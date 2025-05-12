@@ -1,0 +1,34 @@
+# Site settings
+title: Your Name | Academic Portfolio
+description: Personal academic portfolio and blog showcasing research, projects, and publications.
+baseurl: "" # e.g., "/your-username.github.io" if hosted in a subdirectory
+url: "https://peterlicon2323.github.io" # Replace with your GitHub Pages URL
+author:
+  name: Your Name
+  email: your.email@example.com
+  github: your-github-username
+  linkedin: your-linkedin-profile
+  location: Your City, Country
+
+# Build settings
+theme: minima # Fallback theme, but we'll override with custom layouts
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: assets/css
