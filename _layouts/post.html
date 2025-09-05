@@ -1,8 +1,16 @@
 ---
 layout: default
 ---
-<article class="prose dark:prose-invert max-w-none">
-  <h1 class="text-3xl font-mono font-bold">{{ page.title }}</h1>
-  <p class="text-gray-500 dark:text-gray-400 font-sans">Posted on {{ page.date | date: "%B %d, %Y" }}</p>
-  {{ content }}
-</article>
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<link rel="stylesheet" href="/assets/css/style.css">
+<body>
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="text-3xl font-mono font-bold">{{ page.title }}</h1>
+    <p class="text-gray-500 dark:text-gray-400 font-sans">Posted on {{ page.date | date: "%B %d, %Y" }}</p>
+    {{ content }}
+  </article>
+  {% include highlight.html %}
+</body>
+</html>
