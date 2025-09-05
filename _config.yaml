@@ -11,6 +11,8 @@ theme: minima
 markdown: kramdown
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax # Enable MathJax for LaTeX
   hard_wrap: false
   
 permalink: /blog/:title # URL structure for blog posts
@@ -27,6 +29,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-admonitions
+  - jekyll-sitemap
 
 # Exclude files from build
 exclude:
@@ -41,5 +44,6 @@ sass:
   sass_dir: assets/css
 
   style: compressed
+
 
 
