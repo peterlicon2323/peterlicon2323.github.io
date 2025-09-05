@@ -1,5 +1,5 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" media="screen and (prefers-color-scheme: light)"> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" media="screen and (prefers-color-scheme: dark)"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" media="screen and (prefers-color-scheme: light)">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" media="screen and (prefers-color-scheme: dark)">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <style>
@@ -48,9 +48,11 @@
     /* Remove border from Highlight.js code blocks */
     pre, code {
         border: none !important; /* Override any border from Highlight.js themes */
+        background: var(--light-card); /* Default to light mode card color */
     }
     [data-theme="dark"] pre, [data-theme="dark"] code {
         border: none !important; /* Ensure no border in dark mode */
+        background: var(--dark-card); /* Use dark mode card color */
     }
 </style>
 <script>
