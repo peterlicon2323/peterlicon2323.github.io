@@ -122,82 +122,33 @@
 .cv-section-header {
     position: relative;
     padding: 20px 0;
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    overflow: hidden;
-}
-
-.cv-section-title {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #333333;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     text-align: center;
 }
 
-.cv-section-title::before,
-.cv-section-title::after {
-    content: "Education";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #007bff;
-    opacity: 0.7;
-    z-index: 1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.cv-section-title::before {
-    transform: translate(-50%, -50%) rotate(-5deg);
-    color: #0056b3;
-    opacity: 0.5;
+.cv-section-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+    display: inline-block;
+    position: relative;
 }
 
 .cv-section-title::after {
-    transform: translate(-50%, -50%) rotate(5deg);
-    color: #00aaff;
-    opacity: 0.3;
-}
-
-.cv-section-header::after {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: -10px;
     left: 0;
     width: 100%;
-    height: 50px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="%23d9e2ec" d="M0,60 C300,0 1140,0 1440,60 L1440,0 L0,0 Z"/></svg>');
-    background-size: cover;
-    z-index: 0;
-}
-
-.cv-section-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        135deg,
-        rgba(217, 226, 236, 0.1) 0,
-        rgba(217, 226, 236, 0.1) 10px,
-        transparent 10px,
-        transparent 20px
-    );
-    z-index: 1;
+    height: 1px;
+    background: #333333;
+    display: block;
 }
 
 .text-primary {
-    color: #007bff;
+    color: #333333; /* Matches the image's text color */
 }
+/* End */
 .other-version-link {
     font-size: 0.9em;
     color: #007bff;
