@@ -1,253 +1,228 @@
-/* Import Google Fonts for enhanced typography */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-/* Define CSS custom properties for theming */
+/* ======================
+   Base & Variables
+   ====================== */
 :root {
-    /* Light mode variables */
-    --background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    --text-primary: #2d3748;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --accent: #3182ce;
-    --accent-dark: #2b6cb0;
-    --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    --border: #e2e8f0;
-    --section-line: linear-gradient(90deg, #3182ce, #63b3ed);
-    --bullet-color: #3182ce;
+  --cv-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cv-accent-color: #3182ce;
+  --cv-text-color: #2d3748;
+  --cv-muted-color: #718096;
+  --cv-background: #ffffff;
+  --cv-border: #e2e8f0;
+  --cv-link-color: #4299e1;
+
+  /* Print overrides */
+  --print-background: #ffffff;
+  --print-border: #000000;
 }
 
-/* Dark mode variables */
-:root.dark-mode,
-@media (prefers-color-scheme: dark) {
-    :root:not(.light-mode) {
-        --background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
-        --text-primary: #e2e8f0;
-        --text-secondary: #a0aec0;
-        --text-muted: #a0aec0;
-        --accent: #63b3ed;
-        --accent-dark: #4299e1;
-        --shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        --border: #4a5568;
-        --section-line: linear-gradient(90deg, #63b3ed, #90cdf4);
-        --bullet-color: #63b3ed;
-    }
+@media print {
+  :root {
+    --cv-background: var(--print-background);
+    --cv-border: var(--print-border);
+  }
 }
 
-/* Base CV Layout */
+/* ======================
+   Typography & Layout
+   ====================== */
 .cv {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 24px;
-    background: var(--background);
-    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-primary);
-    box-shadow: var(--shadow);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: var(--cv-font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cv-text-color);
+  background-color: var(--cv-background);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Personal Information Section */
+.cv a {
+  color: var(--cv-link-color);
+  text-decoration: none;
+}
+
+.cv a:hover {
+  text-decoration: underline;
+}
+
+.cv h1, .cv h2, .cv h3 {
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.cv h1 {
+  font-size: 2em;
+  margin: 1rem 0;
+}
+
+.cv h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.75rem;
+}
+
+.cv p {
+  margin: 0 0 0.5rem;
+}
+
+.cv ul, .cv ol {
+  margin: 0.25rem 0 0.5rem 1.25rem;
+  padding: 0;
+}
+
+.cv li {
+  margin-bottom: 0.25rem;
+}
+
 .cv-photo {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 24px 20px 0;
-    float: left;
-    border: 4px solid var(--border);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cv-photo:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  height: 128px;
+  float: left;
+  margin: 0 1.5em 1rem 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cv-border);
 }
 
 .cv-name {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0 0 12px 0;
-    overflow: hidden;
-    letter-spacing: -0.02em;
+  font-size: 2em;
+  margin: 20px 0;
+  line-height: 1.1;
 }
 
 .cv-basic-info {
-    overflow: hidden;
-    margin-bottom: 30px;
-    font-size: 0.95em;
-    color: var(--text-secondary);
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9em;
+  margin-bottom: 1.5rem;
 }
 
 .cv-basic-info-item {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 24px;
-    margin-bottom: 12px;
-    font-size: 0.95em;
-    color: var(--text-primary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--cv-muted-color);
 }
 
-.cv-basic-info-item i.material-icons {
-    color: var(--accent);
-    margin-right: 10px;
-    font-size: 1.2em;
-    vertical-align: middle;
-}
-
-.cv-basic-info-item a,
-.other-version-link a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-.cv-basic-info-item a:hover,
-.other-version-link a:hover {
-    color: var(--accent-dark);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-dark);
-}
-
-/* Section Styling */
-.cv-section {
-    margin-bottom: 40px;
-    position: relative;
+.cv-basic-info-item i {
+  width: 16px;
+  text-align: center;
 }
 
 .cv-section-title {
-    font-size: 1.9em;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 30px 0 20px 0;
-    padding-bottom: 8px;
-    position: relative;
-    display: inline-block;
-    letter-spacing: -0.01em;
+  font-size: 1.75rem;
+  margin: 1.5rem 0 1rem;
+  position: relative;
+  display: inline-block;
+  background: var(--cv-background);
+  padding-right: 1.2rem;
+  z-index: 1;
 }
 
 .cv-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--section-line);
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--cv-accent-color);
+  z-index: -1;
 }
 
-.cv-section-title:hover::after {
-    width: 100%;
-}
-
-/* Item Styling */
-.cv-item {
-    margin-bottom: 24px;
-    padding-left: 16px;
-    border-left: 2px solid var(--border);
-    transition: border-color 0.3s ease;
-}
-
-.cv-item:hover {
-    border-left-color: var(--accent);
+.cv-section:not(:first-child) {
+  border-top: 1px solid var(--cv-border);
+  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .cv-item-title {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
 }
 
 .cv-item-content {
-    padding-left: 16px;
-    color: var(--text-secondary);
-    font-size: 0.95em;
-}
-
-.cv-item-content ul {
-    margin: 8px 0 0 20px;
-    list-style-type: none;
-}
-
-.cv-item-content ul li {
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.cv-item-content ul li::before {
-    content: '•';
-    position: absolute;
-    left: -20px;
-    color: var(--bullet-color);
-    font-weight: bold;
+  padding-left: 1.5rem;
 }
 
 .cv-item-content em {
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: 0.9em;
+  color: var(--cv-muted-color);
+  margin-left: 0.5rem;
+  font-style: italic;
 }
 
-/* Print Styles */
+.cv-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-item + .cv-item {
+  margin-top: 1rem;
+}
+
+.other-version-link {
+  float: right;
+  font-size: 0.9em;
+  margin-left: 0.5rem;
+}
+
+.other-version-link a {
+  color: var(--cv-muted-color);
+}
+
+/* ======================
+   Responsive Design
+   ====================== */
+@media (max-width: 768px) {
+  .cv-photo {
+    height: 96px;
+  }
+
+  .cv-name {
+    font-size: 1.75em;
+  }
+
+  .cv-basic-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cv-section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ======================
+   Print Styles
+   ====================== */
 @media print {
-    .cv {
-        box-shadow: none;
-        background: #ffffff;
-        padding: 20px;
-    }
+  .cv {
+    padding: 1rem;
+  }
 
-    .cv a[href]::after {
-        content: none !important;
-    }
+  .cv-photo {
+    border: none;
+    margin-right: 1rem;
+  }
 
-    .cv-photo {
-        display: none;
-    }
+  .cv-basic-info-item,
+  .text-muted,
+  .other-version-link {
+    font-size: 0.85em;
+  }
 
-    .cv-section-title::after {
-        background: #000000;
-    }
+  .cv-section-title::after {
+    background: #000;
+  }
 
-    .cv-item {
-        border-left: none;
-    }
-}
+  .cv-item-title {
+    font-weight: 600;
+  }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .cv {
-        padding: 24px 16px;
-        border-radius: 0;
-    }
-
-    .cv-photo {
-        height: 100px;
-        width: 100px;
-        margin: 0 16px 16px 0;
-    }
-
-    .cv-name {
-        font-size: 2em;
-    }
-
-    .cv-section-title {
-        font-size: 1.6em;
-    }
-
-    .cv-basic-info-item {
-        display: block;
-        margin-bottom: 12px;
-    }
-
-    .cv-item {
-        padding-left: 12px;
-    }
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
 }
