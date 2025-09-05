@@ -1,21 +1,51 @@
 /* Import Google Fonts for enhanced typography */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+/* Define CSS custom properties for theming */
+:root {
+    /* Light mode variables */
+    --background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --accent: #3182ce;
+    --accent-dark: #2b6cb0;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --border: #e2e8f0;
+    --section-line: linear-gradient(90deg, #3182ce, #63b3ed);
+}
+
+/* Dark mode variables */
+.dark-mode,
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+        --text-primary: #e2e8f0;
+        --text-secondary: #a0aec0;
+        --text-muted: #718096;
+        --accent: #63b3ed;
+        --accent-dark: #4299e1;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        --border: #4a5568;
+        --section-line: linear-gradient(90deg, #63b3ed, #90cdf4);
+    }
+}
+
 /* Base CV Layout */
 .cv {
-    max-width: 900px; /* Slightly wider for modern displays */
+    max-width: 900px;
     margin: 0 auto;
-    padding: 48px 24px; /* Increased padding for elegance */
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient for depth */
+    padding: 48px 24px;
+    background: var(--background);
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px; /* Baseline font size */
-    line-height: 1.7; /* Improved readability */
-    color: #2d3748; /* Professional dark gray */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
-    border-radius: 8px; /* Subtle rounded corners */
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full height for consistency */
+    min-height: 100vh;
 }
 
 /* Personal Information Section */
@@ -26,8 +56,8 @@
     object-fit: cover;
     margin: 0 24px 20px 0;
     float: left;
-    border: 4px solid #e2e8f0; /* Subtle border for polish */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--border);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -37,19 +67,19 @@
 }
 
 .cv-name {
-    font-size: 2.5em; /* Larger for impact */
-    font-weight: 700; /* Bold for prominence */
-    color: #1a202c; /* Darker for emphasis */
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-primary);
     margin: 0 0 12px 0;
     overflow: hidden;
-    letter-spacing: -0.02em; /* Tighten spacing for elegance */
+    letter-spacing: -0.02em;
 }
 
 .cv-basic-info {
     overflow: hidden;
     margin-bottom: 30px;
     font-size: 0.95em;
-    color: #4a5568; /* Softer gray for secondary info */
+    color: var(--text-secondary);
 }
 
 .cv-basic-info-item {
@@ -58,11 +88,11 @@
     margin-right: 24px;
     margin-bottom: 12px;
     font-size: 0.95em;
-    color: #2d3748;
+    color: var(--text-primary);
 }
 
 .cv-basic-info-item i.material-icons {
-    color: #3182ce; /* Professional blue */
+    color: var(--accent);
     margin-right: 10px;
     font-size: 1.2em;
     vertical-align: middle;
@@ -70,7 +100,7 @@
 
 .cv-basic-info-item a,
 .other-version-link a {
-    color: #3182ce;
+    color: var(--accent);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
@@ -78,9 +108,9 @@
 
 .cv-basic-info-item a:hover,
 .other-version-link a:hover {
-    color: #2b6cb0;
+    color: var(--accent-dark);
     text-decoration: underline;
-    text-decoration-color: #2b6cb0;
+    text-decoration-color: var(--accent-dark);
 }
 
 /* Section Styling */
@@ -92,7 +122,7 @@
 .cv-section-title {
     font-size: 1.9em;
     font-weight: 600;
-    color: #2b6cb0;
+    color: var(--accent);
     margin: 30px 0 20px 0;
     padding-bottom: 8px;
     position: relative;
@@ -105,44 +135,44 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px; /* Shorter, refined underline */
-    height: 3px; /* Thicker for emphasis */
-    background: linear-gradient(90deg, #3182ce, #63b3ed); /* Gradient underline */
+    width: 60px;
+    height: 3px;
+    background: var(--section-line);
     transition: width 0.3s ease;
 }
 
 .cv-section-title:hover::after {
-    width: 100%; /* Extend underline on hover */
+    width: 100%;
 }
 
 /* Item Styling */
 .cv-item {
     margin-bottom: 24px;
     padding-left: 16px;
-    border-left: 2px solid #e2e8f0; /* Subtle left border for hierarchy */
+    border-left: 2px solid var(--border);
     transition: border-color 0.3s ease;
 }
 
 .cv-item:hover {
-    border-left-color: #3182ce; /* Highlight on hover */
+    border-left-color: var(--accent);
 }
 
 .cv-item-title {
     font-size: 1.2em;
     font-weight: 600;
-    color: #1a202c;
+    color: var(--text-primary);
     margin-bottom: 8px;
 }
 
 .cv-item-content {
     padding-left: 16px;
-    color: #4a5568;
+    color: var(--text-secondary);
     font-size: 0.95em;
 }
 
 .cv-item-content ul {
     margin: 8px 0 0 20px;
-    list-style-type: none; /* Custom bullet style */
+    list-style-type: none;
 }
 
 .cv-item-content ul li {
@@ -154,12 +184,12 @@
     content: '•';
     position: absolute;
     left: -20px;
-    color: #3182ce;
+    color: var(--accent);
     font-weight: bold;
 }
 
 .cv-item-content em {
-    color: #718096;
+    color: var(--text-muted);
     font-style: italic;
     font-size: 0.9em;
 }
@@ -168,7 +198,7 @@
 @media print {
     .cv {
         box-shadow: none;
-        background: #ffffff;
+        background: #ffffff; /* Always light for print */
         padding: 20px;
     }
 
@@ -181,7 +211,7 @@
     }
 
     .cv-section-title::after {
-        background: #000000; /* Black underline for print */
+        background: #000000;
     }
 
     .cv-item {
@@ -193,7 +223,7 @@
 @media screen and (max-width: 768px) {
     .cv {
         padding: 24px 16px;
-        border-radius: 0; /* Remove border radius on mobile */
+        border-radius: 0;
     }
 
     .cv-photo {
