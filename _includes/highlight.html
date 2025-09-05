@@ -68,15 +68,38 @@
         padding: 8px !important;
     }
 
-    .admonition.warning {
-      background-color: #fff3cd;
-      border-left: 4px solid #ffcc00;
-      padding: 1em;
-      margin: 1em 0;
+    /* GFM Admonition Styling */
+    .admonition {
+        margin: 1em 0;
+        padding: 1em;
+        border-left: 4px solid;
+        background-color: var(--light-card);
+        border-radius: 4px;
     }
-    .admonition.warning .admonition-title {
-      font-weight: bold;
-      color: #856404;
+    .admonition.warning {
+        border-left-color: #ffcc00;
+        background-color: #fff3cd;
+    }
+    .admonition.warning p:first-child::before {
+        content: "Warning: ";
+        font-weight: bold;
+        color: #856404;
+    }
+    [data-theme="dark"] .admonition {
+        background-color: var(--dark-card);
+    }
+    [data-theme="dark"] .admonition.warning {
+        border-left-color: #ffcc00;
+        background-color: #664d00;
+    }
+    [data-theme="dark"] .admonition.warning p:first-child::before {
+        color: #ffcc00;
+    }
+    .admonition p {
+        margin: 0;
+    }
+    .admonition p:first-child {
+        margin-bottom: 0.5em;
     }
     
 </style>
