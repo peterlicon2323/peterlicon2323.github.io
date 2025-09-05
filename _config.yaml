@@ -1,5 +1,5 @@
 # Site settings
-title: Your Name - Software Developer
+title: My Name (alias-name) - AI Engineer
 description: A portfolio showcasing my coding projects, technical blog, and computer science expertise.
 url: "https://bobniker929.github.io" # Replace with your GitHub username
 baseurl: "" # Set to "/repo" for subdirectory deployments
@@ -41,4 +41,5 @@ sass:
   sass_dir: assets/css
 
   style: compressed
+
 
