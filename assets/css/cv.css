@@ -1,22 +1,17 @@
 /* ======================
-   Base & Variables
+   CV Styles - Dark Mode Ready
    ====================== */
 :root {
-  --cv-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cv-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --cv-accent-color: #3182ce;
   --cv-text-color: #2d3748;
   --cv-muted-color: #718096;
   --cv-background: #ffffff;
   --cv-border: #e2e8f0;
   --cv-link-color: #4299e1;
-  --cv-photo-border: #e2e8f0;
-
-  /* Print overrides */
-  --print-background: #ffffff;
-  --print-border: #000000;
 }
 
-/* Light mode variables (matching your styles.css) */
+/* Light theme (default) */
 [data-theme="light"] {
   --cv-text-color: #1a1a1a;
   --cv-muted-color: #6c757d;
@@ -24,32 +19,20 @@
   --cv-border: #e5e5e5;
   --cv-accent-color: #0d6efd;
   --cv-link-color: #0d6efd;
-  --cv-photo-border: #1a1a1a;
 }
 
-/* Dark mode variables (matching your styles.css) */
+/* Dark theme */
 [data-theme="dark"] {
   --cv-text-color: #f0f0f0;
   --cv-muted-color: #a0a0a0;
-  --cv-background: #3d3d3d;
+  --cv-background: #303030;
   --cv-border: #4b5563;
   --cv-accent-color: #60a5fa;
-  --cv-link-color: #60a5fa;
-  --cv-photo-border: #f0f0f0;
-}
-
-@media print {
-  :root {
-    --cv-background: #ffffff;
-    --cv-text-color: #000000;
-    --cv-muted-color: #333333;
-    --cv-border: #000000;
-    --cv-accent-color: #000000;
-  }
+  --cv-link-color: #90cdf4;
 }
 
 /* ======================
-   Typography & Layout
+   Core CV Styles
    ====================== */
 .cv {
   font-family: var(--cv-font-family);
@@ -60,7 +43,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cv a {
@@ -72,7 +55,7 @@
   text-decoration: underline;
 }
 
-.cv h1, .cv h2, .cv h3 {
+.cv h1, .cv h2 {
   font-weight: normal;
   margin-top: 0;
 }
@@ -88,55 +71,33 @@
   color: var(--cv-accent-color);
 }
 
-.cv p {
-  margin: 0 0 0.5rem;
-}
-
-.cv ul, .cv ol {
-  margin: 0.25rem 0 0.5rem 1.25rem;
-  padding: 0;
-}
-
-.cv li {
-  margin-bottom: 0.25rem;
-}
-
 .cv-photo {
   height: 128px;
   float: left;
   margin: 0 1.5em 1rem 0;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--cv-photo-border);
-  transition: border-color 0.3s ease;
+  border: 2px solid var(--cv-border);
 }
 
 .cv-name {
   font-size: 2em;
   margin: 20px 0;
-  line-height: 1.1;
 }
 
 .cv-basic-info {
   clear: both;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
   font-size: 0.9em;
   margin-bottom: 1.5rem;
 }
 
 .cv-basic-info-item {
-  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 0.25rem;
   color: var(--cv-muted-color);
-}
-
-.cv-basic-info-item i {
-  width: 16px;
-  text-align: center;
 }
 
 .cv-section-title {
@@ -164,103 +125,20 @@
 
 .cv-item-content em {
   color: var(--cv-muted-color);
-  margin-left: 0.5rem;
   font-style: italic;
 }
 
-.cv-item {
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-.cv-item + .cv-item {
-  margin-top: 1rem;
-}
-
-.other-version-link {
-  float: right;
-  font-size: 0.9em;
-  margin-left: 0.5rem;
-  color: var(--cv-muted-color);
-}
-
-.other-version-link a {
-  color: var(--cv-muted-color);
-}
-
-/* ======================
-   Responsive Design
-   ====================== */
 @media (max-width: 768px) {
   .cv-photo {
     height: 96px;
-    margin-right: 1rem;
   }
-
-  .cv-name {
-    font-size: 1.75em;
-  }
-
+  
   .cv-basic-info {
     flex-direction: column;
     gap: 0.5rem;
   }
-
+  
   .cv-section-title {
     font-size: 1.5rem;
-  }
-  
-  .other-version-link {
-    float: none;
-    display: block;
-    text-align: right;
-    margin-top: 0.5rem;
-  }
-}
-
-/* ======================
-   Print Styles
-   ====================== */
-@media print {
-  .cv {
-    padding: 1rem;
-    background: white !important;
-    color: black !important;
-  }
-
-  .cv-photo {
-    border: none;
-    margin-right: 1rem;
-  }
-
-  .cv-basic-info-item,
-  .text-muted,
-  .other-version-link {
-    font-size: 0.85em;
-    color: #000000 !important;
-  }
-
-  .cv-section-title {
-    color: #000000 !important;
-  }
-
-  .cv-item-title {
-    font-weight: 600;
-  }
-
-  body {
-    font-size: 12pt;
-    line-height: 1.4;
-    background: white !important;
-    color: black !important;
-  }
-  
-  a {
-    color: #000 !important;
-    text-decoration: none !important;
-  }
-  
-  a[href]:after {
-    content: none !important;
   }
 }
