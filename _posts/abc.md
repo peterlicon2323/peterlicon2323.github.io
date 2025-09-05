@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sample Blog Post 2
-date: 1010-09-04
+date: 2024-09-29
 description: A deep dive into practical applications of machine learning in 2025.
 thumbnail: /assets/images/projects/th_1.jpg
 tags: [machine learning, AI, technology]
@@ -18,4 +18,5 @@ tags: [machine learning, AI, technology]
   
   <h2 class="font-mono">Autonomous Systems</h2>
   <p class="font-sans">Self-driving cars and drones rely on ML for navigation and obstacle avoidance, pushing the boundaries of automation.</p>
+
 </div>
