@@ -18,7 +18,16 @@ This is:
 echo done
 ```
 ```python
+import time
 print("hello")
+t1 = time.time()
+print(f"This time is {time.time() - t1}")
+class Abc:
+    def __init__(self):
+    def run(self):
+        print("ABC")
+var = Abc()
+var.run()
 ```
 THis is `code`.
 > [!WARNING]
@@ -31,3 +40,4 @@ ${1 + 1 = 2}$
 This project solves the equation $ax^2 + bx + c = 0$ using:
 
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
