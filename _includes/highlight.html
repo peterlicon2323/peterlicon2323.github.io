@@ -68,40 +68,72 @@
         padding: 8px !important;
     }
 
-    /* GFM Admonition Styling */
-    .admonition {
+    /*Block Quote Styling */
+    blockquote.admonition {
         margin: 1em 0;
         padding: 1em;
         border-left: 4px solid;
-        background-color: var(--light-card);
         border-radius: 4px;
+        background-color: var(--light-card);
     }
-    .admonition.warning {
+    blockquote.admonition.warning {
         border-left-color: #ffcc00;
         background-color: #fff3cd;
     }
-    .admonition.warning p:first-child::before {
+    blockquote.admonition.warning p:first-child::before {
         content: "Warning: ";
         font-weight: bold;
         color: #856404;
     }
-    [data-theme="dark"] .admonition {
+    [data-theme="dark"] blockquote.admonition {
         background-color: var(--dark-card);
     }
-    [data-theme="dark"] .admonition.warning {
+    [data-theme="dark"] blockquote.admonition.warning {
         border-left-color: #ffcc00;
         background-color: #664d00;
     }
-    [data-theme="dark"] .admonition.warning p:first-child::before {
+    [data-theme="dark"] blockquote.admonition.warning p:first-child::before {
         color: #ffcc00;
     }
-    .admonition p {
+    blockquote.admonition p {
         margin: 0;
     }
-    .admonition p:first-child {
+    blockquote.admonition p:first-child {
         margin-bottom: 0.5em;
     }
-    
+/*     other */
+    blockquote {
+        margin: 1em 0;
+        padding: 1em;
+        border-left: 4px solid;
+        border-radius: 4px;
+        background-color: var(--light-card);
+    }
+    blockquote.warning {
+        border-left-color: #ffcc00;
+        background-color: #fff3cd;
+    }
+    blockquote.warning p:first-child::before {
+        content: "Warning: ";
+        font-weight: bold;
+        color: #856404;
+    }
+    [data-theme="dark"] blockquote {
+        background-color: var(--dark-card);
+    }
+    [data-theme="dark"] blockquote.warning {
+        border-left-color: #ffcc00;
+        background-color: #664d00;
+    }
+    [data-theme="dark"] blockquote.warning p:first-child::before {
+        color: #ffcc00;
+    }
+    blockquote p {
+        margin: 0;
+    }
+    blockquote p:first-child {
+        margin-bottom: 0.5em;
+    }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
