@@ -69,45 +69,12 @@
     }
 
     /*Block Quote Styling */
-    blockquote.admonition {
+    blockquote {
         margin: 1em 0;
         padding: 1em;
         border-left: 4px solid;
         border-radius: 4px;
-        background-color: var(--light-card);
-    }
-    blockquote.admonition.warning {
-        border-left-color: #ffcc00;
-        background-color: #fff3cd;
-    }
-    blockquote.admonition.warning p:first-child::before {
-        content: "Warning: ";
-        font-weight: bold;
-        color: #856404;
-    }
-    [data-theme="dark"] blockquote.admonition {
-        background-color: var(--dark-card);
-    }
-    [data-theme="dark"] blockquote.admonition.warning {
-        border-left-color: #ffcc00;
-        background-color: #664d00;
-    }
-    [data-theme="dark"] blockquote.admonition.warning p:first-child::before {
-        color: #ffcc00;
-    }
-    blockquote.admonition p {
-        margin: 0;
-    }
-    blockquote.admonition p:first-child {
-        margin-bottom: 0.5em;
-    }
-/*     other */
-/*     blockquote {
-        margin: 1em 0;
-        padding: 1em;
-        border-left: 4px solid;
-        border-radius: 4px;
-        background-color: var(--light-card);
+        background-color: var(--light-bg);
     }
     blockquote.warning {
         border-left-color: #ffcc00;
@@ -119,7 +86,7 @@
         color: #856404;
     }
     [data-theme="dark"] blockquote {
-        background-color: var(--dark-card);
+        background-color: var(--dark-bg);
     }
     [data-theme="dark"] blockquote.warning {
         border-left-color: #ffcc00;
@@ -133,7 +100,7 @@
     }
     blockquote p:first-child {
         margin-bottom: 0.5em;
-    } */
+    }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
