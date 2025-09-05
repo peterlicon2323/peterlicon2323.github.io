@@ -26,6 +26,7 @@ collections:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-admonitions
 
 # Exclude files from build
 exclude:
@@ -40,3 +41,4 @@ sass:
   sass_dir: assets/css
 
   style: compressed
+
