@@ -37,7 +37,7 @@
         fill: var(--icon-fill-hover); /* Use custom property for SVG fill on hover */
     }
     
-    /* Ensure pre tag uses card color and overrides Highlight.js styles */
+    /* Remove border from Highlight.js code blocks */
     pre.highlight.code-container {
         border: none !important; /* Override any border from Highlight.js themes */
         background: var(--light-card) !important; /* Enforce light mode card color */
@@ -55,24 +55,19 @@
         background: transparent !important; /* Prevent code from overriding pre background */
     }
 </style>
-<div class="highlight">
-    <pre class="highlight code-container">
-        <code data-highlighted="yes" class="hljs language-{{ include.language }}">{{ include.code }}</code>
-        <button class="copy-button">
-            <svg viewBox="0 0 24 24">
-                <path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"></path>
-            </svg>
-        </button>
-    </pre>
-</div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         hljs.highlightAll();
-        document.querySelectorAll('.copy-button').forEach(button => {
+        document.querySelectorAll('pre code').forEach(block => {
+            const container = block.parentElement;
+            container.classList.add('code-container');
+            const button = document.createElement('button');
+            button.classList.add('copy-button');
+            button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>';
+            container.appendChild(button);
             button.addEventListener('click', () => {
-                const codeBlock = button.previousElementSibling;
                 const clipboard = new ClipboardJS(button, {
-                    text: () => codeBlock.textContent
+                    text: () => block.textContent
                 });
                 clipboard.on('success', () => {
                     button.textContent = 'Copied!';
