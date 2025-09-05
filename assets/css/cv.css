@@ -1,0 +1,268 @@
+/* assets/css/cv.css */
+
+/* --- Import/Setup (Assuming MDL and necessary fonts/icons are loaded in HTML) --- */
+/* Font imports for Roboto are generally handled in MDL's base CSS or HTML for performance */
+
+
+/* --- Base CV Layout and Spacing --- */
+/* Use MDL's flexbox utilities where applicable */
+.cv {
+    max-width: 850px; /* Specific container width */
+    /* Use MDL utility classes like mdl-layout--center or centering in HTML if possible */
+    margin: 0 auto; /* Centering override */
+    /* Use mdl-layout or similar for padding, or add custom if needed */
+    padding: 40px 20px;
+    background: #ffffff; /* Overrides MDL's potential background if needed */
+    /* MDL uses 'Roboto', fallbacks. We redefine to prioritize Roboto. */
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif; /* Align with MDL */
+    /* MDL's default line-height is often ~1.4-1.6 */
+    line-height: 1.6; /* Keep custom line-height */
+    color: #333333; /* Specific text color override */
+    /* Use mdl-shadow-- classes for consistent shadows if possible, e.g., mdl-shadow--4dp */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Custom shadow override */
+    /* MDL promotes flexbox for layout */
+    display: flex; /* Enable flex for children layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* --- Personal Information Section --- */
+/* Layout */
+.cv-photo {
+    /* Dimensions */
+    height: 120px;
+    width: 120px;
+    /* Shape */
+    border-radius: 50%;
+    /* Image fit */
+    object-fit: cover;
+    /* Layout/Margins */
+    /* Use MDL's spacing/margin/padding utilities or float/inline-block */
+    margin: 0 20px 15px 0;
+    float: left; /* MDL uses floats in grid, this aligns with that concept */
+    /* MDL Shadows */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Custom shadow override */
+    /* Interaction */
+    transition: transform 0.3s ease;
+    /* MDL uses border-box */
+    box-sizing: border-box;
+}
+
+.cv-photo:hover {
+    transform: scale(1.05);
+}
+
+.cv-name {
+    /* Typo override */
+    font-size: 2.2em; /* Larger than MDL's h4 */
+    margin: 0 0 10px 0; /* Margin override */
+    /* MDL's text colors are typically rgba(0,0,0,.87). Override if needed. */
+    color: #1a2a44; /* Custom dark blue */
+    font-weight: 500; /* MDL default is 400. Override weight. */
+    /* Layout (ensures it clears the floated image) */
+    /* Use MDL's utility classes like mdl-typography--clearfix or clear floats manually */
+    overflow: hidden; /* Clears the float */
+}
+
+/* MDL provides muted styles in components like lists/cards */
+.text-muted,
+.cv-basic-info {
+    font-size: 0.95em; /* Override MDL's default size if needed */
+    color: #6c757d; /* MDL uses rgba(0,0,0,.54) often. Override with specific gray. */
+    /* MDL uses block display for p */
+    display: block; /* Ensure block display */
+    /* MDL uses margin utilities (e.g., mdl-typography--margin-bottom-standard) */
+    margin-bottom: 15px; /* Custom margin */
+}
+
+.cv-basic-info {
+    /* Layout (ensures it clears the floated image) */
+    overflow: hidden; /* Clears the float */
+    margin-bottom: 25px; /* Specific bottom margin */
+}
+
+.cv-basic-info-item {
+    /* Layout */
+    /* MDL uses inline-block/list items. Align here. */
+    display: inline-block;
+    /* MDL's spacing system uses multiples of 8px. Approximate here. */
+    margin-right: 20px; /* Custom spacing */
+    /* Typo */
+    font-size: 0.95em;
+    color: #495057; /* Specific dark gray, overriding MDL's default text color if needed */
+}
+
+/* Icons */
+.cv-basic-info-item i.material-icons { /* Using MDL's icon class */
+    /* Color override */
+    color: #007bff; /* MDL primary blue */
+    /* MDL standard icon spacings */
+    margin-right: 8px; /* Space between icon and text */
+    /* Ensure vertical alignment */
+    vertical-align: middle;
+}
+
+
+/* Links */
+.cv-basic-info-item a,
+.other-version-link a {
+    color: #007bff; /* MDL accent/primary blue */
+    text-decoration: none; /* Override MDL's default underline state sometimes */
+    /* MDL's interactive states */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.cv-basic-info-item a:hover,
+.other-version-link a:hover {
+    text-decoration: underline; /* MDL hover effect */
+    color: #0056b3; /* Darken the link color slightly on hover */
+}
+
+/* --- Section Styling (Experience, Education, etc.) --- */
+.cv-section {
+    /* MDL uses margins/padding for structure */
+    margin-bottom: 30px; /* Specific spacing between sections */
+}
+
+/* Section Titles */
+/* Align with MDL's heading classes where possible (e.g., mdl-typography--headline, color) */
+.cv-section-title {
+    /* Typo */
+    font-size: 1.8em; /* Override MDL heading sizes */
+    font-style: italic; /* Custom style */
+    /* MDL's heading margins are top/bottom */
+    margin: 25px 0 15px 0; /* Custom margins */
+    color: #007bff; /* MDL primary blue */
+    font-weight: 500; /* MDL default is 400. Override weight. */
+    /* Custom Styling/Positioning */
+    position: relative;
+    /* MDL uses block by default */
+    display: inline-block; /* Allows the pseudo-element to only span the width of the text + padding */
+    padding-right: 1.2rem; /* Add space to the right for visual separation */
+    /* MDL does not provide this style directly */
+    background: #ffffff; /* Match CV background */
+    z-index: 1; /* Ensure it sits above the line */
+    /* MDL-like line adjustment */
+    /* The line is handled via ::after pseudo-element now */
+    line-height: 1.2; /* Adjust line height for title */
+}
+
+/* Line after title */
+.cv-section-title::after {
+    content: '';
+    position: absolute;
+    /* Place below the text baseline */
+    /* Using % or ems can be tricky with smaller text. top: 100% or 1.5em etc. */
+    top: 50%; /* Position 50% down the title */
+    left: 0; /* Align to the left of the title */
+    transform: translateY(50%); /* Move it down by 50% of its own height */
+    width: 100vw; /* Full viewport width */
+    height: 1px;
+    background: #007bff; /* Match link/icon color */
+    z-index: -1; /* Behind the title text */
+    /* Animation */
+    transition: width 0.3s ease;
+}
+
+/* Animated line effect on hover */
+.cv-section-title:hover::after {
+    width: 200vw; /* Extend on hover */
+}
+
+/* --- Item Styling (Job, Degree, etc.) --- */
+/* MDL uses flexbox/grid/lists for items. Use block/flex as needed. */
+.cv-item {
+    /* MDL uses margins for spacing */
+    margin-bottom: 20px; /* Space between items */
+    /* MDL's page layout uses `break-inside: avoid;` in print */
+    break-inside: avoid; /* Prevent item from splitting across page/columns */
+}
+
+/* Item Titles (Position, Degree Name) */
+/* Align with MDL's strong/text classes */
+.cv-item-title {
+    /* MDL often uses bold weight */
+    font-weight: 600; /* Override MDL's bold weight if needed */
+    /* MDL uses color for contrast */
+    color: #1a2a44; /* Custom dark blue */
+    /* MDL uses margin utilities */
+    margin-right: 10px; /* Space after title */
+}
+
+/* Item Content (Dates, Description, etc.) */
+/* Align with MDL's text/body classes */
+.cv-item-content {
+    /* MDL uses padding utilities */
+    padding-left: 15px; /* Indent content */
+    /* MDL uses color for body text */
+    color: #495057; /* Specific dark gray */
+}
+
+/* Lists within content */
+/* MDL provides list styling. Align with it or override if custom needed */
+.cv-item-content ul {
+    /* MDL resets like this */
+    padding: 0;
+    margin: 0 0 0 20px; /* Standard list indentation */
+    /* MDL uses disc by default */
+    list-style-type: disc; /* Keep disc bullets */
+}
+
+/* Emphasized details within item content */
+.cv-item-content em {
+    /* MDL uses opacity for meta text */
+    color: #6c757d; /* Use specific gray for dates/locations */
+    font-style: italic; /* MDL's default em style */
+    /* Add custom spacing if needed, e.g., margin-left */
+}
+
+/* --- Layout Adjustments --- */
+/* MDL's grid (mdl-grid, mdl-cell) is great for complex layouts. For simple CV, custom styles often suffice. */
+
+/* --- Print Styles --- */
+/* Align with MDL's print styles */
+@media print {
+    /* MDL resets links in print */
+    .cv a[href]::after {
+        content: none !important; /* Really disable all link printing */
+    }
+    /* Adjust font sizes */
+    .text-muted, .other-version-link, .cv-basic-info-item {
+        font-size: 0.9em; /* Keep consistent sizes in print */
+    }
+    /* Section height (if needed) */
+    #experience {
+        min-height: 9in; /* Minimal section height in print */
+    }
+    /* Hide photo in print (if desired) */
+    .cv-photo {
+        /* MDL uses display utilities. Use standard CSS here. */
+        display: none; /* Print version might omit photo */
+    }
+}
+
+/* --- Responsive Styles --- */
+/* Align with MDL's responsive breakpoints (e.g., max-width 768px) */
+@media screen and (max-width: 768px) {
+    /* MDL uses padding utilities for responsiveness */
+    .cv {
+        padding: 20px 10px; /* Adjust padding */
+    }
+    /* Photo adjustments */
+    .cv-photo {
+        height: 100px;
+        width: 100px;
+        margin: 0 15px 10px 0; /* Adjust margins */
+    }
+    /* Title adjustments */
+    .cv-name {
+        font-size: 1.8em; /* Smaller font on mobile */
+    }
+    .cv-section-title {
+        font-size: 1.6em; /* Smaller section title */
+    }
+    /* Basic info item adjustments */
+    .cv-basic-info-item {
+        display: block; /* Stack items on mobile */
+        margin-bottom: 10px; /* Adjust spacing */
+    }
+}
