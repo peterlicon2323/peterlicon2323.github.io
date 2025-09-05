@@ -9,6 +9,10 @@ github_username: bobniker929 # Optional: for linking to GitHub in templates
 # Build settings
 theme: minima
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  
 permalink: /blog/:title # URL structure for blog posts
 show_excerpts: true # Show excerpts on blog index
 
@@ -34,4 +38,5 @@ exclude:
 # Sass settings (for custom CSS processing)
 sass:
   sass_dir: assets/css
+
   style: compressed
