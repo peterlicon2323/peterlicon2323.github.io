@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <style>
@@ -10,7 +10,7 @@
         top: 1px;
         right: 1px;
         background: transparent;
-        color: white;
+        color: #1f2937; /* Tailwind gray-800 for light mode */
         border: none;
         padding: 1px 1px;
         cursor: pointer;
@@ -21,39 +21,21 @@
         width: 24px;
         height: 24px;
     }
+    .dark .copy-button {
+        color: #e5e7eb; /* Tailwind gray-200 for dark mode */
+    }
     .copy-button:hover {
         background: transparent;
     }
     .copy-button svg {
         width: 16px;
         height: 16px;
-        fill: white;
+        fill: #1f2937; /* Tailwind gray-800 for light mode */
+    }
+    .dark .copy-button svg {
+        fill: #e5e7eb; /* Tailwind gray-200 for dark mode */
     }
 </style>
-<!-- <script>
-   document.addEventListener('DOMContentLoaded', () => {
-       hljs.highlightAll();
-       document.querySelectorAll('pre code').forEach(block => {
-           const container = block.parentElement;
-           container.classList.add('code-container');
-           const button = document.createElement('button');
-           button.classList.add('copy-button');
-           button.textContent = 'Copy';
-           container.appendChild(button);
-           button.addEventListener('click', () => {
-               const clipboard = new ClipboardJS(button, {
-                   text: () => block.textContent
-               });
-               clipboard.on('success', () => {
-                   button.textContent = 'Copied!';
-                   setTimeout(() => button.textContent = 'Copy', 2000);
-                   clipboard.destroy();
-               });
-           });
-       });
-   });
-</script> -->
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         hljs.highlightAll();
