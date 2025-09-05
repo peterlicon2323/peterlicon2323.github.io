@@ -5,12 +5,13 @@
 <style>
     .code-container {
         position: relative;
+        background: transparent;
     }
     .copy-button {
         position: absolute;
         top: 1px;
         right: 1px;
-/*         background: transparent; */
+        background: transparent;
         color: var(--icon-fill);
         border: none;
         padding: 1px 1px;
@@ -19,8 +20,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 5px;
-        height: 5px;
+        width: 24px;
+        height: 24px;
     }
     .copy-button:hover {
         background: transparent;
@@ -28,13 +29,14 @@
     }
     
     .copy-button svg {
-        width: 5px;
-        height: 5px;
+        width: 16px;
+        height: 16px;
         fill: var(--icon-fill); /* Use custom property for SVG fill */
     }
     .copy-button:hover svg {
         fill: var(--icon-fill-hover); /* Use custom property for SVG fill on hover */
     }
+    
     /* Remove border from Highlight.js code blocks */
     pre, code {
         border: none !important; /* Override any border from Highlight.js themes */
