@@ -34,6 +34,13 @@
     .copy-button:hover svg {
         fill: var(--icon-fill-hover); /* Use custom property for SVG fill on hover */
     }
+    /* Remove border from Highlight.js code blocks */
+    pre, code {
+        border: none !important; /* Override any border from Highlight.js themes */
+    }
+    [data-theme="dark"] pre, [data-theme="dark"] code {
+        border: none !important; /* Ensure no border in dark mode */
+    }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
