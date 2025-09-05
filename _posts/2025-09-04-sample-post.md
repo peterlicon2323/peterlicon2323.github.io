@@ -35,12 +35,13 @@ This is `code`.
 > This is quote
 > 
 This is Latex:
-$1 + 1 = 2$
+$$1 + 1 = 2$$
 
-${1 + 1 = 2}$
+$${1 + 1 = 2}$$
 
-This project solves the equation $ax^2 + bx + c = 0$ using:
+This project solves the equation $$ax^2 + bx + c = 0$$ using:
 
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
 
 
