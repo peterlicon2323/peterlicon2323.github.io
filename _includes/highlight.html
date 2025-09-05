@@ -1,5 +1,5 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" media="screen and (prefers-color-scheme: light)">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" media="screen and (prefers-color-scheme: dark)"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" media="screen and (prefers-color-scheme: light)">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" media="screen and (prefers-color-scheme: dark)">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
 <style>
@@ -11,7 +11,7 @@
         top: 1px;
         right: 1px;
         background: transparent;
-        color: #1f2937; /* Tailwind gray-800 for light mode */
+        color: var(--icon-fill); /* Use custom property for text color */
         border: none;
         padding: 1px 1px;
         cursor: pointer;
@@ -22,19 +22,17 @@
         width: 24px;
         height: 24px;
     }
-    .dark .copy-button {
-        color: #ffffff; /* White for dark mode */
-    }
     .copy-button:hover {
         background: transparent;
+        color: var(--icon-fill-hover); /* Use custom property for hover text color */
     }
     .copy-button svg {
         width: 16px;
         height: 16px;
-        fill: #1f2937; /* Tailwind gray-800 for light mode */
+        fill: var(--icon-fill); /* Use custom property for SVG fill */
     }
-    .dark .copy-button svg {
-        fill: #ffffff; /* White for dark mode */
+    .copy-button:hover svg {
+        fill: var(--icon-fill-hover); /* Use custom property for SVG fill on hover */
     }
 </style>
 <script>
