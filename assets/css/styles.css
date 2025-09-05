@@ -51,6 +51,13 @@ main {
   color: var(--dark-text);
 }
 
+.alert-warning {
+       background-color: #fff3cd;
+       border-left: 4px solid #ffecb5;
+       padding: 10px;
+       margin: 20px 0;
+   }
+
 .bg-light-bg {
   background-color: var(--light-bg);
 }
@@ -310,4 +317,5 @@ code {
 pre {
   padding: 1rem;
   overflow-x: auto;
+
 }
