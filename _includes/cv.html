@@ -145,16 +145,24 @@
             </span>
         {% endif %}
     </section> -->
-
-    <section class="cv-basic-info flex flex-wrap gap-4 text-gray-800">
+    <section class="cv-basic-info" style="display: flex; flex-wrap: wrap; gap: 1rem; color: #1f2937;">
         {% if cv.email %}
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg style="width: 20px; height: 20px; color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6m0 0l-9 6-9-6m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
+                </svg>
+                <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+            </span>
+        {% endif %}
+<!--     <section class="cv-basic-info flex flex-wrap gap-4 text-gray-800"> -->
+<!--         {% if cv.email %}
             <span class="cv-basic-info-item flex items-center space-x-2">
                 <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6m0 0l-9 6-9-6m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
                 </svg>
                 <a href="mailto:{{cv.email}}" class="hover:text-blue-600">{{cv.email}}</a>
             </span>
-        {% endif %}
+        {% endif %} -->
     
         {% if cv.phone %}
             <span class="cv-basic-info-item flex items-center space-x-2">
