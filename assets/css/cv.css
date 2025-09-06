@@ -16,25 +16,25 @@
 /* Light theme (default) */
 [data-theme="light"] {
   --cv-text-color: #1a1a1a;
-  --cv-muted-color: #8b9aa8;
+  --cv-muted-color: #b3b3b3;
   --cv-background: #ffffff; /* Used by cv-name */
   --cv-border: #e5e5e5;
   --cv-accent-color: #303030;
   --cv-link-color: #0d6efd;
   --cv-accent-bg: #ffffff; /* Light accent background */
-  --cv-muted-bg: #fafbff; /* Lighter than cv-background */
+  --cv-muted-bg: #ffffff; /* Lighter than cv-background */
 }
 
 /* Dark theme */
 [data-theme="dark"] {
   --cv-text-color: #f0f0f0;
-  --cv-muted-color: #b0b8c2;
+  --cv-muted-color: #a0a0a0;
   --cv-background: #303030; /* Used by cv-name */
   --cv-border: #4b5563;
   --cv-accent-color: #60a5fa;
   --cv-link-color: #90cdf4;
   --cv-accent-bg: #303030; /* Dark accent background */
-  --cv-muted-bg: #3c3c3c; /* Lighter than cv-background */
+  --cv-muted-bg: #303030; /* Lighter than cv-background */
 }
 
 /* ======================
@@ -70,18 +70,18 @@
 
 /* Ensure h1 and h2 use text color consistently */
 .cv h1, .cv h2 {
-  font-weight: 800;
+  font-weight: bold;
   margin-top: 0;
   color: var(--cv-text-color);
 }
 
 .cv h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 1rem 0;
 }
 
 .cv h2 {
-  font-size: 2em;
+  font-size: 1.75em;
   margin-bottom: 0.75rem;
 }
 
@@ -94,13 +94,11 @@
 
 /* Ensure .cv-section-title uses accent color and background */
 .cv-section-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin: 1.5rem 0 1rem;
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
   padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
-  font-size: 3rem;
-  font-weight: bold;
 }
 
 .cv-photo {
@@ -112,11 +110,10 @@
 }
 
 .cv-name {
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 20px 0;
   color: var(--cv-text-color);
   background-color: var(--cv-background); /* Explicitly set for consistency */
-  font-weight: bold;
 }
 
 .cv-basic-info {
