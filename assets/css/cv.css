@@ -13,21 +13,21 @@
 
 /* Light theme (default) */
 [data-theme="light"] {
-  --cv-text-color: #1a1a1a;
-  --cv-muted-color: #6c757d;
+  --cv-text-color: #1a1a1a; /* Darker text for cv-name */
+  --cv-muted-color: #8b9aa8; /* Lighter than cv-text-color for text-muted */
   --cv-background: #ffffff;
   --cv-border: #e5e5e5;
-  --cv-accent-color: #0d6efd;
+  --cv-accent-color: #0d6efd; /* For text-primary and cv-section-title */
   --cv-link-color: #0d6efd;
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --cv-text-color: #f0f0f0;
-  --cv-muted-color: #a0a0a0;
+  --cv-text-color: #f0f0f0; /* Lighter text for cv-name */
+  --cv-muted-color: #b0b8c2; /* Lighter than cv-text-color for text-muted */
   --cv-background: #303030;
   --cv-border: #4b5563;
-  --cv-accent-color: #60a5fa;
+  --cv-accent-color: #60a5fa; /* For text-primary and cv-section-title */
   --cv-link-color: #90cdf4;
 }
 
@@ -62,7 +62,7 @@
   text-decoration: underline;
 }
 
-/* Ensure h2 uses text color consistently */
+/* Ensure h1 and h2 use text color consistently */
 .cv h1, .cv h2 {
   font-weight: normal;
   margin-top: 0;
@@ -79,7 +79,7 @@
   margin-bottom: 0.75rem;
 }
 
-/* Define .text-primary to use accent color consistently */
+/* Ensure .text-primary uses accent color */
 .text-primary {
   color: var(--cv-accent-color) !important;
 }
@@ -103,6 +103,7 @@
 .cv-name {
   font-size: 2em;
   margin: 20px 0;
+  color: var(--cv-text-color);
 }
 
 .cv-basic-info {
@@ -137,7 +138,7 @@
   padding-left: 1.5rem;
 }
 
-/* Fix for .text-muted in dark mode */
+/* Ensure .text-muted uses muted color */
 .text-muted {
   color: var(--cv-muted-color) !important;
 }
