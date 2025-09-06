@@ -55,9 +55,10 @@
      }
 
     </style>
-    <i class="fa fa-download"></i>
+    <!--     HTML Part -->
     {% if config.download_links %}
         <span class='other-version-link' style="float: right">
+            <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
             {% for item in config.download_links %}&nbsp;&nbsp;
                 <a title="Download as {{item[0]}}" href="{{item[1]}}">{{item[0]}}</a>
             {% endfor %}
@@ -78,7 +79,7 @@
     
     <!--     Basic Info -->
     <section class="cv-basic-info" style="display: flex; flex-wrap: wrap; gap: 1rem; color: #1f2937;">
-        <h3>Contact Information</h3>
+        <h4>Contact Information</h4>
         <div style="display: flex; flex-wrap: wrap; gap: 1rem; width: 100%;">
             {% if cv.email %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -102,7 +103,7 @@
             {% endif %}
         </div>
     
-        <h3>Online Presence</h3>
+        <h4>Online Presence</h4>
         <div style="display: flex; flex-wrap: wrap; gap: 1rem; width: 100%;">
             {% if cv.github %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -126,7 +127,7 @@
             {% endif %}
         </div>
     
-        <h3>Social Media</h3>
+        <h4>Social Media</h4>
         <div style="display: flex; flex-wrap: wrap; gap: 1rem; width: 100%;">
             {% if cv.linkedin %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
