@@ -9,7 +9,7 @@
   --cv-background: #ffffff;
   --cv-border: #e2e8f0;
   --cv-link-color: #4299e1;
-  --cv-accent-bg: #e6f0fa; /* Background for text-primary and cv-section-title */
+  --cv-accent-bg: #ffffff; /* Background for text-primary and cv-section-title */
   --cv-muted-bg: #f5f7fa; /* Lighter background for text-muted */
 }
 
@@ -19,7 +19,7 @@
   --cv-muted-color: #8b9aa8;
   --cv-background: #ffffff; /* Used by cv-name */
   --cv-border: #e5e5e5;
-  --cv-accent-color: #0d6efd;
+  --cv-accent-color: #303030;
   --cv-link-color: #0d6efd;
   --cv-accent-bg: #e7f1ff; /* Light accent background */
   --cv-muted-bg: #fafbff; /* Lighter than cv-background */
@@ -173,5 +173,6 @@
   
   .cv-section-title {
     font-size: 1.5rem;
+    font-weight: 800;
   }
 }
