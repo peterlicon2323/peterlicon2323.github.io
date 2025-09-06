@@ -78,34 +78,30 @@
     </header>
     
     <!--     Basic Info -->
-    <section class="cv-basic-info" style="display: flex; flex-wrap: wrap; gap: 1rem; color: #1f2937;">
-        <h4>Contact Information</h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem; width: 100%;">
-    
     <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
-        <h3>Contact Information</h3>
+        <h4>Contact Information</h4>
             {% if cv.email %}
-                <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                <span style="display: flex; align-items: center; gap: 0.5rem">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
                     <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
                 </span>
             {% endif %}
         
             {% if cv.phone %}
-                <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                 <span style="display: flex; align-items: center; gap: 0.5rem">
                     <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
                     <span>{{cv.phone}}</span>
                 </span>
             {% endif %}
         
             {% if cv.location %}
-                <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                 <span style="display: flex; align-items: center; gap: 0.5rem">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
                     <span>{{cv.location}}</span>
                 </span>
             {% endif %}
     
-        <h3>Online Presence</h3>
+        <h4>Online Presence</h4>
         <div style="display: flex; justify-content: space-around; width: 100%; margin-bottom: 2rem;">
             <div style="width: 45%; padding: 1rem;">
                 {% if cv.github %}
