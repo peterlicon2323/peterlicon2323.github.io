@@ -21,7 +21,7 @@
   --cv-border: #e5e5e5;
   --cv-accent-color: #303030;
   --cv-link-color: #0d6efd;
-  --cv-accent-bg: #e7f1ff; /* Light accent background */
+  --cv-accent-bg: #ffffff; /* Light accent background */
   --cv-muted-bg: #fafbff; /* Lighter than cv-background */
 }
 
@@ -33,7 +33,7 @@
   --cv-border: #4b5563;
   --cv-accent-color: #60a5fa;
   --cv-link-color: #90cdf4;
-  --cv-accent-bg: #3b4b6b; /* Dark accent background */
+  --cv-accent-bg: #303030; /* Dark accent background */
   --cv-muted-bg: #3c3c3c; /* Lighter than cv-background */
 }
 
@@ -99,7 +99,7 @@
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
   padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
-  font-weight: 600;
+  font-weight: 3000;
 }
 
 .cv-photo {
@@ -172,7 +172,6 @@
   }
   
   .cv-section-title {
-    font-size: 2rem;
-    font-weight: 3000;
+    font-size: 1.5rem;
   }
 }
