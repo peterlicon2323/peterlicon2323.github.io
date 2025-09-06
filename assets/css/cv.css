@@ -9,26 +9,32 @@
   --cv-background: #ffffff;
   --cv-border: #e2e8f0;
   --cv-link-color: #4299e1;
+  --cv-accent-bg: #e6f0fa; /* Background for text-primary and cv-section-title */
+  --cv-muted-bg: #f5f7fa; /* Lighter background for text-muted */
 }
 
 /* Light theme (default) */
 [data-theme="light"] {
-  --cv-text-color: #1a1a1a; /* Darker text for cv-name */
-  --cv-muted-color: #8b9aa8; /* Lighter than cv-text-color for text-muted */
-  --cv-background: #ffffff;
+  --cv-text-color: #1a1a1a;
+  --cv-muted-color: #8b9aa8;
+  --cv-background: #ffffff; /* Used by cv-name */
   --cv-border: #e5e5e5;
-  --cv-accent-color: #0d6efd; /* For text-primary and cv-section-title */
+  --cv-accent-color: #0d6efd;
   --cv-link-color: #0d6efd;
+  --cv-accent-bg: #e7f1ff; /* Light accent background */
+  --cv-muted-bg: #fafbff; /* Lighter than cv-background */
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --cv-text-color: #f0f0f0; /* Lighter text for cv-name */
-  --cv-muted-color: #b0b8c2; /* Lighter than cv-text-color for text-muted */
-  --cv-background: #303030;
+  --cv-text-color: #f0f0f0;
+  --cv-muted-color: #b0b8c2;
+  --cv-background: #303030; /* Used by cv-name */
   --cv-border: #4b5563;
-  --cv-accent-color: #60a5fa; /* For text-primary and cv-section-title */
+  --cv-accent-color: #60a5fa;
   --cv-link-color: #90cdf4;
+  --cv-accent-bg: #3b4b6b; /* Dark accent background */
+  --cv-muted-bg: #3c3c3c; /* Lighter than cv-background */
 }
 
 /* ======================
@@ -79,16 +85,20 @@
   margin-bottom: 0.75rem;
 }
 
-/* Ensure .text-primary uses accent color */
+/* Ensure .text-primary uses accent color and background */
 .text-primary {
   color: var(--cv-accent-color) !important;
+  background-color: var(--cv-accent-bg) !important;
+  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
 }
 
-/* Ensure .cv-section-title uses accent color */
+/* Ensure .cv-section-title uses accent color and background */
 .cv-section-title {
   font-size: 1.75rem;
   margin: 1.5rem 0 1rem;
   color: var(--cv-accent-color) !important;
+  background-color: var(--cv-accent-bg) !important;
+  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
   font-weight: 600;
 }
 
@@ -104,6 +114,7 @@
   font-size: 2em;
   margin: 20px 0;
   color: var(--cv-text-color);
+  background-color: var(--cv-background); /* Explicitly set for consistency */
 }
 
 .cv-basic-info {
@@ -138,9 +149,11 @@
   padding-left: 1.5rem;
 }
 
-/* Ensure .text-muted uses muted color */
+/* Ensure .text-muted uses muted color and lighter background */
 .text-muted {
   color: var(--cv-muted-color) !important;
+  background-color: var(--cv-muted-bg) !important;
+  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
 }
 
 .cv-item-content em {
