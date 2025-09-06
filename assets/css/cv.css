@@ -2,7 +2,7 @@
    CV Styles - Dark Mode Ready
    ====================== */
 :root {
-  --cv-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --cv-font-family: "Consolas", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --cv-accent-color: #3182ce;
   --cv-text-color: #2d3748;
   --cv-muted-color: #718096;
@@ -15,7 +15,7 @@
 [data-theme="light"] {
   --cv-text-color: #1a1a1a;
   --cv-muted-color: #6c757d;
-  --cv-background: #ffffff; /* Updated to ensure pure white background */
+  --cv-background: #ffffff;
   --cv-border: #e5e5e5;
   --cv-accent-color: #0d6efd;
   --cv-link-color: #0d6efd;
