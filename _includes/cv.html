@@ -80,26 +80,28 @@
     <!--     Basic Info -->
     <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
         <h4>Contact Information</h4>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
             {% if cv.email %}
-                <span style="display: flex; align-items: center; gap: 0.5rem">
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
                     <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
                 </span>
             {% endif %}
-        
+            
             {% if cv.phone %}
-                 <span style="display: flex; align-items: center; gap: 0.5rem">
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
                     <span>{{cv.phone}}</span>
                 </span>
             {% endif %}
-        
+            
             {% if cv.location %}
-                 <span style="display: flex; align-items: center; gap: 0.5rem">
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
                     <span>{{cv.location}}</span>
                 </span>
             {% endif %}
+        </div>
     
         <h4>Online Presence</h4>
         <div style="display: flex; justify-content: space-around; width: 100%; margin-bottom: 2rem;">
@@ -110,14 +112,14 @@
                         <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                     </span>
                 {% endif %}
-            
+                
                 {% if cv.huggingface %}
                     <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
                         <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
                         <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
                     </span>
                 {% endif %}
-            
+                
                 {% if cv.website %}
                     <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
                         <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
@@ -133,14 +135,14 @@
                         <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                     </span>
                 {% endif %}
-            
+                
                 {% if cv.x %}
                     <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
                         <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
                         <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
                     </span>
                 {% endif %}
-            
+                
                 {% if cv.facebook %}
                     <span style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
                         <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
@@ -149,7 +151,7 @@
                 {% endif %}
             </div>
         </div>
-    </section>
+</section>
     
     <!--     Experiment Infr -->
     {% for sec_id in cv.sections %}
