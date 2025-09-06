@@ -4,14 +4,21 @@
 # - change design to 2-column to save space
 # - write up more details for work experience -> fill the first page with just that, 2nd page is the other shit
 # - point at talks on my website (and clean that up)
-#
 
+# Main Info
 name: Kamila Součková
 photo: /assets/images/cv/avatar.jpg
 tagline: I identify problems in systems before they eat your time, your product, and your dog.
+
+# Contect Info
 email: me@kamila.is
-opensource: https://github.com/anotherkamila
-# phone: --
+opensource_1: https://github.com/anotherkamila
+opensource_2: https://huggingface.co/anotherkamila
+phone: +84xxxxxxxxx
+social_media_1: https://www.linkedin.com/in/anotherkamila
+social_media_1: https://x.com/anotherkamila
+social_media_2: https://facebook.com/anotherkamila
+
 website: https://kamila.is
 location: Zurich, Switzerland
 
