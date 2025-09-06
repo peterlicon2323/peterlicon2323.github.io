@@ -71,6 +71,17 @@
     {% endif %}
 
     <!--     Name and Avatar -->
+    <header>
+        <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
+        <h1 class="cv-name">{{cv.name}}</h1>
+        <span class="text-muted">{{cv.tagline}}</span>
+    </header>
+    
+    <!--     Basic Info -->
+    <section class="cv-basic-info" style="display: flex; flex-wrap: wrap; gap: 1rem; color: #1f2937;">
+        <h4>Contact Information</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; width: 100%;">
+    
     <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
         <h3>Contact Information</h3>
             {% if cv.email %}
