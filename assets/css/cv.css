@@ -112,7 +112,7 @@
 }
 
 .cv-name {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 20px 0;
   color: var(--cv-text-color);
   background-color: var(--cv-background); /* Explicitly set for consistency */
