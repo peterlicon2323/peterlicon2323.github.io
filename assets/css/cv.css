@@ -99,7 +99,8 @@
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
   padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
-  font-weight: 3000;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .cv-photo {
@@ -111,10 +112,11 @@
 }
 
 .cv-name {
-  font-size: 2em;
+  font-size: 3em;
   margin: 20px 0;
   color: var(--cv-text-color);
   background-color: var(--cv-background); /* Explicitly set for consistency */
+  font-weight: bold;
 }
 
 .cv-basic-info {
