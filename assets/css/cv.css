@@ -70,18 +70,18 @@
 
 /* Ensure h1 and h2 use text color consistently */
 .cv h1, .cv h2 {
-  font-weight: normal;
+  font-weight: 800;
   margin-top: 0;
   color: var(--cv-text-color);
 }
 
 .cv h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 1rem 0;
 }
 
 .cv h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 0.75rem;
 }
 
@@ -94,7 +94,7 @@
 
 /* Ensure .cv-section-title uses accent color and background */
 .cv-section-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin: 1.5rem 0 1rem;
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
