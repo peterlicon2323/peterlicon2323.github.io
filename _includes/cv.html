@@ -102,7 +102,7 @@
             {% endif %}
         </div>
     
-        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
                 {% if cv.github %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -110,41 +110,16 @@
                         <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                     </span>
                 {% endif %}
-                
-                {% if cv.huggingface %}
-                    <span style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
-                        <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
-                    </span>
-                {% endif %}
-                
                 {% if cv.website %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
                         <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
                         <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
                     </span>
                 {% endif %}
-            </div>
-    
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">    
                 {% if cv.linkedin %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
                         <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
                         <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
-                    </span>
-                {% endif %}
-                
-                {% if cv.x %}
-                    <span style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
-                        <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
-                    </span>
-                {% endif %}
-                
-                {% if cv.facebook %}
-                    <span style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
-                        <a href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
                     </span>
                 {% endif %}
             </div>
