@@ -8,9 +8,9 @@
 # Main Info
 name: Keee Pppp Loiw Fend
 photo: /assets/images/cv/avatar.jpg
-tagline: AI Engineer
+tagline: An AI Engineer: Embracing AI, Powered by Passion
 
-# Contect Info
+# Contact Info
 date_of_birth: 12/8/1992
 location: HCMC, Vietnam
 email: anotherkamila@gmail.com
@@ -24,9 +24,7 @@ linkedin: https://www.linkedin.com/in/anotherkamila
 x: https://x.com/anotherkamila
 facebook: https://facebook.com/anotherkamila
 
-
-
-
+# Experiment Info
 sections:
   - experience
   - education
