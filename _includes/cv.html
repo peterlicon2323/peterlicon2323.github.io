@@ -76,10 +76,18 @@
         <h1 class="cv-name" style="border-right-width: 0px; border-right-style: solid; text-align: left">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
     </header>
-
+    
     <!-- Basic Info -->
     <header style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-top: 1em;">
         <div style="display: flex; flex-direction: row; justify-content: left; align-items: left; gap: 1.5rem; flex-wrap: wrap; text-align: left;">
+            {% if date_of_birth %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="date_of_birth icon"/>
+                    <span>{{cv.date_of_birth}}</span>
+                </span>
+                <p>|</p>
+            {% endif %}
+            
             {% if cv.location %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
