@@ -6,21 +6,26 @@
 # - point at talks on my website (and clean that up)
 
 # Main Info
-name: Kamila Součková
+name: Keee Pppp Loiw Fend
 photo: /assets/images/cv/avatar.jpg
-tagline: I identify problems in systems before they eat your time, your product, and your dog.
+tagline: AI Engineer
 
 # Contect Info
-email: me@kamila.is
+date_of_birth: 12/8/1992
+location: HCMC, Vietnam
+email: anotherkamila@gmail.com
+phone: +84xxxxxxxxx
+
 github: https://github.com/anotherkamila
 huggingface: https://huggingface.co/anotherkamila
-phone: +84xxxxxxxxx
+website: https://anotherkamila.github.io
+
 linkedin: https://www.linkedin.com/in/anotherkamila
 x: https://x.com/anotherkamila
 facebook: https://facebook.com/anotherkamila
 
-website: https://kamila.is
-location: Zurich, Switzerland
+
+
 
 sections:
   - experience
