@@ -83,31 +83,28 @@
             {% if cv.date_of_birth %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="date_of_birth icon"/>
-                    <span>{{cv.date_of_birth}}</span>
+                    <span class="contact">{{cv.date_of_birth}}</span>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.location %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
-                    <span>{{cv.location}}</span>
+                    <span class="contact">{{cv.location}}</span>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.email %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
-                    <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
-                </span>
-                <p>|</p>
+                    <a class="contact" href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+                </span>   
             {% endif %}
-            
+            <p>|</p>
             {% if cv.phone %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
-                    <span>{{cv.phone}}</span>
+                    <a class="contact" href="tel:{{cv.email}}" style="color: #2563eb;">{{cv.phone}}</span>
                 </span>
             {% endif %}
         </div>
@@ -118,47 +115,43 @@
             {% if cv.github %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="github icon"/>
-                    <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
+                    <a class="contact" href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.website %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
-                    <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
+                    <a class="contact" href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.linkedin %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
-                    <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
+                    <a class="contact" href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                 </span>
-                <p>|</p>
+                
             {% endif %}
-            
+            <p>|</p>
             {% if cv.huggingface %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
-                    <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
+                    <a class="contact" href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.x %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
-                    <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
+                    <a class="contact" href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
                 </span>
-                <p>|</p>
             {% endif %}
-            
+            <p>|</p>
             {% if cv.facebook %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
-                    <a href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
+                    <a class="contact" href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
                 </span>
             {% endif %}
         </div>
