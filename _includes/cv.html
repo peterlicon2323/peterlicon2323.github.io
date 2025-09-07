@@ -45,41 +45,42 @@
      .cv-basic-info-item a[href]:after { content: none !important; }
 
      @media print {
-         /* Murder all the links in the print thing */
+         body * {
+             visibility: hidden; /* Hide all elements */
+         }
+         .cv, .cv * {
+             visibility: visible; /* Show only the .cv div and its children */
+         }
+         .cv {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%; /* Ensure it fits the print area */
+         }
          .cv a[href]:after { content: none !important; }
          .text-muted, .other-version-link, .cv-basic-info-item { font-size: 0.9em; }
          #experience { min-height: 9in; }
          .cv-section:not(:first-child) { 
              border-top: 1px solid #000000; /* Black line for print */
          }
+         .print-button { display: none; } /* Hide print button during printing */
      }
     </style>
     <!-- HTML Part -->
-    <!-- Print Button and Download/Online Links -->
-    <div style="float: right; margin-right: 1em; display: flex; align-items: center; gap: 1em;">
-        <button onclick="printCV()" style="padding: 0.5em 1em; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">
-            <img src="{{ '/assets/svg/printer.svg' | relative_url }}" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 0.5em;" alt="print icon"/>
-            Print CV
-        </button>
-        {% if config.download_links %}
-            <span class="other-version-link">
-                <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
-                {% for item in config.download_links %}&nbsp;&nbsp;
-                    <a title="Download as {{item[0]}}" href="{{item[1]}}">{{item[0]}}</a>
-                {% endfor %}
-            </span>
-        {% endif %}
-        {% if config.online_link %}
-            <span class="other-version-link">
-                Online version:&nbsp;&nbsp;<a title="Go to website" href="{{config.online_link}}">{{config.online_link | replace: 'https://', ''}}</a>
-            </span>
-        {% endif %}
-    </div>
-    <script>
-        function printCV() {
-            window.print();
-        }
-    </script>
+    <!-- Download CV URL -->
+    {% if config.download_links %}
+        <span class="other-version-link" style="float: right; margin-right: 1em;">
+            <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
+            {% for item in config.download_links %}&nbsp;&nbsp;
+                <a title="Download as {{item[0]}}" href="{{item[1]}}">{{item[0]}}</a>
+            {% endfor %}
+        </span>
+    {% endif %}
+    {% if config.online_link %}
+        <span class="other-version-link" style="float: right; margin-right: 1em;">
+            Online version:&nbsp;&nbsp;<a title="Go to website" href="{{config.online_link}}">{{config.online_link | replace: 'https://', ''}}</a>
+        </span>
+    {% endif %}
 
     <!-- Name and Avatar -->
     <header style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em;">
@@ -186,4 +187,11 @@
             {% endfor %}
         </section>
     {% endfor %}
+    <button class="print-button" onclick="printDiv()" style="margin: 1em; padding: 0.5em 1em; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">Print CV</button>
 </div><!-- .cv -->
+
+<script>
+    function printDiv() {
+        window.print(); // Trigger the browser's print dialog
+    }
+</script>
