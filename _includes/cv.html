@@ -7,9 +7,9 @@
      .cv p { margin: 0; }
      .cv h1, h2 { font-weight: normal; }
      .cv-photo { height: 128px; float: left; margin: 0 1em 1rem 0; }
-     .cv-name { font-size: 2em; line-height: 1; margin: 20px 0; }
+     .cv-name { font-size: 2em; line-height: 1; margin: 0 0 0.5rem 0; }
      .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
-     .cv-basic-info { clear: both; }
+     .cv-basic-info { clear: none; margin-left: 148px; }
      .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; break-after: avoid; }
      .cv-item-title { font-weight: bold; }
      .cv-item { break-inside: avoid; }
@@ -72,7 +72,7 @@
     {% endif %}
 
     <!--     Name and Avatar -->
-    <header>
+    <header style="display: flex; align-items: center;">
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
         <div>
             <h1 class="cv-name">{{cv.name}}</h1>
@@ -81,30 +81,33 @@
     </header>
 
     <!--     Basic Info -->
-    <section class="cv-basic-info" style="display: flex; flex-direction: row; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-left: 148px;">
-        {% if cv.location %}
-            <span style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
-                <span>{{cv.location}}</span>
-            </span>
-        {% endif %}
-        
-        {% if cv.email %}
-            <span style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
-                <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
-            </span>
-        {% endif %}
-        
-        {% if cv.phone %}
-            <span style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
-                <span>{{cv.phone}}</span>
-            </span>
-        {% endif %}
+    <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 148px;">
+        <div style="display: flex; flex-direction: row; gap: 1.5rem; flex-wrap: wrap;">
+            {% if cv.location %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
+                    <span>{{cv.location}}</span>
+                </span>
+            {% endif %}
+            
+            {% if cv.email %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
+                    <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+                </span>
+            {% endif %}
+            
+            {% if cv.phone %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
+                    <span>{{cv.phone}}</span>
+                </span>
+            {% endif %}
+        </div>
     </section>
 
-    <section class="cv-basic-info" style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
+    <!--     Social Media Info -->
+    <section class="cv-basic-info" style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-top: 1rem;">
         <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
             {% if cv.github %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
