@@ -70,18 +70,14 @@
         </span>
     {% endif %}
 
-    <!--     Name and Avatar -->
-     <header style="text-align: center;">
-        <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
-    </header> 
-    
-    <header style="text-align: center;">        
+    <!--     Name and Avatar -->    
+    <header>       
         <h1 class="cv-name">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
     </header>
-    
-    <!--     Basic Info -->
-    <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
+
+    <header>
+        <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
         <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
             {% if cv.location %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -104,6 +100,10 @@
                 </span>
             {% endif %}
         </div>
+    </header> 
+    <!--     Basic Info -->
+    <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
+        
     
         <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
