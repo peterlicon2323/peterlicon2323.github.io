@@ -1,0 +1,483 @@
+{% assign cv = site.data.cv %}
+{% assign config = page.cv %}
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white text-gray-800">
+    <!-- Hero Section -->
+    <header class="hero-gradient mt-8 mb-12">
+        <div class="flex flex-col md:flex-row items-center p-8 md:p-12">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gray-200 shadow-md mb-6 md:mb-0 md:mr-8">
+                <img src="{{ cv.photo }}" alt="{{ cv.name }}" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{{ cv.name }}</h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-6 italic">{{ cv.tagline }}</p>
+                <div class="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
+                    {% if config.download_links %}
+                        {% for item in config.download_links %}
+                            {% if item[0] == 'PDF' %}
+                                <a href="{{ item[1] }}" class="flex items-center px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200 transition border border-gray-300">
+                                    <i data-feather="download" class="mr-2"></i> Download PDF
+                                </a>
+                            {% elsif item[0] == 'YAML' %}
+                                <a href="#" onclick="showCodeEditor('yaml'); return false;" class="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition border border-gray-300">
+                                    <i data-feather="download" class="mr-2"></i> View YAML
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+                    {% if cv.location %}
+                        <div class="flex items-center text-gray-600">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span>{{ cv.location }}</span>
+                        </div>
+                    {% endif %}
+                    {% if cv.email %}
+                        <div class="flex items-center text-gray-600">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>{{ cv.email }}</span>
+                        </div>
+                    {% endif %}
+                    {% if cv.phone %}
+                        <div class="flex items-center text-gray-600">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            <span>{{ cv.phone }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    {% if cv.github %}
+                        <a href="{{ cv.github }}" class="text-gray-600 hover:text-gray-900 transition" title="GitHub">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                    {% if cv.huggingface %}
+                        <a href="{{ cv.huggingface }}" class="text-gray-600 hover:text-gray-900 transition" title="Hugging Face">
+                            <i data-feather="cpu" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                    {% if cv.website %}
+                        <a href="{{ cv.website }}" class="text-gray-600 hover:text-gray-900 transition" title="Website">
+                            <i data-feather="globe" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                    {% if cv.linkedin %}
+                        <a href="{{ cv.linkedin }}" class="text-gray-600 hover:text-gray-900 transition" title="LinkedIn">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                    {% if cv.x %}
+                        <a href="{{ cv.x }}" class="text-gray-600 hover:text-gray-900 transition" title="X">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                    {% if cv.facebook %}
+                        <a href="{{ cv.facebook }}" class="text-gray-600 hover:text-gray-900 transition" title="Facebook">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    {% for sec_id in cv.sections %}
+        {% assign section = cv.data[sec_id] %}
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-8 relative w-fit section-title">
+                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-300"></span>
+                {{ section.title }}
+            </h2>
+            
+            {% case sec_id %}
+                {% when 'professional-experience' %}
+                    <div class="relative pl-8 border-l-2 border-gray-300 space-y-8">
+                        {% for item in section.items %}
+                            <div class="timeline-item relative pl-6">
+                                {% for keyvalue in item %}
+                                    {% if keyvalue[0] == 'company' %}
+                                        <div class="bg-white p-6 mb-4 border-b border-gray-200">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <h3 class="text-xl font-semibold">{{ keyvalue[1] }}</h3>
+                                                {% if item.dates %}<span class="text-sm bg-gray-100 text-gray-800 px-2 py-1 rounded">{{ item.dates }}</span>{% endif %}
+                                            </div>
+                                            {% if item.role %}<h4 class="text-lg text-gray-700 mb-2">{{ item.role }}</h4>{% endif %}
+                                            {% if item.description %}<p class="text-gray-600">{{ item.description }}</p>{% endif %}
+                                        </div>
+                                    {% elsif keyvalue[0] == 'wincent' or keyvalue[0] == 'eth-zurich' %}
+                                        <div class="bg-white p-6 rounded hover:bg-gray-50 transition border border-gray-200">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <h3 class="text-xl font-semibold">{{ keyvalue[0] | capitalize }}</h3>
+                                                {% if item.dates %}<span class="text-sm bg-gray-100 text-gray-800 px-2 py-1 rounded">{{ item.dates }}</span>{% endif %}
+                                            </div>
+                                            {% if item.role %}<h4 class="text-lg text-gray-700 mb-2">{{ item.role }}</h4>{% endif %}
+                                            {% if item.description %}<p class="text-gray-600">{{ item.description }}</p>{% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                {% when 'academic-background' %}
+                    <div class="grid md:grid-cols-2 gap-6">
+                        {% for item in section.items %}
+                            <div class="bg-white p-6 mb-4 border-b border-gray-300">
+                                {% for keyvalue in item %}
+                                    {% if keyvalue[0] == 'university' %}
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-xl font-semibold">{{ keyvalue[1] }}</h3>
+                                            {% if item.dates %}<span class="text-sm bg-gray-100 text-gray-800 px-2 py-1 rounded">{{ item.dates }}</span>{% endif %}
+                                        </div>
+                                        {% if item.degree %}<h4 class="text-lg text-gray-700 mb-2">{{ item.degree }}</h4>{% endif %}
+                                        {% if item.faculty %}<p class="text-gray-600 mb-2">{{ item.faculty }}</p>{% endif %}
+                                        {% if item.project %}<div class="mt-3"><a href="{{ item.project.link }}" class="text-gray-700 hover:underline inline-flex items-center"><i data-feather="github" class="mr-2 w-4 h-4"></i> {{ item.project.name }}</a></div>{% endif %}
+                                    {% elsif keyvalue[0] == 'google' %}
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-xl font-semibold">{{ keyvalue[1] }}</h3>
+                                            {% if item.dates %}<span class="text-sm bg-gray-100 text-gray-800 px-2 py-1 rounded">{{ item.dates }}</span>{% endif %}
+                                        </div>
+                                        <h4 class="text-lg text-gray-700 mb-1">{{ item.role }}</h4>
+                                        {% if item.internships %}<ul class="list-disc pl-5 text-gray-600 space-y-1">{% for internship in item.internships %}<li>{{ internship }}</li>{% endfor %}</ul>{% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                {% when 'core-competencies' %}
+                    <div class="bg-white p-6 rounded border border-gray-200">
+                        {% if section.skills %}
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                {% for skill in section.skills %}
+                                    <span class="skill-chip">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <div class="space-y-4">
+                            {% if section.languages %}
+                                <div>
+                                    <h3 class="font-medium mb-2">Languages</h3>
+                                    <p class="text-gray-600">{{ section.languages }}</p>
+                                </div>
+                            {% endif %}
+                            {% if section.strengths %}
+                                <div>
+                                    <h3 class="font-medium mb-2">Key Strengths</h3>
+                                    <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                        {% for strength in section.strengths %}
+                                            <li>{{ strength }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                            {% if section.open_source %}
+                                <div>
+                                    <h3 class="font-medium mb-2">Open Source Contributions</h3>
+                                    <p class="text-gray-600 mb-2">{{ section.open_source.text | markdownify }}</p>
+                                </div>
+                            {% endif %}
+                            {% if section.public_speaking %}
+                                <div>
+                                    <h3 class="font-medium mb-2">Public Speaking</h3>
+                                    <p class="text-gray-600">{{ section.public_speaking | markdownify }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                
+                {% when 'honors-recognition' %}
+                    <div class="grid md:grid-cols-2 gap-6">
+                        {% for item in section.items %}
+                            <div class="bg-white p-6 mb-4 border-b border-gray-300">
+                                {% if item.type == 'academic' %}
+                                    <h3 class="text-xl font-semibold mb-3">Academic Achievements</h3>
+                                    <ul class="space-y-3">
+                                        {% for achievement in item.achievements %}
+                                            <li>
+                                                <h4 class="font-medium">{{ achievement.name }}</h4>
+                                                <p class="text-gray-600">{{ achievement.description }}</p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% elsif item.type == 'technical' %}
+                                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow transition border border-gray-100">
+                                        <h3 class="text-xl font-semibold mb-3">Technical Excellence</h3>
+                                        <ul class="space-y-3">
+                                            {% for excellence in item.excellences %}
+                                                <li>
+                                                    <h4 class="font-medium">{{ excellence.name }}</h4>
+                                                    <p class="text-gray-600">{{ excellence.description | markdownify }}</p>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                
+                {% else %}
+                    <!-- Default rendering for other sections -->
+                    {{ section.text | markdownify }}
+                    {% for item in section.items %}
+                        {% for keyvalue in item %}
+                            <div class="cv-item">
+                                <span class="cv-item-title">{{ keyvalue[0] }}:</span>
+                                <div class="cv-item-content">{{ keyvalue[1] | markdownify }}</div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+            {% endcase %}
+        </section>
+    {% endfor %}
+
+    <!-- Contact Information Footer -->
+    <footer class="py-8 border-t border-gray-300 text-center">
+        <div class="flex justify-center space-x-4 mb-4">
+            {% if cv.github %}
+                <a href="{{ cv.github }}" class="text-gray-600 hover:text-gray-900 transition" title="GitHub">
+                    <i data-feather="github" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+            {% if cv.huggingface %}
+                <a href="{{ cv.huggingface }}" class="text-gray-600 hover:text-gray-900 transition" title="Hugging Face">
+                    <i data-feather="cpu" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+            {% if cv.website %}
+                <a href="{{ cv.website }}" class="text-gray-600 hover:text-gray-900 transition" title="Website">
+                    <i data-feather="globe" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+            {% if cv.linkedin %}
+                <a href="{{ cv.linkedin }}" class="text-gray-600 hover:text-gray-900 transition" title="LinkedIn">
+                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+            {% if cv.x %}
+                <a href="{{ cv.x }}" class="text-gray-600 hover:text-gray-900 transition" title="X">
+                    <i data-feather="twitter" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+            {% if cv.facebook %}
+                <a href="{{ cv.facebook }}" class="text-gray-600 hover:text-gray-900 transition" title="Facebook">
+                    <i data-feather="facebook" class="w-5 h-5"></i>
+                </a>
+            {% endif %}
+        </div>
+        <div class="flex flex-wrap justify-center space-x-6 mb-4 text-gray-600">
+            {% if cv.location %}
+                <div class="flex items-center">
+                    <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                    <span>{{ cv.location }}</span>
+                </div>
+            {% endif %}
+            {% if cv.email %}
+                <div class="flex items-center">
+                    <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                    <span>{{ cv.email }}</span>
+                </div>
+            {% endif %}
+            {% if cv.phone %}
+                <div class="flex items-center">
+                    <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                    <span>{{ cv.phone }}</span>
+                </div>
+            {% endif %}
+        </div>
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ cv.name }}. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- Code Editor Modal -->
+<div id="codeEditorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg w-11/12 max-w-4xl h-3/4 flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h3 class="text-lg font-semibold" id="editorTitle">Code Editor</h3>
+            <button onclick="hideCodeEditor()" class="text-gray-500 hover:text-gray-700">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-hidden">
+            <textarea id="codeEditor"></textarea>
+        </div>
+        <div class="p-4 border-t flex justify-end">
+            <button onclick="hideCodeEditor()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Custom styles from 1) */
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.5;
+        font-size: 14px;
+    }
+    .hero-gradient {
+        background: #f8f8f8;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 20px 0;
+    }
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        background: #555;
+        border-radius: 50%;
+    }
+    .skill-chip {
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        padding: 4px 12px;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin: 4px;
+        border-radius: 16px;
+    }
+    .section-title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #333;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    h1, h2, h3, h4 {
+        font-weight: bold;
+        color: #222;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Integrate CSS from 2) for additional theming support */
+    :root {
+      --cv-font-family: "Times New Roman", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --cv-accent-color: #3182ce;
+      --cv-text-color: #2d3748;
+      --cv-muted-color: #718096;
+      --cv-background: #ffffff;
+      --cv-border: #e2e8f0;
+      --cv-link-color: #4299e1;
+      --cv-accent-bg: #ffffff;
+      --cv-muted-bg: #f5f7fa;
+    }
+    /* Light and dark theme rules from 2) can be applied via data-theme attribute on body */
+    [data-theme="light"] {
+      --cv-text-color: #1a1a1a;
+      --cv-muted-color: #b3b3b3;
+      --cv-background: #ffffff;
+      --cv-border: #e5e5e5;
+      --cv-accent-color: #303030;
+      --cv-link-color: #0d6efd;
+      --cv-accent-bg: #ffffff;
+      --cv-muted-bg: #ffffff;
+    }
+    [data-theme="dark"] {
+      --cv-text-color: #f0f0f0;
+      --cv-muted-color: #a0a0a0;
+      --cv-background: #303030;
+      --cv-border: #4b5563;
+      --cv-accent-color: #60a5fa;
+      --cv-link-color: #90cdf4;
+      --cv-accent-bg: #303030;
+      --cv-muted-bg: #303030;
+    }
+    .cv {
+      font-family: var(--cv-font-family);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--cv-text-color);
+      background-color: var(--cv-background);
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Additional classes from 2) for compatibility */
+    .text-primary {
+      color: var(--cv-accent-color) !important;
+      background-color: var(--cv-accent-bg) !important;
+      padding: 0.2rem 0.4rem;
+    }
+    .text-muted {
+      color: var(--cv-muted-color) !important;
+      background-color: var(--cv-muted-bg) !important;
+      padding: 0.2rem 0.4rem;
+    }
+    .cv-section-title {
+      font-size: 1.75rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--cv-accent-color) !important;
+      background-color: var(--cv-accent-bg) !important;
+      padding: 0.2rem 0.4rem;
+    }
+</style>
+
+<script>
+    // Scripts from 1)
+    AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true
+    });
+    feather.replace();
+
+    let editor;
+    function showCodeEditor(mode) {
+        const modal = document.getElementById('codeEditorModal');
+        const title = document.getElementById('editorTitle');
+        const textarea = document.getElementById('codeEditor');
+        
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        if (mode === 'yaml') {
+            title.textContent = 'CV YAML';
+            fetch('{{ config.download_links[1][1] }}')  // Assuming second link is YAML
+                .then(response => response.text())
+                .then(data => {
+                    if (!editor) {
+                        editor = CodeMirror.fromTextArea(textarea, {
+                            mode: 'yaml',
+                            lineNumbers: true,
+                            readOnly: true,
+                            theme: 'default',
+                            lineWrapping: true
+                        });
+                    }
+                    editor.setValue(data);
+                    editor.refresh();
+                });
+        }
+    }
+
+    function hideCodeEditor() {
+        document.getElementById('codeEditorModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+</script>
