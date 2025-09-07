@@ -129,7 +129,7 @@
   clear: both;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
   font-size: 0.9em;
   margin-bottom: 1.5rem;
 }
@@ -150,8 +150,8 @@
 .cv span.contact-block {
    display: flex;
    align-items: center; gap: 0.5rem;
-   margin-left: -1em;
-   margin-right: -1em;
+/*    margin-left: -1em;
+   margin-right: -1em; */
 }
 
 .cv-item-title {
