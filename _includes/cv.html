@@ -6,10 +6,10 @@
     <style scoped>
      .cv p { margin: 0; }
      .cv h1, h2 { font-weight: normal; }
-     .cv-photo { height: 128px; float: left; margin: 0 1em 1rem 0; }
-     .cv-name { font-size: 2em; line-height: 1; margin: 20px 0; }
+     .cv-photo { height: 128px; margin: 0 auto 1rem auto; display: block; }
+     .cv-name { font-size: 2em; line-height: 1; margin: 20px 0; text-align: center; }
      .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
-     .cv-basic-info { clear: both; }
+     .cv-basic-info { clear: both; text-align: center; }
      .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; break-after: avoid; }
      .cv-item-title { font-weight: bold; }
      .cv-item { break-inside: avoid; }
@@ -44,56 +44,6 @@
      /* Remove mailto: and similar links in the basic info section */
      .cv-basic-info-item a[href]:after { content: none !important; }
 
-     /* New styles for the impressive footer */
-     .cv-footer {
-         background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-         padding: 1.5rem;
-         border-radius: 8px;
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-         margin-top: 2rem;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-wrap: wrap;
-         gap: 1.5rem;
-         transition: transform 0.3s ease;
-     }
-     .cv-footer:hover {
-         transform: translateY(-4px);
-     }
-     .cv-footer span {
-         display: flex;
-         align-items: center;
-         gap: 0.5rem;
-         background: #ffffff;
-         padding: 0.5rem 1rem;
-         border-radius: 20px;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-         transition: all 0.3s ease;
-     }
-     .cv-footer span:hover {
-         background: #2563eb;
-         transform: scale(1.05);
-     }
-     .cv-footer span:hover a {
-         color: #ffffff;
-     }
-     .cv-footer a {
-         color: #2563eb;
-         text-decoration: none;
-         font-weight: 500;
-         transition: color 0.3s ease;
-     }
-     .cv-footer img {
-         width: 24px;
-         height: 24px;
-         filter: brightness(1);
-         transition: filter 0.3s ease;
-     }
-     .cv-footer span:hover img {
-         filter: brightness(0) invert(1);
-     }
-
      @media print {
          /* Murder all the links in the print thing */
          .cv a[href]:after { content: none !important; }
@@ -102,30 +52,10 @@
          .cv-section:not(:first-child) { 
              border-top: 1px solid #000000; /* Black line for print */
          }
-         /* Adjust footer for print */
-         .cv-footer {
-             background: none;
-             box-shadow: none;
-             padding: 1rem;
-         }
-         .cv-footer span {
-             background: none;
-             box-shadow: none;
-             padding: 0.5rem;
-         }
-         .cv-footer span:hover {
-             background: none;
-             transform: none;
-         }
-         .cv-footer a {
-             color: #000000;
-         }
-         .cv-footer img {
-             filter: none;
-         }
      }
     </style>
-    <!-- Download CV URL -->
+    <!--     HTML Part -->
+    <!--     Download CV URL -->
     {% if config.download_links %}
         <span class='other-version-link' style="float: right">
             <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
@@ -140,14 +70,14 @@
         </span>
     {% endif %}
 
-    <!-- Name and Avatar -->
-    <header>
+    <!--     Name and Avatar -->
+    <header style="text-align: center;">
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
         <h1 class="cv-name">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
     </header>
     
-    <!-- Basic Info -->
+    <!--     Basic Info -->
     <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
         <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
             {% if cv.location %}
@@ -171,14 +101,65 @@
                 </span>
             {% endif %}
         </div>
+    
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                {% if cv.github %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="github icon"/>
+                        <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.huggingface %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
+                        <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.website %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
+                        <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
+                    </span>
+                {% endif %}
+            </div>
+    
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">    
+                {% if cv.linkedin %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
+                        <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.x %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
+                        <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.facebook %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
+                        <a href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
     </section>
     
-    <!-- Experiment Info -->
+    <!--     Experiment Info -->
     {% for sec_id in cv.sections %}
         {% assign section = cv.data[sec_id] %}
         <section class="cv-section" id="{{sec_id}}">
+            
             <header class="cv-section-header"><h2 class="text-primary cv-section-title">{{section.title}}</h2></header>
+
             {{ section.text | markdownify }}
+
             {% for item in section.items %}
                 {% for keyvalue in item %}
                     <div class="cv-item">
@@ -190,50 +171,4 @@
         </section>
     {% endfor %}
 
-    <!-- Footer with Social Links -->
-    <footer class="cv-footer">
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            {% if cv.github %}
-                <span>
-                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" alt="github icon"/>
-                    <a href="{{cv.github}}">{{cv.github | replace: 'https://github.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.huggingface %}
-                <span>
-                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" alt="huggingface icon"/>
-                    <a href="{{cv.huggingface}}">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.website %}
-                <span>
-                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" alt="website icon"/>
-                    <a href="{{cv.website}}">{{cv.website | replace: 'https://', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.linkedin %}
-                <span>
-                    <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" alt="linkedin icon"/>
-                    <a href="{{cv.linkedin}}">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.x %}
-                <span>
-                    <img src="{{ '/assets/svg/x.svg' | relative_url }}" alt="x icon"/>
-                    <a href="{{cv.x}}">{{cv.x | replace: 'https://x.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.facebook %}
-                <span>
-                    <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" alt="facebook icon"/>
-                    <a href="{{cv.facebook}}">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
-                </span>
-            {% endif %}
-        </div>
-    </footer>
 </div><!-- .cv -->
