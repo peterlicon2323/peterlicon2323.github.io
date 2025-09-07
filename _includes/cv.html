@@ -9,7 +9,6 @@
      .cv-photo { height: 128px; float: left; margin: 0 1em 1rem 0; }
      .cv-name { font-size: 2em; line-height: 1; margin: 0 0 0.5rem 0; }
      .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
-     .cv-basic-info { clear: none; margin-left: 148px; }
      .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; break-after: avoid; }
      .cv-item-title { font-weight: bold; }
      .cv-item { break-inside: avoid; }
@@ -53,7 +52,6 @@
              border-top: 1px solid #000000; /* Black line for print */
          }
      }
-
     </style>
     <!--     HTML Part -->
     <!--     Download CV URL -->
@@ -71,8 +69,8 @@
         </span>
     {% endif %}
 
-    <!--     Name and Avatar -->
-    <header style="display: flex; align-items: center;">
+    <!--     Header Tag -->
+    <header style="display: flex; align-items: center; margin-left: 148px;">
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
         <div>
             <h1 class="cv-name">{{cv.name}}</h1>
@@ -80,8 +78,8 @@
         </div>
     </header>
 
-    <!--     Basic Info -->
-    <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 148px;">
+    <!--     Section Tag 1: Basic Info -->
+    <section class="cv-section" style="margin-left: 148px;">
         <div style="display: flex; flex-direction: row; gap: 1.5rem; flex-wrap: wrap;">
             {% if cv.location %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -106,52 +104,54 @@
         </div>
     </section>
 
-    <!--     Social Media Info -->
-    <section class="cv-basic-info" style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-top: 1rem;">
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            {% if cv.github %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="github icon"/>
-                    <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.huggingface %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
-                    <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.website %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
-                    <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
-                </span>
-            {% endif %}
-        </div>
+    <!--     Section Tag 2: Social Media Info -->
+    <section class="cv-section" style="margin-left: 148px;">
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%;">
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                {% if cv.github %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="github icon"/>
+                        <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.huggingface %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
+                        <a href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.website %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
+                        <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
+                    </span>
+                {% endif %}
+            </div>
 
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">    
-            {% if cv.linkedin %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
-                    <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.x %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
-                    <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
-                </span>
-            {% endif %}
-            
-            {% if cv.facebook %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
-                    <a href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
-                </span>
-            {% endif %}
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">    
+                {% if cv.linkedin %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
+                        <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.x %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="x icon"/>
+                        <a href="{{cv.x}}" style="color: #2563eb; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
+                    </span>
+                {% endif %}
+                
+                {% if cv.facebook %}
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="facebook icon"/>
+                        <a href="{{cv.facebook}}" style="color: #2563eb; text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
+                    </span>
+                {% endif %}
+            </div>
         </div>
     </section>
     
