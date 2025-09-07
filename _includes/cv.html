@@ -9,8 +9,8 @@
         .cv-photo { height: 128px; margin: 0 auto 1rem auto; display: block; }
         .cv-name { font-size: 2em; line-height: 1; margin: 20px 0; text-align: center; }
         .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
-        .cv-basic-info { clear: both; text-align: center; }
-        .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; break-after: avoid; }
+        .cv-basic-info { clear: both; text-align: center; display: flex; flex-direction: column; align-items: center; color: #1f2937; }
+        .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; break-after: avoid; font-style: italic; }
         .cv-item-title { font-weight: bold; }
         .cv-item { break-inside: avoid; }
         .cv-item-content { padding-left: 40px; }
@@ -19,7 +19,7 @@
 
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
-        .cv-section-title { font-style: italic; display: inline-block; background: var(--background, #fff) !important; padding-right: 1.2rem; }
+        .cv-section-title { display: inline-block; background: var(--background, #fff) !important; padding-right: 1.2rem; }
         .cv-section-title:after { 
             position: absolute; 
             top: 3.4rem; 
@@ -43,6 +43,12 @@
 
         /* Remove mailto: and similar links in the basic info section */
         .cv-basic-info-item a[href]:after { content: none !important; }
+
+        /* Specific link styling */
+        a[href] { color: #2563eb; text-decoration: none; }
+
+        /* Separator styling */
+        p { display: inline-block; margin: 0 0.5rem; }
 
         @media print {
             /* Remove links in print */
@@ -90,7 +96,7 @@
             {% if cv.email %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
-                    <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+                    <a href="mailto:{{cv.email}}">{{cv.email}}</a>
                 </span>
             {% endif %}
             {% if cv.email and cv.phone %}<p>|</p>{% endif %}
@@ -104,27 +110,27 @@
     </header>
 
     <!-- Basic Info (Social Links) -->
-    <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; color: #1f2937; text-align: center;">
+    <section class="cv-basic-info">
         <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 1rem; flex-wrap: wrap; width: 100%; margin-bottom: 2rem;">
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
                 {% if cv.github %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
                         <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="github icon"/>
-                        <a href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
+                        <a href="{{cv.github}}">{{cv.github | replace: 'https://github.com/', ''}}</a>
                     </span>
                 {% endif %}
                 {% if cv.github and (cv.website or cv.linkedin) %}<p>|</p>{% endif %}
                 {% if cv.website %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
                         <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="website icon"/>
-                        <a href="{{cv.website}}" style="color: #2563eb; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
+                        <a href="{{cv.website}}">{{cv.website | replace: 'https://', ''}}</a>
                     </span>
                 {% endif %}
                 {% if cv.website and cv.linkedin %}<p>|</p>{% endif %}
                 {% if cv.linkedin %}
                     <span style="display: flex; align-items: center; gap: 0.5rem;">
                         <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="linkedin icon"/>
-                        <a href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
+                        <a href="{{cv.linkedin}}">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                     </span>
                 {% endif %}
             </div>
@@ -135,7 +141,9 @@
     {% for sec_id in cv.sections %}
         {% assign section = cv.data[sec_id] %}
         <section class="cv-section" id="{{sec_id}}">
-            <header class="cv-section-header"><h2 class="text-primary cv-section-title">{{section.title}}</h2></header>
+            <header class="cv-section-header">
+                <h2 class="text-primary cv-section-title">{{section.title}}</h2>
+            </header>
             {{ section.text | markdownify }}
             {% for item in section.items %}
                 {% for keyvalue in item %}
