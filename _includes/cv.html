@@ -118,6 +118,13 @@
                     <a class="contact" href="{{cv.github}}" style="color: #2563eb; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                 </span>
             {% endif %}
+             <p>|</p>
+            {% if cv.huggingface %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
+                    <a class="contact" href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
+                </span>
+            {% endif %}           
             <p>|</p>
             {% if cv.website %}
                 <span style="display: flex; align-items: center; gap: 0.5rem;">
@@ -132,13 +139,6 @@
                     <a class="contact" href="{{cv.linkedin}}" style="color: #2563eb; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                 </span>
                 
-            {% endif %}
-            <p>|</p>
-            {% if cv.huggingface %}
-                <span style="display: flex; align-items: center; gap: 0.5rem;">
-                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="huggingface icon"/>
-                    <a class="contact" href="{{cv.huggingface}}" style="color: #2563eb; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
-                </span>
             {% endif %}
             <p>|</p>
             {% if cv.x %}
