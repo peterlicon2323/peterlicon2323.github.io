@@ -72,10 +72,43 @@
     {% endif %}
 
     <!--     Name and Avatar -->
-    <header>
+<!--     <header>
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
         <h1 class="cv-name">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
+    </header> -->
+
+    <header style="display: flex; align-items: flex-start; gap: 1rem;">
+        <!-- Contact Info from Section 2) -->
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+            {% if cv.location %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
+                    <span>{{cv.location}}</span>
+                </span>
+            {% endif %}
+            
+            {% if cv.email %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
+                    <a href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+                </span>
+            {% endif %}
+            
+            {% if cv.phone %}
+                <span style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
+                    <span>{{cv.phone}}</span>
+                </span>
+            {% endif %}
+        </div>
+        <!-- Photo -->
+        <img class="cv-photo" src="{{cv.photo}}" alt="my photo" />
+        <!-- Name and Tagline -->
+        <div style="flex-grow: 1;">
+            <h1 class="cv-name">{{cv.name}}</h1>
+            <span class="text-muted">{{cv.tagline}}</span>
+        </div>
     </header>
     
     <!--     Basic Info -->
