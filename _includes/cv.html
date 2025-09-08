@@ -92,40 +92,75 @@
          .print-button { display: none; }
      } */
 
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
     @media print {
         body * {
-            visibility: hidden; /* Hide all elements except .cv */
+            visibility: hidden;
         }
         .cv, .cv * {
-            visibility: visible; /* Show .cv and its children */
+            visibility: visible;
         }
         .cv {
             position: absolute;
             top: 0;
             left: 0;
             width: 210mm; /* A4 width */
-            height: auto; /* Allow height to adjust based on content */
-            margin: 10mm; /* Add margins to prevent content from touching edges */
-            box-sizing: border-box; /* Include padding and borders in width/height */
-            font-size: 10pt; /* Adjust font size for print clarity */
+            height: auto; /* Allow height to adjust */
+            margin: 10mm; /* Safe margins for printing */
+            padding: 10mm; /* Internal padding */
+            box-sizing: border-box;
+            background: #fff;
+            font-size: calc(8pt + 0.5vw); /* Base size + viewport scaling */
+            line-height: 1.4; /* Improve readability */
         }
-        /* Ensure no page breaks inside items */
+        /* Specific font sizes for different elements */
+        .cv-name {
+            font-size: calc(14pt + 0.8vw); /* Larger for name */
+            max-font-size: 18pt; /* Cap to avoid oversized text */
+        }
+        .cv-section-title {
+            font-size: calc(12pt + 0.6vw); /* Slightly larger for section titles */
+            max-font-size: 16pt;
+            break-after: avoid;
+        }
+        .cv-item-title {
+            font-size: calc(9pt + 0.5vw); /* Item titles */
+            max-font-size: 12pt;
+        }
+        .cv-item-content, .cv-basic-info, .contact {
+            font-size: calc(8pt + 0.5vw); /* Regular text */
+            max-font-size: 11pt;
+        }
+        /* Prevent page breaks inside items */
         .cv-item {
             break-inside: avoid;
+            margin-bottom: 0.5em;
         }
-        /* Hide non-essential elements for printing */
+        .cv-section {
+            break-before: auto;
+            break-after: auto;
+        }
+        /* Hide non-essential elements */
         .print-button, .other-version-link {
             display: none;
         }
-        /* Adjust section borders for print */
         .cv-section:not(:first-child) {
             border-top: 1px solid #000;
         }
-        /* Ensure links are plain text in print */
         .cv a[href]:after {
             content: none !important;
         }
+        /* Ensure images scale appropriately */
+        .cv-photo {
+            max-width: 80mm; /* Limit photo width */
+            height: auto; /* Maintain aspect ratio */
+        }
     }
+        
     </style>
     <!-- HTML Part -->
     <!-- Download CV URL -->
