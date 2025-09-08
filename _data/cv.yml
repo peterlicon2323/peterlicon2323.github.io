@@ -68,8 +68,8 @@ data:
 
 
   skills:
-    title: Skills
-     title: "Versatile and enthusiastic professional who thrives on tackling complex systems, seamlessly blending theoretical knowledge with practical expertise. My passion lies in system design."
+    # title: Skills
+    title: "Versatile and enthusiastic professional who thrives on tackling complex systems, seamlessly blending theoretical knowledge with practical expertise. My passion lies in system design."
     # text: |
     #     - not intimidated by unfamiliar complex systems, enjoys diving into them
     #     - able to combine theoretical understanding and practical skills
