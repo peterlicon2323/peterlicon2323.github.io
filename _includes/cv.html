@@ -39,7 +39,7 @@
          .cv-photo { height: 128px; margin: 0 1.5em 1rem 0; float: left; border-radius: 50%; }
          .cv-name { font-size: clamp(1.5em, calc(1.5em + 0.8vw), 2em); line-height: 1; margin: 20px 0; text-align: left; }
          .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
-         .cv-basic-info { clear: both; text-align: center; font-size: clamp(0.7em, calc(0.7em + 0.2vw), 0.85em); }
+         .cv-basic-info { clear: both; text-align: center; font-size: clamp(0.65em, calc(0.65em + 0.15vw), 0.8em); } /* Smaller font for single line */
          .cv-section-title { font-size: clamp(1.25rem, calc(1.25rem + 0.6vw), 1.75rem); margin: 1.5rem 0 1rem 0; break-after: avoid; }
          .cv-item-title { font-weight: bold; font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.1em); }
          .cv-item { break-inside: avoid; margin-bottom: 0.5em; }
@@ -71,8 +71,8 @@
          .text-muted { opacity: 0.8; }
          .cv ul { margin: 0; }
          .cv-basic-info-item a[href]:after { content: none !important; }
-         .contact { white-space: nowrap; } /* Ensure contact stays on one line */
-         .contact-block { display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap; }
+         .contact { white-space: nowrap; font-size: clamp(0.65em, calc(0.65em + 0.15vw), 0.8em); } /* Smaller font for single line */
+         .contact-block { display: inline-flex; align-items: center; gap: 0.2rem; white-space: nowrap; } /* Tighter gap */
 
         @page {
             size: A4 portrait;
@@ -102,27 +102,27 @@
                 position: relative;
                 width: 100%;
                 height: auto;
-                font-size: clamp(7pt, calc(7pt + 0.3vw), 9pt); /* Tighter for print */
+                font-size: clamp(6.5pt, calc(6.5pt + 0.2vw), 8pt); /* Smaller base for print */
                 line-height: 1.5;
                 word-break: break-word;
                 overflow-wrap: break-word;
                 hyphens: auto;
             }
             .cv-name {
-                font-size: clamp(12pt, calc(12pt + 0.6vw), 16pt);
+                font-size: clamp(11pt, calc(11pt + 0.5vw), 14pt); /* Adjusted for print */
             }
             .cv-section-title {
-                font-size: clamp(10pt, calc(10pt + 0.5vw), 14pt);
+                font-size: clamp(9pt, calc(9pt + 0.4vw), 12pt);
                 break-after: avoid;
             }
             .cv-item-title {
-                font-size: clamp(8pt, calc(8pt + 0.4vw), 10pt);
+                font-size: clamp(7.5pt, calc(7.5pt + 0.3vw), 9pt);
             }
             .cv-item-content {
-                font-size: clamp(7pt, calc(7pt + 0.3vw), 9pt);
+                font-size: clamp(6.5pt, calc(6.5pt + 0.2vw), 8pt);
             }
             .cv-basic-info, .contact {
-                font-size: clamp(6pt, calc(6pt + 0.2vw), 8pt); /* Smaller to fit single line */
+                font-size: clamp(5.5pt, calc(5.5pt + 0.15vw), 7pt); /* Smaller to ensure single line */
             }
             .cv-item, .cv-section, header {
                 break-inside: avoid;
@@ -154,7 +154,7 @@
                 text-overflow: ellipsis; /* Truncate if too long */
             }
             .contact-block {
-                margin: 0 0.5em; /* Tighter margins for single-line fit */
+                margin: 0 0.3em; /* Tighter margins for single-line fit */
             }
         }
         </style>
@@ -167,31 +167,31 @@
         
         <!-- Basic Info (First Row: DOB, Location, Email, Phone) -->
         <header style="margin: 0 1em; margin-top: 1em; border-bottom: 0;">
-            <div style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 0.3rem; flex-wrap: nowrap; text-align: left; overflow: hidden; text-overflow: ellipsis;">
+            <div style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 0.2rem; flex-wrap: nowrap; text-align: left; overflow: hidden; text-overflow: ellipsis;">
                 {% if cv.date_of_birth %}
                     <span class="contact-block" style="margin-left: 0;">
-                        <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="date_of_birth icon"/>
+                        <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="date_of_birth icon"/>
                         <span class="contact">{{cv.date_of_birth}}</span>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.location %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="location icon"/>
+                        <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="location icon"/>
                         <span class="contact">{{cv.location}}</span>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.email %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="email icon"/>
+                        <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="email icon"/>
                         <a class="contact" href="mailto:{{cv.email}}" style="color: var(--cv-link-color);">{{cv.email}}</a>
                     </span>   
                 {% endif %}
                 <p>|</p>
                 {% if cv.phone %}
                     <span class="contact-block" style="margin-right: 0;">
-                        <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="phone icon"/>
+                        <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="phone icon"/>
                         <a class="contact" href="tel:{{cv.phone}}" style="color: var(--cv-link-color);">{{cv.phone}}</a>
                     </span>
                 {% endif %}
@@ -200,45 +200,45 @@
 
         <!-- Basic Info (Second Row: Social Links) -->
         <section class="cv-basic-info" style="display: flex; flex-direction: column; align-items: center; margin: 0 1em 2em 1em;">
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 0.3em; flex-wrap: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis;">
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 0.2em; flex-wrap: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis;">
                 {% if cv.github %}
                     <span class="contact-block" style="margin-left: 0;">
-                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="github icon"/>
+                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="github icon"/>
                         <a class="contact" href="{{cv.github}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.huggingface %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="huggingface icon"/>
+                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="huggingface icon"/>
                         <a class="contact" href="{{cv.huggingface}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
                     </span>
                 {% endif %}           
                 <p>|</p>
                 {% if cv.website %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="website icon"/>
+                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="website icon"/>
                         <a class="contact" href="{{cv.website}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.linkedin %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="linkedin icon"/>
+                        <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="linkedin icon"/>
                         <a class="contact" href="{{cv.linkedin}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.x %}
                     <span class="contact-block">
-                        <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="x icon"/>
+                        <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="x icon"/>
                         <a class="contact" href="{{cv.x}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
                     </span>
                 {% endif %}
                 <p>|</p>
                 {% if cv.facebook %}
                     <span class="contact-block" style="margin-right: 0;">
-                        <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="facebook icon"/>
+                        <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="facebook icon"/>
                         <a class="contact" href="{{cv.facebook}}" style="color: var(--cv-link-color); text-decoration: none;">{{cv.facebook | replace: 'https://facebook.com/', ''}}</a>
                     </span>
                 {% endif %}
