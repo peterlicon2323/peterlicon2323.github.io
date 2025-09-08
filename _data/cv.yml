@@ -38,7 +38,7 @@ data:
           system & application monitoring; big data pipeline design & implementation; performance monitoring including using [eBPF](https://ebpf.io/) to export custom kernel metrics
       - 2019-2021: |
           Research Engineer, Site Reliability Engineer at [Network Security Group](https://netsec.ethz.ch/), ETH Zurich:  
-          design and operations of the [SCIONLab](https://scionlab.org) global research network; work on high-performance network applications
+          design and operations of the [SCIONLab](https://scionlab.org) global research network; work on high-performance network aplikasi
       - 2018: |
           Lead Site Reliability Engineer for [Data Center Light](https://datacenterlight.ch) at [ungleich](https://www.ungleich.ch/):  
           VM cluster design and operation ([Ceph](https://ceph.io/) distributed filesystem, [OpenNebula](https://opennebula.io/) virtualization manager, [Prometheus](https://prometheus.io/) monitoring)
