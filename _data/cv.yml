@@ -26,9 +26,9 @@ facebook: https://facebook.com/anotherkamila
 
 # Experiment Info
 sections:
-  - experience
   - education
   - skills
+  - experience
   - awards
   # - free_time
 
