@@ -10,7 +10,7 @@
 </script>
 
 <!-- Download CV URL -->
-<div class="download" style="margin-bottom: 2em; margin-right: 1em;">
+<div class="download" style="margin-bottom: 4.5em; margin-right: 3em;">
     {% if config.download_links %}
         <span class="other-version-link" style="float: right; margin-right: 1em;">
             <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
@@ -88,8 +88,8 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 190mm; /* A4 width minus margins (210mm - 10mm - 10mm) */
-                min-height: 267mm; /* A4 height minus margins (297mm - 15mm - 15mm) */
+                width: 210mm; /* A4 width minus margins (210mm - 10mm - 10mm) */
+                min-height: 297mm; /* A4 height minus margins (297mm - 15mm - 15mm) */
                 margin: 0;
                 padding: 10mm;
                 box-sizing: border-box;
@@ -116,8 +116,9 @@
             .cv-item-title {
                 font-size: clamp(8pt, calc(8pt + 0.4vw), 10pt);
             }
+            
             .cv-item-content, .cv-basic-info, .contact {
-                font-size: clamp(7pt, calc(7pt + 0.3vw), 9pt);
+                font-size: clamp(5pt, calc(5pt + 0.3vw), 7pt);
             }
             .cv-item, .cv-section, header {
                 break-inside: avoid;
