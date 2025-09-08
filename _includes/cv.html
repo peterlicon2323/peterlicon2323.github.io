@@ -70,27 +70,62 @@
      /* Remove mailto: and similar links in the basic info section */
      .cv-basic-info-item a[href]:after { content: none !important; }
 
-     @media print {
+/*      @media print {
          body * {
-             visibility: hidden; /* Hide all elements */
+             visibility: hidden;
          }
          .cv, .cv * {
-             visibility: visible; /* Show only the .cv div and its children */
+             visibility: visible; 
          }
          .cv {
              position: absolute;
              top: 0;
              left: 0;
-             width: 100%; /* Ensure it fits the print area */
+             width: 100%;
          }
          .cv a[href]:after { content: none !important; }
          .text-muted, .other-version-link, .cv-basic-info-item { font-size: 0.9em; }
          #experience { min-height: 9in; }
          .cv-section:not(:first-child) { 
-             border-top: 1px solid #000000; /* Black line for print */
+             border-top: 1px solid #000000;
          }
-         .print-button { display: none; } /* Hide print button during printing */
-     }
+         .print-button { display: none; }
+     } */
+
+    @media print {
+        body * {
+            visibility: hidden; /* Hide all elements except .cv */
+        }
+        .cv, .cv * {
+            visibility: visible; /* Show .cv and its children */
+        }
+        .cv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 210mm; /* A4 width */
+            height: auto; /* Allow height to adjust based on content */
+            margin: 10mm; /* Add margins to prevent content from touching edges */
+            box-sizing: border-box; /* Include padding and borders in width/height */
+            font-size: 10pt; /* Adjust font size for print clarity */
+        }
+        /* Ensure no page breaks inside items */
+        .cv-item {
+            break-inside: avoid;
+        }
+        /* Hide non-essential elements for printing */
+        .print-button, .other-version-link {
+            display: none;
+        }
+        /* Adjust section borders for print */
+        .cv-section:not(:first-child) {
+            border-top: 1px solid #000;
+        }
+        /* Ensure links are plain text in print */
+        .cv a[href]:after {
+            content: none !important;
+        }
+    }
     </style>
     <!-- HTML Part -->
     <!-- Download CV URL -->
