@@ -290,21 +290,26 @@
                 <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">{{section.title}}</h2>
             </header>
             {% if sec_id == 'skills' %}
-                {% assign skills = section.text | split: '\n' %}
-                {% for skill in skills %}
-                    {% assign skill_parts = skill | strip | split: ': ' %}
-                    {% if skill_parts.size == 2 %}
-                        {% assign skill_name = skill_parts[0] | strip %}
-                        {% assign skill_rating = skill_parts[1] | strip | split: '/' | first | plus: 0 %}
-                        {% assign skill_percentage = skill_rating | times: 10 %}
-                        <div class="skill-progress-container">
-                            <span class="skill-progress-label">{{ skill_name }}</span>
-                            <div class="skill-progress-bar">
-                                <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                <div class="cv-item-content">
+                    {% assign skills = section.text | strip | split: '- ' %}
+                    {% for skill in skills %}
+                        {% if skill %}
+                            {% assign skill_parts = skill | split: ': ' %}
+                            {% if skill_parts.size == 2 %}
+                                {% assign skill_name = skill_parts[0] | strip %}
+                                {% assign skill_rating = skill_parts[1] | strip | split: '/' | first | strip %}
+                                {% assign skill_percentage = skill_rating | times: 10 %}
+                                <div class="skill-progress-container">
+                                    <span class="skill-progress-label">{{ skill_name }}</span>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
+                                    </div>
+                                    <span style="margin-left: 10px;">{{ skill_rating }}/10</span>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             {% else %}
                 {{ section.text | markdownify }}
                 {% for item in section.items %}
