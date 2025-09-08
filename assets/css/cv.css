@@ -173,7 +173,7 @@
 .text-muted {
   color: var(--cv-muted-color) !important;
   background-color: var(--cv-muted-bg) !important;
-  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
+  margin: 0.2rem 0rem; /* Slight padding for background visibility */
 }
 
 .cv-item-content em {
