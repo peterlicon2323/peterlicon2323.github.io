@@ -106,12 +106,14 @@
         }
         .cv {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 15mm;
+            bottom: 15mm;
+            right: 20mm;
+            left: 10mm;
             width: 210mm; /* A4 width */
             height: 297mm; /* Allow height to adjust */
-            margin: 10mm; /* Safe margins for printing */
-            padding: 10mm; /* Internal padding */
+/*             margin: 10mm;
+            padding: 10mm; */
             box-sizing: border-box;
             background: #fff;
             font-size: calc(8pt + 0.5vw); /* Base size + viewport scaling */
@@ -120,8 +122,11 @@
         /* Specific font sizes for different elements */
         .cv-name {
 /*             font-size: calc(14pt + 0.8vw); */
-            font-size: 13pt;
+            font-size: 12pt;
             max-font-size: 18pt; /* Cap to avoid oversized text */
+        }
+        .text-muted {
+            font-size: 9pt;
         }
         .cv-section-title {
 /*             font-size: calc(12pt + 0.6vw); */
