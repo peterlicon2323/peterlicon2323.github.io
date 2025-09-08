@@ -69,15 +69,17 @@ data:
 
   skills:
     title: Skills
-    text: |
-        - not intimidated by unfamiliar complex systems, enjoys diving into them
-        - able to combine theoretical understanding and practical skills
-        - enjoys system design with emphasis on reliability, security, scalability, maintainability and correctness
-        - languages: English (fluent), Slovak (native speaker), Czech (fluent), German (intermediate)
-        - experience giving talks about a multitude of topics in science and technology at various venues, notably [FOSDEM 2020](https://archive.fosdem.org/2020/schedule/event/scion/)
-        - an ever-increasing list of programming languages, database environments, operating systems and other technologies
-        - many open-source contributions (code, outreach, education), notably presence in the [FreeBSD](https://www.freebsd.org/) community: outreach, talks, workshops, contributed [a device driver](https://reviews.freebsd.org/D23370)
-        - [I know regular expressions!](https://xkcd.com/208/)
+    # text: |
+    #     - not intimidated by unfamiliar complex systems, enjoys diving into them
+    #     - able to combine theoretical understanding and practical skills
+    #     - enjoys system design with emphasis on reliability, security, scalability, maintainability and correctness
+    #     - languages: English (fluent), Slovak (native speaker), Czech (fluent), German (intermediate)
+    #     - experience giving talks about a multitude of topics in science and technology at various venues, notably [FOSDEM 2020](https://archive.fosdem.org/2020/schedule/event/scion/)
+    #     - an ever-increasing list of programming languages, database environments, operating systems and other technologies
+    #     - many open-source contributions (code, outreach, education), notably presence in the [FreeBSD](https://www.freebsd.org/) community: outreach, talks, workshops, contributed [a device driver](https://reviews.freebsd.org/D23370)
+    #     - [I know regular expressions!](https://xkcd.com/208/)
+
+    title: | I’m a versatile and enthusiastic professional who thrives on tackling complex systems, seamlessly blending theoretical knowledge with practical expertise. My passion lies in system design, prioritizing reliability, security, scalability, maintainability, and correctness. I’m fluent in English and Czech, a native Slovak speaker, and have intermediate proficiency in German. With extensive experience delivering engaging talks on diverse science and technology topics, including a notable presentation at FOSDEM 2020 on SCION, I’m adept at communicating complex ideas. My technical expertise spans an ever-growing array of programming languages, database environments, operating systems, and other technologies. As an active contributor to the open-source community, particularly within FreeBSD, I’ve made significant contributions through code, outreach, education, and workshops, including authoring a device driver. Plus, I wield regular expressions with confidence, ready to dive into any technical challenge with humor and precision.
     # items:
     #   - Technologies: |
     #       - Python *experienced – using at work and at competitions; language of choice for most personal projects*
