@@ -79,95 +79,94 @@
          }
          
          @media print {
-             body * {
-                 visibility: hidden;
-             }
-             .cv, .cv * {
-                 visibility: visible;
-             }
-             .cv {
-                 position: absolute;
-                 top: 0mm;
-                 bottom: 0mm;
-                 right: 0mm;
-                 left: 0mm;
-                 width: 210mm; /* A4 width */
-                 height: 297mm; /* A4 height */
-                 box-sizing: border-box;
-                 background: #fff;
-                 font-size: calc(8pt + 0.5vw);
-                 line-height: 1.4;
-                 word-break: break-word;
-                 overflow-wrap: break-word;
-                 hyphens: auto;
-             }
-             h1, h1.cv-name, .cv-name {
-                 font-size: 5pt;
-/*                  max-font-size: 18pt; */
-             }
-             .text-muted {
-                 font-size: 9pt;
-             }
-             .cv-section-title {
-                 font-size: 11pt;
-                 max-font-size: 16pt;
-                 break-before: auto;
-                 break-after: auto;
-             }
-             .cv-item-title {
-                 font-size: 10pt;
-                 max-font-size: 12pt;
-                 break-before: auto;
-                 break-after: auto;
-             }
-             .contact-block, span.contact, a.contact {
-                 font-size: 8pt;
-             }
-             .cv-item-content {
-                 font-size: 10pt;
-                 max-font-size: 11pt;
-             }
-             .cv-item {
-                 break-inside: avoid;
-                 margin-top: 0.5em;
-                 margin-bottom: 0.5em;
-                 break-before: auto;
-                 break-after: auto;
-             }
-             .cv-section {
-                 font-size: 8pt;
-                 max-font-size: 11pt;
-                 break-inside: auto; /* Allow internal breaks */
-                 margin-top: 0.5em;
-                 margin-bottom: 0.5em;
-                 break-before: auto;
-                 break-after: auto;
-             }
-             .print-button, .other-version-link {
-                 display: none;
-             }
-             .cv-section:not(:first-child) {
-                 border-top: 1px solid #000;
-             }
-             .cv a[href]:after {
-                 content: none !important;
-             }
-             .cv-photo {
-                 max-width: 100mm;
-                 height: auto;
-                 float: none;
-                 margin: 0 auto 1rem auto;
-                 display: block;
-             }
-             .cv-basic-info > div, header > div {
-                 flex-wrap: nowrap; /* Keep all items on one line */
-                 overflow: hidden;
-                 text-overflow: ellipsis;
-             }
-             .contact-block {
-                 margin: 0 0.3em; /* Tighter margins for single-line fit */
-             }
-         }
+            body * {
+                visibility: hidden;
+            }
+            .cv, .cv * {
+                visibility: visible;
+            }
+            .cv {
+                position: absolute;
+                top: 0mm;
+                bottom: 0mm;
+                right: 0mm;
+                left: 0mm;
+                width: 210mm; /* A4 width */
+                height: 297mm; /* A4 height */
+                box-sizing: border-box;
+                background: #fff;
+                font-size: calc(8pt + 0.5vw);
+                line-height: 1.4;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+            h1, h1.cv-name, .cv-name {
+                font-size: 5pt;
+            }
+            .text-muted {
+                font-size: 9pt;
+            }
+            .cv-section-title {
+                font-size: 11pt;
+                max-font-size: 16pt;
+                break-before: auto;
+                break-after: auto;
+            }
+            .cv-item-title {
+                font-size: 10pt;
+                max-font-size: 12pt;
+                break-before: auto;
+                break-after: auto;
+            }
+            .contact-block, span.contact, a.contact {
+                font-size: 8pt;
+            }
+            .cv-item-content {
+                font-size: 10pt;
+                max-font-size: 11pt;
+            }
+            .cv-item {
+                break-inside: avoid;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                break-before: auto;
+                break-after: auto;
+            }
+            .cv-section {
+                font-size: 8pt;
+                max-font-size: 11pt;
+                break-inside: auto; /* Allow internal breaks */
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                break-before: auto;
+                break-after: auto;
+            }
+            .print-button, .other-version-link {
+                display: none;
+            }
+            .cv-section:not(:first-child) {
+                border-top: 1px solid #000;
+            }
+            .cv a[href]:after {
+                content: none !important;
+            }
+            .cv-photo {
+                max-width: 100mm;
+                height: auto;
+                float: none;
+                margin: 0 auto 1rem auto;
+                display: block;
+            }
+            .cv-basic-info > div, header > div {
+                flex-wrap: nowrap; /* Keep all items on one line */
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .contact-block {
+                margin: 0 0.3em; /* Tighter margins for single-line fit */
+            }
+        }
         </style>
     <!-- HTML Part -->
     <!-- Name and Avatar -->
