@@ -103,12 +103,17 @@
             }
             h1, h1.cv-name, .cv-name {
                 font-size: 20pt !important;
-                margin-bottom: 1px !important;
+/*                 margin-bottom: 1px !important; */
             }
             span.text-muted, .text-muted {
                 margin-top: 1px !important;
                 font-size: 10pt;
             }
+             
+            header.name-slogan {
+                margin-bottom: 1px !important; */
+            }
+             
             .cv-section-title {
                 font-size: 11pt;
                 max-font-size: 16pt;
@@ -172,14 +177,14 @@
         </style>
     <!-- HTML Part -->
     <!-- Name and Avatar -->
-    <header style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-bottom: 1em;">
+    <header class="name-slogan" style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-bottom: 1em;">
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" style="border-left-style: solid; border-left-width: 0px; border-right-width: 0px; border-right-style: solid; margin-left: 2em; padding-left: 0px; margin-right: 2em;"/>
         <h1 class="cv-name" style="border-right-width: 0px; border-right-style: solid; text-align: left">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
     </header>
     
     <!-- Basic Info -->
-    <header style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-top: 0em;">
+    <header class="contact-block" style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-top: 0em;">
         <div style="display: flex; flex-direction: row; justify-content: left; align-items: left; gap: 0.5rem; flex-wrap: wrap; text-align: left;">
             {% if cv.date_of_birth %}
                 <span class="contact-block" style="margin-left: 0em;">
