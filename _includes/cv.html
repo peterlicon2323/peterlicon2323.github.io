@@ -106,14 +106,14 @@
         }
         .cv {
             position: absolute;
-            top: 15mm;
+/*             top: 15mm;
             bottom: 15mm;
             right: 20mm;
-            left: 10mm;
+            left: 10mm; */
             width: 210mm; /* A4 width */
             height: 297mm; /* Allow height to adjust */
-/*             margin: 10mm;
-            padding: 10mm; */
+            margin: 10mm;
+/*             padding: 10mm; */
             box-sizing: border-box;
             background: #fff;
             font-size: calc(8pt + 0.5vw); /* Base size + viewport scaling */
@@ -132,12 +132,16 @@
 /*             font-size: calc(12pt + 0.6vw); */
             font-size: 11pt;
             max-font-size: 16pt;
-            break-after: avoid;
+            break-before: auto;
+            break-after: auto;
+/*             break-after: avoid; */
         }
         .cv-item-title {
 /*             font-size: calc(9pt + 0.5vw; */
             font-size: 10pt;
             max-font-size: 12pt;
+            break-before: auto;
+            break-after: auto;
         }
         .contact-block, span.contact, a.contact {
             font-size: 8.5pt;
