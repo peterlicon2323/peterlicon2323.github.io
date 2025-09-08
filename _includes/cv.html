@@ -135,7 +135,7 @@
             max-font-size: 12pt;
         }
         span.contact, a.contact {
-            font-size: 6pt;
+            font-size: 2pt;
         }
         .cv-item-content {
 /*             font-size: calc(8pt + 0.5vw); */
@@ -145,11 +145,17 @@
         /* Prevent page breaks inside items */
         .cv-item {
             break-inside: avoid;
+            margin-top: 0.5em;
             margin-bottom: 0.5em;
+            break-before: auto;
+            break-after: auto;
         }
         .cv-section {
             font-size: 8pt;
             max-font-size: 11pt;
+            break-inside: avoid;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
             break-before: auto;
             break-after: auto;
         }
