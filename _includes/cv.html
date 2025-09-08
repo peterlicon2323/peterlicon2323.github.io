@@ -1,11 +1,21 @@
 {% assign cv = site.data.cv %}
 {% assign config = page.cv %}
 
+<!-- Print CV Function -->
+<script>
+    function printDiv() {
+        window.print(); // Trigger the browser's print dialog
+    }
+</script>
+
 <!-- Download CV URL -->
 <div class="download" style="margin-bottom: 2.5em;margin-right: 4.5em;">
     {% if config.download_links %}
         <span class="other-version-link" style="float: right; margin-right: 1em;">
             <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="download icon"/>
+            <button class="print-button" onclick="printDiv()" style="margin: 1em; padding: 0.5em 1em; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Print CV
+            </button>
             {% for item in config.download_links %}&nbsp;&nbsp;
                 <a title="Download as {{item[0]}}" href="{{item[1]}}">{{item[0]}}</a>
             {% endfor %}
@@ -203,11 +213,5 @@
             {% endfor %}
         </section>
     {% endfor %}
-    <button class="print-button" onclick="printDiv()" style="margin: 1em; padding: 0.5em 1em; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">Print CV</button>
 </div><!-- .cv -->
 
-<script>
-    function printDiv() {
-        window.print(); // Trigger the browser's print dialog
-    }
-</script>
