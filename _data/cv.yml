@@ -81,7 +81,7 @@ data:
         institution: ABC University
         degree: Bachelor of Science in Computer Science
         description: Studied foundational and advanced topics in computer science.
-        location: Not specified
+        Thesis: Not specified
         achievements:
           - Completed coursework in algorithms, data structures, and software engineering.
           
