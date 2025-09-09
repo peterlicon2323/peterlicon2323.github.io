@@ -221,30 +221,33 @@
     </header>
 
     <!-- Basic Info -->
-    <header class="contact-block" style="margin: 0 1em 2em 1em;">
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1em; flex-wrap: wrap;">
+    <header class="contact-block" style="border-bottom-width: 0em;">
+        <div style="display: flex; flex-direction: row; justify-content: left; align-items: left; gap: 0.5rem; flex-wrap: wrap; text-align: left;">
             {% if cv.date_of_birth %}
-                <span class="contact-block">
-                    <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="date of birth icon"/>
+                <span class="contact-block" style="margin-left: 0em;">
+                    <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="date_of_birth icon"/>
                     <span class="contact">{{cv.date_of_birth}}</span>
                 </span>
             {% endif %}
+            <p>|</p>
             {% if cv.location %}
                 <span class="contact-block">
-                    <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="location icon"/>
+                    <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
                     <span class="contact">{{cv.location}}</span>
                 </span>
             {% endif %}
+            <p>|</p>
             {% if cv.email %}
                 <span class="contact-block">
-                    <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="email icon"/>
-                    <a class="contact" href="mailto:{{cv.email}}" style="color: #1e40af; text-decoration: none;">{{cv.email}}</a>
-                </span>
+                    <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
+                    <a class="contact" href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
+                </span>   
             {% endif %}
+            <p>|</p>
             {% if cv.phone %}
-                <span class="contact-block">
-                    <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="phone icon"/>
-                    <a class="contact" href="tel:{{cv.phone}}" style="color: #1e40af; text-decoration: none;">{{cv.phone}}</a>
+                <span class="contact-block" style="margin-right: 0em;">
+                    <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
+                    <a class="contact" href="tel:{{cv.phone}}" style="color: #2563eb;">{{cv.phone}}</a>
                 </span>
             {% endif %}
         </div>
