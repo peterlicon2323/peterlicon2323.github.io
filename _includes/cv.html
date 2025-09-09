@@ -43,10 +43,7 @@
          .cv-item-content {
             padding-left: 0px; /* Match inline style in HTML for consistency */
             font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem); /* Preserve original font-size */
-            text-align: left; /* Center-align text and inline/inline-block children */
-            display: flex; /* Use flexbox to center content */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically, if needed */
+            
         }
          .cv-item-content > ul { padding: 0; margin: 0; }
          .cv-item-content em { color: var(--text-muted, #636c72); margin-left: 0.5rem; }
@@ -73,7 +70,7 @@
         /* Start Prgress Bar */
         .skill-progress-bar { 
              display: inline-block; 
-             width: auto; 
+             width: 7rem; 
              height: 0.65rem; 
              background-color: #e2e8f0; 
              border-radius: 8px; 
@@ -106,6 +103,10 @@
              display: grid;
              grid-template-columns: repeat(2, 1fr);
              gap: 1em;
+             text-align: left; /* Center-align text and inline/inline-block children */
+             display: flex; /* Use flexbox to center content */
+             justify-content: center; /* Center horizontally */
+             align-items: center; /* Center vertically, if needed */
          }
 
          {% unless config.no_lines %}
