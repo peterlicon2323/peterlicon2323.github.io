@@ -47,6 +47,7 @@
             font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
             text-align: left;
             display: block;
+            margin-top: 0.5em;
         }
         .cv-item-content > ul { padding: 0 0 0 1.5em; margin: 0.5em 0; }
         .cv-item-content em { color: #6b7280; margin-left: 0.75em; font-style: italic; }
@@ -55,7 +56,7 @@
         .cv-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
         }
         .cv-table th, .cv-table td {
             border: 1px solid #e2e8f0;
@@ -327,97 +328,101 @@
                 <h2 class="text-primary cv-section-title">{{section.title}}</h2>
             </header>
             {% if sec_id == 'education' %}
-                <table class="cv-table">
-                    <thead>
-                        <tr>
-                            <th>Degree</th>
-                            <th>Institution</th>
-                            <th>Date</th>
-                            <th>Thesis</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for item in section.items %}
+                {% for item in section.items %}
+                    <table class="cv-table">
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>Institution</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>{{item.degree}}</td>
                                 <td>{{item.institution}}</td>
                                 <td>{{item.date}}</td>
-                                <td>{{item.thesis | default: '-'}}</td>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                    {% if item.thesis %}
+                        <div class="cv-item-content"><em>Thesis:</em> {{item.thesis | markdownify}}</div>
+                    {% endif %}
+                {% endfor %}
             {% elsif sec_id == 'projects' %}
-                <table class="cv-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>URL</th>
-                            <th>Date</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for item in section.items %}
+                {% for item in section.items %}
+                    <table class="cv-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>URL</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>{{item.name}}</td>
                                 <td>{% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</td>
                                 <td>{{item.date}}</td>
-                                <td>{{item.description | markdownify | strip_html}}</td>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                    {% if item.description %}
+                        <div class="cv-item-content">{{item.description | markdownify}}</div>
+                    {% endif %}
+                {% endfor %}
                 <div class="cv-item-content">
                     <em>For additional projects, please refer to the <a href="#others" style="color: #1e40af; text-decoration: none;">More Information</a> section.</em>
                 </div>
             {% elsif sec_id == 'certificates' %}
-                <table class="cv-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Provider</th>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>URL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for item in section.items %}
+                {% for item in section.items %}
+                    <table class="cv-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Provider</th>
+                                <th>Date</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>{{item.name}}</td>
                                 <td>{{item.provider}}</td>
                                 <td>{{item.date}}</td>
-                                <td>{{item.description | markdownify | strip_html}}</td>
                                 <td>{% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</td>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                    {% if item.description %}
+                        <div class="cv-item-content">{{item.description | markdownify}}</div>
+                    {% endif %}
+                {% endfor %}
                 <div class="cv-item-content">
                     <em>For a comprehensive list of certifications, please refer to the <a href="#others" style="color: #1e40af; text-decoration: none;">More Information</a> section.</em>
                 </div>
             {% elsif sec_id == 'experience' %}
-                <table class="cv-table">
-                    <thead>
-                        <tr>
-                            <th>Job Title</th>
-                            <th>Organization</th>
-                            <th>Date</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for item in section.items %}
+                {% for item in section.items %}
+                    <table class="cv-table">
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Organization</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>{{item.job_title}}</td>
                                 <td>{{item.organization}}</td>
                                 <td>{{item.date}}</td>
-                                <td>{{item.description | markdownify | strip_html}}</td>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                    {% if item.description %}
+                        <div class="cv-item-content">{{item.description | markdownify}}</div>
+                    {% endif %}
+                {% endfor %}
             {% elsif sec_id == 'skills' %}
                 <div class="cv-item-content">
                     <div class="skills-grid">
