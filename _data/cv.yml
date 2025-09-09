@@ -114,7 +114,13 @@ data:
         score: 8.5/10
       - skill: TensorFlow, PyTorch, OpenCV
         score: 8/10
-      - skill: Kafka
+      - skill: Git
+        score: 7/10
+      - skill: SQL, NoSQL
+        score: 7/10
+      - skill: Kafka, Spark
+        score: 7/10
+      - skill: Kafka, Spark
         score: 7/10
       - skill: JavaScript, HTML, CSS
         score: 7/10
