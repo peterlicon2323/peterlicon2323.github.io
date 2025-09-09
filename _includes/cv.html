@@ -57,7 +57,7 @@
              display: inline-block; 
              width: 180px; 
              font-weight: 600; 
-             font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.1em); 
+             font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem); 
              color: #1f2937; 
              font-family: 'Georgia', serif; 
              flex-shrink: 0;
@@ -81,7 +81,7 @@
          }
          .skill-progress-text { 
              margin-left: 10px; 
-             font-size: clamp(0.85em, calc(0.85em + 0.3vw), 1em); 
+             font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem); 
              color: #1f2937; 
              font-family: 'Georgia', serif; 
              font-weight: 500;
@@ -348,76 +348,125 @@
         </div>
     </section>
 
-    <!-- Work Experience -->
-    <section class="cv-section" id="work_experience" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
-        <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
-            <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">Work Experience</h2>
-        </header>
-        <div class="cv-item">
-            <span class="cv-item-title">01/2021 - Present:</span>
-            <div class="cv-item-content">
-                <strong>Công ty Cổ phần Công nghệ Novadata</strong> - AI Engineer<br>
-                Phát triển và triển khai các mô hình học sâu (Deep Learning) trong hệ thống phân tích ảnh y tế (CT, MRI), giúp tăng độ chính xác chẩn đoán lên đến 15%.
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="cv-section" id="projects" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
-        <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
-            <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">Projects</h2>
-        </header>
-        <div class="cv-item">
-            <span class="cv-item-title">2024:</span>
-            <div class="cv-item-content">
-                <strong>{{cv.projects[0].name}}</strong><br>
-                {% if cv.projects[0].project_code_url %}
-                    <a href="{{cv.projects[0].project_code_url}}" style="color: #2563eb; text-decoration: none;">{{cv.projects[0].project_code_url | replace: 'https://', ''}}</a><br>
-                {% endif %}
-                {% if cv.projects[0].project_demo_url %}
-                    <a href="{{cv.projects[0].project_demo_url}}" style="color: #2563eb; text-decoration: none;">{{cv.projects[0].project_demo_url | replace: 'https://', ''}}</a><br>
-                {% endif %}
-                {% if cv.projects[0].description %}
-                    {{cv.projects[0].description | markdownify}}
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates -->
-    <section class="cv-section" id="certificates" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
-        <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
-            <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">Certificates</h2>
-        </header>
-        <div class="cv-item">
-            <span class="cv-item-title">{{cv.certificates[0].date}}:</span>
-            <div class="cv-item-content">
-                <strong>AWS Certified Machine Learning – Specialty</strong> - Amazon Web Services<br>
-                <a href="https://aws.amazon.com/certification/certified-machine-learning-specialty/" style="color: #2563eb; text-decoration: none;">aws.amazon.com/certification/certified-machine-learning-specialty/</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills -->
-    {% if cv.data.skills %}
-    <section class="cv-section" id="skills" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
-        <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
-            <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">Technical Skills</h2>
-        </header>
-        <div class="cv-item-content">
-            <div class="skills-grid">
-                {% for skill in cv.data.skills.items %}
-                    {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
-                    <div class="skill-progress-container">
-                        <span class="skill-progress-label">{{ skill.skill }}</span>
-                        <div class="skill-progress-bar">
-                            <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
+    <!-- Sections -->
+    {% for sec_id in cv.sections %}
+        {% assign section = cv.data[sec_id] %}
+        <section class="cv-section" id="{{sec_id}}" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
+            <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
+                <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">{{section.title}}</h2>
+            </header>
+            {% if sec_id == 'skills' %}
+                <div class="cv-item-content">
+                    <div class="skills-grid">
+                        {% for skill in section.items %}
+                            {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
+                            <div class="skill-progress-container">
+                                <span class="skill-progress-label">{{ skill.skill }}</span>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
+                                </div>
+                                <span class="skill-progress-text">{{ skill.score }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% elsif sec_id == 'work_experience' %}
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <span class="cv-item-title">{{ item.date }}:</span>
+                        <div class="cv-item-content">
+                            <strong>{{ item.organization }}</strong> - {{ item.job_title }}<br>
+                            {% if item.description %}
+                                {{ item.description | markdownify }}
+                            {% endif %}
                         </div>
-                        <span class="skill-progress-text">{{ skill.score }}</span>
                     </div>
                 {% endfor %}
-            </div>
-        </div>
-    </section>
-    {% endif %}
+            {% elsif sec_id == 'projects' %}
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <span class="cv-item-title">{{ item.date }}:</span>
+                        <div class="cv-item-content">
+                            <strong>{{ item.name }}</strong><br>
+                            {% if item.project_code_url %}
+                                <a href="{{ item.project_code_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_code_url | replace: 'https://', '' }}</a><br>
+                            {% endif %}
+                            {% if item.project_demo_url %}
+                                <a href="{{ item.project_demo_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_demo_url | replace: 'https://', '' }}</a><br>
+                            {% endif %}
+                            {% if item.description %}
+                                {{ item.description | markdownify }}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% elsif sec_id == 'certificates' %}
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <span class="cv-item-title">{{ item.date }}:</span>
+                        <div class="cv-item-content">
+                            <strong>{{ item.name }}</strong> - {{ item.provider }}<br>
+                            {% if item.url %}
+                                <a href="{{ item.url }}" style="color: #2563eb; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% if section.text %}
+                    {{ section.text | markdownify }}
+                {% endif %}
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        {% if item.date %}
+                            <span class="cv-item-title">{{ item.date }}:</span>
+                            <div class="cv-item-content">
+                                {% if item.organization %}
+                                    <strong>{{ item.organization }}</strong> - {{ item.job_title }}<br>
+                                {% endif %}
+                                {% if item.institution %}
+                                    <strong>{{ item.institution }}</strong> - {{ item.degree }}<br>
+                                {% endif %}
+                                {% if item.description %}
+                                    {{ item.description | markdownify }}
+                                {% endif %}
+                                {% if item.location %}
+                                    <em>Location: {{ item.location }}</em><br>
+                                {% endif %}
+                                {% if item.url %}
+                                    <a href="{{ item.url }}" style="color: #2563eb; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a><br>
+                                {% endif %}
+                                {% if item.achievements %}
+                                    <ul>
+                                        {% for achievement in item.achievements %}
+                                            <li>{{ achievement }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                {% if item.provider %}
+                                    <em>Provider: {{ item.provider }}</em>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <span class="cv-item-title">{{ item.name }}:</span>
+                            <div class="cv-item-content">
+                                {% if item.date %}
+                                    <em>{{ item.date }}</em><br>
+                                {% endif %}
+                                {% if item.description %}
+                                    {{ item.description | markdownify }}
+                                {% endif %}
+                                {% if item.url %}
+                                    <a href="{{ item.url }}" style="color: #2563eb; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a><br>
+                                {% endif %}
+                                {% if item.provider %}
+                                    <em>Provider: {{ item.provider }}</em>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </section>
+    {% endfor %}
 </div>
