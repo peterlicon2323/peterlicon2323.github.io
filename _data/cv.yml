@@ -96,7 +96,7 @@ data:
         date: Jul. 25, 2024
         provider: DataCamp
         url: https://www.google.com
-      description: Hello World
+        description: Hello World
 
   # skills:
   #   title: Technical Skills
