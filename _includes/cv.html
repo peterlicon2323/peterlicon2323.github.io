@@ -117,7 +117,7 @@
             padding-top: 2.5em; 
         }
 
-        .text-muted { opacity: 0.85; font-style: italic; }
+        .text-muted { opacity: 1; font-style: italic; }
         .cv ul { margin: 0.5em 0; }
         .cv-basic-info-item a[href]:after { content: none !important; }
         .contact { white-space: nowrap; font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em); }
@@ -214,10 +214,10 @@
     </style>
 
     <!-- Name and Avatar -->
-    <header class="name-slogan" style="margin: 0 1em 2em 1em;">
-        <img class="cv-photo" src="{{cv.photo}}" alt="Profile photo" style="margin-left: 0;"/>
-        <h1 class="cv-name">{{cv.name}}</h1>
-        <span class="text-muted" style="font-size: 1.1em; display: block; margin-top: 0.5em;">{{cv.tagline}}</span>
+    <header class="name-slogan" style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-bottom: 1em;">
+        <img class="cv-photo" src="{{cv.photo}}" alt="my photo" style="border-left-style: solid; border-left-width: 0px; border-right-width: 0px; border-right-style: solid; margin-left: 2em; padding-left: 0px; margin-right: 2em;"/>
+        <h1 class="cv-name" style="border-right-width: 0px; border-right-style: solid; text-align: left">{{cv.name}}</h1>
+        <span class="text-muted">{{cv.tagline}}</span>
     </header>
 
     <!-- Basic Info -->
