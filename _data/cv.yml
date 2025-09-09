@@ -24,6 +24,7 @@ sections:
   - projects
   - certificates
   - experience
+  # - others
   # - free_time
 
 data:
@@ -157,3 +158,13 @@ data:
         - flying small aircraft
         - music, art & design, archery, hiking, puzzle hunts (e.g. [TMOU](https://en.wikipedia.org/wiki/TMOU))
         - physics, astronomy, mathematics
+
+  others:
+    title: More Information
+    items:
+      - name: Certificates
+        url: google.com
+      - name: Certificates
+        url: google.com
+      - name: Blog
+        url: google.com
