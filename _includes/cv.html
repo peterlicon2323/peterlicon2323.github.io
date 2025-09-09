@@ -43,7 +43,7 @@
          .cv-item-content {
             padding-left: 0px; /* Match inline style in HTML for consistency */
             font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem); /* Preserve original font-size */
-            text-align: center; /* Center-align text and inline/inline-block children */
+            text-align: left; /* Center-align text and inline/inline-block children */
             display: flex; /* Use flexbox to center content */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically, if needed */
@@ -69,7 +69,9 @@
              font-family: 'Times', serif; 
              flex-shrink: 0;
          }
-/*          .skill-progress-bar { 
+
+        /* Start Prgress Bar */
+        .skill-progress-bar { 
              display: inline-block; 
              width: auto; 
              height: 0.65rem; 
@@ -80,32 +82,8 @@
              box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
              flex-grow: 1;
          }
- */
-/*         Start Prgress Bar */
-        .skill-progress-bar {
-            display: block;
-            width: 100px; /* Fixed width for compact look */
-            height: 20px; /* Matches Bootstrap 3 progress bar height */
-            background-color: #f5f5f5; /* Bootstrap's progress bar background */
-            border-radius: 4px; /* Bootstrap's default border-radius */
-            overflow: hidden;
-            border: 1px solid #ccc; /* Bootstrap's border style */
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Bootstrap's inner shadow */
-            position: relative;
-        }
+        /* End Progress Bar */
         
-        .skill-progress-bar::before {
-            content: '';
-            display: block;
-            width: 25%; /* Matches ~20-30% fill */
-            height: 100%;
-            background-color: #17a2b8; /* Bootstrap's default progress-bar blue */
-            border-radius: 4px; /* Matches container's border-radius */
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-/*         End Progress Bar */
          .skill-progress-fill { 
              height: 100%; 
              background: linear-gradient(to right, #2563eb, #3b82f6); 
