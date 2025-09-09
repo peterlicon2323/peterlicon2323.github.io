@@ -38,29 +38,12 @@
         .cv-photo { 
             height: 150px; 
             margin: 0 2em 1.5em 0; 
-            float: left; 
-            border-radius: 50%; 
-            border: 0px solid #e2e8f0;
-            border-bottom-width: 0px !important; 
-            border-top-width: 0px !important; 
-        }
-        .cv-name { 
-            font-size: clamp(2em, calc(2em + 0.8vw), 2.5em); 
-            line-height: 1.2; 
-            margin: 0.5em 0; 
-            text-align: left; 
-            color: #1e40af; 
-        }
-        .cv-basic-info-item { 
-            margin-right: 1.5em; 
-            white-space: nowrap; 
-        }
-        .cv-basic-info { 
-            clear: both; 
-            text-align: center; 
-            font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em); 
-            margin-bottom: 1rem !important; 
-        }
+            float: left; border-radius: 
+            50%; border: 0px solid #e2e8f0;
+            border-bottom-width: 0px !important; border-top-width: 0px !important; }
+        .cv-name { font-size: clamp(2em, calc(2em + 0.8vw), 2.5em); line-height: 1.2; margin: 0.5em 0; text-align: left; color: #1e40af; }
+        .cv-basic-info-item { margin-right: 1.5em; white-space: nowrap; }
+        .cv-basic-info { clear: both; text-align: center; font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em); margin-bottom: 1rem !important; }
         .cv-section {
             margin-top: 1rem !important; 
             padding-top: 0rem !important; 
@@ -69,21 +52,15 @@
         }
         .cv-section-title { 
             font-size: clamp(1.5rem, calc(1.5rem + 0.6vw), 2rem); 
-            margin: 2em 0 1em 0; 
-            color: #1e40af; 
+            margin: 2em 0 1em 0; color: #1e40af; 
             margin-bottom: 0.1rem !important; 
             margin-top: 0.1rem !important;
             padding: 0em 0em !important;
             font-style: italic; 
         }
-        .cv-item-title { 
-            font-weight: 600; 
-            font-size: clamp(1em, calc(1em + 0.4vw), 1.2em); 
-        }
-        .cv-item { 
-            break-inside: avoid; 
-            margin-bottom: 1em; 
-        }
+
+        .cv-item-title { font-weight: 600; font-size: clamp(1em, calc(1em + 0.4vw), 1.2em); }
+        .cv-item { break-inside: avoid; margin-bottom: 1em; }
         .cv-item-content {
             padding-left: 0px !important;
             font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
@@ -91,22 +68,11 @@
             display: block;
             margin-top: 0.5em;
         }
-        .cv-item-content > ul { 
-            padding: 0 0 0 1.5em; 
-            margin: 0.5em 0; 
-        }
-        .cv-item-content em { 
-            color: #6b7280; 
-            margin-left: 0.75em; 
-            font-style: italic; 
-        }
+        .cv-item-content > ul { padding: 0 0 0 1.5em; margin: 0.5em 0; }
+        .cv-item-content em { color: #6b7280; margin-left: 0.75em; font-style: italic; }
         .cv-item-row {
             font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
             margin-bottom: 0.5em;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-            align-items: center;
         }
         .cv-item-row a {
             color: #1e40af;
@@ -115,11 +81,7 @@
         .cv-item-row a:hover {
             text-decoration: underline;
         }
-        .cv-item-row span:not(:last-child)::after {
-            content: '•';
-            margin: 0 0.5em;
-            color: #6b7280;
-        }
+
         /* Enhanced progress bar styles for skills */
         .skill-progress-container { 
             margin: 0em 0em; 
@@ -165,6 +127,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5em;
         }
+
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
         .cv-section-title { display: inline-block; background: #fff !important; padding-right: 1.5em; }
@@ -178,19 +141,24 @@
             border-top: 2px solid #1e40af; 
         }
         {% endunless %}
+
         .cv-section:not(:first-child) { 
+            /* border-top: 2px solid #e2e8f0;  */
             margin-top: 2.5em; 
             padding-top: 2.5em; 
         }
+
         .text-muted { opacity: 1; font-style: italic; }
         .cv ul { margin: 0.5em 0; }
         .cv-basic-info-item a[href]:after { content: none !important; }
         .contact { white-space: nowrap; font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em); }
         .contact-block { display: inline-flex; align-items: center; gap: 0.5em; white-space: nowrap; }
+
         @page {
             size: A4;
             margin: 15mm;
         }
+
         @media print {
             body * { visibility: hidden; }
             .cv, .cv * { visibility: visible; }
@@ -220,11 +188,6 @@
             }
             .cv-item-row, .cv-item-content {
                 font-size: 10pt;
-            }
-            .cv-item-row span:not(:last-child)::after {
-                content: '•';
-                margin: 0 0.5em;
-                color: #000;
             }
             .contact-block, .contact, a.contact {
                 font-size: 9pt;
@@ -292,21 +255,21 @@
                     <span class="contact">{{cv.date_of_birth}}</span>
                 </span>
             {% endif %}
-            <span class="contact-block">•</span>
+            <p>|</p>
             {% if cv.location %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
                     <span class="contact">{{cv.location}}</span>
                 </span>
             {% endif %}
-            <span class="contact-block">•</span>
+            <p>|</p>
             {% if cv.email %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
                     <a class="contact" href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
                 </span>   
             {% endif %}
-            <span class="contact-block">•</span>
+            <p>|</p>
             {% if cv.phone %}
                 <span class="contact-block" style="margin-right: 0em;">
                     <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
@@ -368,11 +331,7 @@
             {% if sec_id == 'education' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <span>{{item.degree}}</span>
-                            <span>{{item.institution}}</span>
-                            <span>{{item.date}}</span>
-                        </div>
+                        <div class="cv-item-row">{{item.degree}} | {{item.institution}} | {{item.date}}</div>
                         {% if item.thesis %}
                             <div class="cv-item-content"><em>Thesis:</em> {{item.thesis | markdownify}}</div>
                         {% endif %}
@@ -381,11 +340,7 @@
             {% elsif sec_id == 'projects' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <span>{{item.name}}</span>
-                            <span>{% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</span>
-                            <span>{{item.date}}</span>
-                        </div>
+                        <div class="cv-item-row">{{item.name}} | {% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %} | {{item.date}}</div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
@@ -397,11 +352,7 @@
             {% elsif sec_id == 'certificates' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <span>{{item.name}}</span>
-                            <span>{{item.provider}}</span>
-                            <span>{{item.date}}</span>
-                        </div>
+                        <div class="cv-item-row">{{item.name}} | {{item.provider}} | {{item.date}}</div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
@@ -413,11 +364,7 @@
             {% elsif sec_id == 'experience' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <span>{{item.job_title}}</span>
-                            <span>{{item.organization}}</span>
-                            <span>{{item.date}}</span>
-                        </div>
+                        <div class="cv-item-row">{{item.job_title}} | {{item.organization}} | {{item.date}}</div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
