@@ -45,16 +45,22 @@
         .cv-item-content em { color: #4b5563; margin-left: 0.5em; font-style: italic; }
 
         /* Progress bar styles for skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: space-between;
+        }
         .skill-progress-container { 
-            margin: 0.75em 0; 
+            margin: 0.5em 0; 
             display: flex; 
             align-items: center; 
-            gap: 0.8em; 
-            width: 100%; 
-            flex-wrap: nowrap; 
+            gap: 0.6em; 
+            width: calc(50% - 0.5em); /* Two columns */
+            flex-shrink: 0;
         }
         .skill-progress-label { 
-            width: 160px; 
+            width: 100px; 
             font-weight: 600; 
             font-size: clamp(0.9em, calc(0.9em + 0.3vw), 1.05em); 
             font-family: 'Georgia', serif; 
@@ -62,10 +68,10 @@
             flex-shrink: 0; 
         }
         .skill-progress-bar { 
-            width: 240px; 
-            height: 10px; 
+            width: 120px; 
+            height: 8px; 
             background-color: #e5e7eb; 
-            border-radius: 6px; 
+            border-radius: 5px; 
             overflow: hidden; 
             border: 1px solid #d1d5db; 
             flex-grow: 1; 
@@ -73,7 +79,7 @@
         .skill-progress-fill { 
             height: 100%; 
             background: linear-gradient(to right, #1e40af, #3b82f6); 
-            border-radius: 6px; 
+            border-radius: 5px; 
             transition: width 0.5s ease-in-out; 
         }
         .skill-progress-text { 
@@ -81,7 +87,7 @@
             font-family: 'Georgia', serif; 
             color: #1f2937; 
             font-weight: 500; 
-            min-width: 45px; 
+            min-width: 40px; 
             text-align: right; 
             flex-shrink: 0; 
         }
@@ -149,15 +155,20 @@
             .cv-photo { height: 80mm; float: none; margin: 0 auto 0.5em; display: block; }
             .cv-basic-info > div, header > div { flex-wrap: nowrap; overflow: hidden; text-overflow: ellipsis; }
             .contact-block { margin: 0 0.3em; }
-            .skill-progress-container { gap: 0.5em; }
-            .skill-progress-label { font-size: 10pt; width: 100px; }
-            .skill-progress-bar { width: 200px; height: 8px; }
+            .skills-container { flex-direction: column; gap: 0.5em; }
+            .skill-progress-container { width: 100%; gap: 0.5em; }
+            .skill-progress-label { font-size: 10pt; width: 90px; }
+            .skill-progress-bar { width: 100px; height: 7px; }
             .skill-progress-text { font-size: 8pt; min-width: 35px; }
             .skill-progress-fill {
                 background: linear-gradient(to right, #1e40af, #3b82f6) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
+        }
+
+        @media (max-width: 600px) {
+            .skill-progress-container { width: 100%; }
         }
     </style>
 
@@ -253,16 +264,18 @@
             </header>
             {% if sec_id == 'technical_skills' %}
                 <div class="cv-item-content">
-                    {% for skill in section.items %}
-                        {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
-                        <div class="skill-progress-container">
-                            <span class="skill-progress-label">{{ skill.skill }}</span>
-                            <div class="skill-progress-bar">
-                                <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
+                    <div class="skills-container">
+                        {% for skill in section.items %}
+                            {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
+                            <div class="skill-progress-container">
+                                <span class="skill-progress-label">{{ skill.skill }}</span>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
+                                </div>
+                                <span class="skill-progress-text">{{ skill.score }}</span>
                             </div>
-                            <span class="skill-progress-text">{{ skill.score }}</span>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             {% else %}
                 {% if section.text %}
