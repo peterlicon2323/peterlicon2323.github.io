@@ -353,7 +353,7 @@
         {% assign section = cv.data[sec_id] %}
         <section class="cv-section" id="{{sec_id}}" style="margin-top: 0.5em; padding-top: 0px; border-bottom-style: solid; border-bottom-width: 0px; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 1em; border-top-width: 0px; border-top-style: solid;">
             <header class="cv-section-header" style="border-bottom-style: solid; border-bottom-width: 1px; border-top-style: solid; border-top-width: 1px;">
-                <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;">{{section.title}}</h2>
+                <h2 class="text-primary cv-section-title" style="border-bottom-style: solid; border-bottom-width: 0px; margin-bottom: 0.1em;" {% if sec_id == 'skills' %}style="font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem);"{% endif %}>{{section.title}}</h2>
             </header>
             {% if sec_id == 'skills' %}
                 <div class="cv-item-content">
@@ -370,46 +370,39 @@
                         {% endfor %}
                     </div>
                 </div>
-            {% elsif sec_id == 'work_experience' %}
+            {% elsif sec_id == 'experience' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <span class="cv-item-title">{{ item.date }}:</span>
-                        <div class="cv-item-content">
-                            <strong>{{ item.organization }}</strong> - {{ item.job_title }}<br>
-                            {% if item.description %}
-                                {{ item.description | markdownify }}
-                            {% endif %}
-                        </div>
+                        <strong>{{ item.job_title }}</strong><br>
+                        {{ item.organization }}		{{ item.date }}<br>
+                        {% if item.description %}
+                            {{ item.description | markdownify }}
+                        {% endif %}
+                        {% if item.achievements %}
+                            <ul>
+                                {% for achievement in item.achievements %}
+                                    <li>{{ achievement }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% elsif sec_id == 'projects' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <span class="cv-item-title">{{ item.date }}:</span>
-                        <div class="cv-item-content">
-                            <strong>{{ item.name }}</strong><br>
-                            {% if item.project_code_url %}
-                                <a href="{{ item.project_code_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_code_url | replace: 'https://', '' }}</a><br>
-                            {% endif %}
-                            {% if item.project_demo_url %}
-                                <a href="{{ item.project_demo_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_demo_url | replace: 'https://', '' }}</a><br>
-                            {% endif %}
-                            {% if item.description %}
-                                {{ item.description | markdownify }}
-                            {% endif %}
-                        </div>
+                        <strong>{{ item.name }}</strong>	{% if item.project_code_url %}<a href="{{ item.project_code_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_code_url | replace: 'https://', '' }}</a>{% endif %} {% if item.project_demo_url %}<a href="{{ item.project_demo_url }}" style="color: #2563eb; text-decoration: none;">{{ item.project_demo_url | replace: 'https://', '' }}</a>{% endif %}	{{ item.date }}<br>
+                        {% if item.description %}
+                            {{ item.description | markdownify }}
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% elsif sec_id == 'certificates' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <span class="cv-item-title">{{ item.date }}:</span>
-                        <div class="cv-item-content">
-                            <strong>{{ item.name }}</strong> - {{ item.provider }}<br>
-                            {% if item.url %}
-                                <a href="{{ item.url }}" style="color: #2563eb; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a>
-                            {% endif %}
-                        </div>
+                        <strong>{{ item.name }}</strong>, {{ item.provider }}, [{{ item.date }}]<br>
+                        {% if item.url %}
+                            <a href="{{ item.url }}" style="color: #2563eb; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             {% else %}
