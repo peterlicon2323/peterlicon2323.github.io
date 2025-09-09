@@ -302,48 +302,26 @@
             <header class="cv-section-header">
                 <h2 class="text-primary cv-section-title">{{section.title}}</h2>
             </header>
-            {% if sec_id == 'skills' %}
-                <div class="cv-item-content">
-                    <div class="skills-grid">
-                        {% for skill in section.items %}
-                            {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
-                            <div class="skill-progress-container">
-                                <span class="skill-progress-label">{{ skill.skill }}</span>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" style="width: {{ skill_percentage }}%;"></div>
-                                </div>
-                                <span class="skill-progress-text">{{ skill.score }}</span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% elsif sec_id == 'experience' %}
+            {% if sec_id == 'education' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-title">{{ item.job_title }} at {{ item.organization }}</div>
-                        <span class="text-muted">{{ item.date }}</span>
-                        {% if item.description %}
-                            <div class="cv-item-content">{{ item.description | markdownify }}</div>
-                        {% endif %}
-                        {% if item.achievements %}
-                            <ul>
-                                {% for achievement in item.achievements %}
-                                    <li>{{ achievement }}</li>
-                                {% endfor %}
-                            </ul>
+                        <div class="cv-item-title">{{item.degree}} at {{item.institution}}</div>
+                        <span class="text-muted">{{item.date}}</span>
+                        {% if item.thesis %}
+                            <div class="cv-item-content"><em>Thesis:</em> {{item.thesis}}</div>
                         {% endif %}
                     </div>
                 {% endfor %}
             {% elsif sec_id == 'projects' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-title">{{ item.name }}</div>
-                        <span class="text-muted">{{ item.date }}</span>
+                        <div class="cv-item-title">{{item.name}}</div>
+                        <span class="text-muted">{{item.date}}</span>
                         {% if item.url %}
-                            <div><a href="{{ item.url }}" style="color: #1e40af; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a></div>
+                            <div><a href="{{item.url}}" style="color: #1e40af; text-decoration: none;">{{item.url | replace: 'https://', ''}}</a></div>
                         {% endif %}
                         {% if item.description %}
-                            <div class="cv-item-content">{{ item.description | markdownify }}</div>
+                            <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -353,51 +331,50 @@
             {% elsif sec_id == 'certificates' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-title">{{ item.name }} ({{ item.provider }})</div>
-                        <span class="text-muted">{{ item.date }}</span>
+                        <div class="cv-item-title">{{item.name}} ({{item.provider}})</div>
+                        <span class="text-muted">{{item.date}}</span>
                         {% if item.url %}
-                            <div><a href="{{ item.url }}" style="color: #1e40af; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a></div>
+                            <div><a href="{{item.url}}" style="color: #1e40af; text-decoration: none;">{{item.url | replace: 'https://', ''}}</a></div>
                         {% endif %}
                         {% if item.description %}
-                            <div class="cv-item-content">{{ item.description | markdownify }}</div>
+                            <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
                     </div>
                 {% endfor %}
                 <div class="cv-item-content">
                     <em>For a comprehensive list of certifications, please refer to the <a href="#others" style="color: #1e40af; text-decoration: none;">More Information</a> section.</em>
                 </div>
-            {% elsif sec_id == 'education' %}
+            {% elsif sec_id == 'experience' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-title">{{ item.degree }} at {{ item.institution }}</div>
-                        <span class="text-muted">{{ item.date }}</span>
-                        {% if item.thesis %}
-                            <div class="cv-item-content"><em>Thesis:</em> {{ item.thesis }}</div>
-                        {% endif %}
+                        <div class="cv-item-title">{{item.job_title}} at {{item.organization}}</div>
+                        <span class="text-muted">{{item.date}}</span>
                         {% if item.description %}
-                            <div class="cv-item-content">{{ item.description | markdownify }}</div>
-                        {% endif %}
-                        {% if item.achievements %}
-                            <ul>
-                                {% for achievement in item.achievements %}
-                                    <li>{{ achievement }}</li>
-                                {% endfor %}
-                            </ul>
+                            <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
                     </div>
                 {% endfor %}
+            {% elsif sec_id == 'skills' %}
+                <div class="cv-item-content">
+                    <div class="skills-grid">
+                        {% for skill in section.items %}
+                            {% assign skill_percentage = skill.score | split: '/' | first | strip | times: 10 %}
+                            <div class="skill-progress-container">
+                                <span class="skill-progress-label">{{skill.skill}}</span>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" style="width: {{skill_percentage}}%;"></div>
+                                </div>
+                                <span class="skill-progress-text">{{skill.score}}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             {% else %}
-                {% if section.text %}
-                    <div class="cv-item-content">{{ section.text | markdownify }}</div>
-                {% endif %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-title">{{ item.name }}</div>
+                        <div class="cv-item-title">{{item.name}}</div>
                         {% if item.url %}
-                            <div><a href="{{ item.url }}" style="color: #1e40af; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a></div>
-                        {% endif %}
-                        {% if item.description %}
-                            <div class="cv-item-content">{{ item.description | markdownify }}</div>
+                            <div><a href="{{item.url}}" style="color: #1e40af; text-decoration: none;">{{item.url | replace: 'https://', ''}}</a></div>
                         {% endif %}
                     </div>
                 {% endfor %}
