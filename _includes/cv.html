@@ -83,24 +83,24 @@
  */
 /*         Start Prgress Bar */
         .skill-progress-bar {
-            display: inline-block;
-            width: 100px; /* Fixed width for compact, square look */
-            height: 0.65rem; /* Same height as original */
-            background-color: #e2e8f0; /* Light gray background */
-            border-radius: 0; /* Square edges */
+            display: block;
+            width: 100px; /* Fixed width for compact look */
+            height: 20px; /* Matches Bootstrap 3 progress bar height */
+            background-color: #f5f5f5; /* Bootstrap's progress bar background */
+            border-radius: 4px; /* Bootstrap's default border-radius */
             overflow: hidden;
-            border: 1px solid #cbd5e1; /* Border for definition */
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+            border: 1px solid #ccc; /* Bootstrap's border style */
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Bootstrap's inner shadow */
             position: relative;
         }
         
         .skill-progress-bar::before {
             content: '';
             display: block;
-            width: 25%; /* ~20-30% fill to match █▊ */
+            width: 25%; /* Matches ~20-30% fill */
             height: 100%;
-            background-color: #3b82f6; /* Blue fill for contrast */
-            border-radius: 0; /* Square edges */
+            background-color: #17a2b8; /* Bootstrap's default progress-bar blue */
+            border-radius: 4px; /* Matches container's border-radius */
             position: absolute;
             top: 0;
             left: 0;
