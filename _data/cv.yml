@@ -106,7 +106,16 @@ data:
   #       - Kafka: 7/10
   #       - JavaScript, HTML, CSS: 7/10
   #       - C++, PHP: 6/10
-      
+
+  # Programming Languages: Python, R, Java, C++
+  # Machine Learning Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras
+  # Deep Learning: CNNs, RNNs, GANs, Transformers, Reinforcement Learning
+  # Data Processing & Analysis: Pandas, NumPy, SQL, Spark
+  # Cloud Platforms: AWS (SageMaker, Lambda), Google Cloud (AI Platform), Azure
+  # Tools & Technologies: Docker, Kubernetes, Git, CI/CD, REST APIs
+  # Domains: Natural Language Processing (NLP), Computer Vision, Time-Series Analysis, Predictive Modeling
+  # Soft Skills: Problem-solving, Team Collaboration, Technical Communication, Agile Methodologies
+  
   skills:
     title: Technical Skills
     items:
