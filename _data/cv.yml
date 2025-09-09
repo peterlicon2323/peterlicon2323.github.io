@@ -24,7 +24,7 @@ sections:
   - projects
   - certificates
   - experience
-  # - others
+  - others
   # - free_time
 
 data:
@@ -57,10 +57,17 @@ data:
       - date: 1900 -- 3000
         organization: ABC Inc
         job_title: normal staff
-        description: do nothing
-        location: Not specified
-        achievements:
-          - Contributed to team projects with consistent performance.
+        description: Do somthing right or wrong, I dont know how and  I can do, test high preformence system AI Agent.
+        # location: Not specified
+        # achievements:
+        #   - Contributed to team projects with consistent performance.
+      - date: 1900 -- 3000
+        organization: ABC Inc
+        job_title: normal staff
+        description: Do somthing right or wrong, I dont know how and  I can do, test high preformence system AI Agent.
+        # location: Not specified
+        # achievements:
+        #   - Contributed to team projects with consistent performance.
         
       
   # education:
@@ -79,25 +86,47 @@ data:
     items:
       - date: 1900–3000
         institution: ABC University
+        degree: Master of Science in Computer Science
+        # description: Studied foundational and advanced topics in computer science.
+        thesis: Nothing is True, Everything is Permited version 2
+        # achievements:
+        #   - Completed coursework in algorithms, data structures, and software engineering.
+      - date: 1900–3000
+        institution: ABC University
         degree: Bachelor of Science in Computer Science
-        description: Studied foundational and advanced topics in computer science.
-        thesis: Not specified
-        achievements:
-          - Completed coursework in algorithms, data structures, and software engineering.
+        # description: Studied foundational and advanced topics in computer science.
+        thesis: Nothing is True, Everything is Permited
+        # achievements:
+        #   - Completed coursework in algorithms, data structures, and software engineering.
           
   certificates:
     title: Certificates
     items:
-      - name: ABC
-        date: Jul. 25, 2024
-        provider: DataCamp
-        url: https://www.google.com
-        description: Hello World
-      - name: ABC
-        date: Jul. 25, 2024
-        provider: DataCamp
-        url: https://www.google.com
-        description: Hello World
+      - name: Deep Learning Specialization
+        date: Jun. 15, 2023
+        provider: Coursera (deeplearning.ai)
+        url: https://www.coursera.org/specializations/deep-learning
+        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+      - name: Deep Learning Specialization
+        date: Jun. 15, 2023
+        provider: Coursera (deeplearning.ai)
+        url: https://www.coursera.org/specializations/deep-learning
+        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+      - name: Deep Learning Specialization
+        date: Jun. 15, 2023
+        provider: Coursera (deeplearning.ai)
+        url: https://www.coursera.org/specializations/deep-learning
+        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+      - name: Deep Learning Specialization
+        date: Jun. 15, 2023
+        provider: Coursera (deeplearning.ai)
+        url: https://www.coursera.org/specializations/deep-learning
+        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+      - name: Deep Learning Specialization
+        date: Jun. 15, 2023
+        provider: Coursera (deeplearning.ai)
+        url: https://www.coursera.org/specializations/deep-learning
+        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.      
 
   # skills:
   #   title: Technical Skills
@@ -140,14 +169,38 @@ data:
   projects:
     title: AI & Programming Projects
     items:
-      - name: ABC
-        date: Jul. 25, 2024
-        url: https://www.github.com
-        description: Hello World
-      - name: ABC
-        date: Jul. 25, 2024
-        url: https://www.github.com
-        description: Hello World
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
 
         
   free_time:
@@ -163,8 +216,8 @@ data:
     title: More Information
     items:
       - name: Certificates
-        url: google.com
-      - name: Certificates
-        url: google.com
+        url: https:/github.com/google
+      - name: Projects
+        url: https:/github.com/google
       - name: Blog
-        url: google.com
+        url: https:/github.com/google
