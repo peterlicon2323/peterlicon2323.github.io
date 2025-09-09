@@ -55,17 +55,17 @@
          }
          .skill-progress-label { 
              display: inline-block; 
-             width: 180px; 
+             width: 7rem; 
              font-weight: 600; 
              font-size: clamp(0.875em, calc(0.875em + 0.4vw), 1rem); 
              color: #1f2937; 
              font-family: 'Times', serif; 
              flex-shrink: 0;
          }
-         .skill-progress-bar { 
+/*          .skill-progress-bar { 
              display: inline-block; 
-             width: 250px; 
-             height: 12px; 
+             width: auto; 
+             height: 0.65rem; 
              background-color: #e2e8f0; 
              border-radius: 8px; 
              overflow: hidden; 
@@ -73,6 +73,30 @@
              box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
              flex-grow: 1;
          }
+ */
+        .skill-progress-bar {
+            display: inline-block;
+            width: 100px; /* Adjusted for a compact, fixed width like the example */
+            height: 0.65rem;
+            background-color: #e2e8f0; /* Light gray background */
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #cbd5e1; /* Border for definition */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+            position: relative;
+        }
+        
+        .skill-progress-bar::before {
+            content: '';
+            display: block;
+            width: 25%; /* Adjust this percentage to match the filled portion (█▊ is ~20-30%) */
+            height: 100%;
+            background-color: #3b82f6; /* Blue fill to contrast with the background */
+            border-radius: 6px 0 0 6px; /* Rounded only on the left side */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
          .skill-progress-fill { 
              height: 100%; 
              background: linear-gradient(to right, #2563eb, #3b82f6); 
