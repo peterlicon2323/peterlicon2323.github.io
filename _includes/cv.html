@@ -333,7 +333,7 @@
             {% elsif sec_id == 'certificates' %}
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">{{item.name}} | {{item.provider}} | {{item.date}} | {% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</div>
+                        <div class="cv-item-row">{{item.name}} | {{item.provider}} | {{item.date}}</div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
                         {% endif %}
