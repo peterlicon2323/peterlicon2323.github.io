@@ -30,10 +30,38 @@ title: Certificates
         </div>
         <div class="flex-shrink-0">
           {% if cer.file %}
-            <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" class="w-48 h-auto rounded-lg border-2 border-gray-200 dark:border-gray-600 transition-transform duration-300 hover:scale-105 hover:shadow-md">
+            <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" width="500rem" class="w-48 h-auto rounded-lg border-2 border-gray-200 dark:border-gray-600 transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-pointer" onclick="showModal('{{ cer.file | relative_url }}', '{{ cer.name }}')">
           {% endif %}
         </div>
       </div>
     </li>
   {% endfor %}
 </ul>
+
+<!-- Modal for larger image view -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-4xl w-full relative">
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 text-2xl font-bold">&times;</button>
+    <img id="modalImage" src="" alt="Enlarged certificate" class="max-h-[80vh] w-auto rounded-lg">
+  </div>
+</div>
+
+<script>
+  function showModal(imageSrc, imageAlt) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = imageSrc;
+    modalImage.alt = imageAlt;
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('imageModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
