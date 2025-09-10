@@ -106,6 +106,14 @@ div.flex.items-center.gap-4 p {
   color: var(--secondary-text);
 }
 
+/* Separator styling */
+div.flex.items-center.gap-4 span.separator {
+  color: var(--secondary-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
 /* Image styling */
 img.w-48 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -141,5 +149,8 @@ h1.text-4xl {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+  div.flex.items-center.gap-4 span.separator {
+    display: none; /* Hide separator in column layout */
   }
 }
