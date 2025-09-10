@@ -84,18 +84,20 @@ data:
   education:
     title: Education
     items:
-      - date: 1900–3000
-        institution: ABC University
+      - date: 1900 -- 3000
+        institution: Ho Chi Minh City University of Technology
         degree: Master of Science in Computer Science
+        gpa: 8.08/10
         # description: Studied foundational and advanced topics in computer science.
         thesis: Nothing is True, Everything is Permited version 2
         # achievements:
         #   - Completed coursework in algorithms, data structures, and software engineering.
-      - date: 1900–3000
-        institution: ABC University
+      - date: 1900 -- 3000
+        institution: Ho Chi Minh City University of Technology
         degree: Bachelor of Science in Computer Science
+        # gpa:
         # description: Studied foundational and advanced topics in computer science.
-        thesis: Nothing is True, Everything is Permited
+        # thesis: Nothing is True, Everything is Permited
         # achievements:
         #   - Completed coursework in algorithms, data structures, and software engineering.
           
