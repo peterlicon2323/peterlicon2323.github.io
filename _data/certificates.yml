@@ -27,3 +27,11 @@
   description: Full-stack web development with HTML, CSS, and JavaScript
   # tags: [Web Development, HTML, CSS, JavaScript]
   file: assets/images/certificates/ibm/th_1.jpg
+
+- name: Web Development Bootcamp
+  date: 2022-11-10
+  certificate_url: https://example.com/certificates/web-dev-bootcamp.pdf
+  provider_issuer: DataCamp
+  description: Full-stack web development with HTML, CSS, and JavaScript
+  # tags: [Web Development, HTML, CSS, JavaScript]
+  file: assets/images/certificates/datacamp/th_1.jpg
