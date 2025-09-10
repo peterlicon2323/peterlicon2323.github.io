@@ -62,10 +62,10 @@
             margin-bottom: 1rem !important; 
         }
         .cv-section {
-            margin-top: 1em !important; 
             padding-top: 0rem !important; 
-            margin-top: 0rem !important; 
             border-top: 0rem !important;
+            margin-top: 0rem !important; 
+            margin-bottom: 0.25em !important; 
             margin-right: 1em !important;
             margin-left: 1em !important;
         }
@@ -92,6 +92,7 @@
             text-align: left;
             display: block;
             margin-top: 0.5em;
+            margin-bottom: 0.5em;
         }
         .cv-item-content > ul { 
             padding: 0 0 0 1.5em; 
@@ -294,21 +295,21 @@
                     <span class="contact">{{cv.date_of_birth}}</span>
                 </span>
             {% endif %}
-            <span class="contact-block">•</span>
+            <span>•</span>
             {% if cv.location %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/location.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="location icon"/>
                     <span class="contact">{{cv.location}}</span>
                 </span>
             {% endif %}
-            <span class="contact-block">•</span>
+            <span>•</span>
             {% if cv.email %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
                     <a class="contact" href="mailto:{{cv.email}}" style="color: #2563eb;">{{cv.email}}</a>
                 </span>   
             {% endif %}
-            <span class="contact-block">•</span>
+            <span>•</span>
             {% if cv.phone %}
                 <span class="contact-block" style="margin-right: 0em;">
                     <img src="{{ '/assets/svg/phone.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="phone icon"/>
@@ -327,30 +328,35 @@
                     <a class="contact" href="{{cv.github}}" style="color: #1e40af; text-decoration: none;">{{cv.github | replace: 'https://github.com/', ''}}</a>
                 </span>
             {% endif %}
+            <span>•</span>
             {% if cv.huggingface %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="huggingface icon"/>
                     <a class="contact" href="{{cv.huggingface}}" style="color: #1e40af; text-decoration: none;">{{cv.huggingface | replace: 'https://huggingface.co/', ''}}</a>
                 </span>
             {% endif %}
+            <span>•</span>
             {% if cv.website %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="website icon"/>
                     <a class="contact" href="{{cv.website}}" style="color: #1e40af; text-decoration: none;">{{cv.website | replace: 'https://', ''}}</a>
                 </span>
             {% endif %}
+            <span>•</span>
             {% if cv.linkedin %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/linkedin.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="linkedin icon"/>
                     <a class="contact" href="{{cv.linkedin}}" style="color: #1e40af; text-decoration: none;">{{cv.linkedin | replace: 'https://www.linkedin.com/', ''}}</a>
                 </span>
             {% endif %}
+            <span>•</span>
             {% if cv.x %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/x.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="x icon"/>
                     <a class="contact" href="{{cv.x}}" style="color: #1e40af; text-decoration: none;">{{cv.x | replace: 'https://x.com/', ''}}</a>
                 </span>
             {% endif %}
+            <span>•</span>
             {% if cv.facebook %}
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/facebook.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="facebook icon"/>
