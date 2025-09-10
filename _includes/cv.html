@@ -292,7 +292,7 @@
             {% if cv.date_of_birth %}
                 <span class="contact-block" style="margin-left: 0em;">
                     <img src="{{ '/assets/svg/date_of_birth.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="date_of_birth icon"/>
-                    <span class="contact">{{cv.date_of_birth}}</span>
+                    <span class="contact">{{cv.date_of_birth | markdownify}}</span>
                 </span>
             {% endif %}
             <span>•</span>
@@ -379,7 +379,7 @@
                         <div class="cv-item-row">
                             <span>{{item.degree}}</span>
                             <span>{{item.institution}}</span>
-                            <span>{{item.date}}</span>
+                            <span>{{item.date | markdownify}}</span>
                         </div>
                         {% if item.thesis %}
                             <!-- <div class="cv-item-content"><em>Thesis:</em></div> -->
@@ -393,7 +393,7 @@
                         <div class="cv-item-row">
                             <span>{{item.name}}</span>
                             <span>{% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</span>
-                            <span>{{item.date}}</span>
+                            <span>{{item.date  | markdownify}}</span>
                         </div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
@@ -409,7 +409,7 @@
                         <div class="cv-item-row">
                             <span>{{item.name}}</span>
                             <span>{{item.provider}}</span>
-                            <span>{{item.date}}</span>
+                            <span>{{item.date | markdownify}}</span>
                         </div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
@@ -425,7 +425,7 @@
                         <div class="cv-item-row">
                             <span>{{item.job_title}}</span>
                             <span>{{item.organization}}</span>
-                            <span>{{item.date}}</span>
+                            <span>{{item.date | markdownify}}</span>
                         </div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
