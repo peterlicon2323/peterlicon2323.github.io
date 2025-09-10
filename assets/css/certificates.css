@@ -60,11 +60,16 @@ li.bg-white.dark\:bg-gray-900 > div {
   z-index: 1;
 }
 
+/* Remove bullet points from ul */
+ul.space-y-8 {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0; /* Remove default padding */
+}
+
 /* Layout for certificate details and file */
 div[style="display: flex; position: relative;"] {
   gap: 2rem;
   padding: 1rem 0;
-  /* Ensure flex children are properly aligned */
   align-items: flex-start;
 }
 
@@ -94,7 +99,7 @@ div.flex-1 a {
 div.flex-shrink-0 {
   flex: 1;
   min-width: 12rem;
-  text-align: right;
+  text-align: left; /* Changed from right to left */
   padding-left: 1rem;
 }
 
@@ -176,7 +181,7 @@ h1.text-4xl {
     display: none;
   }
   div.flex-shrink-0 {
-    text-align: left;
+    text-align: left; /* Left alignment maintained on mobile */
   }
   img.w-48 {
     width: 100%;
