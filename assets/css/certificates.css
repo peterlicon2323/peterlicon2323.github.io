@@ -28,6 +28,7 @@ li.bg-white.dark\:bg-gray-900 {
   box-shadow: 0 4px 12px var(--shadow-color);
   border-radius: 0.75rem;
   transition: all 0.3s ease;
+  position: relative; /* Ensure relative positioning for overlay */
 }
 
 li.bg-white.dark\:bg-gray-900:hover {
@@ -63,6 +64,8 @@ li.bg-white.dark\:bg-gray-900 > div {
 div[style="display: flex; position: relative;"] {
   gap: 2rem;
   padding: 1rem 0;
+  /* Ensure flex children are properly aligned */
+  align-items: flex-start;
 }
 
 div.flex-1 {
