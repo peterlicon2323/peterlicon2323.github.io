@@ -447,7 +447,13 @@
                         </div>
                     </div>
                     {% if item.description %}
-                        <div class="cv-item-content">{{item.description | markdownify}}</div>
+                        <div class="cv-item-content">
+                                <em>Description:</em>
+                                <span>
+                                    <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                                </span>
+                            </div>
+                        <!-- <div class="cv-item-content">{{item.description | markdownify}}</div> -->
                     {% endif %}
                 </div>
             {% endfor %}
@@ -459,9 +465,9 @@
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-row">
-                            <span>{{item.name}}</span>
-                            <span>{{item.provider}}</span>
-                            <span>{{item.date | markdownify}}</span>
+                            <div><span>{{item.name}}</span></div>
+                            <div><span>{{item.provider}}</span></div>
+                            <div><span>{{item.date | markdownify}}</span></div>
                         </div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
@@ -479,9 +485,24 @@
                             <span>{{item.organization}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
+                        <div class="cv-item-content"></div>
                         {% if item.description %}
-                            <div class="cv-item-content">{{item.description | markdownify}}</div>
+                            <div>
+                                <em>Description:</em>
+                                <span>
+                                    <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                                </span>
+                            </div>
+                        % endif %}
+                        {% if item.url %}
+                            <div>
+                                <em>URL:</em>
+                                <span>
+                                    <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
+                                </span>
+                            </div>
                         {% endif %}
+                        </div>
                     </div>
                 {% endfor %}
             {% elsif sec_id == 'skills' %}
