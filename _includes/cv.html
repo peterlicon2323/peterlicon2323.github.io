@@ -382,7 +382,8 @@
                             <span>{{item.date}}</span>
                         </div>
                         {% if item.thesis %}
-                            <div class="cv-item-content"><em>Thesis:</em> {{item.thesis | markdownify}}</div>
+                            <!-- <div class="cv-item-content"><em>Thesis:</em></div> -->
+                             <div class="cv-item-content"><em>Thesis:</em> <span>{{item.thesis | markdownify}}</span></div>
                         {% endif %}
                     </div>
                 {% endfor %}
