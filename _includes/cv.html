@@ -535,7 +535,7 @@
                         {% endfor %}
                     </div>
                 </div>
-            <!-- {% elsif sec_id == 'additional_info' %}
+            {% elsif sec_id == 'additional_info' %}
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-title">{{item.name}}</div>
@@ -544,11 +544,11 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-            {% endif %} -->
+            {% endif %}
             
             <!-- {% elsif sec_id == 'additional_info' %} -->
             {% else %}
-                {% for item in section.items %}
+                <!-- {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-row">
                             <div class="cv-item-title">{{ item.name }}</div>
@@ -567,7 +567,7 @@
                         </div>
                     </div>
                 {% endfor %}
-            {% endif %}
+            {% endif %} -->
         </section>
     {% endfor %}
 </div>
