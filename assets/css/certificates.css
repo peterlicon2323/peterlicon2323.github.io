@@ -99,7 +99,7 @@ div.flex-1 a {
 div.flex-shrink-0 {
   flex: 1;
   min-width: 12rem;
-  text-align: left; /* Changed from right to left */
+  text-align: center; /* Changed from right to left */
   padding-left: 1rem;
 }
 
@@ -128,6 +128,7 @@ div[style="display: flex; position: relative;"] > * {
 
 /* Image styling */
 img.w-48 {
+  width: 300rem;
   border-radius: 0.5rem;
   border-width: 2px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
