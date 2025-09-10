@@ -4,7 +4,7 @@
   provider_issuer: Coursera
   description: Comprehensive course on Python programming fundamentals
   # tags: [Python, Programming, Data Science]
-  # file: assets/images/certificates/coursera/th_1.jpg
+  file: assets/images/certificates/coursera/th_1.jpg
 
 - name: Machine Learning Fundamentals
   date: 2024-03-20
@@ -26,4 +26,4 @@
   provider_issuer: IBM
   description: Full-stack web development with HTML, CSS, and JavaScript
   # tags: [Web Development, HTML, CSS, JavaScript]
-  # file: assets/images/certificates/ibm/th_1.jpg
+  file: assets/images/certificates/ibm/th_1.jpg
