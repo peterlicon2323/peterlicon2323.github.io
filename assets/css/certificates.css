@@ -94,6 +94,18 @@ div.flex.flex-col.gap-4 span.bg-blue-100.dark\:bg-blue-900:hover {
   transform: scale(1.1);
 }
 
+/* Inline flex container for Provider and Date */
+div.flex.items-center.gap-4 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+div.flex.items-center.gap-4 p {
+  margin: 0;
+  color: var(--secondary-text);
+}
+
 /* Image styling */
 img.w-48 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -124,5 +136,10 @@ h1.text-4xl {
   }
   h1.text-4xl {
     font-size: 2rem;
+  }
+  div.flex.items-center.gap-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }

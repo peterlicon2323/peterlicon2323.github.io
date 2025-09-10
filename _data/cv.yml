@@ -222,5 +222,5 @@ data:
         url: https://github.com/google
       - name: Projects
         url: https://github.com/google
-      - name: Blog
-        url: https://github.com/google
+      # - name: Blog
+      #   url: https://github.com/google
