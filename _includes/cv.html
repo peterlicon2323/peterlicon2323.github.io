@@ -503,8 +503,8 @@
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-row">
-                            <span>{{item.job_title}}</span>
-                            <span>{{item.organization}}</span>
+                            <span>{{item.job_title | markdownify}}</span>
+                            <span>{{item.organization | markdownify}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
                         <div class="cv-item-content">
@@ -516,14 +516,7 @@
                                 </span>
                             </div>
                         {% endif %}
-                        {% if item.url %}
-                            <div>
-                                <em>URL:</em>
-                                <span>
-                                    <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
-                                </span>
-                            </div>
-                        {% endif %}
+                        
                         </div>
                     </div>
                 {% endfor %}
@@ -542,13 +535,35 @@
                         {% endfor %}
                     </div>
                 </div>
-            {% else %}
+            <!-- {% elsif sec_id == 'additional_info' %}
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-title">{{item.name}}</div>
                         {% if item.url %}
                             <div><a href="{{item.url}}" style="color: #1e40af; text-decoration: none;">{{item.url | replace: 'https://', ''}}</a></div>
                         {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %} -->
+            
+            {% elsif sec_id == 'additional_info' %}
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <div class="cv-item-row">
+                            <div class="cv-item-title">{{ item.name }}</div>
+                            {% if item.url %}
+                                <div>
+                                    {% if item.url contains 'github.com' %}
+                                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
+                                    {% elsif item.url contains 'huggingface.co' %}
+                                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                    {% else %}
+                                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
+                                    {% endif %}
+                                    <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left: 0.5em;">{{ item.url | replace: 'https://', '' }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 {% endfor %}
             {% endif %}

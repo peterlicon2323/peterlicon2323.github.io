@@ -24,7 +24,7 @@ sections:
   - projects
   - certificates
   - experience
-  - others
+  - additional_info
   # - free_time
 
 data:
@@ -215,7 +215,7 @@ data:
         - music, art & design, archery, hiking, puzzle hunts (e.g. [TMOU](https://en.wikipedia.org/wiki/TMOU))
         - physics, astronomy, mathematics
 
-  others:
+  additional_info:
     title: More Information
     items:
       - name: Certificates
