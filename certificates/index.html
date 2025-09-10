@@ -3,33 +3,34 @@ layout: default
 title: Certificates
 ---
 <link rel="stylesheet" href="/assets/css/certificates.css">
-<h1 class="text-4xl font-bold font-mono tracking-tight text-gray-900 dark:text-gray-100 mb-8">Certificates</h1>
-<ul class="space-y-6">
+<h1 class="text-4xl font-bold font-mono tracking-tight text-gray-900 dark:text-gray-100 mb-8 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Certificates</h1>
+<ul class="space-y-8">
   {% for cer in site.data.certificates %}
-    <li class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
-      <div style="display: flex; position: relative;">
-        <div class="flex flex-col gap-4">
-          <a href="{{ cer.certificate_url }}" class="text-2xl font-semibold font-sans text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" target="_blank">{{ cer.name }}</a>
-          <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Description: {{ cer.description }}</p>
+    <li class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+      <div class="flex flex-col md:flex-row items-start justify-between gap-6 relative overflow-hidden">
+        <div class="flex-1 space-y-4">
+          <a href="{{ cer.certificate_url }}" class="text-2xl font-semibold font-sans text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 inline-block group" target="_blank">
+            {{ cer.name }}
+            <span class="inline-block transition-transform group-hover:translate-x-2 duration-200">↗</span>
+          </a>
+          <p class="text-gray-600 dark:text-gray-300 font-sans text-base leading-relaxed">Description: {{ cer.description }}</p>
           <div class="flex items-center gap-4">
             <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Provider or Issuer: {{ cer.provider_issuer }}</p>
             <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Date: {{ cer.date | date: "%B %d, %Y" }}</p>
           </div>
-          <!-- Show File -->
-          {% if cer.file %}
-            <div class="mt-4">
-              <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" class="w-48 h-auto rounded-md border border-gray-200 dark:border-gray-600">
-            </div>
-          {% endif %}
-          <!-- Show Tags -->
           {% if cer.tags %}
             <div class="mt-4 flex flex-wrap gap-2">
               {% for tag in cer.tags %}
-                <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200">
+                <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-all duration-200 transform hover:scale-105">
                   {{ tag }}
                 </span>
               {% endfor %}
             </div>
+          {% endif %}
+        </div>
+        <div class="flex-shrink-0 relative">
+          {% if cer.file %}
+            <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" class="w-48 h-auto rounded-lg border-2 border-gray-200 dark:border-gray-600 transition-transform duration-300 hover:scale-105 hover:shadow-md">
           {% endif %}
         </div>
       </div>
