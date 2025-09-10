@@ -1,0 +1,18 @@
+---
+layout: default
+title: Certificates
+description: A collection of my professional certifications and achievements.
+---
+<article class="prose dark:prose-invert max-w-none">
+  <h1 class="text-3xl font-mono font-bold">{{ page.title }}</h1>
+  <p class="text-gray-500 dark:text-gray-400 font-sans">{{ page.description }}</p>
+  <div class="mt-6">
+    {% for cert in site.data.certificates %}
+      <div class="mb-4">
+        <h3 class="text-xl font-semibold">{{ cert.course }}</h3>
+        <p class="text-gray-600 dark:text-gray-300">Completed: {{ cert.date | date: "%B %d, %Y" }}</p>
+        <a href="{{ cert.url }}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">View Certificate</a>
+      </div>
+    {% endfor %}
+  </div>
+</article>
