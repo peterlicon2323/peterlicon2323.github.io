@@ -16,7 +16,7 @@
 /* Light theme (default) */
 [data-theme="light"] {
   --cv-text-color: #1a1a1a;
-  --cv-muted-color: #b3b3b3;
+  --cv-muted-color: #666565;
   --cv-background: #ffffff; /* Used by cv-name */
   --cv-border: #8c8c8c;/* #e5e5e5; */
   --cv-accent-color: #303030;

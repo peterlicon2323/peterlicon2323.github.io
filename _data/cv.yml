@@ -85,7 +85,7 @@ data:
     title: Education
     items:
       - date: 1900 -- 3000
-        institution: Ho Chi Minh City University of Technology
+        institution: Ho Chi Minh City University of Technology -- Vietnam National University Ho Chi Minh City
         degree: Master of Science in Computer Science
         gpa: 8.08/10
         # description: Studied foundational and advanced topics in computer science.
@@ -93,7 +93,7 @@ data:
         # achievements:
         #   - Completed coursework in algorithms, data structures, and software engineering.
       - date: 1900 -- 3000
-        institution: Ho Chi Minh City University of Technology
+        institution: Ho Chi Minh City University of Technology -- Vietnam National University Ho Chi Minh City
         degree: Bachelor of Science in Computer Science
         # gpa:
         # description: Studied foundational and advanced topics in computer science.
