@@ -97,9 +97,9 @@ div.flex-1 a {
 }
 
 div.flex-shrink-0 {
-  flex: 1;
-  min-width: 8rem;
-  text-align: center; /* Changed from right to left */
+  width: 40%; /* Set to 40% of parent width */
+  min-width: 12rem;
+  text-align: right; /* Right alignment */
   padding-left: 1rem;
 }
 
@@ -128,7 +128,6 @@ div[style="display: flex; position: relative;"] > * {
 
 /* Image styling */
 img.w-48 {
-  /* width: 300rem; */
   border-radius: 0.5rem;
   border-width: 2px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -169,6 +168,31 @@ h1.text-4xl {
   color: transparent;
 }
 
+/* Modal styling */
+#imageModal {
+  transition: opacity 0.3s ease;
+}
+
+#imageModal .bg-white.dark\:bg-gray-800 {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+#imageModal button {
+  transition: color 0.3s ease;
+}
+
+#imageModal button:hover {
+  color: var(--accent-color);
+}
+
+#imageModal img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   li.bg-white.dark\:bg-gray-900 {
@@ -182,7 +206,9 @@ h1.text-4xl {
     display: none;
   }
   div.flex-shrink-0 {
-    text-align: left; /* Left alignment maintained on mobile */
+    width: 100%; /* Full width on mobile */
+    text-align: left; /* Left alignment on mobile */
+    min-width: 0; /* Remove min-width constraint on mobile */
   }
   img.w-48 {
     width: 100%;
@@ -190,5 +216,8 @@ h1.text-4xl {
   }
   h1.text-4xl {
     font-size: 2rem;
+  }
+  #imageModal .bg-white.dark\:bg-gray-800 {
+    padding: 1rem;
   }
 }
