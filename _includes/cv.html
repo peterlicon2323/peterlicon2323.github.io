@@ -423,17 +423,17 @@
                                 {% if item.url contains 'github.com' %}
                                 <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="GitHub icon"/>
                                 <span>
-                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com', '' }}</a>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com/', '' }}</a>
                                 </span>
                                 {% elsif item.url contains 'gitlab.com' %}
                                 <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="GitLab icon"/>
                                 <span>
-                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com', '' }}</a>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com/', '' }}</a>
                                 </span>
                                 {% elsif item.url contains 'huggingface.co' %}
                                 <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="Hugging Face icon"/>
                                 <span>
-                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co', '' }}</a>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
                                 </span>
                                 {% else %}
                                 <span></span>
@@ -454,7 +454,7 @@
             <div class="cv-item-content">
                 <em>For additional projects, please refer to the <a href="#others" style="color: #1e40af; text-decoration: none;">More Information</a>.</em>
             </div>
-            
+
             {% elsif sec_id == 'certificates' %}
                 {% for item in section.items %}
                     <div class="cv-item">
