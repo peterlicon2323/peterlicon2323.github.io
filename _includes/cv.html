@@ -62,10 +62,12 @@
             margin-bottom: 1rem !important; 
         }
         .cv-section {
-            margin-top: 1rem !important; 
+            margin-top: 1em !important; 
             padding-top: 0rem !important; 
             margin-top: 0rem !important; 
             border-top: 0rem !important;
+            margin-right: 1em !important;
+            margin-left: 1em !important;
         }
         .cv-section-title { 
             font-size: clamp(1.5rem, calc(1.5rem + 0.6vw), 2rem); 
@@ -361,7 +363,7 @@
     <!-- Sections -->
     {% for sec_id in cv.sections %}
         {% assign section = cv.data[sec_id] %}
-        <section class="cv-section" id="{{sec_id}}" style="margin: 0 1em;">
+        <section class="cv-section" id="{{sec_id}}">
             <header class="cv-section-header">
                 <h2 class="text-primary cv-section-title">{{section.title}}</h2>
             </header>
