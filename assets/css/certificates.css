@@ -76,6 +76,7 @@ div[style="display: flex; position: relative;"] {
 div.flex-1 {
   flex: 1;
   padding-right: 1rem;
+  margin-left: 1rem;
 }
 
 div.flex-1 p {
@@ -99,7 +100,7 @@ div.flex-1 a {
 div.flex-shrink-0 {
   width: 40%; /* Set to 40% of parent width */
   min-width: 12rem;
-  text-align: right; /* Right alignment */
+  text-align: center; /* Right alignment */
   padding-left: 1rem;
 }
 
@@ -113,7 +114,7 @@ div[style="display: flex; position: relative;"]::after {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   width: 2px;
   background: linear-gradient(to bottom, transparent, var(--border-color), transparent);
@@ -207,7 +208,7 @@ h1.text-4xl {
   }
   div.flex-shrink-0 {
     width: 100%; /* Full width on mobile */
-    text-align: left; /* Left alignment on mobile */
+    text-align: center; /* Left alignment on mobile */
     min-width: 0; /* Remove min-width constraint on mobile */
   }
   img.w-48 {
