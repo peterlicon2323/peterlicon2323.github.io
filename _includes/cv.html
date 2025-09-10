@@ -381,12 +381,20 @@
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-row">
-                            <span>{{item.degree}}</span>
+                            <div>
+                                <span>{{item.degree}}</span>
+                            </div>                            
                             {% if item.thesis %}
+                            <div>
                                 <em>GPA:</em>
                                 <span>{{item.gpa}}</span>
+                            </div>                                
                             {% endif %}
-                            <span>{{item.date | markdownify}}</span>
+                            <div>
+                                <em>Duration:</em>
+                                <span>{{item.date | markdownify}}</span>
+                            </div>
+                            
                         </div>
                         <div class="cv-item-content">
                             <em>Institution:</em>
@@ -409,9 +417,34 @@
                 {% for item in section.items %}
                     <div class="cv-item">
                         <div class="cv-item-row">
-                            <span>{{item.name}}</span>
-                            <span>{% if item.url %}<a href="{{item.url}}">{{item.url | replace: 'https://', ''}}</a>{% else %}-{% endif %}</span>
-                            <span>{{item.date  | markdownify}}</span>
+                            <div><span>{{item.name}}</span></div>
+                            <div>
+                                {% if item.url %}
+                                {% if 'github.com' in item.url %}
+                                <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="GitHub icon"/>
+                                <span>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com', '' }}</a>
+                                </span>
+                                {% elsif 'gitlab.com' in item.url %}
+                                <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="GitLab icon"/>
+                                <span>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com', '' }}</a>
+                                </span>
+                                {% elsif 'huggingface.co' in item.url %}
+                                <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="Hugging Face icon"/>
+                                <span>
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co', '' }}</a>
+                                </span>
+                                {% else %}
+                                <span></span>
+                                {% endif %}
+                            {% else %}
+                                <span></span>
+                            {% endif %}
+                            </div>
+                            <div>
+                                <span>{{item.date  | markdownify}}</span>
+                            </div>
                         </div>
                         {% if item.description %}
                             <div class="cv-item-content">{{item.description | markdownify}}</div>
