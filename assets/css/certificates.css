@@ -66,54 +66,54 @@ li.bg-white.dark\:bg-gray-800 > div {
   z-index: 1;
 }
 
-/* Layout for certificate details and file */
-div[style="display: flex; position: relative;"] {
-  gap: 1.5rem;
+/* Text color for elements inside flex container */
+div.flex.flex-col.gap-4 a.text-2xl {
+  color: var(--link-color);
 }
 
-div.flex-1 {
-  flex: 1;
-  padding-right: 0.75rem; /* Adjust spacing to avoid overlap with line */
+div.flex.flex-col.gap-4 a.text-2xl:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-div.flex-1 p {
+div.flex.flex-col.gap-4 p.text-gray-600.dark\:text-gray-300 {
   color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+div.flex.flex-col.gap-4 span.bg-blue-100.dark\:bg-blue-900 {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+div.flex.flex-col.gap-4 span.bg-blue-100.dark\:bg-blue-900:hover {
+  background: var(--tag-hover-bg);
+  transform: scale(1.1);
+}
+
+/* Inline flex container for Provider and Date */
+div.flex.items-center.gap-4 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+div.flex.items-center.gap-4 p {
   margin: 0;
-}
-
-div.flex-1 p.text-2xl {
-  color: var(--primary-text);
-  margin-bottom: 0.5rem;
-}
-
-div.flex-shrink-0 {
-  flex: 1;
-  min-width: 12rem;
-  text-align: right;
-  padding-left: 0.75rem; /* Adjust spacing to avoid overlap with line */
-}
-
-div.flex-shrink-0 p {
   color: var(--secondary-text);
 }
 
-/* Vertical line separator */
-div[style="display: flex; position: relative;"]::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%; /* Center the line between the two divs */
-  transform: translateX(-50%);
-  width: 1px;
-  background: var(--border-color);
-  z-index: 0;
-}
-
-/* Ensure content is above separator */
-div[style="display: flex; position: relative;"] > * {
-  position: relative;
-  z-index: 1;
+/* Separator styling using pseudo-element */
+div.flex.items-center.gap-4 p:not(:last-child)::after {
+  content: '.';
+  margin: 0 0.5em;
+  color: var(--secondary-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
 }
 
 /* Image styling */
@@ -136,19 +136,9 @@ h1.text-4xl {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   li.bg-white.dark\:bg-gray-800 {
     padding: 1rem;
-  }
-  div[style="display: flex; position: relative;"] {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  div[style="display: flex; position: relative;"]::after {
-    display: none; /* Hide vertical line on mobile */
-  }
-  div.flex-shrink-0 {
-    text-align: left;
   }
   img.w-48 {
     width: 100%;
@@ -156,5 +146,13 @@ h1.text-4xl {
   }
   h1.text-4xl {
     font-size: 2rem;
+  }
+  div.flex.items-center.gap-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  div.flex.items-center.gap-4 p:not(:last-child)::after {
+    display: none; /* Hide separator in column layout */
   }
 }
