@@ -37,7 +37,7 @@
         .cv h1, h2 { font-weight: normal; }
         .cv-photo { 
             height: 150px; 
-            margin: 0 2em 1.5em 0; 
+            margin: 0 1.5em 1.5em 0; 
             float: left; 
             border-radius: 50%; 
             border: 0px solid #e2e8f0;
@@ -383,10 +383,15 @@
                         </div>
                         {% if item.thesis %}
                             <!-- <div class="cv-item-content"><em>Thesis:</em></div> -->
-                             <div class="cv-item-content"><em>Thesis:</em> <span>{{item.thesis | markdownify}}</span></div>
+                            <!-- <div class="cv-item-content"><em>Thesis:</em> <span>{{item.thesis | markdownify}}</span></div> -->
+                            <div class="cv-item-content">
+                                <em>Thesis:</em>
+                                    <span><p style="display:inline;">{{item.thesis | markdownify}}</p></span>
+                                </div>
                         {% endif %}
                     </div>
                 {% endfor %}
+
             {% elsif sec_id == 'projects' %}
                 {% for item in section.items %}
                     <div class="cv-item">
