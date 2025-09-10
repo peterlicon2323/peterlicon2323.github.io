@@ -1,9 +1,24 @@
-----
-layout: certificates
-title: Certificates
-description: A collection of my professional certifications and achievements.
-permalink: /certificates/
 ---
-
-
-
+layout: default
+title: Certificates
+---
+<h1 class="text-3xl font-mono font-bold mb-6">Certificates</h1>
+<ul class="space-y-6">
+  {% for certificate in site.data.certificates %}
+    <li class="border-l-4 border-blue-500 pl-4 flex flex-col gap-4">
+      <div class="flex-1">
+        <a href="{{ certificate.certificate_url }}" class="text-xl font-sans hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200" target="_blank">{{ certificate.name }}</a>
+        <p class="text-gray-500 dark:text-gray-400 font-sans text-sm mt-1">{{ certificate.description }}</p>
+        <p class="text-gray-600 dark:text-gray-300 font-sans text-sm mt-1">Issuer: {{ certificate.issuer }}</p>
+        <p class="text-gray-600 dark:text-gray-300 font-sans text-sm mt-1">Date: {{ certificate.date | date: "%B %d, %Y" }}</p>
+        {% if certificate.tags %}
+          <div class="mt-2">
+            {% for tag in certificate.tags %}
+              <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
