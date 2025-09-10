@@ -67,9 +67,13 @@ li.bg-white.dark\:bg-gray-800 > div {
 }
 
 /* Layout for certificate details and file */
-div.flex-col.md\:flex-row.justify-between.items-start {
+div.flex-col.md\:flex-row.items-start {
   gap: 1.5rem;
   position: relative;
+}
+
+div.flex-1 {
+  flex: 1;
 }
 
 div.flex-1 p {
@@ -83,6 +87,7 @@ div.flex-1 p.text-2xl {
 }
 
 div.flex-shrink-0 {
+  flex-shrink: 0;
   min-width: 12rem;
   text-align: right;
 }
@@ -92,19 +97,20 @@ div.flex-shrink-0 p {
 }
 
 /* Vertical line separator */
-div.flex-col.md\:flex-row.justify-between.items-start::after {
+div.flex-col.md\:flex-row.items-start::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  right: calc(12rem + 1.5rem); /* Positioned just to the left of flex-shrink-0 */
+  left: 50%; /* Center the line between the two divs */
+  transform: translateX(-50%);
   width: 1px;
   background: var(--border-color);
   z-index: 0;
 }
 
 /* Ensure content is above separator */
-div.flex-col.md\:flex-row.justify-between.items-start > * {
+div.flex-col.md\:flex-row.items-start > * {
   position: relative;
   z-index: 1;
 }
@@ -133,11 +139,11 @@ h1.text-4xl {
   li.bg-white.dark\:bg-gray-800 {
     padding: 1rem;
   }
-  div.flex-col.md\:flex-row.justify-between.items-start {
+  div.flex-col.md\:flex-row.items-start {
     flex-direction: column;
     gap: 1rem;
   }
-  div.flex-col.md\:flex-row.justify-between.items-start::after {
+  div.flex-col.md\:flex-row.items-start::after {
     display: none; /* Hide vertical line on mobile */
   }
   div.flex-shrink-0 {
