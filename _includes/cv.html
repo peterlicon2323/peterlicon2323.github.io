@@ -471,8 +471,14 @@
                                 <div>
                                     <em>URL:</em>
                                     <span>
-                                        <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
+                                        <!-- <p style="display:inline;">{{item.url | markdownify | strip_html}}</p> -->
+                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
                                     </span>
+
+                                    <!-- <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                    <span>
+                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
+                                    </span> -->
                                 </div>
                             {% endif %}
                             <div><span>{{item.date | markdownify}}</span></div>
