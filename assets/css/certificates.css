@@ -1,28 +1,28 @@
 /* Root variables for consistent theming */
 :root {
-  --primary-text: #1f2937;
-  --secondary-text: #4b5563;
+  --primary-text: #000000; /* Black for light mode */
+  --secondary-text: #000000; /* Black for light mode */
   --border-color: #e5e7eb;
   --card-bg: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --link-color: #2563eb;
   --link-hover: #1d4ed8;
   --tag-bg: #dbeafe;
-  --tag-text: #1e40af;
+  --tag-text: #000000; /* Black for light mode */
   --tag-hover-bg: #bfdbfe;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-text: #f3f4f6;
-    --secondary-text: #d1d5db;
+    --primary-text: #ffffff; /* White for dark mode */
+    --secondary-text: #ffffff; /* White for dark mode */
     --border-color: #374151;
     --card-bg: #1f2937;
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --link-color: #60a5fa;
+    --link-color: #ffffff; /* White for dark mode */
     --link-hover: #93c5fd;
     --tag-bg: #1e40af;
-    --tag-text: #bfdbfe;
+    --tag-text: #ffffff; /* White for dark mode */
     --tag-hover-bg: #1d4ed8;
   }
 }
@@ -66,22 +66,32 @@ li.bg-white.dark\:bg-gray-800 > div {
   z-index: 1;
 }
 
-/* Link styling */
-a.text-2xl {
+/* Text color for elements inside flex container */
+div.flex.flex-col.gap-4 a.text-2xl {
   color: var(--link-color);
 }
 
-a.text-2xl:hover {
+div.flex.flex-col.gap-4 a.text-2xl:hover {
   color: var(--link-hover);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-/* Text styling */
-p.text-gray-600.dark\:text-gray-300 {
+div.flex.flex-col.gap-4 p.text-gray-600.dark\:text-gray-300 {
   color: var(--secondary-text);
   line-height: 1.6;
+}
+
+div.flex.flex-col.gap-4 span.bg-blue-100.dark\:bg-blue-900 {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+div.flex.flex-col.gap-4 span.bg-blue-100.dark\:bg-blue-900:hover {
+  background: var(--tag-hover-bg);
+  transform: scale(1.1);
 }
 
 /* Image styling */
@@ -92,18 +102,6 @@ img.w-48 {
 img.w-48:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-/* Tag styling */
-span.bg-blue-100.dark\:bg-blue-900 {
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-span.bg-blue-100.dark\:bg-blue-900:hover {
-  background: var(--tag-hover-bg);
-  transform: scale(1.1);
 }
 
 /* Heading styling */
