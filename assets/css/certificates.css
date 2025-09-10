@@ -67,8 +67,9 @@ li.bg-white.dark\:bg-gray-800 > div {
 }
 
 /* Layout for certificate details and file */
-div.flex.flex-col.md\:flex-row.justify-between.items-start {
+div.flex-col.md\:flex-row.justify-between.items-start {
   gap: 1.5rem;
+  position: relative;
 }
 
 div.flex-1 p {
@@ -94,9 +95,9 @@ div.flex-shrink-0 p {
 div.flex-col.md\:flex-row.justify-between.items-start::after {
   content: '';
   position: absolute;
-  top: 1rem;
-  bottom: 1rem;
-  right: 6rem;
+  top: 0;
+  bottom: 0;
+  right: calc(12rem + 1.5rem); /* Positioned just to the left of flex-shrink-0 */
   width: 1px;
   background: var(--border-color);
   z-index: 0;
