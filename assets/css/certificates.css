@@ -60,9 +60,8 @@ li.bg-white.dark\:bg-gray-900 > div {
 }
 
 /* Layout for certificate details and file */
-div.flex-col.md\:flex-row.items-start {
+div[style="display: flex; position: relative;"] {
   gap: 2rem;
-  position: relative;
   padding: 1rem 0;
 }
 
@@ -101,7 +100,7 @@ div.flex-shrink-0 p {
 }
 
 /* Vertical line separator */
-div.flex-col.md\:flex-row.items-start::after {
+div[style="display: flex; position: relative;"]::after {
   content: '';
   position: absolute;
   top: 0;
@@ -114,7 +113,7 @@ div.flex-col.md\:flex-row.items-start::after {
 }
 
 /* Ensure content is above separator */
-div.flex-col.md\:flex-row.items-start > * {
+div[style="display: flex; position: relative;"] > * {
   position: relative;
   z-index: 1;
 }
@@ -166,11 +165,11 @@ h1.text-4xl {
   li.bg-white.dark\:bg-gray-900 {
     padding: 1rem;
   }
-  div.flex-col.md\:flex-row.items-start {
+  div[style="display: flex; position: relative;"] {
     flex-direction: column;
     gap: 1.5rem;
   }
-  div.flex-col.md\:flex-row.items-start::after {
+  div[style="display: flex; position: relative;"]::after {
     display: none;
   }
   div.flex-shrink-0 {
