@@ -448,11 +448,11 @@
                     </div>
                     {% if item.description %}
                         <div class="cv-item-content">
-                                <em>Description:</em>
-                                <span>
-                                    <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
-                                </span>
-                            </div>
+                            <em>Details:</em>
+                            <span>
+                                <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                            </span>
+                        </div>
                         <!-- <div class="cv-item-content">{{item.description | markdownify}}</div> -->
                     {% endif %}
                 </div>
@@ -469,9 +469,26 @@
                             <div><span>{{item.provider}}</span></div>
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
-                        {% if item.description %}
-                            <div class="cv-item-content">{{item.description | markdownify}}</div>
+                        <div class="cv-item-content"></div>
+                            {% if item.description %}
+                                {% if item.description %}
+                                <div>
+                                    <em>Details:</em>
+                                    <span>
+                                        <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                                    </span>
+                                </div>
+                            {% endif %}
+                            {% if item.url %}
+                                <div>
+                                    <em>URL:</em>
+                                    <span>
+                                        <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
+                                    </span>
+                                </div>
+                            {% endif %}                            
                         {% endif %}
+                        </div>
                     </div>
                 {% endfor %}
                 <div class="cv-item-content">
@@ -485,10 +502,10 @@
                             <span>{{item.organization}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
-                        <div class="cv-item-content"></div>
+                        <div class="cv-item-content">
                         {% if item.description %}
                             <div>
-                                <em>Description:</em>
+                                <em>Details:</em>
                                 <span>
                                     <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                 </span>
