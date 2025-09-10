@@ -2,35 +2,31 @@
 layout: default
 title: Certificates
 ---
-<h1 class="text-3xl font-mono font-bold mb-6">Certificates</h1>
+<h1 class="text-4xl font-bold font-mono tracking-tight text-gray-900 dark:text-gray-100 mb-8">Certificates</h1>
 <ul class="space-y-6">
   {% for cer in site.data.certificates %}
-    <li class="border-l-4 border-blue-500 pl-4 flex flex-col gap-4">
-      <div class="flex-1">
-        <a href="{{ cer.certificate_url }}" class="text-xl font-sans hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200" target="_blank">{{ cer.name }}</a>
-        <p class="text-gray-500 dark:text-gray-400 font-sans text-sm mt-1">Description: {{ cer.description }}</p>
-        <p class="text-gray-600 dark:text-gray-300 font-sans text-sm mt-1">Provider or Issuer: {{ cer.provider_issuer }}</p>
-        <p class="text-gray-600 dark:text-gray-300 font-sans text-sm mt-1">Date: {{ cer.date | date: "%B %d, %Y" }}</p>
+    <li class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <div class="flex flex-col gap-4">
+        <a href="{{ cer.certificate_url }}" class="text-2xl font-semibold font-sans text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" target="_blank">{{ cer.name }}</a>
+        <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Description: {{ cer.description }}</p>
+        <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Provider or Issuer: {{ cer.provider_issuer }}</p>
+        <p class="text-gray-600 dark:text-gray-300 font-sans text-base">Date: {{ cer.date | date: "%B %d, %Y" }}</p>
         <!-- Show File -->
         {% if cer.file %}
-          <!-- <div class="mt-2">
-              <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2">
-                {{ cer.file }}</span>
-          </div> -->
-          <div class="mt-2">
-            <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" class="w-32 h-auto">
+          <div class="mt-4">
+            <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate" class="w-48 h-auto rounded-md border border-gray-200 dark:border-gray-600">
           </div>
         {% endif %}
-        <!-- Show Tabs -->
+        <!-- Show Tags -->
         {% if cer.tags %}
-          <div class="mt-2">
+          <div class="mt-4 flex flex-wrap gap-2">
             {% for tag in cer.tags %}
-              <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mr-2">
-                {{ tag }}</span>
+              <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200">
+                {{ tag }}
+              </span>
             {% endfor %}
           </div>
         {% endif %}
-
       </div>
     </li>
   {% endfor %}
