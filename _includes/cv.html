@@ -380,7 +380,7 @@
                     <div class="cv-item">
                         <div class="cv-item-row">
                             <span>{{item.degree}}</span>
-                            <span>{{item.institution}}</span>
+                            <span>{{item.institution | markdownify}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
                         {% if item.thesis %}
