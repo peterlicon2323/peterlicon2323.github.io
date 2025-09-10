@@ -467,6 +467,14 @@
                         <div class="cv-item-row">
                             <div><span>{{item.name}}</span></div>
                             <div><span>{{item.provider}}</span></div>
+                            {% if item.url %}
+                                <div>
+                                    <em>URL:</em>
+                                    <span>
+                                        <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
+                                    </span>
+                                </div>
+                            {% endif %}
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
                         <div class="cv-item-content">
@@ -478,14 +486,7 @@
                                     </span>
                                 </div>
                             {% endif %}
-                            {% if item.url %}
-                                <div>
-                                    <em>URL:</em>
-                                    <span>
-                                        <p style="display:inline;">{{item.url | markdownify | strip_html}}</p>
-                                    </span>
-                                </div>
-                            {% endif %}                            
+                                                      
                         </div>
                     </div>
                 {% endfor %}
