@@ -283,17 +283,24 @@
             }
         }
         /* Zebra striping */
-        .cv-item:nth-child(odd) {
+        /* .cv-item:nth-child(odd) {
             background-color: #f9f9f9;
         }
         .cv-item:nth-child(even) {
             background-color: #e6f3ff;
+        } */
+
+        .cv-item:nth-child(odd) {
+            background-color: #f8f9fa; /* Subtle off-white gray for a modern neutral base */
+        }
+        .cv-item:nth-child(even) {
+            background-color: #e9ecef; /* Slightly deeper cool gray for gentle alternation */
         }
         /* End Zebra striping */
         /* FFixed width columns layout */
         .cv-item-row {
             display: flex;
-            grid-template-columns: 0.55fr 0.25fr 0.2fr;
+            grid-template-columns: 0.5fr 0.35fr 0.15fr;
         }
 
         /* End Fixed width columns layout */
@@ -504,7 +511,7 @@
                             <div><span>{{item.name}}</span></div>
                             <div>
                                 {% if item.url %}
-                                    <a href="{{ item.url }}" target="_blank" style="margin-right: 0.35rem;">{{ item.provider_issuer }}</a>
+                                    <a href="{{ item.url }}" target="_blank" style="margin-right: 0.15rem;">{{ item.provider_issuer }}</a>
                                     <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
                                 {% else %}
                                     <span>{{ item.provider_issuer }}</span>
