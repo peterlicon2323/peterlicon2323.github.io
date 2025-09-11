@@ -184,12 +184,11 @@
   color: var(--cv-muted-color);
   font-style: italic;
 }
-/* Download Link Path */
-.download-link {
-    color: var(--cv-accent-color);
-    text-decoration: none;
-    margin-left: 1em;
-    font-weight: 500;
+/* Download Icon Path */
+.download-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--cv-text-color);
 }
 
 @media (max-width: 768px) {
