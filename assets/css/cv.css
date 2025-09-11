@@ -195,3 +195,35 @@
     font-size: 1.5rem;
   }
 }
+
+
+/* <div class="cv-item">
+                    <div class="cv-item-row">
+                        <div><span>Stable Diffusion</span></div>
+                        <div>
+                            
+                                
+                                <img src="/assets/svg/github.svg" style="width: 17px; height: 17px;" alt="GitHub icon">
+                                <span>
+                                    <a href="https://github.com/Stability-AI/stablediffusion">Stability-AI/stablediffusion</a>
+                                </span>
+                                
+                            
+                        </div>
+                        <div>
+                            <span><p>2024</p>
+</span>
+                        </div>
+                    </div>
+                    
+                        <div class="cv-item-content">
+                            <em style="font-size: 0.85rem; font-style: italic;margin-left: 0em;">Description</em>
+                            <span style="font-size: 0.85rem; font-style: italic">
+                                <p style="display:inline;">Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+</p>
+                            </span>
+                        </div>
+                        <!-- <div class="cv-item-content"><p>Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.</p>
+</div> -->
+                    
+                </div> */
