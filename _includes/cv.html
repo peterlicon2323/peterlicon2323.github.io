@@ -283,6 +283,24 @@
             }
         }
         /* More Infro Addition */
+        #additional_info {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        #additional_info .section-background {
+            background: #fff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        #additional_info .cv-section-header {
+            background: #667eea !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        #additional_info .cv-item-link {
+            background: #fff !important;
+            box-shadow: none;
+        }
         /* End More Info Addition */
     </style>
 
@@ -543,18 +561,19 @@
                 {% for item in section.items %}
                     <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row">
-                            <div class="cv-item-title" style="margin-top: 0rem;">{{ item.name }}</div>
+                            <div class="cv-item-title" style="margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
                             {% if item.url %}
-                                <div>
-                                    {% if item.url contains 'github.com' %}
-                                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
-                                    {% elsif item.url contains 'huggingface.co' %}
-                                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
-                                    {% else %}
-                                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
-                                    {% endif %}
-                                    <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left: 0.5em;">{{ item.url | replace: 'https://', '' }}</a>
-                                </div>
+                            <span>•</span>
+                            <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 1rem;">
+                                {% if item.url contains 'github.com' %}
+                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
+                                {% elsif item.url contains 'huggingface.co' %}
+                                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                {% else %}
+                                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
+                                {% endif %}
+                                <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left: 0.5em;">{{ item.url | replace: 'https://', '' }}</a>
+                            </div>
                             {% endif %}
                         </div>
                     </div>
