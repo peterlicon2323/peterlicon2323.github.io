@@ -220,9 +220,9 @@ data:
   additional_info:
     title: More Information
     items:
-      - name: Certificates
-        url: https://github.com/google
       - name: Projects
+        url: https://github.com/google
+      - name: Certificates
         url: https://github.com/google
       # - name: Blog
       #   url: https://github.com/google
