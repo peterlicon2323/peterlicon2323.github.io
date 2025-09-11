@@ -511,9 +511,9 @@
                             <div>
                                 {% if item.url %}
                                     <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
-                                    <a href="{{ item.url }}">{{ item.provider }}</a>
+                                    <a href="{{ item.url }}">{{ item.provider_issuer }}</a>
                                 {% else %}
-                                    <span>{{ item.provider }}</span>
+                                    <span>{{ item.provider_issuer }}</span>
                                 {% endif %}
                             </div>
                             <div><span>{{item.date | markdownify}}</span></div>
