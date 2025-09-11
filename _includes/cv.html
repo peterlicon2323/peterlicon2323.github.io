@@ -43,6 +43,8 @@
             --cv-link-color: #1e40af;
             --cv-accent-bg: #ffffff;
             --cv-muted-bg: #f8f9fa;
+            --cv-zebra-bg-old: #fff; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #fff; /* Dark mode: darker blue-gray */
         }
 
         /* Light theme (default) */
@@ -55,8 +57,10 @@
             --cv-link-color: #1e40af;
             --cv-accent-bg: #ffffff;
             --cv-muted-bg: #f8f9fa;
+            --cv-zebra-bg-old: #f5f7fa; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #e2e8f0; /* Dark mode: darker blue-gray */
         }
-
+        
         /* Dark theme */
         [data-theme="dark"] {
             --cv-text-color: #f0f0f0;
@@ -67,6 +71,8 @@
             --cv-link-color: #90cdf4;
             --cv-accent-bg: #1a1a1a;
             --cv-muted-bg: #2a2a2a;
+            --cv-zebra-bg-old: #2d3748; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #4a5568; /* Dark mode: darker blue-gray */
         }
 
         .cv { 
@@ -344,10 +350,10 @@
         }
         /* Zebra striping */
         .cv-item:nth-child(odd) {
-            background-color: var(--cv-muted-bg);
+            background-color: var(--cv-zebra-bg-old);
         }
         .cv-item:nth-child(even) {
-            background-color: var(--cv-border);
+            background-color: var(--cv-zebra-bg-even);
         }
         /* Fixed width columns layout */
         .cv-item-row {
