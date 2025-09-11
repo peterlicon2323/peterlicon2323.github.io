@@ -89,6 +89,11 @@ ul.space-y-8 > li {
   }
 }
 
+.text-base {
+  font-size: 1.1rem !important;
+  color: #4b5563;
+}
+
 .text-base.leading-relaxed {
   font-size: 0.75rem;
   color: #4b5563;
@@ -99,11 +104,6 @@ ul.space-y-8 > li {
   .text-base.leading-relaxed {
     color: #d1d5db;
   }
-}
-
-.text-base {
-  font-size: 0.75rem;
-  color: #4b5563;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -150,7 +150,7 @@ div[style*="display: flex"] {
 }
 
 .flex-shrink-0 img:hover {
-  transform: scale(2); /* Zoom image by 2x on hover */
+  transform: scale(2.5); /* Zoom image by 2.5x on hover */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   z-index: 10; /* Ensure zoomed image appears above other elements */
   cursor: zoom-in; /* Change cursor to magnifying glass on hover */
