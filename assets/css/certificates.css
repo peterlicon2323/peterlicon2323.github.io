@@ -89,11 +89,6 @@ ul.space-y-8 > li {
   }
 }
 
-.text-base {
-  font-size: 1.1rem !important;
-  color: #4b5563;
-}
-
 .text-base.leading-relaxed {
   font-size: 0.75rem;
   color: #4b5563;
@@ -106,7 +101,10 @@ ul.space-y-8 > li {
   }
 }
 
-
+.text-base {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
 
 @media (prefers-color-scheme: dark) {
   .text-base {
@@ -136,6 +134,31 @@ div[style*="display: flex"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Ensure zoomed image is contained */
+}
+
+/* Image styles */
+.flex-shrink-0 img {
+  max-width: 100%;
+  max-height: 100%; /* Ensure image does not exceed container height */
+  width: auto;
+  height: auto; /* Allow natural scaling within bounds */
+  object-fit: contain; /* Ensure entire image is visible without cropping */
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flex-shrink-0 img:hover {
+  transform: scale(3); /* Zoom image by 3x on hover */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensure zoomed image appears above other elements */
+}
+
+@media (prefers-color-scheme: dark) {
+  .flex-shrink-0 img {
+    border-color: #374151;
+  }
 }
 
 /* Tags */
@@ -164,29 +187,6 @@ div[style*="display: flex"] {
   }
 }
 
-/* Image styles */
-img {
-  max-width: 100%;
-  max-height: 100%; /* Ensure image does not exceed container height */
-  width: auto;
-  height: auto; /* Allow natural scaling within bounds */
-  object-fit: contain; /* Ensure entire image is visible without cropping */
-  border-radius: 0.5rem;
-  border: 2px solid #e5e7eb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-}
-
-@media (prefers-color-scheme: dark) {
-  img {
-    border-color: #374151;
-  }
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   div[style*="display: flex"] {
@@ -203,7 +203,7 @@ img:hover {
     height: auto; /* Remove fixed height on mobile for better content fit */
   }
 
-  img {
+  .flex-shrink-0 img {
     margin-top: 1rem;
     max-height: 150px; /* Limit image height on mobile */
     width: auto;
