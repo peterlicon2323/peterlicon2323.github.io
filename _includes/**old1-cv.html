@@ -15,6 +15,7 @@
             <button class="print-button" onclick="printDiv()" style="padding: 0.75rem 0.75rem; margin-right: 1rem; background-color: var(--cv-accent-color); color: var(--cv-background); border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: background-color 0.3s;">
                 Print CV
             </button>
+            <!-- <img src="{{ '/assets/svg/download.svg' | relative_url }}" style="width: 24px; height: 24px;" alt="download icon"/> -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-download download-icon" viewBox="0 0 16 16">
               <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
               <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
@@ -45,8 +46,8 @@
             --cv-link-color: #1e40af;
             --cv-accent-bg: #ffffff;
             --cv-muted-bg: #f8f9fa;
-            --cv-zebra-bg-odd: #f5f7fa;
-            --cv-zebra-bg-even: #e2e8f0;
+            --cv-zebra-bg-old: #fff; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #fff; /* Dark mode: darker blue-gray */
         }
 
         /* Light theme (default) */
@@ -59,10 +60,10 @@
             --cv-link-color: #1e40af;
             --cv-accent-bg: #ffffff;
             --cv-muted-bg: #f8f9fa;
-            --cv-zebra-bg-odd: #f5f7fa;
-            --cv-zebra-bg-even: #e2e8f0;
+            --cv-zebra-bg-old: #f5f7fa; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #e2e8f0; /* Dark mode: darker blue-gray */
         }
-
+        
         /* Dark theme */
         [data-theme="dark"] {
             --cv-text-color: #f0f0f0;
@@ -73,72 +74,72 @@
             --cv-link-color: #90cdf4;
             --cv-accent-bg: #1a1a1a;
             --cv-muted-bg: #2a2a2a;
-            --cv-zebra-bg-odd: #2d3748;
-            --cv-zebra-bg-even: #4a5568;
+            --cv-zebra-bg-old: #2d3748; /* Dark mode: dark gray */
+            --cv-zebra-bg-even: #4a5568; /* Dark mode: darker blue-gray */
         }
 
-        .cv {
-            font-family: var(--cv-font-family);
-            color: var(--cv-text-color);
-            line-height: 1.6;
+        .cv { 
+            font-family: var(--cv-font-family); 
+            color: var(--cv-text-color); 
+            line-height: 1.6; 
             background-color: var(--cv-background);
         }
         .cv p { margin: 0; }
         .cv h1, .cv h2 { font-weight: normal; }
-        .cv-photo {
-            height: 150px;
-            margin: 0 1.5em 1.5em 0;
+        .cv-photo { 
+            height: 150px; 
+            margin: 0 1.5em 1.5em 0; 
             margin-left: 1.5em !important;
             margin-right: 1.5em !important;
-            float: left;
-            border-radius: 50%;
+            float: left; 
+            border-radius: 50%; 
             border: 2px solid var(--cv-border);
-            border-bottom-width: 0px !important;
-            border-top-width: 0px !important;
+            border-bottom-width: 0px !important; 
+            border-top-width: 0px !important; 
         }
-        .cv-name {
-            font-size: clamp(2em, calc(2em + 0.8vw), 2.5em);
-            line-height: 1.2;
-            margin: 0.5em 0;
-            text-align: left;
-            color: var(--cv-accent-color);
+        .cv-name { 
+            font-size: clamp(2em, calc(2em + 0.8vw), 2.5em); 
+            line-height: 1.2; 
+            margin: 0.5em 0; 
+            text-align: left; 
+            color: var(--cv-accent-color); 
             background-color: var(--cv-accent-bg);
         }
-        .cv-basic-info-item {
-            margin-right: 1.5em;
-            white-space: nowrap;
+        .cv-basic-info-item { 
+            margin-right: 1.5em; 
+            white-space: nowrap; 
         }
-        .cv-basic-info {
-            clear: both;
-            text-align: center;
-            font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em);
-            margin-bottom: 1rem !important;
+        .cv-basic-info { 
+            clear: both; 
+            text-align: center; 
+            font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em); 
+            margin-bottom: 1rem !important; 
         }
         .cv-section {
-            padding-top: 0rem !important;
+            padding-top: 0rem !important; 
             border-top: 0rem !important;
-            margin-top: 0rem !important;
-            margin-bottom: 0.25em !important;
+            margin-top: 0rem !important; 
+            margin-bottom: 0.25em !important; 
             margin-right: 1em !important;
             margin-left: 1em !important;
         }
-        .cv-section-title {
-            font-size: clamp(1.5rem, calc(1.5rem + 0.6vw), 2rem);
-            margin: 2em 0 1em 0;
-            color: var(--cv-accent-color);
+        .cv-section-title { 
+            font-size: clamp(1.5rem, calc(1.5rem + 0.6vw), 2rem); 
+            margin: 2em 0 1em 0; 
+            color: var(--cv-accent-color); 
             background-color: var(--cv-accent-bg);
-            margin-bottom: 0.1rem !important;
+            margin-bottom: 0.1rem !important; 
             margin-top: 0.1rem !important;
             padding: 0em 0em !important;
-            font-style: italic;
+            font-style: italic; 
         }
-        .cv-item-title {
-            font-weight: 600;
-            font-size: clamp(1em, calc(1em + 0.4vw), 1.2em);
+        .cv-item-title { 
+            font-weight: 600; 
+            font-size: clamp(1em, calc(1em + 0.4vw), 1.2em); 
         }
-        .cv-item {
-            break-inside: avoid;
-            margin-bottom: 1em;
+        .cv-item { 
+            break-inside: avoid; 
+            margin-bottom: 1em; 
         }
         .cv-item-content {
             padding-left: 0px !important;
@@ -148,13 +149,13 @@
             margin-top: 0em !important;
             margin-bottom: 0em !important;
         }
-        .cv-item-content > ul {
-            padding: 0 0 0 1.5em;
-            margin: 0.5em 0;
+        .cv-item-content > ul { 
+            padding: 0 0 0 1.5em; 
+            margin: 0.5em 0; 
         }
-        .cv-item-content em {
-            color: var(--cv-muted-color);
-            font-style: italic;
+        .cv-item-content em { 
+            color: var(--cv-muted-color); 
+            font-style: italic; 
             font-size: 0.9rem;
         }
         .cv-item-row {
@@ -166,6 +167,7 @@
             align-items: center;
             justify-content: space-between;
         }
+
         .cv-item-row a {
             color: var(--cv-link-color);
             text-decoration: none;
@@ -173,43 +175,44 @@
         .cv-item-row a:hover {
             text-decoration: underline;
         }
-        .skill-progress-container {
-            margin: 0em 0em;
-            display: flex;
-            align-items: center;
-            gap: 1em;
+        /* Enhanced progress bar styles for skills */
+        .skill-progress-container { 
+            margin: 0em 0em; 
+            display: flex; 
+            align-items: center; 
+            gap: 1em; 
             width: 100%;
             flex-wrap: nowrap;
         }
-        .skill-progress-label {
-            width: 15rem;
-            font-weight: 600;
-            font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
-            color: var(--cv-text-color);
+        .skill-progress-label { 
+            width: 15rem; 
+            font-weight: 600; 
+            font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em); 
+            color: var(--cv-text-color); 
             flex-shrink: 0;
         }
-        .skill-progress-bar {
-            width: 120px;
-            height: 0.8rem;
-            background-color: var(--cv-background);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--cv-border);
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        .skill-progress-bar { 
+            width: 120px; 
+            height: 0.8rem; 
+            background-color: var(--cv-background); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            border: 1px solid var(--cv-border); 
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
             flex-grow: 1;
         }
-        .skill-progress-fill {
-            height: 100%;
-            background: linear-gradient(to right, var(--cv-accent-color), var(--cv-link-color));
-            transition: width 0.5s ease-in-out;
-            border-radius: 6px;
+        .skill-progress-fill { 
+            height: 100%; 
+            background: linear-gradient(to right, var(--cv-accent-color), var(--cv-link-color)); 
+            transition: width 0.5s ease-in-out; 
+            border-radius: 6px; 
         }
-        .skill-progress-text {
-            font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
-            color: var(--cv-text-color);
-            font-weight: 500;
-            flex-shrink: 0;
-            min-width: 2.75em;
+        .skill-progress-text { 
+            font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em); 
+            color: var(--cv-text-color); 
+            font-weight: 500; 
+            flex-shrink: 0; 
+            min-width: 2.75em; 
             text-align: right;
         }
         .skills-grid {
@@ -220,39 +223,39 @@
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
         .cv-section-title { display: inline-block; background: var(--cv-accent-bg) !important; padding-right: 1.5em; }
-        .cv-section-title:after {
-            position: absolute;
-            top: 50%;
-            z-index: -1;
-            content: '';
-            display: block;
-            width: 100%;
-            border-top: 2px solid var(--cv-accent-color);
+        .cv-section-title:after { 
+            position: absolute; 
+            top: 50%; 
+            z-index: -1; 
+            content: ''; 
+            display: block; 
+            width: 100%; 
+            border-top: 2px solid var(--cv-accent-color); 
         }
         {% endunless %}
-        .cv-section:not(:first-child) {
-            margin-top: 2.5em;
-            padding-top: 2.5em;
+        .cv-section:not(:first-child) { 
+            margin-top: 2.5em; 
+            padding-top: 2.5em; 
             border-top: 1px solid var(--cv-border);
         }
-        .text-muted {
+        .text-muted { 
             color: var(--cv-muted-color) !important;
             background-color: var(--cv-muted-bg) !important;
-            opacity: 1;
-            font-style: italic;
+            opacity: 1; 
+            font-style: italic; 
         }
         .cv ul { margin: 0.5em 0; }
         .cv-basic-info-item a[href]:after { content: none !important; }
-        .contact {
-            white-space: nowrap;
+        .contact { 
+            white-space: nowrap; 
             font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em);
             color: var(--cv-link-color);
         }
-        .contact-block {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5em;
-            white-space: nowrap;
+        .contact-block { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.5em; 
+            white-space: nowrap; 
         }
         @page {
             size: A4;
@@ -268,117 +271,97 @@
                 width: 210mm;
                 height: auto;
                 box-sizing: border-box;
-                background: var(--cv-background);
-                font-family: var(--cv-font-family);
-                color: var(--cv-text-color);
-                line-height: 1.6;
-                padding: 2em;
+                background: #fff !important;
+                font-size: 10pt;
+                line-height: 1.5;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+                color: #000 !important;
             }
-            .cv-name {
-                font-size: clamp(2em, calc(2em + 0.8vw), 2.5em);
-                line-height: 1.2;
-                margin: 0.5em 0;
-                text-align: left;
-                color: var(--cv-accent-color);
-                background-color: var(--cv-accent-bg);
+            h1, .cv-name {
+                font-size: 18pt !important;
+                margin-bottom: 0.5em !important;
+                color: #000 !important;
             }
-            .text-muted {
-                color: var(--cv-muted-color) !important;
-                background-color: var(--cv-muted-bg) !important;
-                font-style: italic;
-                font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em);
-            }
+            .text-muted { font-size: 9pt; color: #666 !important; }
             .cv-section-title {
-                font-size: clamp(1.5rem, calc(1.5rem + 0.6vw), 2rem);
-                margin: 2em 0 1em 0;
-                color: var(--cv-accent-color);
-                background-color: var(--cv-accent-bg);
-                font-style: italic;
-                padding: 0;
+                font-size: 12pt;
+                break-before: auto;
+                break-after: auto;
+                color: #1e40af !important;
             }
             .cv-item-row, .cv-item-content {
-                font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
-                color: var(--cv-text-color);
+                font-size: 10pt;
+                color: #000 !important;
             }
             .contact-block, .contact, a.contact {
-                font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em);
-                color: var(--cv-link-color);
+                font-size: 9pt;
+                color: #000 !important;
             }
             .cv-item {
-                break-inside: avoid;
-                margin-bottom: 1em;
+                margin: 0.75em 0;
+                break-before: auto;
+                break-after: auto;
             }
             .cv-section {
-                margin-top: 2.5em;
-                padding-top: 2.5em;
-                border-top: 1px solid var(--cv-border);
+                font-size: 10pt;
+                break-inside: auto;
+                margin: 1em 0;
             }
             .print-button, .other-version-link { display: none; }
+            .cv-section:not(:first-child) { border-top: 1px solid #000; }
             .cv a[href]:after { content: none !important; }
             .cv-photo {
-                height: 150px;
-                margin: 0 1.5em 1.5em 0;
-                float: left;
-                border-radius: 50%;
-                border: 2px solid var(--cv-border);
-                border-bottom-width: 0px;
-                border-top-width: 0px;
+                height: 100mm;
+                float: none;
+                margin: 0 auto 1em auto;
+                display: block;
+                border: 1px solid #000;
             }
-            .cv-basic-info {
-                clear: both;
-                text-align: center;
-                font-size: clamp(0.8em, calc(0.8em + 0.2vw), 0.95em);
-                margin-bottom: 1rem;
-            }
-            .skill-progress-container {
-                display: flex;
-                align-items: center;
-                gap: 1em;
-                width: 100%;
+            .cv-basic-info > div, header > div {
                 flex-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .contact-block { margin: 0 0.5em; }
+            .skill-progress-container {
+                gap: 0.75em;
             }
             .skill-progress-label {
-                width: 15rem;
-                font-weight: 600;
-                font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
-                color: var(--cv-text-color);
+                font-size: 10pt;
+                width: 140px;
+                color: #000 !important;
             }
             .skill-progress-text {
-                font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
-                color: var(--cv-text-color);
-                font-weight: 500;
-                min-width: 2.75em;
-                text-align: right;
+                font-size: 9pt;
+                min-width: 50px;
+                color: #000 !important;
             }
             .skill-progress-fill {
-                background: linear-gradient(to right, var(--cv-accent-color), var(--cv-link-color));
+                background: linear-gradient(to right, #1e40af, #3b82f6) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
             .skills-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 1.5em;
+                grid-template-columns: 1fr;
             }
-            .cv-item:nth-child(odd) {
-                background-color: var(--cv-zebra-bg-odd);
-            }
+            .cv-item:nth-child(odd),
             .cv-item:nth-child(even) {
-                background-color: var(--cv-zebra-bg-even);
-            }
-            .cv-item-row {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5em;
-                align-items: center;
-                justify-content: space-between;
+                background-color: #fff !important;
             }
         }
+        /* Zebra striping */
         .cv-item:nth-child(odd) {
-            background-color: var(--cv-zebra-bg-odd);
+            background-color: var(--cv-zebra-bg-old);
         }
         .cv-item:nth-child(even) {
             background-color: var(--cv-zebra-bg-even);
+        }
+        /* Fixed width columns layout */
+        .cv-item-row {
+            display: flex;
+            grid-template-columns: 0.5fr 0.35fr 0.15fr;
         }
     </style>
 
@@ -410,7 +393,7 @@
                 <span class="contact-block">
                     <img src="{{ '/assets/svg/email.svg' | relative_url }}" style="width: 20px; height: 20px;" alt="email icon"/>
                     <a class="contact" href="mailto:{{cv.email}}">{{cv.email}}</a>
-                </span>
+                </span>   
             {% endif %}
             <span>•</span>
             {% if cv.phone %}
@@ -482,21 +465,22 @@
                         <div class="cv-item-row">
                             <div>
                                 <span>{{item.degree}}</span>
-                            </div>
+                            </div>                            
                             {% if item.thesis %}
                             <div>
                                 <em>GPA:</em>
                                 <span>{{item.gpa}}</span>
-                            </div>
+                            </div>                                
                             {% endif %}
                             <div>
                                 <em>Duration:</em>
                                 <span>{{item.date | markdownify}}</span>
                             </div>
+                            
                         </div>
                         <div class="cv-item-content">
                             <em>University:</em>
-                            <span>{{item.university | markdownify | strip_html}}</span>
+                            <span>{{item.university |  markdownify | strip_html}}</span>
                         </div>
                         {% if item.thesis %}
                             <div class="cv-item-content">
@@ -539,7 +523,7 @@
                             {% endif %}
                         </div>
                         <div>
-                            <span>{{item.date | markdownify}}</span>
+                            <span>{{item.date  | markdownify}}</span>
                         </div>
                     </div>
                     {% if item.description %}
@@ -580,6 +564,7 @@
                                     </span>
                                 </div>
                             {% endif %}
+                                                      
                         </div>
                     </div>
                 {% endfor %}
@@ -603,6 +588,7 @@
                                 </span>
                             </div>
                         {% endif %}
+                        
                         </div>
                     </div>
                 {% endfor %}
@@ -636,7 +622,7 @@
                                 {% else %}
                                     <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Website icon"/>
                                 {% endif %}
-                                <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left: 0.15em;">{{ item.url | replace: 'https://', '' }}</a>
+                                <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left:  0.15em;">{{ item.url | replace: 'https://', '' }}</a>
                             </div>
                             {% endif %}
                         </div>
