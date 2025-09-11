@@ -283,10 +283,10 @@
             }
         }
         /* More Infro Addition */
-        #additional_info {
+        /* #additional_info {
             break-inside: avoid;
             page-break-inside: avoid;
-        }
+        } */
         /* #additional_info .section-background {
             background: #fff !important;
             -webkit-print-color-adjust: exact !important;
@@ -297,10 +297,10 @@
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         } */
-        #additional_info .cv-item-link {
+        /* #additional_info .cv-item-link {
             background: #fff !important;
             box-shadow: none;
-        }
+        } */
         /* End More Info Addition */
     </style>
 
@@ -561,7 +561,7 @@
                 {% for item in section.items %}
                     <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row">
-                            <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
+                            <div class="cv-item-title" style="text-align: right; margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
                             {% if item.url %}
                             <span>•</span>
                             <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 1rem;">
