@@ -102,8 +102,9 @@
         }
         .cv-item-content em { 
             color: #6b7280; 
-            margin-left: 0.75em; 
+            /* margin-left: 0.75em;  */
             font-style: italic; 
+            font-size: 0.9rem;
         }
         .cv-item-row {
             font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
@@ -228,11 +229,11 @@
             .cv-item-row, .cv-item-content {
                 font-size: 10pt;
             }
-            .cv-item-row span:not(:last-child)::after {
+            /* .cv-item-row span:not(:last-child)::after {
                 content: '•';
                 margin: 0 0.5em;
                 color: #000;
-            }
+            } */
             .contact-block, .contact, a.contact {
                 font-size: 9pt;
             }
@@ -448,8 +449,8 @@
                     </div>
                     {% if item.description %}
                         <div class="cv-item-content">
-                            <em>Details:</em>
-                            <span>
+                            <em>Description:</em>
+                            <span style="font-style: italic; font-size: 0.85rem;">
                                 <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                             </span>
                         </div>
@@ -486,8 +487,8 @@
                         <div class="cv-item-content">
                             {% if item.description %}
                                 <div>
-                                    <em>Details:</em>
-                                    <span>
+                                    <em>Description:</em>
+                                    <span style="font-style: italic; font-size: 0.85rem;">
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
                                 </div>
@@ -510,8 +511,8 @@
                         <div class="cv-item-content">
                         {% if item.description %}
                             <div>
-                                <em>Details:</em>
-                                <span>
+                                <em>Description:</em>
+                                <span style="font-style: italic; font-size: 0.85rem;">
                                     <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                 </span>
                             </div>
