@@ -200,6 +200,11 @@
   }
 }
 
+.download-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(var(--cv-text-color)); /* Apply text color to SVG icon */
+}
 
 /* <div class="cv-item">
                     <div class="cv-item-row">
