@@ -29,15 +29,15 @@ ul.space-y-8 {
   list-style: none;
 }
 
-/* Certificate card styles */
-li {
+/* Certificate card styles (only apply to li within ul.space-y-8) */
+ul.space-y-8 > li {
   background: linear-gradient(145deg, #ffffff, #f0f4f8);
   border: 1px solid #e5e7eb;
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 200px; /* Fixed height for all li elements */
+  height: 200px; /* Fixed height for certificate li elements */
   display: flex;
   align-items: stretch;
   overflow: hidden; /* Prevent content from overflowing the li */
@@ -45,13 +45,13 @@ li {
 
 /* Dark mode card styles */
 @media (prefers-color-scheme: dark) {
-  li {
+  ul.space-y-8 > li {
     background: linear-gradient(145deg, #1f2937, #111827);
     border-color: #374151;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
   }
 
-  li:hover {
+  ul.space-y-8 > li:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
   }
 }
@@ -138,7 +138,7 @@ div[style*="display: flex"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent image from overflowing */
+  overflow-y: auto; /* Add scrollbar for image overflow */
 }
 
 /* Tags */
@@ -202,7 +202,7 @@ img:hover {
     max-width: 100%;
   }
 
-  li {
+  ul.space-y-8 > li {
     height: auto; /* Remove fixed height on mobile for better content fit */
   }
 
