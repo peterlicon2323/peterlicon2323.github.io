@@ -184,6 +184,13 @@
   color: var(--cv-muted-color);
   font-style: italic;
 }
+/* Download Link Path */
+.download-link {
+    color: var(--cv-accent-color);
+    text-decoration: none;
+    margin-left: 1em;
+    font-weight: 500;
+}
 
 @media (max-width: 768px) {
   .cv-photo {
@@ -200,11 +207,6 @@
   }
 }
 
-.download-icon {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) saturate(100%) invert(var(--cv-text-color)); /* Apply text color to SVG icon */
-}
 
 /* <div class="cv-item">
                     <div class="cv-item-row">
