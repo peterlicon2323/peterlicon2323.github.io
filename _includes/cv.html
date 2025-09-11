@@ -539,9 +539,9 @@
             <!-- Addition -->
             {% elsif sec_id == 'additional_info' %}
                 {% for item in section.items %}
-                    <div class="cv-item">
+                    <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row">
-                            <div class="cv-item-title">{{ item.name }}</div>
+                            <div class="cv-item-title" style="margin-top: 0rem;">{{ item.name }}</div>
                             {% if item.url %}
                                 <div>
                                     {% if item.url contains 'github.com' %}
