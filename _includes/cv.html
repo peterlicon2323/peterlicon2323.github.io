@@ -297,10 +297,12 @@
             gap: 10px; /* Optional: adds spacing between columns */
             align-items: center; /* Vertically align items */
             width: 100%; /* Ensure it takes full width */
+            justify-content: space-between !important;
         }
         .cv-item-row > div {
             display: flex;
             align-items: center; /* Ensure content within each div aligns vertically */
+            justify-content: space-between !important;
         }
         /* End Fixed width columns layout */
         /* More Infro Addition */
@@ -510,7 +512,7 @@
                             <div><span>{{item.name}}</span></div>
                             <div>
                                 {% if item.url %}
-                                    <a href="{{ item.url }}" target="_blank">{{ item.provider_issuer }}</a>
+                                    <a href="{{ item.url }}" target="_blank" style="margin-right: 0.35rem;">{{ item.provider_issuer }}</a>
                                     <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
                                 {% else %}
                                     <span>{{ item.provider_issuer }}</span>
