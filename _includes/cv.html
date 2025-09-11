@@ -282,6 +282,88 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* More Infro Addition */
+        .cv-section { 
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .cv-section-header { 
+            text-align: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .cv-section-title { 
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .cv-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+        .cv-item-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        .cv-item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            text-transform: uppercase;
+            margin: 0;
+            flex: 1;
+        }
+        .cv-item-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+        .cv-item-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .cv-item-link img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        .cv-item-link a {
+            color: #1e40af;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .cv-item-link a:hover {
+            color: #1e3a8a;
+        }
+        .section-background {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            padding: 1rem;
+        }
+        /* End More Info Addition */
     </style>
 
     <!-- Name and Avatar -->
@@ -537,7 +619,7 @@
                     </div>
                 </div>
             <!-- Addition -->
-            {% elsif sec_id == 'additional_info' %}
+            <!-- {% elsif sec_id == 'additional_info' %}
                 {% for item in section.items %}
                     <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row">
@@ -557,7 +639,25 @@
                         </div>
                     </div>
                 {% endfor %}
-            {% endif %}
+            {% endif %} -->
+            {% elsif sec_id == 'additional_info' %}
+                <div class="section-background">
+                    <header class="cv-section-header">
+                        <h2 class="cv-section-title">More Information</h2>
+                    </header>
+                    
+                    {% for item in section.items %}
+                        <div class="cv-item">
+                            <div class="cv-item-row">
+                                <div class="cv-item-title">{{ item.name }}</div>
+                                <div class="cv-item-link">
+                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" alt="GitHub icon">
+                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://', '' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             <!-- Finish Addition -->
         </section>
     {% endfor %}
