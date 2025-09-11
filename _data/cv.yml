@@ -168,6 +168,8 @@ data:
         score: 7/10
       - skill: C++, PHP
         score: 6/10
+      # - skill: Docker
+      #   score: 6/10
 
   projects:
     title: AI & Programming Projects
