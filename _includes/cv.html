@@ -451,17 +451,17 @@
                         <div>
                             {% if item.url %}
                                 {% if item.url contains 'github.com' %}
-                                <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
+                                <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="GitHub icon"/>
                                 <span>
                                     <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com/', '' }}</a>
                                 </span>
                                 {% elsif item.url contains 'gitlab.com' %}
-                                <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitLab icon"/>
+                                <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="GitLab icon"/>
                                 <span>
                                     <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com/', '' }}</a>
                                 </span>
                                 {% elsif item.url contains 'huggingface.co' %}
-                                <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Hugging Face icon"/>
                                 <span>
                                     <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
                                 </span>
@@ -496,21 +496,26 @@
                     <div class="cv-item">
                         <div class="cv-item-row">
                             <div><span>{{item.name}}</span></div>
-                            <div><span>{{item.provider}}</span></div>
+                            <!-- <div>
+                                <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
+                                <span>{{item.provider_issuer}}</span>
+                            </div>
                             {% if item.url %}
                                 <div>
                                     <em>URL:</em>
                                     <span>
-                                        <!-- <p style="display:inline;">{{item.url | markdownify | strip_html}}</p> -->
                                         <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
                                     </span>
-
-                                    <!-- <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
-                                    <span>
-                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
-                                    </span> -->
                                 </div>
-                            {% endif %}
+                            {% endif %} -->
+                            <div>
+                                {% if item.url %}
+                                    <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
+                                    <a href="{{ item.url }}">{{ item.provider }}</a>
+                                {% else %}
+                                    <span>{{ item.provider }}</span>
+                                {% endif %}
+                            </div>
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
                         <div class="cv-item-content">
@@ -575,11 +580,11 @@
                             <span>•</span>
                             <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 1rem;">
                                 {% if item.url contains 'github.com' %}
-                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
+                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="GitHub icon"/>
                                 {% elsif item.url contains 'huggingface.co' %}
-                                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Hugging Face icon"/>
                                 {% else %}
-                                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
+                                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Website icon"/>
                                 {% endif %}
                                 <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left:  0.15em;">{{ item.url | replace: 'https://', '' }}</a>
                             </div>
