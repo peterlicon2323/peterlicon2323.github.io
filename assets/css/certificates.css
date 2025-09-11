@@ -102,11 +102,21 @@ li:hover {
   }
 }
 
-/* Flex container */
+/* Flex container with 60/40 split */
 div[style*="display: flex"] {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
+}
+
+.flex-1 {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.flex-shrink-0 {
+  flex: 0 0 40%;
+  max-width: 40%;
 }
 
 /* Tags */
@@ -137,7 +147,7 @@ div[style*="display: flex"] {
 
 /* Image styles */
 img {
-  max-width: 12rem;
+  max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
   border: 2px solid #e5e7eb;
@@ -162,8 +172,12 @@ img:hover {
     align-items: center;
   }
 
-  img {
+  .flex-1, .flex-shrink-0 {
+    flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  img {
     margin-top: 1rem;
   }
 
