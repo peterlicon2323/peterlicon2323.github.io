@@ -290,19 +290,7 @@
             background-color: #e6f3ff;
         }
         /* End Zebra striping */
-        /* FFixed width columns layout */
-        .cv-item-row {
-            display: grid;
-            grid-template-columns: 0.7fr 0.1fr 0.1fr 0.1fr;
-            gap: 10px; /* Optional: adds spacing between columns */
-            align-items: center; /* Vertically align items */
-            width: 100%; /* Ensure it takes full width */
-        }
-        .cv-item-row > div {
-            display: flex;
-            align-items: center; /* Ensure content within each div aligns vertically */
-        }
-        /* End Fixed width columns layout */
+
         /* More Infro Addition */
         /* #additional_info {
             break-inside: avoid;
@@ -515,6 +503,7 @@
                                 {% else %}
                                     <span>{{ item.provider_issuer }}</span>
                                 {% endif %}
+                                <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
                             </div>
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
