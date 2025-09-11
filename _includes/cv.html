@@ -363,6 +363,25 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
             padding: 1rem;
         }
+
+        #additional_info {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        #additional_info .section-background {
+            background: #fff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        #additional_info .cv-section-header {
+            background: #667eea !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        #additional_info .cv-item-link {
+            background: #fff !important;
+            box-shadow: none;
+        }
         /* End More Info Addition */
     </style>
 
@@ -620,23 +639,26 @@
                 </div>
             <!-- Addition -->
             {% elsif sec_id == 'additional_info' %}
-                <div class="section-background">
-                    <header class="cv-section-header">
-                        <h2 class="cv-section-title">More Information</h2>
-                    </header>
-                    
-                    {% for item in section.items %}
-                        <div class="cv-item">
-                            <div class="cv-item-row">
-                                <div class="cv-item-title">{{ item.name }}</div>
-                                <div class="cv-item-link">
-                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" alt="GitHub icon">
-                                    <a href="{{ item.url }}">{{ item.url | replace: 'https://', '' }}</a>
+                {% for item in section.items %}
+                    <div class="cv-item" style="margin-bottom: 0rem;">
+                        <div class="cv-item-row">
+                            <div class="cv-item-title" style="margin-top: 0rem;">{{ item.name }}</div>
+                            {% if item.url %}
+                                <div>
+                                    {% if item.url contains 'github.com' %}
+                                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
+                                    {% elsif item.url contains 'huggingface.co' %}
+                                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Hugging Face icon"/>
+                                    {% else %}
+                                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
+                                    {% endif %}
+                                    <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left: 0.5em;">{{ item.url | replace: 'https://', '' }}</a>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
             <!-- Finish Addition -->
         </section>
     {% endfor %}
