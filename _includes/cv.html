@@ -283,24 +283,34 @@
             }
         }
         /* More Infro Addition */
-        /* #additional_info {
-            break-inside: avoid;
-            page-break-inside: avoid;
-        } */
-        /* #additional_info .section-background {
-            background: #fff !important;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
+        .cv-item-row {
+            font-size: clamp(0.9em, calc(0.9em + 0.4vw), 1.05em);
+            margin-bottom: 0em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            align-items: center;
+            justify-content: space-between; /* Added to push name left and URL right */
         }
-        #additional_info .cv-section-header {
-            background: #667eea !important;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        } */
-        /* #additional_info .cv-item-link {
-            background: #fff !important;
-            box-shadow: none;
-        } */
+
+        .cv-item-row span• { /* Hide the bullet visually without removing it */
+            visibility: hidden;
+            margin: 0;
+        }
+
+        /* For the additional_info specific rows */
+        .cv-item-row .name-div {
+            flex: 1;
+            text-align: left;
+        }
+
+        .cv-item-row .url-div {
+            flex: 0 0 auto;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
         /* End More Info Addition */
     </style>
 
@@ -561,10 +571,10 @@
                 {% for item in section.items %}
                     <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row">
-                            <div class="cv-item-title" style="text-align: right; margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
+                            <div class="cv-item-title name-div">{{ item.name }}</div>
                             {% if item.url %}
                             <span>•</span>
-                            <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 1rem;">
+                            <div class="cv-item-title url-div">
                                 {% if item.url contains 'github.com' %}
                                     <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="GitHub icon"/>
                                 {% elsif item.url contains 'huggingface.co' %}
@@ -572,7 +582,7 @@
                                 {% else %}
                                     <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 17px; height: 17px;" alt="Website icon"/>
                                 {% endif %}
-                                <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none; margin-left: 0.5em;">{{ item.url | replace: 'https://', '' }}</a>
+                                <a href="{{ item.url }}" style="color: #1e40af; text-decoration: none;">{{ item.url | replace: 'https://', '' }}</a>
                             </div>
                             {% endif %}
                         </div>
