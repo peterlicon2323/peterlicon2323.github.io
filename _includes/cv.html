@@ -496,25 +496,14 @@
                     <div class="cv-item">
                         <div class="cv-item-row">
                             <div><span>{{item.name}}</span></div>
-                            <!-- <div>
-                                <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
-                                <span>{{item.provider_issuer}}</span>
-                            </div>
-                            {% if item.url %}
-                                <div>
-                                    <em>URL:</em>
-                                    <span>
-                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
-                                    </span>
-                                </div>
-                            {% endif %} -->
                             <div>
                                 {% if item.url %}
+                                    <a href="{{ item.url }}" target="_blank">{{ item.provider_issuer }}</a>
                                     <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
-                                    <a href="{{ item.url }}">{{ item.provider_issuer }}</a>
                                 {% else %}
                                     <span>{{ item.provider_issuer }}</span>
                                 {% endif %}
+                                <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
                             </div>
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
