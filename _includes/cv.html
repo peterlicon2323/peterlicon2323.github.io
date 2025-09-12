@@ -59,8 +59,8 @@
             --cv-link-color: #1e40af;
             --cv-accent-bg: #ffffff;
             --cv-muted-bg: #f8f9fa;
-            --cv-zebra-bg-odd: #f5f7fa;
-            --cv-zebra-bg-even: #e2e8f0;
+            --cv-zebra-bg-odd: #f1f3f5;
+            --cv-zebra-bg-even: #ffffff;
         }
 
         /* Dark theme */
@@ -73,8 +73,8 @@
             --cv-link-color: #90cdf4;
             --cv-accent-bg: #1a1a1a;
             --cv-muted-bg: #2a2a2a;
-            --cv-zebra-bg-odd: #2d3748;
-            --cv-zebra-bg-even: #4a5568;
+            --cv-zebra-bg-odd: #3c4248;
+            --cv-zebra-bg-even: #2f343a;
         }
 
         .cv {
@@ -261,6 +261,7 @@
         .cv-item:nth-child(even) {
             background-color: var(--cv-zebra-bg-even);
         }
+
         @page {
             size: A4;
             margin: 0mm;
@@ -359,12 +360,18 @@
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 1.5em;
             }
+            /* Zebra-stripe priting */
             .cv-item:nth-child(odd) {
-                background-color: var(--cv-zebra-bg-odd);
+                background-color: var(--cv-zebra-bg-odd) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             .cv-item:nth-child(even) {
-                background-color: var(--cv-zebra-bg-even);
+                background-color: var(--cv-zebra-bg-even) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
+            /* End Zebra-stripe priting */
             .cv-item-row {
                 display: flex;
                 flex-wrap: wrap;
