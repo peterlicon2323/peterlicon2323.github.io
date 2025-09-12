@@ -104,6 +104,12 @@
             color: var(--cv-accent-color);
             background-color: var(--cv-accent-bg);
         }
+        .name-slogan {
+            margin-left: 1em; 
+            margin-right: 1em; 
+            border-bottom-width: 0em; 
+            margin-bottom: 1em;
+        }
         .cv-basic-info-item {
             margin-right: 1.5em;
             white-space: nowrap;
@@ -262,7 +268,16 @@
         .cv-item:nth-child(even) {
             background-color: var(--cv-zebra-bg-even);
         }
-
+        /* University, Thesis name */
+        .university-name {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .thesis-name {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        /* End University, Thesis name */
         @page {
             size: A4;
             margin: 0mm;
@@ -285,7 +300,10 @@
                 hyphens: auto;
                 color: #000 !important;
             }
-             h1, .cv-name {
+            .name-slogan {
+                margin-bottom: 5em !important;
+            }
+            h1, .cv-name {
                 font-size: 18pt !important;
                 margin-bottom: 0.5em !important;
                 color: #000 !important;
@@ -293,10 +311,9 @@
             .text-muted { 
                 font-size: 9pt; 
                 color: #666 !important;
-                margin-bottom: 2rem !important;
             }
             .cv-section-title {
-                font-size: 12pt;
+                font-size: 10.5pt;
                 break-before: auto;
                 break-after: auto;
                 color: #1e40af !important;
@@ -389,10 +406,11 @@
                 justify-content: space-between;
             }
         }
+        
     </style>
 
     <!-- Name and Avatar -->
-    <header class="name-slogan" style="margin-left: 1em; margin-right: 1em; border-bottom-width: 0em; margin-bottom: 1em;">
+    <header class="name-slogan">
         <img class="cv-photo" src="{{cv.photo}}" alt="my photo" style="border-left-style: solid; border-left-width: 0px; border-right-width: 0px; border-right-style: solid; margin-left: 2em; padding-left: 0px; margin-right: 2em;"/>
         <h1 class="cv-name" style="border-right-width: 0px; border-right-style: solid; text-align: left;">{{cv.name}}</h1>
         <span class="text-muted">{{cv.tagline}}</span>
@@ -499,20 +517,20 @@
                             </div>
                             {% endif %}
                             <div>
-                                <em>Duration:</em>
+                                <!-- <em>Duration:</em> -->
                                 <span>{{item.date | markdownify}}</span>
                             </div>
                         </div>
                         <div class="cv-item-content">
                             <em>University:</em>
-                            <span style="font-size: 1rem; font-weight: 700;">
+                            <span class="university-name">
                                 {{item.university | markdownify | strip_html}}
                             </span>
                         </div>
                         {% if item.thesis %}
                             <div class="cv-item-content">
                                 <em>Thesis:</em>
-                                <span style="font-size: 1rem; font-weight: 700;">
+                                <span class="thesis-name">
                                     <p style="display:inline;">{{item.thesis | strip_html}}</p>
                                 </span>
                             </div>
