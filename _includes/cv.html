@@ -401,6 +401,7 @@
                 grid-template-columns: 1fr;
                 gap: 1em;
             }
+            /* Zebra-stripe printing */
             .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
                 background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
@@ -411,7 +412,6 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            /* Zebra-stripe priting */
             .cv-item:nth-child(odd) {
                 background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
@@ -422,7 +422,7 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            /* End Zebra-stripe priting */
+            /* End Zebra-stripe printing */
             .cv-item-row {
                 display: flex;
                 flex-wrap: wrap;
