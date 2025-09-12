@@ -104,31 +104,31 @@ data:
   certificates:
     title: Certificates
     items:
-      - name: Deep Learning Specialization
+      - name: Deep Learning Specialization 1
         date: Jun. 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         # url: https://www.coursera.org/specializations/deep-learning
         url: Coursera
         description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
-      - name: Deep Learning Specialization
+      - name: Deep Learning Specialization 2
         date: Jun. 15, 2023
         provider_issuer: DataCamp
         url: DataCamp
         description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
-      - name: Deep Learning Specialization
+      - name: Deep Learning Specialization 3
         date: Jun. 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         url: NetCad
         description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
-      - name: Deep Learning Specialization
+      - name: Deep Learning Specialization 4
         date: Jun. 15, 2023
         provider_issuer: Google Cloud Skills Boost
         url: Google Cloud Skills Boost
         description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
-      - name: Deep Learning Specialization
+      - name: Deep Learning Specialization 5
         date: Jun. 15, 2023
         provider_issuer: Microsoft Learn
-        url: Microsoft Learn
+        url: Microsoft Learn 6
         description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.      
 
   # skills:
@@ -174,7 +174,23 @@ data:
   projects:
     title: AI & Programming Projects
     items:
-      - name: Stable Diffusion
+      - name: Stable Diffusion 1
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion 2
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion 3
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion 4
+        date: 2024
+        url: https://github.com/Stability-AI/stablediffusion
+        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+      - name: Stable Diffusion 5
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
@@ -182,27 +198,11 @@ data:
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
+      - name: Stable Diffusion 6
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
-        date: 2024
-        url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
-        date: 2024
-        url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
-        date: 2024
-        url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
-        date: 2024
-        url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-      - name: Stable Diffusion
+      - name: Stable Diffusion 7
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
