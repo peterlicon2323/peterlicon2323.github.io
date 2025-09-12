@@ -456,7 +456,9 @@
                 font-weight: bold;
             }
         }
-
+        cv-item-content.more {
+            line-height: 1.2;
+        }
         .cv-item-content.about {
             font-style: italic;
             font-size: 8pt !important;
@@ -656,7 +658,7 @@
                     </div>
                 {% endfor %}
                 </div>
-                <div class="cv-item-content">
+                <div class="cv-item-content more">
                     <em>For additional projects, please refer to the <a href="#additional_info" style="color: var(--cv-accent-color); text-decoration: none;">More Information</a>.</em>
                 </div>
 
@@ -692,7 +694,7 @@
                     </div>
                 {% endfor %}
                 </div>
-                <div class="cv-item-content">
+                <div class="cv-item-content more">
                     <em>For a comprehensive list of certifications, please refer to the <a href="#additional_info" style="color: var(--cv-accent-color); text-decoration: none;">More Information</a>.</em>
                 </div>
             {% elsif sec_id == 'experience' %}
@@ -733,22 +735,26 @@
             {% elsif sec_id == 'additional_info' %}
                 {% for item in section.items %}
                     <div class="cv-item" style="margin-bottom: 0rem;">
-                        <div class="cv-item-row" style="display: flex; justify-content: center !important;">
-                            <div class="cv-item-title" style="font-size: 1.1rem; text-align: right; margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
-                            {% if item.url %}
-                            <span>•</span>
-                            <div class="cv-item-title" style="font-size: 1.1rem; text-align: left; margin-top: 0rem; padding-left: 1rem;">
-                                {% if item.url contains 'github.com' %}
-                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="GitHub icon"/>
-                                {% elsif item.url contains 'huggingface.co' %}
-                                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Hugging Face icon"/>
-                                {% else %}
-                                    <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Website icon"/>
+                        
+                        <div class="cv-item-row" style="display: flex; justify-content: center !important; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center;">
+                                <div class="cv-item-title" style="font-size: 1.1rem; text-align: right; margin-top: 0rem; padding-right: 1rem;">{{ item.name }}</div>
+                                {% if item.url %}
+                                <span style="margin: 0 0.5rem;">•</span>
+                                <div class="cv-item-title" style="font-size: 1.1rem; text-align: left; margin-top: 0rem; padding-left: 1rem;">
+                                    {% if item.url contains 'github.com' %}
+                                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="GitHub icon"/>
+                                    {% elsif item.url contains 'huggingface.co' %}
+                                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Hugging Face icon"/>
+                                    {% else %}
+                                        <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 16px; height: 16px;" alt="Website icon"/>
+                                    {% endif %}
+                                    <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left: 0.15em;">{{ item.url | replace: 'https://', '' }}</a>
+                                </div>
                                 {% endif %}
-                                <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left: 0.15em;">{{ item.url | replace: 'https://', '' }}</a>
                             </div>
-                            {% endif %}
                         </div>
+
                     </div>
                 {% endfor %}
             {% endif %}
