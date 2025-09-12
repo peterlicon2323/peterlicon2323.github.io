@@ -227,7 +227,7 @@
         .two-column-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5em;
+            gap: 0.5em;
         }
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
@@ -267,10 +267,10 @@
             white-space: nowrap;
         }
 
-        .cv-item:nth-child(odd) {
+        .cv-item:nth-child(4n-3), .cv-item:nth-child(4n) {
             background-color: var(--cv-zebra-bg-odd);
         }
-        .cv-item:nth-child(even) {
+        .cv-item:nth-child(4n-2), .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
         }
         /* University, Thesis name */
@@ -397,12 +397,12 @@
                 gap: 1em;
             }
             /* Zebra-stripe priting */
-            .cv-item:nth-child(odd) {
+            .cv-item:nth-child(4n-3), .cv-item:nth-child(4n) {
                 background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .cv-item:nth-child(even) {
+            .cv-item:nth-child(4n-2), .cv-item:nth-child(4n-1) {
                 background-color: var(--cv-zebra-bg-even) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -429,8 +429,8 @@
             }
         }
         .degree {
-                font-size: 1.1rem
-            }
+            font-size: 1.1rem
+        }
     </style>
 
     <!-- Name and Avatar -->
