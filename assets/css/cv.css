@@ -52,7 +52,7 @@
   background-color: var(--cv-background);
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .cv h2 {
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   margin-bottom: 0.75rem;
 }
 
