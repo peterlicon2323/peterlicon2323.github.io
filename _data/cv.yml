@@ -109,27 +109,27 @@ data:
         provider_issuer: Coursera (deeplearning.ai)
         # url: https://www.coursera.org/specializations/deep-learning
         url: Coursera
-        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+        description: Completed a series on neural networks, CNNs, RNNs, and sequence models.
       - name: Deep Learning Specialization 2
         date: Jun. 15, 2023
         provider_issuer: DataCamp
         url: DataCamp
-        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+        description: Completed a series on neural networks, CNNs, RNNs, and sequence models.
       - name: Deep Learning Specialization 3
         date: Jun. 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         url: NetCad
-        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+        description: Completed a series on neural networks, CNNs, RNNs, and sequence models.
       - name: Deep Learning Specialization 4
         date: Jun. 15, 2023
         provider_issuer: Google Cloud Skills Boost
         url: Google Cloud Skills Boost
-        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.
+        description: Completed a series on neural networks, CNNs, RNNs, and sequence models.
       - name: Deep Learning Specialization 5
         date: Jun. 15, 2023
         provider_issuer: Microsoft Learn
         url: Microsoft Learn 6
-        description: Completed a 5‑course series covering neural networks, CNNs, RNNs, and sequence models.      
+        description: Completed a series on neural networks, CNNs, RNNs, and sequence models.      
 
   # skills:
   #   title: Technical Skills
