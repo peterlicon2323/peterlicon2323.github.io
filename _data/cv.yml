@@ -104,31 +104,31 @@ data:
   certificates:
     title: Certificates
     items:
-      - name: Deep Learning Specialization 1
+      - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         # url: https://www.coursera.org/specializations/deep-learning
-        url: Coursera
+        url: Associate AI Engineer for Developers
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
-      - name: Deep Learning Specialization 2
+      - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: DataCamp
         url: DataCamp
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
-      - name: Deep Learning Specialization 3
+      - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         url: NetCad
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
-      - name: Deep Learning Specialization 4
+      - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: Google Cloud Skills Boost
         url: Google Cloud Skills Boost
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
-      - name: Deep Learning Specialization 5
+      - name: Machine Learning Scientist in Python
         date: Jun 15, 2023
         provider_issuer: Microsoft Learn
-        url: Microsoft Learn 6
+        url: Machine Learning Scientist in Python
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.    
 
   # skills:
@@ -174,35 +174,35 @@ data:
   projects:
     title: AI & Programming Projects
     items:
-      - name: Stable Diffusion 1
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 2
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 3
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 4
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 5
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 6
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
-      - name: Stable Diffusion 7
+      - name: Grayscale2color-landscape-from-scratch
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
         description: "Stable Diffusion: new checkpoints for image generation."
