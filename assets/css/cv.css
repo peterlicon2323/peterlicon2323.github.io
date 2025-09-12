@@ -52,7 +52,7 @@
   background-color: var(--cv-background);
   max-width: 960px;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
