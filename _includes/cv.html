@@ -451,10 +451,21 @@
             .degree {
                 font-size: 11pt;
             }
+            .cv-item-row-name {
+                font-size: 1rem;
+                font-weight: 700;
+            }
         }
         .cv-item-content.about {
             font-style: italic; 
             font-size: 8pt !important;
+        }
+        .cv-item-row-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .cv-item-row-2-columns {
+            font-weight: normal !important;
         }
         .degree {
             font-size: 1.1rem
@@ -593,8 +604,10 @@
                 <div class="two-column-section">
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <div><span>{{item.name}}</span></div>
+                        <div class="cv-item-row-2-columns">
+                            <div class="cv-item-row-name">
+                                <span>{{item.name}}</span>
+                            </div>
                             <div>
                                 {% if item.url %}
                                     {% if item.url contains 'github.com' %}
@@ -642,8 +655,10 @@
                 <div class="two-column-section">
                 {% for item in section.items %}
                     <div class="cv-item">
-                        <div class="cv-item-row">
-                            <div><span>{{item.name}}</span></div>
+                        <div class="cv-item-row-2-columns">
+                            <div class="cv-item-row-name">
+                                <span>{{item.name}}</span>
+                            </div>
                             <div>
                                 {% if item.url %}
                                     <a href="{{ item.url }}" target="_blank" style="margin-right: 0.15rem;">{{ item.provider_issuer }}</a>
