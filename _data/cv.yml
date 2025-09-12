@@ -177,35 +177,35 @@ data:
       - name: Stable Diffusion 1
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 2
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 3
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 4
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 5
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 6
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
       - name: Stable Diffusion 7
         date: 2024
         url: https://github.com/Stability-AI/stablediffusion
-        description: Stable Diffusion: new checkpoints for image generation.
+        description: "Stable Diffusion: new checkpoints for image generation."
 
         
   free_time:
