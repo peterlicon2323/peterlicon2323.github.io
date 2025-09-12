@@ -227,7 +227,13 @@
         .two-column-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 0.5em;
+            gap: 1.5em;
+        }
+        .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
+            background-color: var(--cv-zebra-bg-odd);
+        }
+        .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
+            background-color: var(--cv-zebra-bg-even);
         }
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
@@ -267,10 +273,10 @@
             white-space: nowrap;
         }
 
-        .cv-item:nth-child(4n-3), .cv-item:nth-child(4n) {
+        .cv-item:nth-child(odd) {
             background-color: var(--cv-zebra-bg-odd);
         }
-        .cv-item:nth-child(4n-2), .cv-item:nth-child(4n-1) {
+        .cv-item:nth-child(even) {
             background-color: var(--cv-zebra-bg-even);
         }
         /* University, Thesis name */
@@ -360,7 +366,6 @@
                 text-overflow: ellipsis;
                 font-size: 9pt;
             }
-            /* .contact-block { margin: 0 0.5em; } */
             .contact-block { margin: 0 0em; }
             .skill-progress-container {
                 display: flex;
@@ -396,13 +401,23 @@
                 grid-template-columns: 1fr;
                 gap: 1em;
             }
-            /* Zebra-stripe priting */
-            .cv-item:nth-child(4n-3), .cv-item:nth-child(4n) {
+            .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
                 background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .cv-item:nth-child(4n-2), .cv-item:nth-child(4n-1) {
+            .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
+                background-color: var(--cv-zebra-bg-even) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            /* Zebra-stripe priting */
+            .cv-item:nth-child(odd) {
+                background-color: var(--cv-zebra-bg-odd) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .cv-item:nth-child(even) {
                 background-color: var(--cv-zebra-bg-even) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -429,8 +444,8 @@
             }
         }
         .degree {
-            font-size: 1.1rem
-        }
+                font-size: 1.1rem
+            }
     </style>
 
     <!-- Name and Avatar -->
@@ -541,7 +556,6 @@
                             </div>
                             {% endif %}
                             <div>
-                                <!-- <em>Duration:</em> -->
                                 <span>{{item.date | markdownify}}</span>
                             </div>
                         </div>
