@@ -338,9 +338,9 @@
                 font-size: 10pt;
                 color: #000 !important;
             }
-            .cv-item-content.two-column-section {
+            .cv-item-content.about {
                 font-style: italic; 
-                font-size: 0.75rem !important;
+                font-size: 0.8rem !important;
             }
             .contact-block, .contact, a.contact {
                 font-size: 9pt;
@@ -432,13 +432,13 @@
                 print-color-adjust: exact !important;
             }
             /* End Zebra-stripe printing */
-            .cv-item-row {
+            /* .cv-item-row {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5em;
                 align-items: center;
                 justify-content: space-between;
-            }
+            } */
 
             .university-name {
                 font-size: 10pt;
@@ -452,13 +452,13 @@
                 font-size: 11pt;
             }
         }
-        .cv-item-content.two-column-section {
-                font-style: italic; 
-                font-size: 0.75rem !important;
-            }
+        .cv-item-content.about {
+            font-style: italic; 
+            font-size: 0.8rem !important;
+        }
         .degree {
-                font-size: 1.1rem
-            }
+            font-size: 1.1rem
+        }
     </style>
 
     <!-- Name and Avatar -->
@@ -654,7 +654,7 @@
                             </div>
                             <div><span>{{item.date | markdownify}}</span></div>
                         </div>
-                        <div class="cv-item-content two-column-section">
+                        <div class="cv-item-content about">
                             {% if item.description %}
                                 <div>
                                     <em>About:</em>
@@ -679,7 +679,7 @@
                             <span>{{item.organization | markdownify}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
-                        <div class="cv-item-content two-column-section">
+                        <div class="cv-item-content about">
                         {% if item.description %}
                             <div>
                                 <em>About:</em>
