@@ -456,10 +456,17 @@
                 font-weight: 700;
             }
         }
+
         .cv-item-content.about {
-            font-style: italic; 
+            font-style: italic;
             font-size: 8pt !important;
+            line-height: 1;
         }
+
+        /* .cv-item-content.about.one-columns {
+            line-height: 1.6;
+        } */
+
         .cv-item-row-name {
             font-size: 1.1rem;
             font-weight: 700;
@@ -638,7 +645,7 @@
                             </div>
                         </div>
                         {% if item.description %}
-                            <div class="cv-item-content">
+                            <div class="cv-item-content about">
                                 <em>About:</em>
                                 <span style="font-style: italic; font-size: 0.75rem;">
                                     <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
@@ -695,7 +702,7 @@
                             <span>{{item.organization | markdownify}}</span>
                             <span>{{item.date | markdownify}}</span>
                         </div>
-                        <div class="cv-item-content about">
+                        <div class="cv-item-content">
                         {% if item.description %}
                             <div>
                                 <em>About:</em>
