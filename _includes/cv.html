@@ -254,9 +254,16 @@
             gap: 0.5em;
             white-space: nowrap;
         }
+
+        .cv-item:nth-child(odd) {
+            background-color: var(--cv-zebra-bg-odd);
+        }
+        .cv-item:nth-child(even) {
+            background-color: var(--cv-zebra-bg-even);
+        }
         @page {
             size: A4;
-            margin: 15mm;
+            margin: 0mm;
         }
         @media print {
             body * { visibility: hidden; }
@@ -365,12 +372,6 @@
                 align-items: center;
                 justify-content: space-between;
             }
-        }
-        .cv-item:nth-child(odd) {
-            background-color: var(--cv-zebra-bg-odd);
-        }
-        .cv-item:nth-child(even) {
-            background-color: var(--cv-zebra-bg-even);
         }
     </style>
 

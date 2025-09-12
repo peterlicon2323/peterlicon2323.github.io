@@ -52,7 +52,7 @@
   background-color: var(--cv-background);
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -193,7 +193,7 @@
 
 @media (max-width: 768px) {
   .cv-photo {
-    height: 96px;
+    height: 128px;
   }
   
   .cv-basic-info {
