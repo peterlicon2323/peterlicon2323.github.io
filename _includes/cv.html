@@ -733,9 +733,9 @@
                     </div>
                 </div>
             {% elsif sec_id == 'additional_info' %}
-                <div>
+                <div style="display: flex; align-content: center; justify-content: center; gap: 1rem; font-size: 1rem;">
                 {% for item in section.items %}
-                    <div style="display: flex; align-content: center; justify-content: center; gap: 1rem; font-size: 1rem;">
+                    <div class="cv-item" style="margin-bottom: 0rem;">
                         <div class="cv-item-row" style="display: flex; justify-content: center !important;">
                             <div class="cv-item-title" style="text-align: right; margin-top: 0rem; padding-right: 1rem;">
                                 {{ item.name }}
