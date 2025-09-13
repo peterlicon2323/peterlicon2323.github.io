@@ -47,6 +47,9 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #f5f7fa;
             --cv-zebra-bg-even: #e2e8f0;
+            --cv-column-1-bg: #f5f7fa; /* First column color */
+            --cv-column-2-bg: #e2e8f0; /* Second column color */
+            --cv-column-3-bg: #f0f4f8; /* Third column color */
         }
 
         /* Light theme (default) */
@@ -61,6 +64,9 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #ffffff;
             --cv-zebra-bg-even: #f1f3f5;
+            --cv-column-1-bg: #f5f7fa;
+            --cv-column-2-bg: #e2e8f0;
+            --cv-column-3-bg: #f0f4f8;
         }
 
         /* Dark theme */
@@ -75,6 +81,9 @@
             --cv-muted-bg: #2a2a2a;
             --cv-zebra-bg-odd: #2f343a;
             --cv-zebra-bg-even: #3c4248;
+            --cv-column-1-bg: #2f343a;
+            --cv-column-2-bg: #3c4248;
+            --cv-column-3-bg: #454b52;
         }
 
         .cv {
@@ -240,20 +249,14 @@
         .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
         }
-        .three-column-section .cv-item:nth-child(9n+1),
-        .three-column-section .cv-item:nth-child(9n+6),
-        .three-column-section .cv-item:nth-child(9n+8) {
-            background-color: var(--cv-zebra-bg-odd);
+        .three-column-section .cv-item:nth-child(3n+1) {
+            background-color: var(--cv-column-1-bg);
         }
-        .three-column-section .cv-item:nth-child(9n+2),
-        .three-column-section .cv-item:nth-child(9n+4),
-        .three-column-section .cv-item:nth-child(9n) {
-            background-color: var(--cv-zebra-bg-even);
+        .three-column-section .cv-item:nth-child(3n+2) {
+            background-color: var(--cv-column-2-bg);
         }
-        .three-column-section .cv-item:nth-child(9n+3),
-        .three-column-section .cv-item:nth-child(9n+5),
-        .three-column-section .cv-item:nth-child(9n+7) {
-            background-color: var(--cv-muted-bg);
+        .three-column-section .cv-item:nth-child(3n) {
+            background-color: var(--cv-column-3-bg);
         }
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
@@ -440,24 +443,18 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(9n+1),
-            .three-column-section .cv-item:nth-child(9n+6),
-            .three-column-section .cv-item:nth-child(9n+8) {
-                background-color: var(--cv-zebra-bg-odd) !important;
+            .three-column-section .cv-item:nth-child(3n+1) {
+                background-color: var(--cv-column-1-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(9n+2),
-            .three-column-section .cv-item:nth-child(9n+4),
-            .three-column-section .cv-item:nth-child(9n) {
-                background-color: var(--cv-zebra-bg-even) !important;
+            .three-column-section .cv-item:nth-child(3n+2) {
+                background-color: var(--cv-column-2-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(9n+3),
-            .three-column-section .cv-item:nth-child(9n+5),
-            .three-column-section .cv-item:nth-child(9n+7) {
-                background-color: var(--cv-muted-bg) !important;
+            .three-column-section .cv-item:nth-child(3n) {
+                background-color: var(--cv-column-3-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
@@ -674,7 +671,7 @@
                             </div>
                             {% if item.description %}
                                 <div class="cv-item-content about">
-                                    <em>About:</em>
+                                    <!-- <em>About:</em> -->
                                     <span style="font-style: italic; font-size: 0.75rem;">
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
@@ -707,7 +704,7 @@
                             <div class="cv-item-content about">
                                 {% if item.description %}
                                     <div>
-                                        <em>About:</em>
+                                        <!-- <em>About:</em> -->
                                         <span>
                                             <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                         </span>
