@@ -1,0 +1,239 @@
+/* ======================
+   CV Styles - Dark Mode Ready
+   ====================== */
+:root {
+  --cv-font-family: "Times New Roman", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --cv-accent-color: #3182ce;
+  --cv-text-color: #2d3748;
+  --cv-muted-color: #718096;
+  --cv-background: #ffffff;
+  --cv-border: #e2e8f0;
+  --cv-link-color: #4299e1;
+  --cv-accent-bg: #ffffff; /* Background for text-primary and cv-section-title */
+  --cv-muted-bg: #f5f7fa; /* Lighter background for text-muted */
+}
+
+/* Light theme (default) */
+[data-theme="light"] {
+  --cv-text-color: #1a1a1a;
+  --cv-muted-color: #666565;
+  --cv-background: #ffffff; /* Used by cv-name */
+  --cv-border: #8c8c8c;/* #e5e5e5; */
+  /* --cv-accent-color: #303030;
+  --cv-link-color: #0d6efd; */
+  --cv-accent-color: #1e40af;
+  --cv-link-color: #1e40af;
+  --cv-accent-bg: #ffffff; /* Light accent background */
+  --cv-muted-bg: #ffffff; /* Lighter than cv-background */
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --cv-text-color: #f0f0f0;
+  --cv-muted-color: #a0a0a0;
+  --cv-background: #303030; /* Used by cv-name */
+  --cv-border: #4b5563;
+  /* --cv-accent-color: #60a5fa;
+  --cv-link-color: #90cdf4; */
+  --cv-accent-color: #60a5fa;
+  --cv-link-color: #90cdf4;
+  --cv-accent-bg: #303030; /* Dark accent background */
+  --cv-muted-bg: #303030; /* Lighter than cv-background */
+}
+
+/* ======================
+   Core CV Styles
+   ====================== */
+.cv {
+  font-family: var(--cv-font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cv-text-color);
+  background-color: var(--cv-background);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure header elements respect theme variables */
+.cv header {
+  color: var(--cv-text-color);
+  background-color: var(--cv-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv a {
+  color: var(--cv-link-color);
+  text-decoration: none;
+}
+
+.cv a:hover {
+  text-decoration: underline;
+}
+
+.cv a.contact {
+  font-size: 0.95em;
+}
+
+.cv span.contact {
+  color: var(--cv-link-color);
+  text-decoration: none;
+   font-size: 0.95em;
+}
+/* Ensure h1 and h2 use text color consistently */
+.cv h1, .cv h2 {
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--cv-text-color);
+}
+
+.cv h1 {
+  font-size: 2em;
+  margin: 1rem 0;
+}
+
+.cv h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Ensure .text-primary uses accent color and background */
+.text-primary {
+  color: var(--cv-accent-color) !important;
+  background-color: var(--cv-accent-bg) !important;
+  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
+}
+
+/* Ensure .cv-section-title uses accent color and background */
+.cv-section-title {
+  font-size: 1.75rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--cv-accent-color) !important;
+  background-color: var(--cv-accent-bg) !important;
+  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
+}
+
+.cv-photo {
+  height: 128px;
+  float: left;
+  margin: 0 1.5em 1rem 0;
+  border-radius: 50%;
+  border: 2px solid var(--cv-border);
+}
+
+.cv-name {
+  font-size: 2em;
+  margin: 20px 0;
+  color: var(--cv-text-color);
+  background-color: var(--cv-background); /* Explicitly set for consistency */
+}
+
+.cv-basic-info {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9em;
+  margin-bottom: 1.5rem;
+}
+
+.cv-basic-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--cv-muted-color);
+}
+
+.cv-section:not(:first-child) {
+  border-top: 1px solid var(--cv-border);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+.cv span.contact-block {
+   display: flex;
+   align-items: center; gap: 0.5rem;
+/*    margin-left: -1em;
+   margin-right: -1em; */
+}
+
+.cv-item-title {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+.cv-section-header {
+   border-top: 1px solid var(--cv-border);
+   border-bottom: 1px solid var(--cv-border);
+}
+
+
+.cv-item-content {
+  padding-left: 1.5rem;
+}
+
+/* Ensure .text-muted uses muted color and lighter background */
+.text-muted {
+  color: var(--cv-muted-color) !important;
+  background-color: var(--cv-muted-bg) !important;
+  margin: 0.2rem 0rem; /* Slight padding for background visibility */
+}
+
+.cv-item-content em {
+  color: var(--cv-muted-color);
+  font-style: italic;
+}
+/* Download Icon Path */
+.download-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--cv-text-color);
+}
+
+@media (max-width: 768px) {
+  .cv-photo {
+    height: 128px;
+  }
+  
+  .cv-basic-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cv-section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* <div class="cv-item">
+                    <div class="cv-item-row">
+                        <div><span>Stable Diffusion</span></div>
+                        <div>
+                            
+                                
+                                <img src="/assets/svg/github.svg" style="width: 17px; height: 17px;" alt="GitHub icon">
+                                <span>
+                                    <a href="https://github.com/Stability-AI/stablediffusion">Stability-AI/stablediffusion</a>
+                                </span>
+                                
+                            
+                        </div>
+                        <div>
+                            <span><p>2024</p>
+</span>
+                        </div>
+                    </div>
+                    
+                        <div class="cv-item-content">
+                            <em style="font-size: 0.85rem; font-style: italic;margin-left: 0em;">Description</em>
+                            <span style="font-size: 0.85rem; font-style: italic">
+                                <p style="display:inline;">Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
+</p>
+                            </span>
+                        </div>
+                        <!-- <div class="cv-item-content"><p>Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.</p>
+</div> -->
+                    
+                </div> */

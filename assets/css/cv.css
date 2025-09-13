@@ -9,36 +9,41 @@
   --cv-background: #ffffff;
   --cv-border: #e2e8f0;
   --cv-link-color: #4299e1;
-  --cv-accent-bg: #ffffff; /* Background for text-primary and cv-section-title */
-  --cv-muted-bg: #f5f7fa; /* Lighter background for text-muted */
+  --cv-accent-bg: #ffffff;
+  --cv-muted-bg: #f5f7fa;
+  --cv-column-1-bg: #ffffff; 
+  --cv-column-2-bg: #007af3;
+  --cv-column-3-bg: #00ff4c; 
 }
 
 /* Light theme (default) */
 [data-theme="light"] {
   --cv-text-color: #1a1a1a;
   --cv-muted-color: #666565;
-  --cv-background: #ffffff; /* Used by cv-name */
-  --cv-border: #8c8c8c;/* #e5e5e5; */
-  /* --cv-accent-color: #303030;
-  --cv-link-color: #0d6efd; */
+  --cv-background: #ffffff;
+  --cv-border: #8c8c8c;
   --cv-accent-color: #1e40af;
   --cv-link-color: #1e40af;
-  --cv-accent-bg: #ffffff; /* Light accent background */
-  --cv-muted-bg: #ffffff; /* Lighter than cv-background */
+  --cv-accent-bg: #ffffff;
+  --cv-muted-bg: #ffffff;
+  --cv-column-1-bg: #ffffff; 
+  --cv-column-2-bg: #007af3;
+  --cv-column-3-bg: #00ff4c; 
 }
 
 /* Dark theme */
 [data-theme="dark"] {
   --cv-text-color: #f0f0f0;
   --cv-muted-color: #a0a0a0;
-  --cv-background: #303030; /* Used by cv-name */
+  --cv-background: #303030;
   --cv-border: #4b5563;
-  /* --cv-accent-color: #60a5fa;
-  --cv-link-color: #90cdf4; */
   --cv-accent-color: #60a5fa;
   --cv-link-color: #90cdf4;
-  --cv-accent-bg: #303030; /* Dark accent background */
-  --cv-muted-bg: #303030; /* Lighter than cv-background */
+  --cv-accent-bg: #303030;
+  --cv-muted-bg: #303030;
+  --cv-column-1-bg: #2a3b5b;
+  --cv-column-2-bg: #374151;
+  --cv-column-3-bg: #3b4a6b;
 }
 
 /* ======================
@@ -79,8 +84,9 @@
 .cv span.contact {
   color: var(--cv-link-color);
   text-decoration: none;
-   font-size: 0.95em;
+  font-size: 0.95em;
 }
+
 /* Ensure h1 and h2 use text color consistently */
 .cv h1, .cv h2 {
   font-weight: bold;
@@ -102,7 +108,7 @@
 .text-primary {
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
-  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
+  padding: 0.2rem 0.4rem;
 }
 
 /* Ensure .cv-section-title uses accent color and background */
@@ -111,7 +117,7 @@
   margin: 1.5rem 0 1rem;
   color: var(--cv-accent-color) !important;
   background-color: var(--cv-accent-bg) !important;
-  padding: 0.2rem 0.4rem; /* Slight padding for background visibility */
+  padding: 0.2rem 0.4rem;
 }
 
 .cv-photo {
@@ -126,7 +132,7 @@
   font-size: 2em;
   margin: 20px 0;
   color: var(--cv-text-color);
-  background-color: var(--cv-background); /* Explicitly set for consistency */
+  background-color: var(--cv-background);
 }
 
 .cv-basic-info {
@@ -152,10 +158,9 @@
 }
 
 .cv span.contact-block {
-   display: flex;
-   align-items: center; gap: 0.5rem;
-/*    margin-left: -1em;
-   margin-right: -1em; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .cv-item-title {
@@ -163,11 +168,11 @@
   display: block;
   margin-top: 1rem;
 }
-.cv-section-header {
-   border-top: 1px solid var(--cv-border);
-   border-bottom: 1px solid var(--cv-border);
-}
 
+.cv-section-header {
+  border-top: 1px solid var(--cv-border);
+  border-bottom: 1px solid var(--cv-border);
+}
 
 .cv-item-content {
   padding-left: 1.5rem;
@@ -177,18 +182,19 @@
 .text-muted {
   color: var(--cv-muted-color) !important;
   background-color: var(--cv-muted-bg) !important;
-  margin: 0.2rem 0rem; /* Slight padding for background visibility */
+  margin: 0.2rem 0rem;
 }
 
 .cv-item-content em {
   color: var(--cv-muted-color);
   font-style: italic;
 }
+
 /* Download Icon Path */
 .download-icon {
-    width: 24px;
-    height: 24px;
-    color: var(--cv-text-color);
+  width: 24px;
+  height: 24px;
+  color: var(--cv-text-color);
 }
 
 @media (max-width: 768px) {
@@ -205,35 +211,3 @@
     font-size: 1.5rem;
   }
 }
-
-
-/* <div class="cv-item">
-                    <div class="cv-item-row">
-                        <div><span>Stable Diffusion</span></div>
-                        <div>
-                            
-                                
-                                <img src="/assets/svg/github.svg" style="width: 17px; height: 17px;" alt="GitHub icon">
-                                <span>
-                                    <a href="https://github.com/Stability-AI/stablediffusion">Stability-AI/stablediffusion</a>
-                                </span>
-                                
-                            
-                        </div>
-                        <div>
-                            <span><p>2024</p>
-</span>
-                        </div>
-                    </div>
-                    
-                        <div class="cv-item-content">
-                            <em style="font-size: 0.85rem; font-style: italic;margin-left: 0em;">Description</em>
-                            <span style="font-size: 0.85rem; font-style: italic">
-                                <p style="display:inline;">Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.
-</p>
-                            </span>
-                        </div>
-                        <!-- <div class="cv-item-content"><p>Stable Diffusion model repository with new checkpoints, including versions 2.0, 2.1, and UnCLIP 2.1 for image generation.</p>
-</div> -->
-                    
-                </div> */
