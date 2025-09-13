@@ -229,31 +229,11 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 0.5em;
         }
-        .three-column-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.5em;
-        }
         .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
             background-color: var(--cv-zebra-bg-odd);
         }
         .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
-        }
-        .three-column-section .cv-item:nth-child(9n+1),
-        .three-column-section .cv-item:nth-child(9n+6),
-        .three-column-section .cv-item:nth-child(9n+8) {
-            background-color: var(--cv-zebra-bg-odd);
-        }
-        .three-column-section .cv-item:nth-child(9n+2),
-        .three-column-section .cv-item:nth-child(9n+4),
-        .three-column-section .cv-item:nth-child(9n) {
-            background-color: var(--cv-zebra-bg-even);
-        }
-        .three-column-section .cv-item:nth-child(9n+3),
-        .three-column-section .cv-item:nth-child(9n+5),
-        .three-column-section .cv-item:nth-child(9n+7) {
-            background-color: var(--cv-muted-bg);
         }
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
@@ -292,12 +272,14 @@
             gap: 0.5em;
             white-space: nowrap;
         }
+
         .cv-item:nth-child(odd) {
             background-color: var(--cv-zebra-bg-odd);
         }
         .cv-item:nth-child(even) {
             background-color: var(--cv-zebra-bg-even);
         }
+        /* University, Thesis name */
         .university-name {
             font-size: 1rem;
             font-weight: 700;
@@ -306,6 +288,7 @@
             font-size: 1rem;
             font-weight: 700;
         }
+        /* End University, Thesis name */
         @page {
             size: A4;
             margin: 0mm;
@@ -336,10 +319,12 @@
             h2.text-primary.cv-section-title {
                 font-size: 14pt;
             }
+
             .text-muted { 
                 font-size: 11pt; 
                 color: #666 !important;
             }
+
             .name-slogan {
                 margin-bottom: 1.25em !important;
             }
@@ -425,11 +410,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.5rem;
             }
-            .three-column-section {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.5rem;
-            }
+            /* Zebra-stripe printing */
             .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
                 background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
@@ -437,27 +418,6 @@
             }
             .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
                 background-color: var(--cv-zebra-bg-even) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .three-column-section .cv-item:nth-child(9n+1),
-            .three-column-section .cv-item:nth-child(9n+6),
-            .three-column-section .cv-item:nth-child(9n+8) {
-                background-color: var(--cv-zebra-bg-odd) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .three-column-section .cv-item:nth-child(9n+2),
-            .three-column-section .cv-item:nth-child(9n+4),
-            .three-column-section .cv-item:nth-child(9n) {
-                background-color: var(--cv-zebra-bg-even) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .three-column-section .cv-item:nth-child(9n+3),
-            .three-column-section .cv-item:nth-child(9n+5),
-            .three-column-section .cv-item:nth-child(9n+7) {
-                background-color: var(--cv-muted-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
@@ -471,6 +431,15 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
+            /* End Zebra-stripe printing */
+            /* .cv-item-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5em;
+                align-items: center;
+                justify-content: space-between;
+            } */
+
             .university-name {
                 font-size: 10pt;
                 font-weight: 700;
@@ -495,6 +464,11 @@
             font-size: 8pt !important;
             line-height: 1;
         }
+
+        /* .cv-item-content.about.one-columns {
+            line-height: 1.6;
+        } */
+
         .cv-item-row-name {
             font-size: 1rem;
             font-weight: bold;
@@ -636,86 +610,89 @@
                         {% endif %}
                     </div>
                 {% endfor %}
+
             {% elsif sec_id == 'projects' %}
-                <div class="three-column-section">
-                    {% for item in section.items %}
-                        <div class="cv-item">
-                            <div class="cv-item-row two-columns">
-                                <div class="cv-item-row-name">
-                                    <span>{{item.name}}</span>
-                                </div>
-                                <div>
-                                    {% if item.url %}
-                                        {% if item.url contains 'github.com' %}
-                                        <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="GitHub icon"/>
-                                        <span>
-                                            <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com/', '' }}</a>
-                                        </span>
-                                        {% elsif item.url contains 'gitlab.com' %}
-                                        <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="GitLab icon"/>
-                                        <span>
-                                            <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com/', '' }}</a>
-                                        </span>
-                                        {% elsif item.url contains 'huggingface.co' %}
-                                        <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="Hugging Face icon"/>
-                                        <span>
-                                            <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
-                                        </span>
-                                        {% else %}
-                                        <span></span>
-                                        {% endif %}
-                                    {% else %}
-                                        <span></span>
-                                    {% endif %}
-                                </div>
-                                <div>
-                                    <span>{{item.date | markdownify}}</span>
-                                </div>
+                <div class="two-column-section">
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <div class="cv-item-row two-columns">
+                            <div class="cv-item-row-name">
+                                <span>{{item.name}}</span>
                             </div>
+                            <div>
+                                {% if item.url %}
+                                    {% if item.url contains 'github.com' %}
+                                    <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="GitHub icon"/>
+                                    <span>
+                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://github.com/', '' }}</a>
+                                    </span>
+                                    {% elsif item.url contains 'gitlab.com' %}
+                                    <img src="{{ '/assets/svg/gitlab.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="GitLab icon"/>
+                                    <span>
+                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://gitlab.com/', '' }}</a>
+                                    </span>
+                                    {% elsif item.url contains 'huggingface.co' %}
+                                    <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 12px; height: 12px;" alt="Hugging Face icon"/>
+                                    <span>
+                                        <a href="{{ item.url }}">{{ item.url | replace: 'https://huggingface.co/', '' }}</a>
+                                    </span>
+                                    {% else %}
+                                    <span></span>
+                                    {% endif %}
+                                {% else %}
+                                    <span></span>
+                                {% endif %}
+                            </div>
+                            <div>
+                                <span>{{item.date | markdownify}}</span>
+                            </div>
+                        </div>
+                        {% if item.description %}
+                            <div class="cv-item-content about">
+                                <em>About:</em>
+                                <span style="font-style: italic; font-size: 0.75rem;">
+                                    <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="cv-item-content more">
+                    <em>For additional projects, please refer to the <a href="#additional_info" style="color: var(--cv-accent-color); text-decoration: none;">More Information</a>.</em>
+                </div>
+
+            {% elsif sec_id == 'certificates' %}
+                <div class="two-column-section">
+                {% for item in section.items %}
+                    <div class="cv-item">
+                        <div class="cv-item-row two-columns">
+                            <div class="cv-item-row-name">
+                                <span>{{item.name}}</span>
+                            </div>
+                            <div>
+                                {% if item.url %}
+                                    <a href="{{ item.url }}" target="_blank" style="margin-right: 0.15rem;">{{ item.provider_issuer }}</a>
+                                    <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
+                                {% else %}
+                                    <span>{{ item.provider_issuer }}</span>
+                                {% endif %}
+                            </div>
+                            <div><span>{{item.date | markdownify}}</span></div>
+                        </div>
+                        <div class="cv-item-content about">
                             {% if item.description %}
-                                <div class="cv-item-content about">
+                                <div>
                                     <em>About:</em>
-                                    <span style="font-style: italic; font-size: 0.75rem;">
+                                    <!-- <span style="font-style: italic; font-size: 0.85rem;"> -->
+                                    <span>
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
                                 </div>
                             {% endif %}
                         </div>
-                    {% endfor %}
-                </div>
-                <div class="cv-item-content more">
-                    <em>For additional projects, please refer to the <a href="#additional_info" style="color: var(--cv-accent-color); text-decoration: none;">More Information</a>.</em>
-                </div>
-            {% elsif sec_id == 'certificates' %}
-                <div class="three-column-section">
-                    {% for item in section.items %}
-                        <div class="cv-item">
-                            <div class="cv-item-row two-columns">
-                                <div class="cv-item-row-name">
-                                    <span>{{item.name}}</span>
-                                </div>
-                                <div>
-                                    {% if item.url %}
-                                        <a href="{{ item.url }}" target="_blank" style="margin-right: 0.15rem;">{{ item.provider_issuer }}</a>
-                                        <img src="/assets/svg/url.svg" style="width: 16px; height: 16px;" alt="url icon">
-                                    {% else %}
-                                        <span>{{ item.provider_issuer }}</span>
-                                    {% endif %}
-                                </div>
-                                <div><span>{{item.date | markdownify}}</span></div>
-                            </div>
-                            <div class="cv-item-content about">
-                                {% if item.description %}
-                                    <div>
-                                        <em>About:</em>
-                                        <span>
-                                            <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
-                                        </span>
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endfor %}
+                    </div>
+                {% endfor %}
                 </div>
                 <div class="cv-item-content more">
                     <em>For a comprehensive list of certifications, please refer to the <a href="#additional_info" style="color: var(--cv-accent-color); text-decoration: none;">More Information</a>.</em>
@@ -729,14 +706,14 @@
                             <span>{{item.date | markdownify}}</span>
                         </div>
                         <div class="cv-item-content">
-                            {% if item.description %}
-                                <div>
-                                    <em>About:</em>
-                                    <span style="font-style: italic; font-size: 0.85rem;">
-                                        <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
-                                    </span>
-                                </div>
-                            {% endif %}
+                        {% if item.description %}
+                            <div>
+                                <em>About:</em>
+                                <span style="font-style: italic; font-size: 0.85rem;">
+                                    <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
+                                </span>
+                            </div>
+                        {% endif %}
                         </div>
                     </div>
                 {% endfor %}
@@ -759,27 +736,27 @@
                 <div style="display: flex; align-content: center; justify-content: center; gap: 1rem; font-size: 0.8rem;">
                     {% for item in section.items %}
                         <div class="cv-item" style="margin-bottom: 0rem;">
-                            <div class="cv-item-row" style="display: flex; justify-content: center !important;">
-                                <div class="cv-item-title" style="text-align: right; margin-top: 0rem; padding-right: 0.1rem;">
-                                    {{ item.name }}
-                                </div>
-                                {% if item.url %}
-                                    <span>•</span>
-                                    <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 0.1rem;">
-                                        {% if item.url contains 'github.com' %}
-                                            <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="GitHub icon"/>
-                                        {% elsif item.url contains 'huggingface.co' %}
-                                            <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="Hugging Face icon"/>
-                                        {% else %}
-                                            <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="Website icon"/>
-                                        {% endif %}
-                                        <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left: 0.15em;">{{ item.url | replace: 'https://', '' }}</a>
-                                    </div>
-                                {% endif %}
+                        <div class="cv-item-row" style="display: flex; justify-content: center !important;">
+                            <div class="cv-item-title" style="text-align: right; margin-top: 0rem; padding-right: 0.1rem;">
+                            {{ item.name }}
                             </div>
+                            {% if item.url %}
+                            <span>•</span>
+                            <div class="cv-item-title" style="text-align: left; margin-top: 0rem; padding-left: 0.1rem;">
+                                {% if item.url contains 'github.com' %}
+                                <img src="{{ '/assets/svg/github.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="GitHub icon"/>
+                                {% elsif item.url contains 'huggingface.co' %}
+                                <img src="{{ '/assets/svg/huggingface.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="Hugging Face icon"/>
+                                {% else %}
+                                <img src="{{ '/assets/svg/website.svg' | relative_url }}" style="width: 14px; height: 14px;" alt="Website icon"/>
+                                {% endif %}
+                                <a href="{{ item.url }}" style="color: var(--cv-accent-color); text-decoration: none; margin-left: 0.15em;">{{ item.url | replace: 'https://', '' }}</a>
+                            </div>
+                            {% endif %}
+                        </div>
                         </div>
                         {% unless forloop.last %}
-                            <span style="margin: 0 0.5rem;">|</span>
+                        <span style="margin: 0 0.5rem;">|</span>
                         {% endunless %}
                     {% endfor %}
                 </div>
