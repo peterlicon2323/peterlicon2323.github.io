@@ -248,13 +248,19 @@
         .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
         }
-        .three-column-section .cv-item:nth-child(3n+1) {
+        .three-column-section .cv-item:nth-child(9n+1),
+        .three-column-section .cv-item:nth-child(9n+6),
+        .three-column-section .cv-item:nth-child(9n+8) {
             background-color: var(--cv-column-1-bg);
         }
-        .three-column-section .cv-item:nth-child(3n+2) {
+        .three-column-section .cv-item:nth-child(9n+2),
+        .three-column-section .cv-item:nth-child(9n+4),
+        .three-column-section .cv-item:nth-child(9n+9) {
             background-color: var(--cv-column-2-bg);
         }
-        .three-column-section .cv-item:nth-child(3n) {
+        .three-column-section .cv-item:nth-child(9n+3),
+        .three-column-section .cv-item:nth-child(9n+5),
+        .three-column-section .cv-item:nth-child(9n+7) {
             background-color: var(--cv-column-3-bg);
         }
         {% unless config.no_lines %}
@@ -442,17 +448,23 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n+1) {
+            .three-column-section .cv-item:nth-child(9n+1),
+            .three-column-section .cv-item:nth-child(9n+6),
+            .three-column-section .cv-item:nth-child(9n+8) {
                 background-color: var(--cv-column-1-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n+2) {
+            .three-column-section .cv-item:nth-child(9n+2),
+            .three-column-section .cv-item:nth-child(9n+4),
+            .three-column-section .cv-item:nth-child(9n+9) {
                 background-color: var(--cv-column-2-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n) {
+            .three-column-section .cv-item:nth-child(9n+3),
+            .three-column-section .cv-item:nth-child(9n+5),
+            .three-column-section .cv-item:nth-child(9n+7) {
                 background-color: var(--cv-column-3-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
