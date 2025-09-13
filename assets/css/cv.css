@@ -11,9 +11,9 @@
   --cv-link-color: #4299e1;
   --cv-accent-bg: #ffffff;
   --cv-muted-bg: #f5f7fa;
-  --cv-column-1-bg: #ffffff; 
-  --cv-column-2-bg: #007af3;
-  --cv-column-3-bg: #00ff4c; 
+  --cv-column-1-bg: #f9fafb; /* Clean, minimalist off-white */
+  --cv-column-2-bg: #e0e7ff; /* Subtle blue accent for visual interest */
+  --cv-column-3-bg: #f3f4f6; /* Light gray for balance */
 }
 
 /* Light theme (default) */
@@ -26,9 +26,9 @@
   --cv-link-color: #1e40af;
   --cv-accent-bg: #ffffff;
   --cv-muted-bg: #ffffff;
-  --cv-column-1-bg: #ffffff; 
-  --cv-column-2-bg: #007af3;
-  --cv-column-3-bg: #00ff4c; 
+  --cv-column-1-bg: #f9fafb; /* Clean, minimalist off-white */
+  --cv-column-2-bg: #e0e7ff; /* Subtle blue accent */
+  --cv-column-3-bg: #f3f4f6; /* Light gray for balance */
 }
 
 /* Dark theme */
@@ -41,9 +41,9 @@
   --cv-link-color: #90cdf4;
   --cv-accent-bg: #303030;
   --cv-muted-bg: #303030;
-  --cv-column-1-bg: #2a3b5b;
-  --cv-column-2-bg: #374151;
-  --cv-column-3-bg: #3b4a6b;
+  --cv-column-1-bg: #2d3748; /* Dark gray-blue for depth */
+  --cv-column-2-bg: #4b5e8e; /* Muted blue for contrast */
+  --cv-column-3-bg: #374151; /* Slightly lighter gray for balance */
 }
 
 /* ======================
