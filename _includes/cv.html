@@ -490,10 +490,10 @@
             .degree {
                 font-size: 11pt;
             }
-            .cv-item-row-name {
+            /* .cv-item-row-name {
                 font-size: 1pt !important;
                 font-weight: bold;
-            }
+            } */
         }
         .cv-item-content.more {
             line-height: 1.2 !important;
@@ -504,8 +504,8 @@
             line-height: 1;
         }
         .cv-item-row-name {
-            font-size: 0.9rem !important;;
-            font-weight: bold;
+            font-size: 0.85rem !important;;
+            font-weight: 700;
         }
         .cv-item-row.two-columns {
             font-weight: normal !important;
@@ -682,7 +682,7 @@
                             </div>
                             {% if item.description %}
                                 <div class="cv-item-content about">
-                                    <span style="font-style: italic; font-size: 0.75rem;">
+                                    <span style="font-style: italic; font-size: 0.7rem;">
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
                                 </div>
