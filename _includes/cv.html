@@ -47,9 +47,9 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #f5f7fa;
             --cv-zebra-bg-even: #e2e8f0;
-            --cv-column-1-bg: #f5f7fa; /* First column color */
-            --cv-column-2-bg: #e2e8f0; /* Second column color */
-            --cv-column-3-bg: #f0f4f8; /* Third column color */
+            --cv-column-1-bg: #e6f0fa; /* Professional soft blue for first column */
+            --cv-column-2-bg: #f0f4f8; /* Light neutral gray for second column */
+            --cv-column-3-bg: #d6e4f0; /* Subtle blue-gray for third column */
         }
 
         /* Light theme (default) */
@@ -64,9 +64,9 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #ffffff;
             --cv-zebra-bg-even: #f1f3f5;
-            --cv-column-1-bg: #f5f7fa;
-            --cv-column-2-bg: #e2e8f0;
-            --cv-column-3-bg: #f0f4f8;
+            --cv-column-1-bg: #e6f0fa; /* Professional soft blue for first column */
+            --cv-column-2-bg: #f0f4f8; /* Light neutral gray for second column */
+            --cv-column-3-bg: #d6e4f0; /* Subtle blue-gray for third column */
         }
 
         /* Dark theme */
@@ -81,9 +81,9 @@
             --cv-muted-bg: #2a2a2a;
             --cv-zebra-bg-odd: #2f343a;
             --cv-zebra-bg-even: #3c4248;
-            --cv-column-1-bg: #2f343a;
-            --cv-column-2-bg: #3c4248;
-            --cv-column-3-bg: #454b52;
+            --cv-column-1-bg: #2a3b5b; /* Deep professional blue for first column */
+            --cv-column-2-bg: #374151; /* Dark neutral gray for second column */
+            --cv-column-3-bg: #3b4a6b; /* Modern blue-gray for third column */
         }
 
         .cv {
@@ -243,12 +243,15 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 0.5em;
         }
+        /* Start Two Columns Section */
         .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
             background-color: var(--cv-zebra-bg-odd);
         }
         .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
         }
+        /* End Three Columns Section */
+        /* Start Three Columns Section */
         .three-column-section .cv-item:nth-child(3n+1) {
             background-color: var(--cv-column-1-bg);
         }
@@ -258,6 +261,7 @@
         .three-column-section .cv-item:nth-child(3n) {
             background-color: var(--cv-column-3-bg);
         }
+        /* End Three Columns Section */
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
         .cv-section-title { display: inline-block; background: var(--cv-accent-bg) !important; padding-right: 1.5em; }
