@@ -353,10 +353,12 @@
             h2.text-primary.cv-section-title {
                 font-size: 14pt;
             }
+
             .text-muted { 
                 font-size: 11pt; 
                 color: #666 !important;
             }
+
             .name-slogan {
                 margin-bottom: 1.25em !important;
             }
@@ -394,7 +396,7 @@
             .cv-section:not(:first-child) { border-top: 1px solid #000; }
             .cv a[href]:after { content: none !important; }
             .cv-photo {
-                height: 128px;
+                height: 100mm;
                 float: none;
                 margin: 0 auto 0.75rem auto;
                 display: block;
@@ -488,6 +490,15 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
+            /* End Zebra-stripe printing */
+            /* .cv-item-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5em;
+                align-items: center;
+                justify-content: space-between;
+            } */
+
             .university-name {
                 font-size: 10pt;
                 font-weight: 700;
@@ -500,7 +511,7 @@
                 font-size: 11pt;
             }
             .cv-item-row-name {
-                font-size: 8pt !important;
+                font-size: 1rem;
                 font-weight: bold;
             }
         }
