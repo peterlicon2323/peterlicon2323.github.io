@@ -64,9 +64,12 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #ffffff;
             --cv-zebra-bg-even: #f1f3f5;
-            --cv-column-1-bg: #ffffff; /* Professional soft blue for first column */
-            --cv-column-2-bg: #f0f4f8; /* Light neutral gray for second column */
-            --cv-column-3-bg: #d6e4f0; /* Subtle blue-gray for third column */
+            /* --cv-column-1-bg: #ffffff; 
+            --cv-column-2-bg: #f0f4f8;
+            --cv-column-3-bg: #d6e4f0; */
+            --cv-column-1-bg: #ffffff; 
+            --cv-column-2-bg: #007af3;
+            --cv-column-3-bg: #00ff4c; 
         }
 
         /* Dark theme */
@@ -686,7 +689,7 @@
                             </div>
                             {% if item.description %}
                                 <div class="cv-item-content about">
-                                    <em>About:</em>
+                                    <!-- <em>About:</em> -->
                                     <span style="font-style: italic; font-size: 0.75rem;">
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
@@ -719,7 +722,7 @@
                             <div class="cv-item-content about">
                                 {% if item.description %}
                                     <div>
-                                        <em>About:</em>
+                                        <!-- <em>About:</em> -->
                                         <span>
                                             <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                         </span>
