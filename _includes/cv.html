@@ -64,7 +64,7 @@
             --cv-muted-bg: #f8f9fa;
             --cv-zebra-bg-odd: #ffffff;
             --cv-zebra-bg-even: #f1f3f5;
-            --cv-column-1-bg: #e6f0fa; /* Professional soft blue for first column */
+            --cv-column-1-bg: #ffffff; /* Professional soft blue for first column */
             --cv-column-2-bg: #f0f4f8; /* Light neutral gray for second column */
             --cv-column-3-bg: #d6e4f0; /* Subtle blue-gray for third column */
         }
@@ -243,25 +243,30 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 0.5em;
         }
-        /* Start Two Columns Section */
         .two-column-section .cv-item:nth-child(4n-3), .two-column-section .cv-item:nth-child(4n) {
             background-color: var(--cv-zebra-bg-odd);
         }
         .two-column-section .cv-item:nth-child(4n-2), .two-column-section .cv-item:nth-child(4n-1) {
             background-color: var(--cv-zebra-bg-even);
         }
-        /* End Three Columns Section */
-        /* Start Three Columns Section */
-        .three-column-section .cv-item:nth-child(3n+1) {
-            background-color: var(--cv-column-1-bg);
+        .three-column-section .cv-item:nth-child(9n+1), /* Row 1, Col 1: Color 1 */
+        .three-column-section .cv-item:nth-child(9n+5), /* Row 2, Col 2: Color 1 */
+        .three-column-section .cv-item:nth-child(9n+7)  /* Row 3, Col 1: Color 1 */
+        {
+            background-color: var(--cv-zebra-bg-odd);
         }
-        .three-column-section .cv-item:nth-child(3n+2) {
-            background-color: var(--cv-column-2-bg);
+        .three-column-section .cv-item:nth-child(9n+2), /* Row 1, Col 2: Color 2 */
+        .three-column-section .cv-item:nth-child(9n+6), /* Row 2, Col 3: Color 2 */
+        .three-column-section .cv-item:nth-child(9n+8)  /* Row 3, Col 2: Color 2 */
+        {
+            background-color: var(--cv-zebra-bg-even);
         }
-        .three-column-section .cv-item:nth-child(3n) {
-            background-color: var(--cv-column-3-bg);
+        .three-column-section .cv-item:nth-child(9n+3), /* Row 1, Col 3: Color 3 */
+        .three-column-section .cv-item:nth-child(9n+4), /* Row 2, Col 1: Color 3 */
+        .three-column-section .cv-item:nth-child(9n+9)  /* Row 3, Col 3: Color 3 */
+        {
+            background-color: var(--cv-muted-bg);
         }
-        /* End Three Columns Section */
         {% unless config.no_lines %}
         .cv-section-header { position: relative; }
         .cv-section-title { display: inline-block; background: var(--cv-accent-bg) !important; padding-right: 1.5em; }
@@ -447,18 +452,24 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n+1) {
-                background-color: var(--cv-column-1-bg) !important;
+            .three-column-section .cv-item:nth-child(9n+1),
+            .three-column-section .cv-item:nth-child(9n+5),
+            .three-column-section .cv-item:nth-child(9n+7) {
+                background-color: var(--cv-zebra-bg-odd) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n+2) {
-                background-color: var(--cv-column-2-bg) !important;
+            .three-column-section .cv-item:nth-child(9n+2),
+            .three-column-section .cv-item:nth-child(9n+6),
+            .three-column-section .cv-item:nth-child(9n+8) {
+                background-color: var(--cv-zebra-bg-even) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .three-column-section .cv-item:nth-child(3n) {
-                background-color: var(--cv-column-3-bg) !important;
+            .three-column-section .cv-item:nth-child(9n+3),
+            .three-column-section .cv-item:nth-child(9n+4),
+            .three-column-section .cv-item:nth-child(9n+9) {
+                background-color: var(--cv-muted-bg) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
@@ -675,7 +686,7 @@
                             </div>
                             {% if item.description %}
                                 <div class="cv-item-content about">
-                                    <!-- <em>About:</em> -->
+                                    <em>About:</em>
                                     <span style="font-style: italic; font-size: 0.75rem;">
                                         <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                     </span>
@@ -708,7 +719,7 @@
                             <div class="cv-item-content about">
                                 {% if item.description %}
                                     <div>
-                                        <!-- <em>About:</em> -->
+                                        <em>About:</em>
                                         <span>
                                             <p style="display:inline;">{{item.description | markdownify | strip_html}}</p>
                                         </span>
