@@ -518,6 +518,13 @@ ninja.data = [{
           window.open("https://gitlab.com/abcd1234httrr", "_blank");
         },
       },{
+        id: 'social-huggingface_username',
+        title: 'Huggingface_username',
+        section: 'Socials',
+        handler: () => {
+          window.open("", "_blank");
+        },
+      },{
         id: 'social-inspire',
         title: 'Inspire HEP',
         section: 'Socials',
