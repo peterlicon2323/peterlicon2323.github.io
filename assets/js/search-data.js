@@ -511,6 +511,13 @@ ninja.data = [{
           window.open("https://facebook.com/abcd1234httrr", "_blank");
         },
       },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/peterlicon2323", "_blank");
+        },
+      },{
         id: 'social-gitlab',
         title: 'GitLab',
         section: 'Socials',
