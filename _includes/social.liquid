@@ -13,7 +13,7 @@
     {% when 'discord_id' %}
       <a href="https://discord.com/users/{{ social[1] }}" title="Discord"><i class="fa-brands fa-discord"></i></a>
     {% when 'email' %}
-      <a href="mailto:{{ social[1] | encode_email }}" title="email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:{{ social[1] | encode_email }}" title="email"><i class="fa-regular fa-envelope"></i></a>
     {% when 'facebook_id' %}
       <a href="https://facebook.com/{{ social[1] }}" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
     {% when 'flickr_id' %}
@@ -22,6 +22,8 @@
       <a href="https://github.com/{{ social[1] }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
     {% when 'gitlab_username' %}
       <a href="https://gitlab.com/{{ social[1] }}" title="GitLab"><i class="fa-brands fa-gitlab"></i></a>
+    {% when 'huggingface_username' %}
+      <a href="https://huggingface.co/{{ social[1] }}" title="HuggingFace"><i class="fa-regular fa-face-smiling-hands"></i></a>
     {% when 'hal_id' %}
       <a href="https://cv.hal.science/{{ social[1] }}/" title="HAL"><i class="ai ai-hal"></i></a>
     {% when 'ieee_id' %}
