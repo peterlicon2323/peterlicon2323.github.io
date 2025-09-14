@@ -560,13 +560,6 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
         },
       },{
-        id: 'social-work',
-        title: 'Work',
-        section: 'Socials',
-        handler: () => {
-          window.open("abcd1234httrr.github.io", "_blank");
-        },
-      },{
         id: 'social-x',
         title: 'X',
         section: 'Socials',
