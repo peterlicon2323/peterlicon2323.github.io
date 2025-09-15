@@ -1,6 +1,6 @@
 ---
 layout: page
-title: certificates
+title: CERTIFICATES
 permalink: /certificates/
 description: A growing collection of your cool projects.
 nav: true
