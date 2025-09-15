@@ -21,9 +21,14 @@
     {% when 'github_username' %}
       <a href="https://github.com/{{ social[1] }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
     {% when 'gitlab_username' %}
-      <a href="https://gitlab.com/{{ social[1] }}" title="GitLab"><i class="fa-brands fa-gitlab"></i></a>
+      <a href="https://gitlab.com/{{ social[1] }}" title="GitLab">
+        <img alt="Hugging Face Icon" src="https://about.gitlab.com/images/press/gitlab-logo-500-rgb.svg">
+      </a>
     {% when 'huggingface_username' %}
-      <a href="https://huggingface.co/{{ social[1] }}" title="HuggingFace"><img src="assets/svg/huggingface.svg" alt="Hugging Face Icon"></img></a>
+      <a href="https://huggingface.co/{{ social[1] }}" title="HuggingFace">
+        <!--<img alt="Hugging Face Icon" src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg">-->        
+        img alt="Hugging Face Icon" src="/assets/svg/huggingface.svg">
+      </a>
     {% when 'hal_id' %}
       <a href="https://cv.hal.science/{{ social[1] }}/" title="HAL"><i class="ai ai-hal"></i></a>
     {% when 'ieee_id' %}
