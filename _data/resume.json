@@ -86,7 +86,8 @@
       "name": "Google Cloud Skills Boost 2",
       "date": "2018-01-01",
       "issuer": "Stanford University",
-      "url": "https://www.cloudskillsboost.google"
+      "url": "https://www.cloudskillsboost.google",
+      "icon": "fa-solid fa-location-dot"
     },
     {
       "name": "Quantum Computing",
