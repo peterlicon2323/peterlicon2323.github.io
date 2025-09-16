@@ -1,0 +1,354 @@
+/* assets/css/styles.css */
+/* Custom properties for monochrome color scheme */
+:root {
+  --light-bg: #f5f5f5; /* Light gray background */
+  --light-card: #ffffff; /* White for cards */
+  --light-text: #1a1a1a; /* Dark gray text */
+  --light-muted: #6c757d; /* Bootstrap's muted gray */
+  --dark-bg: #3d3d3d; /* Lighter dark mode background */
+  --dark-card: #303030; /* Slightly lighter gray for cards */
+  --dark-text: #f0f0f0; /* Near white for text */
+  --dark-muted: #a0a0a0; /* Muted gray for dark mode */
+  --accent: #0d6efd; /* Bootstrap primary blue for hover */
+  --accent-dark: #60a5fa; /* Lighter blue for dark mode */
+  --icon-fill: var(--light-text); /* Icon fill for light mode */
+  --icon-fill-hover: var(--accent); /* Icon fill on hover for light mode */
+}
+
+[data-theme="dark"] {
+  --icon-fill: var(--dark-text); /* Icon fill for dark mode */
+  --icon-fill-hover: var(--accent-dark); /* Icon fill on hover for dark mode */
+}
+
+/* Ensure dark mode overrides */
+[data-theme="dark"] {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Ensure the body takes up at least the full viewport height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Apply custom properties */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Make the main content expand to fill available space */
+main {
+  margin-top: 5rem !important;
+  flex: 1 0 auto;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.alert-warning {
+       background-color: #fff3cd;
+       border-left: 4px solid #ffecb5;
+       padding: 10px;
+       margin: 20px 0;
+   }
+
+.bg-light-bg {
+  background-color: var(--light-bg);
+}
+
+.bg-light-card {
+  background-color: var(--light-card);
+}
+
+/* Fixed Header Navigation */
+/* Fixed positioning for header with bg-light-card shadow-sm */
+header.bg-light-card.shadow-sm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* End Fixed Header Navigation */
+/* Start Reduce Font Size of Header */
+header.bg-light-card.shadow-sm .navbar-brand {
+  font-size: 1.5rem !important; /* Adjust this value to make the brand text smaller (default was fs-3 ~ 1.75rem) */
+}
+
+header.bg-light-card.shadow-sm .nav-link {
+  font-size: 1rem; /* Adjust this value to make nav links smaller (default was fs-5 ~ 1.25rem) */
+}
+/* End Reduce Font Size of Header */
+.text-light-text {
+  color: var(--light-text);
+}
+
+.text-light-muted {
+  color: var(--light-muted);
+}
+
+[data-theme="dark"] .bg-dark-bg {
+  background-color: var(--dark-bg);
+}
+
+[data-theme="dark"] .bg-dark-card {
+  background-color: var(--dark-card);
+}
+
+[data-theme="dark"] .text-dark-text {
+  color: var(--dark-text);
+}
+
+[data-theme="dark"] .text-dark-muted {
+  color: var(--dark-muted);
+}
+
+/* Typography */
+.font-mono {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Links and hover effects */
+.nav-link {
+  color: var(--light-text);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--dark-text) !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link:focus {
+  color: var(--accent-dark) !important;
+}
+
+/* Smooth transitions */
+.nav-link,
+button,
+input {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Header styles */
+header {
+  background-color: var(--light-card);
+  border-bottom: 1px solid #e5e5e5;
+}
+[data-theme="dark"] header {
+  background-color: var(--dark-card); /* Changed from var(--dark-bg) to var(--dark-card) */
+  border-bottom: 1px solid #4b5563;
+}
+
+/* Footer styles */
+footer {
+  flex-shrink: 0;
+  background-color: var(--light-card);
+  border-top: 1px solid #e5e5e5;
+}
+[data-theme="dark"] footer {
+  background-color: var(--dark-card); /* Changed from var(--dark-bg) to var(--dark-card) */
+  border-top: 1px solid #4b5563;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: var(--light-card);
+  border-top: 1px solid #e5e5e5;
+}
+[data-theme="dark"] footer {
+  background-color: var(--dark-card); /* Changed from var(--dark-bg) to var(--dark-card) */
+  border-top: 1px solid #4b5563;
+}
+
+.navbar-brand {
+  color: var(--light-text);
+}
+
+[data-theme="dark"] .navbar-brand {
+  color: var(--dark-text) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(0);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Quote */
+.admonition.warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffcc00;
+  padding: 1em;
+  margin: 1em 0;
+}
+.admonition.warning .admonition-title {
+  font-weight: bold;
+  color: #856404;
+}
+
+footer p {
+  color: var(--light-muted);
+}
+
+[data-theme="dark"] footer p {
+  color: var(--dark-muted) !important;
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+@import "https://unpkg.com/open-props/easings.min.css";
+
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center;
+}
+
+.sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill);
+}
+
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translateX(-7px);
+}
+
+@supports (cx: 1) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    cx: 17;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform .5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon > .sun-beams {
+    transition: transform .5s var(--ease-elastic-4), opacity .5s var(--ease-3);
+  }
+
+  .sun-and-moon .moon > circle {
+    transition: transform .25s var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx .25s var(--ease-out-5);
+    }
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transition-timing-function: var(--ease-3);
+    transition-duration: .25s;
+    transform: scale(1.75);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transition-duration: .15s;
+    transform: rotateZ(-25deg);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transition-duration: .5s;
+    transition-delay: .25s;
+  }
+}
+
+/* Blog post and project page styles */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: var(--light-text);
+}
+
+[data-theme="dark"] article h1,
+[data-theme="dark"] article h2,
+[data-theme="dark"] article h3,
+[data-theme="dark"] article h4,
+[data-theme="dark"] article h5,
+[data-theme="dark"] article h6 {
+  color: var(--dark-text);
+}
+
+article p {
+  color: var(--light-text);
+}
+
+[data-theme="dark"] article p {
+  color: var(--dark-text);
+}
+
+article a {
+  color: var(--accent);
+}
+
+[data-theme="dark"] article a {
+  color: var(--accent-dark);
+}
+
+/* Code blocks (inspired by Hugging Face/Gradio) */
+pre,
+code {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--light-card);
+  border-radius: 0.375rem;
+}
+
+[data-theme="dark"] pre,
+[data-theme="dark"] code {
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+
+}
+
