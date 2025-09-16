@@ -108,27 +108,27 @@ data:
         date: Jun 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
         # url: https://www.coursera.org/specializations/deep-learning
-        url: Associate AI Engineer for Developers
+        url: https://www.coursera.org/specializations/deep-learning
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
       - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: DataCamp
-        url: DataCamp
+        url: https://www.coursera.org/specializations/deep-learning
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
       - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: Coursera (deeplearning.ai)
-        url: NetCad
+        url: https://www.coursera.org/specializations/deep-learning
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
       - name: Associate AI Engineer for Developers
         date: Jun 15, 2023
         provider_issuer: Google Cloud Skills Boost
-        url: Google Cloud Skills Boost
+        url: https://www.coursera.org/specializations/deep-learning
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.
       - name: Machine Learning Scientist in Python
         date: Jun 15, 2023
         provider_issuer: Microsoft Learn
-        url: Machine Learning Scientist in Python
+        url: https://www.coursera.org/specializations/deep-learning
         description: Finished a series on neural nets, CNNs, RNNs, and seq models.    
 
   # skills:
