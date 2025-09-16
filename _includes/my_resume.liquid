@@ -322,6 +322,10 @@
             body * { visibility: hidden; }
             .cv, .cv * { visibility: visible; }
             .cv {
+                transform: scale(1) !important; /* Ensures 100% scale */
+                transform-origin: top left !important;
+                box-sizing: border-box !important;
+                
                 position: absolute;
                 top: 0;
                 left: 0;

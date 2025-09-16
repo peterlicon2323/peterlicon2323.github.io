@@ -12,8 +12,7 @@
   {% endif %}
   <script src="/assets/js/theme_toggle.js" defer></script>
 
-  <!-- default -->
-  <!--
+<!-- default -->
   {% if page.redirect %}
     {% if page.redirect == true %}
       {% assign redirect = site.baseurl | append: '/' %}
@@ -25,30 +24,28 @@
     <meta http-equiv="refresh" content="3; url={{ redirect }}">
   {% endif %}
   {% include head.liquid %}
-  -->
+    
 </head>
 
 <!-- Body -->
-
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
-<!--
+
   <div class="container mt-5" role="main">
     <div class="row">
       <div class="col-sm-3">
         <nav id="toc-sidebar" class="sticky-top"></nav>
       </div>
-      
-      
-      
     </div>
+
+    <main class="container py-4">
+      {{ content }}
+    </main>
     
   </div>
--->
-  <main class="container py-4">
-      {{ content }}
-  </main>
+
+  
   <footer class="bg-light-card shadow-sm py-3 text-center">
     {% include footer.liquid %}
   </footer>
