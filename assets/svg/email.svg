@@ -1,0 +1,7 @@
+<!-- <svg style="width: 20px; height: 20px; color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6m0 0l-9 6-9-6m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
+</svg> -->
+
+<svg style="width: 20px; height: 20px; color: #2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 8l9 6 9-6m0 0l-9 6-9-6m18 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
+</svg>
