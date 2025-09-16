@@ -9,17 +9,16 @@
   <link rel="stylesheet" href="/assets/css/styles.css?v=1">
 <!--   Add CSS for CV -->
   {% if page.url == '/resume' %}
-    {% include resume-css.liquid %}
+    {% include resume_css.liquid %}
   {% endif %}
 <!--   End of add CV CSS -->
-  <script src="/assets/js/theme-toggle.js" defer></script>
+  <script src="/assets/js/theme_toggle.js" defer></script>
   {% seo %}
 </head>
 <body class="bg-light-bg text-light-text">
   <header class="bg-light-card shadow-sm">
     <nav class="navbar navbar-expand-md container py-3">
       <div class="container-fluid">
-        <img src="/assets/images/default/avatar.jpg" style="height: 50px; width: 50px;" alt="Avatar" class="navbar-avatar">
         <a class="navbar-brand fw-bold font-mono fs-3" href="/">{{ site.title }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
