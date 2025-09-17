@@ -36,7 +36,19 @@
   <div class="container mt-5" role="main" style="margin-top: 1rem !important;"> 
     <div class="row">
       <div class="col-sm-3" style="padding-left: 2.5rem;padding-right: 0rem !important;"> 
-        <nav id="toc-sidebar" class="sticky-top"></nav>
+        <nav id="toc-sidebar" class="sticky-top">
+
+        <!-- Print Resume -->        
+        <div class="print-page-element">
+          <span class="other-version-link">
+            <button class="print-button" onclick="printDiv()">
+                <i class="fas fa-print"></i>Print CV
+            </button>
+          </span>
+        </div>
+        <!-- End of Print Resume Part -->
+        
+        </nav>
       </div>
       <main class="container py-4" style="max-width: 900px !important;margin-top: 0rem !important;padding-top: 0rem !important;"> 
         {{ content }}
