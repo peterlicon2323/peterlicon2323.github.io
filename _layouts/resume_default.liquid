@@ -16,11 +16,25 @@
 </head>
 
 <!-- Body -->
-  <body class="bg-light-bg text-light-text">
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Header -->
+    {% include header.liquid %}
+
+  <div class="container mt-5" role="main">
+    <div class="row">
+      <div class="col-sm-3">
+        <nav id="toc-sidebar" class="sticky-top"></nav>
+      </div>
+      <main class="container py-4">
+        {{ content }}
+      </main>
   
-  <main class="container py-4">
-    {{ content }}
-  </main>
+    </div>
+
+    
+    
+  </div>
+  
   
   <footer class="bg-light-card shadow-sm py-3 text-center">
     {% include footer.liquid %}
