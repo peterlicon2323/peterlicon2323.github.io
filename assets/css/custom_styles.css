@@ -9,10 +9,12 @@ body .container {
   text-align: right;
 }
 .other-version-link {
+  margin-left: 1rem;
   display: inline-flex; 
-  align-items: center; 
+  align-content: left;
+  align-items: left; 
   gap: 0.5em; 
-  margin-right: 7rem;
+  margin-right: 0rem;
 }
 .print-button {
     padding: 0.75rem 1.5rem;
