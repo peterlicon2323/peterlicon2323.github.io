@@ -6,7 +6,7 @@ body .container {
 .print-page-element {
   margin-bottom: 1.5rem; 
   margin-right: 0em; 
-  text-align: right;
+  /* text-align: right; */
 }
 .other-version-link {
   margin-left: 1rem;
