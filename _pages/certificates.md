@@ -11,8 +11,6 @@ horizontal: false
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap">
 <link rel="stylesheet" href="/assets/css/certificates.css">
 
-# CERTIFICATES
-
 <ul class="space-y-8">
   {% for cer in site.data.certificates %}
     <li>
