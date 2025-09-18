@@ -165,7 +165,7 @@ div[style*="display: flex"] {
 }
 
 .flex-shrink-0 img:hover {
-  transform: scale(1.1);
+  transform: scale(2.0);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   z-index: 10;
   cursor: zoom-in;
@@ -240,4 +240,8 @@ div[style*="display: flex"] {
   .text-base {
     font-size: 0.875rem !important;
   }
+}
+
+li.cer-list {
+  background: var(--card-bg-start);
 }

@@ -13,7 +13,7 @@ horizontal: false
 
 <ul class="space-y-8">
   {% for cer in site.data.certificates %}
-    <li>
+    <li class="cer-list">
       <div style="display: flex; position: relative;">
         <div class="flex-1 space-y-4">
           <a href="{{ cer.certificate_url }}" class="text-2xl group" target="_blank">
