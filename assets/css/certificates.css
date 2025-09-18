@@ -1,4 +1,4 @@
-/* Define custom properties for light and dark modes */
+/* Define custom properties for light mode */
 :root {
   --bg-primary: #f8fafc;
   --text-primary: #1f2937;
@@ -19,26 +19,25 @@
   --gradient-end: #1d4ed8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: #0a0a0a;
-    --text-primary: #f9fafb;
-    --card-bg-start: #1a1a1a;
-    --card-bg-end: #262626;
-    --card-border: #4b5563;
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
-    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
-    --link-color: #60a5fa;
-    --link-hover: #93c5fd;
-    --text-secondary: #d1d5db;
-    --text-description: #d1d5db;
-    --tag-bg: #1e40af;
-    --tag-text: #bfdbfe;
-    --tag-bg-hover: #1e3a8a;
-    --img-border: #4b5563;
-    --gradient-start: #60a5fa;
-    --gradient-end: #2563eb;
-  }
+/* Override variables for dark theme using [data-theme="dark"] */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --text-primary: #f9fafb;
+  --card-bg-start: #1a1a1a;
+  --card-bg-end: #262626;
+  --card-border: #4b5563;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+  --text-secondary: #d1d5db;
+  --text-description: #d1d5db;
+  --tag-bg: #1e40af;
+  --tag-text: #bfdbfe;
+  --tag-bg-hover: #1e3a8a;
+  --img-border: #4b5563;
+  --gradient-start: #60a5fa;
+  --gradient-end: #2563eb;
 }
 
 /* Reset and base styles */
@@ -208,6 +207,7 @@ div[style*="display: flex"] {
 li.cer-list {
   background: var(--card-bg-start) !important;
 }
+
 /* Responsive design */
 @media (max-width: 768px) {
   div[style*="display: flex"] {
@@ -244,8 +244,4 @@ li.cer-list {
     font-size: 0.875rem !important;
   }
 
-  li.cer-list {
-    background: var(--card-bg-start) !important;
-  }
 }
-
