@@ -8,4 +8,5 @@ children:
   - title: CERTIFICATES
     permalink: /certificates/
   - title: CERTIFICATIONS
+    permalink: /certifications/
 ---
