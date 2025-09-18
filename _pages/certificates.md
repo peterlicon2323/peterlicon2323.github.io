@@ -13,18 +13,19 @@ horizontal: false
 
 <div class="certificates-grid">
   {% for cer in site.data.certificates %}
-    <div class="cer-card" style="display: inline-flex;">
+    <div class="cer-card" >
       <div class="cer-content">
         <a href="{{ cer.certificate_url }}" class="text-2xl group" target="_blank" rel="external nofollow noopener">
           {{ cer.name }}
           <span class="inline-block transition-transform group-hover:translate-x-2 duration-200">↗</span>
         </a>
+      </div>
         <div style="display: inline-flex; gap: 0.5rem; margin-top: 0.75rem;">
           <div>
-            <div class="flex items-center gap-4" style="font-size: 0.85rem !important;">
-              <div><p class="text-base">Provider or Issuer: {{ cer.provider_issuer }}</p></div>
+            <div class="flex items-center gap-4">
+              <div><p class="text-base">{{ cer.provider_issuer }}</p></div>
               <span>•</span>
-              <div><p class="text-base">Date: {{ cer.date | date: "%B %d, %Y" }}</p></div>
+              <div><p class="text-base">{{ cer.date | date: "%B %d, %Y" }}</p></div>
             </div>
             <div style="max-width: 15rem;">
               <p class="text-base leading-relaxed" style="font-size: 0.75rem !important;">Description: {{ cer.description }}</p>
@@ -37,15 +38,16 @@ horizontal: false
               </div>
             {% endif %}
           </div>
+          <div class="image-container">
+                {% if cer.file %}
+                <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate">
+                {% else %}
+                <div class="placeholder-image">No Image Available</div>
+                {% endif %}
+            </div>
         </div>
       </div>
-      <div class="image-container">
-        {% if cer.file %}
-          <img src="{{ cer.file | relative_url }}" alt="{{ cer.name }} certificate">
-        {% else %}
-          <div class="placeholder-image">No Image Available</div>
-        {% endif %}
-      </div>
+      
     </div>
   {% endfor %}
 </div>
