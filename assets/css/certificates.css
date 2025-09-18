@@ -21,10 +21,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #111827;
+    --bg-primary: #0a0f1c;
     --text-primary: #e5e7eb;
-    --card-bg-start: #1f2937;
-    --card-bg-end: #111827;
+    --card-bg-start: #0a0f1c;
+    --card-bg-end: #141925;
     --card-border: #374151;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
     --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
@@ -155,7 +155,7 @@ div[style*="display: flex"] {
 }
 
 .flex-shrink-0 img:hover {
-  transform: scale(2);
+  transform: scale(2.5);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
   z-index: 10;
   cursor: zoom-in;
