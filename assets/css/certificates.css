@@ -90,7 +90,7 @@
 }
 
 .text-2xl {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--link-color);
   text-decoration: none;
@@ -107,7 +107,7 @@
 }
 
 .text-base.leading-relaxed {
-  font-size: 0.875rem;
+  font-size: 0.75rem !important;
   color: var(--text-description);
   font-style: italic;
 }
