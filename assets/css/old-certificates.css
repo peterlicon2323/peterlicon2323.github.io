@@ -19,7 +19,7 @@
   --gradient-end: #1d4ed8;
 }
 
-/* Override variables for dark theme */
+/* Override variables for dark theme using [data-theme="dark"] */
 [data-theme="dark"] {
   --bg-primary: #0a0a0a;
   --text-primary: #f9fafb;
@@ -118,17 +118,10 @@
   font-style: italic;
 }
 
-/* Content area with sharp, square style */
+/* Content area */
 .cer-content {
   flex: 1;
-  padding: 1rem;
-  background: var(--card-bg-start);
-  border: 2px solid var(--card-border);
-  border-radius: 0;
-  margin-right: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-right: 1rem;
 }
 
 /* Image container */
@@ -204,18 +197,13 @@ div.flex.items-center.gap-4 {
   }
 
   .cer-card {
+    /* min-height: auto; */
     padding: 1rem;
   }
 
   .cer-card[style*="display: inline-flex"] {
     display: flex !important;
     flex-direction: column;
-  }
-
-  .cer-content {
-    margin-right: 0;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
   }
 
   .image-container img, .placeholder-image {
