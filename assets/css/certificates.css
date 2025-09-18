@@ -65,9 +65,14 @@
   padding: 1.5rem;
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
   min-height: 300px;
+}
+
+/* Ensure inline-flex is overridden by CSS if needed */
+.cer-card[style*="display: inline-flex"] {
+  display: inline-flex !important;
+  align-items: stretch;
+  width: 100%;
 }
 
 .cer-card:hover {
@@ -90,7 +95,7 @@
 }
 
 .text-2xl {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--link-color);
   text-decoration: none;
@@ -102,7 +107,7 @@
 }
 
 .text-base {
-  font-size: 1rem !important;
+  font-size: 0.85rem !important;
   color: var(--text-secondary);
 }
 
@@ -115,7 +120,7 @@
 /* Content area */
 .cer-content {
   flex: 1;
-  padding-bottom: 1rem;
+  padding-right: 1rem;
 }
 
 /* Image container */
@@ -195,6 +200,11 @@ div.flex.items-center.gap-4 {
     padding: 1rem;
   }
 
+  .cer-card[style*="display: inline-flex"] {
+    display: flex !important;
+    flex-direction: column;
+  }
+
   .image-container img, .placeholder-image {
     margin-top: 1rem;
     max-height: 120px;
@@ -210,6 +220,10 @@ div.flex.items-center.gap-4 {
   }
 
   .text-base {
-    font-size: 0.875rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .text-base.leading-relaxed {
+    font-size: 0.75rem !important;
   }
 }
