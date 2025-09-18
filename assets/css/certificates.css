@@ -1,3 +1,42 @@
+/* Define custom properties in :root for light and dark modes */
+:root {
+  --bg-primary: #f8fafc;
+  --text-primary: #1f2937;
+  --card-bg-start: #ffffff;
+  --card-bg-end: #f0f4f8;
+  --card-border: #e5e7eb;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --link-color: #3b82f6;
+  --link-hover: #1d4ed8;
+  --text-secondary: #4b5563;
+  --text-description: #4b5563;
+  --tag-bg: #dbeafe;
+  --tag-text: #1e40af;
+  --tag-bg-hover: #bfdbfe;
+  --img-border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #111827;
+    --text-primary: #e5e7eb;
+    --card-bg-start: #1f2937;
+    --card-bg-end: #111827;
+    --card-border: #374151;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --link-color: #60a5fa;
+    --link-hover: #93c5fd;
+    --text-secondary: #d1d5db;
+    --text-description: #d1d5db;
+    --tag-bg: #1e40af;
+    --tag-text: #bfdbfe;
+    --tag-bg-hover: #1e3a8a;
+    --img-border: #374151;
+  }
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
@@ -8,17 +47,9 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.5;
-  background-color: #f8fafc;
-  color: #1f2937;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Dark mode base styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #111827;
-    color: #e5e7eb;
-  }
 }
 
 /* Container styles */
@@ -29,30 +60,21 @@ ul.space-y-8 {
   list-style: none;
 }
 
-/* Certificate card styles (only apply to li within ul.space-y-8) */
+/* Certificate card styles */
 ul.space-y-8 > li {
-  background: linear-gradient(145deg, #ffffff, #f0f4f8);
-  border: 1px solid #e5e7eb;
+  background: linear-gradient(145deg, var(--card-bg-start), var(--card-bg-end));
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 200px; /* Fixed height for certificate li elements */
+  height: 200px;
   display: flex;
   align-items: stretch;
 }
 
-/* Dark mode card styles */
-@media (prefers-color-scheme: dark) {
-  ul.space-y-8 > li {
-    background: linear-gradient(145deg, #1f2937, #111827);
-    border-color: #374151;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-  }
-
-  ul.space-y-8 > li:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-  }
+ul.space-y-8 > li:hover {
+  box-shadow: var(--card-shadow-hover);
 }
 
 /* Typography */
@@ -71,60 +93,39 @@ ul.space-y-8 > li {
 .text-2xl {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #3b82f6;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .text-2xl:hover {
-  color: #1d4ed8;
-}
-
-@media (prefers-color-scheme: dark) {
-  .text-2xl {
-    color: #60a5fa;
-  }
-  .text-2xl:hover {
-    color: #93c5fd;
-  }
+  color: var(--link-hover);
 }
 
 .text-base {
   font-size: 1.1rem !important;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 .text-base.leading-relaxed {
   font-size: 0.75rem;
-  color: #4b5563;
+  color: var(--text-description);
   font-style: italic;
-}
-
-@media (prefers-color-scheme: dark) {
-  .text-base.leading-relaxed {
-    color: #d1d5db;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .text-base {
-    color: #d1d5db;
-  }
 }
 
 /* Flex container with 60/40 split */
 div[style*="display: flex"] {
   display: flex;
   gap: 1.5rem;
-  align-items: stretch; /* Ensure children stretch to fill available space */
-  width: 100%; /* Ensure flex container fills li width */
+  align-items: stretch;
+  width: 100%;
 }
 
 /* Left content area */
 .flex-1 {
   flex: 0 0 60%;
   max-width: 60%;
-  padding-right: 0.5rem; /* Add padding to prevent content from touching edge */
+  padding-right: 0.5rem;
 }
 
 /* Right image area */
@@ -134,38 +135,32 @@ div[style*="display: flex"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Ensure zoomed image is contained */
+  position: relative;
 }
 
 /* Image styles */
 .flex-shrink-0 img {
   max-width: 100%;
-  max-height: 100%; /* Ensure image does not exceed container height */
+  max-height: 100%;
   width: auto;
-  height: auto; /* Allow natural scaling within bounds */
-  object-fit: contain; /* Ensure entire image is visible without cropping */
+  height: auto;
+  object-fit: contain;
   border-radius: 0.5rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--img-border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flex-shrink-0 img:hover {
-  transform: scale(2.5); /* Zoom image by 2.5x on hover */
+  transform: scale(2);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* Ensure zoomed image appears above other elements */
-  cursor: zoom-in; /* Change cursor to magnifying glass on hover */
-}
-
-@media (prefers-color-scheme: dark) {
-  .flex-shrink-0 img {
-    border-color: #374151;
-  }
+  z-index: 10;
+  cursor: zoom-in;
 }
 
 /* Tags */
 .bg-blue-100 {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -174,18 +169,8 @@ div[style*="display: flex"] {
 }
 
 .bg-blue-100:hover {
-  background-color: #bfdbfe;
+  background-color: var(--tag-bg-hover);
   transform: scale(1.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  .bg-blue-100 {
-    background-color: #1e40af;
-    color: #bfdbfe;
-  }
-  .bg-blue-100:hover {
-    background-color: #1e3a8a;
-  }
 }
 
 /* Responsive design */
@@ -201,12 +186,12 @@ div[style*="display: flex"] {
   }
 
   ul.space-y-8 > li {
-    height: auto; /* Remove fixed height on mobile for better content fit */
+    height: auto;
   }
 
   .flex-shrink-0 img {
     margin-top: 1rem;
-    max-height: 150px; /* Limit image height on mobile */
+    max-height: 150px;
     width: auto;
   }
 
