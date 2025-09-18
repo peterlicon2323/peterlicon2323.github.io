@@ -1,0 +1,37 @@
+- name: Python Programming
+  date: 2023-06-15
+  certificate_url: https://example.com/certificates/python-programming.pdf
+  provider_issuer: Coursera
+  description: Comprehensive course on Python programming fundamentals
+  # tags: [Python, Programming, Data Science]
+  file: assets/images/certificates/coursera/th_1.jpg
+
+- name: Machine Learning Fundamentals
+  date: 2024-03-20
+  certificate_url: https://example.com/certificates/ml-fundamentals.pdf
+  provider_issuer: edX
+  description: Introduction to machine learning concepts and algorithms
+  # tags: [Machine Learning, AI, Data Science]
+
+- name: Web Development Bootcamp
+  date: 2022-11-10
+  certificate_url: https://example.com/certificates/web-dev-bootcamp.pdf
+  provider_issuer: Udemy
+  description: Full-stack web development with HTML, CSS, and JavaScript
+  # tags: [Web Development, HTML, CSS, JavaScript]
+
+- name: Web Development Bootcamp
+  date: 2022-11-10
+  certificate_url: https://example.com/certificates/web-dev-bootcamp.pdf
+  provider_issuer: IBM
+  description: Full-stack web development with HTML, CSS, and JavaScript
+  # tags: [Web Development, HTML, CSS, JavaScript]
+  file: assets/images/certificates/ibm/th_1.jpg
+
+- name: Web Development Bootcamp
+  date: 2022-11-10
+  certificate_url: https://example.com/certificates/web-dev-bootcamp.pdf
+  provider_issuer: DataCamp
+  description: Full-stack web development with HTML, CSS, and JavaScript
+  # tags: [Web Development, HTML, CSS, JavaScript]
+  file: assets/images/certificates/datacamp/th_1.jpg
