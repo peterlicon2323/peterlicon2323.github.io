@@ -65,7 +65,7 @@
   padding: 1.5rem;
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 300px;
+  /* min-height: 300px; */
 }
 
 /* Ensure inline-flex is overridden by CSS if needed */
