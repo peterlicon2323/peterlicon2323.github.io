@@ -37,14 +37,21 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-certs",
-          title: "CERTS",
-          description: "A growing collection of your cool certificates.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/certificates/";
-          },
-        },{id: "post-a-post-with-plotly-js",
+        },{id: "dropdown-certificates",
+              title: "CERTIFICATES",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/certificates/";
+              },
+            },{id: "dropdown-certifications",
+              title: "CERTIFICATIONS",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
