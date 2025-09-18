@@ -205,6 +205,9 @@ div[style*="display: flex"] {
   transform: scale(1.05);
 }
 
+li.cer-list {
+  background: var(--card-bg-start) !important;
+}
 /* Responsive design */
 @media (max-width: 768px) {
   div[style*="display: flex"] {
@@ -240,8 +243,9 @@ div[style*="display: flex"] {
   .text-base {
     font-size: 0.875rem !important;
   }
+
+  li.cer-list {
+    background: var(--card-bg-start) !important;
+  }
 }
 
-li.cer-list {
-  background: var(--card-bg-start) !important;
-}
