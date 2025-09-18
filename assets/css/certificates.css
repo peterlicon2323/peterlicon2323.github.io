@@ -15,6 +15,8 @@
   --tag-text: #1e40af;
   --tag-bg-hover: #bfdbfe;
   --img-border: #e5e7eb;
+  --gradient-start: #3b82f6;
+  --gradient-end: #1d4ed8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +36,8 @@
     --tag-text: #bfdbfe;
     --tag-bg-hover: #1e3a8a;
     --img-border: #374151;
+    --gradient-start: #60a5fa;
+    --gradient-end: #2563eb;
   }
 }
 
@@ -82,7 +86,7 @@ ul.space-y-8 > li:hover {
   font-size: 2.25rem;
   font-weight: 800;
   letter-spacing: -0.025em;
-  background: linear-gradient(to right, #3b82f6, #1d4ed8);
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
