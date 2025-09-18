@@ -22,9 +22,9 @@ horizontal: false
         <div style="display: inline-flex; gap: 0.5rem; margin-top: 0.75rem;">
           <div>
             <div class="flex items-center gap-4" style="font-size: 0.85rem !important;">
-              <div><p class="text-base">Provider or Issuer: {{ cer.provider_issuer }}</p></div>
+              <div><p class="text-base">{{ cer.provider_issuer }}</p></div>
               <span>•</span>
-              <div><p class="text-base">Date: {{ cer.date | date: "%B %d, %Y" }}</p></div>
+              <div><p class="text-base">{{ cer.date | date: "%B %d, %Y" }}</p></div>
             </div>
             <div style="max-width: 15rem;">
               <p class="text-base leading-relaxed" style="font-size: 0.75rem !important;">Description: {{ cer.description }}</p>

@@ -197,7 +197,7 @@ div.flex.items-center.gap-4 {
   }
 
   .cer-card {
-    min-height: auto;
+    /* min-height: auto; */
     padding: 1rem;
   }
 
