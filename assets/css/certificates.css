@@ -242,6 +242,6 @@ div[style*="display: flex"] {
   }
 }
 
-li .cer-list {
+li.cer-list {
   background: var(--card-bg-start) !important;
 }
