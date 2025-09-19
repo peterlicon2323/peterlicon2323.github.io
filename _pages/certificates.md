@@ -19,7 +19,7 @@ horizontal: false
           {{ cer.name }}
           <span class="inline-block transition-transform group-hover:translate-x-2 duration-200">↗</span>
         </a>
-        <div style="display: inline-flex; gap: 0.5rem; margin-top: 0.75rem;">
+        <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem; justify-content: space-between;">
           <div>
             <div class="flex items-center gap-4" style="font-size: 0.85rem !important;">
               <div><p class="text-base">{{ cer.provider_issuer }}</p></div>
