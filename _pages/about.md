@@ -9,12 +9,17 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <span class="font-style: italic;">Einstein in 1947</span>
     <table>
     <tbody>
-    <tr>
-    <th>Name</th>
-    <td>Bob</td>
-    </tr>
+      <tr>
+        <th>Name</th>
+        <td>Bob Doe</td>
+      </tr>
+      <tr>
+        <th>Education</th>
+        <td><a href="https://www.google.com">Google</a></td>
+      </tr>
     </tbody>
     </table>
 
