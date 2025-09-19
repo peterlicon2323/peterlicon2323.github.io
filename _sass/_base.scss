@@ -269,7 +269,7 @@ ul.task-list input[type="checkbox"] {
 
 .dropdown-item {
   color: var(--global-text-color);
-
+  font-weight: 450 !important;
   &:hover {
     color: var(--global-hover-color);
     background-color: var(--global-bg-color);
@@ -586,6 +586,12 @@ footer.sticky-bottom {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
+  h1 {
+    color: var(--global-theme-color);
+    font-weight: 450;
+    font-size: 5rem;
+  }
+
 }
 
 .post-list {
