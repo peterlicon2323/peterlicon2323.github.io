@@ -326,7 +326,7 @@ article p {
   color: var(--dark-text);
 }
 
-article a {
+/* article a {
   color: var(--accent);
 }
 a.nav-item, a.dropdown {
@@ -335,7 +335,7 @@ a.nav-item, a.dropdown {
 
 [data-theme="dark"] article a {
   color: var(--accent-dark);
-}
+} */
 
 /* Code blocks (inspired by Hugging Face/Gradio) */
 pre,
