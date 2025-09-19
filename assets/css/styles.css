@@ -39,6 +39,11 @@ html, body {
   background-color: var(--light-bg);
   color: var(--light-text);
   font-family: 'Inter', sans-serif;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
 } */
 
 /* Make the main content expand to fill available space */
@@ -47,10 +52,7 @@ main {
   flex: 1 0 auto;
 }
 
-[data-theme="dark"] body {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
+
 
 .alert-warning {
        background-color: #fff3cd;
