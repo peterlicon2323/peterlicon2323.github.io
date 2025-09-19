@@ -588,12 +588,15 @@ footer.sticky-bottom {
   }
   h1 {
     color: var(--global-theme-color);
-    font-weight: 450;
+    
     font-size: 5rem;
   }
 
 }
 
+h1.post-title {
+  font-weight: 450 !important;
+  }
 .post-list {
   margin: 0;
   margin-bottom: 40px;
