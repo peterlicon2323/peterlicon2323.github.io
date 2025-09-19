@@ -330,7 +330,7 @@ article a {
   color: var(--accent);
 }
 a.nav-item, a.dropdown {
-  color: var(--global-text-color);
+  color: var(--global-text-color) !important;
 }
 
 [data-theme="dark"] article a {
