@@ -33,13 +33,13 @@ html, body {
 }
 
 /* Apply custom properties */
-body {
+/* body {
   display: flex;
   flex-direction: column;
   background-color: var(--light-bg);
   color: var(--light-text);
   font-family: 'Inter', sans-serif;
-}
+} */
 
 /* Make the main content expand to fill available space */
 main {
