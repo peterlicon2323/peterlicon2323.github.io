@@ -23,14 +23,21 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-resume",
-          title: "RESUME",
-          description: "This is a description of the page. You can modify it in &#39;_pages/resume.md&#39;. You can also change or remove the top pdf download button.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/resume/";
-          },
-        },{id: "nav-projects",
+        },{id: "dropdown-cv",
+              title: "CV",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/cv/";
+              },
+            },{id: "dropdown-resume",
+              title: "RESUME",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/resume/";
+              },
+            },{id: "nav-projects",
           title: "PROJECTS",
           description: "A growing collection of your cool projects.",
           section: "Navigation",
