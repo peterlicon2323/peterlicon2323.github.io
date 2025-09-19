@@ -329,6 +329,9 @@ article p {
 article a {
   color: var(--accent);
 }
+a.nav-item, a.dropdown {
+  color: var(--global-text-color);
+}
 
 [data-theme="dark"] article a {
   color: var(--accent-dark);
