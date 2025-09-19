@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CERTIFICATES
-permalink: /certificates/
+title: CERTIFICATIONS
+permalink: /certifications/
 description: Welcome to my Certifications Hub! 🥇 Showcase of my earned achievements! 🎓
 # nav: true
 # nav_order: 5
