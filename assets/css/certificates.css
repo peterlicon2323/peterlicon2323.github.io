@@ -97,7 +97,8 @@
 .text-2xl {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--link-color);
+  /* color: var(--link-color); */
+  color: var(--global-theme-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
