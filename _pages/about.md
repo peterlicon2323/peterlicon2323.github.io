@@ -6,10 +6,15 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: avatar.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <span class="font-style: italic;">Einstein in 1947</span>
+    <!-- Avatar Caption -->
+    <div style="display: flex;justify-content: center;margin-bottom: 0.75rem;">
+      <span style="font-style: italic">Einstein in 1947</span>
+    </div>
+    <!-- My Information Table -->
+    <div style="display: flex;justify-content: space-between;">
     <table>
     <tbody>
       <tr>
@@ -22,6 +27,7 @@ profile:
       </tr>
     </tbody>
     </table>
+    </div>
 
 # selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
