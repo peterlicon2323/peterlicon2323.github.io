@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-blog",
           title: "BLOG",
-          description: "",
+          description: "Welcome to our blog hub! Discover insights, tips, and stories! 📰📝",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
@@ -32,7 +32,7 @@ ninja.data = [{
               },
             },{id: "nav-projects",
           title: "PROJECTS",
-          description: "A growing collection of your cool projects.",
+          description: "Welcome to my vibrant projects hub! 🗂️ Explore, create, inspire! 🚀👀",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
