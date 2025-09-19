@@ -2,12 +2,13 @@
 layout: page
 title: CERTIFICATES
 permalink: /certificates/
-description: Welcome to my Certificates Hub, showcasing my achievements and skills! 🏆🎖️
+description: Welcome to my Certifications Hub! 🥇 Showcase of my earned achievements! 🎓
 # nav: true
 # nav_order: 5
 display_categories: [work, fun]
 horizontal: false
 ---
+<!--
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap">
 <link rel="stylesheet" href="/assets/css/certificates.css">
 
@@ -49,3 +50,4 @@ horizontal: false
     </div>
   {% endfor %}
 </div>
+-->

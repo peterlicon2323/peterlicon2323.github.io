@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: TE@CHING
-description: Materials for courses you taught. Replace this text with your description.
+title: TEACHING
+description: Welcome to my teaching hub! 📚 Learn, grow, and inspire with us! ✨
 # nav: true
 # nav_order: 4
 ---

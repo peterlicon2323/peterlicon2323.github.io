@@ -2,6 +2,7 @@
 layout: book-shelf
 title: bookshelf
 permalink: /books/
+description: Welcome to Book-Shelf Hub! 🗃️🗄️ Discover, share, and dive into your favorite reads!
 # nav: false
 # collection: books
 ---

@@ -2,6 +2,7 @@
 layout: default
 permalink: /blog/
 title: BLOG
+description: Welcome to our blog hub! Discover insights, tips, and stories! 📰📝
 nav: true
 nav_order: 1
 pagination:

@@ -558,6 +558,7 @@ footer.sticky-bottom {
 
   h1 {
     color: var(--global-theme-color);
+    font-weight: 450;
     font-size: 5rem;
   }
 }
@@ -1063,7 +1064,7 @@ progress::-moz-progress-bar {
   .dropdown-item:active {
     background-color: var(--global-hover-color);
     color: var(--global-hover-text-color) !important;
-
+    font-weight: 450 !important;
     &:hover {
       color: var(--global-hover-text-color);
     }
