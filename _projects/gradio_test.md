@@ -10,11 +10,11 @@ related_publications: true
 
 This is Thumbnail
 
-[Thumb](assets/images/projects/gradio_test/thumbnail.png)
+[Thumb](/assets/images/projects/gradio_test/thumbnail.png)
 
 or
 
-![Thumb](assets/images/projects/gradio_test/thumbnail.png)
+![Thumb](/assets/images/projects/gradio_test/thumbnail.png)
 
 End Thumb
 Every project has a beautiful feature showcase page.
