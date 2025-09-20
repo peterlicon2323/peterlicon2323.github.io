@@ -29,9 +29,9 @@ profile:
       <span style="font-style: italic">Einstein in 1947</span>
     </div>
     <!-- My Information Table -->
-    <div style="display: flex; justify-content: space-between; font-family: 'EB Garamond', serif">
+    <div style='display: flex; justify-content: space-between; font-family: "EB Garamond", serif'>
     <table>
-      <tbody style="font-family: "EB Garamond", serif;">
+      <tbody>
           <tr>
               <th>Name</th>
               <td>Albert Einstein</td>
