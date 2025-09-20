@@ -30,7 +30,7 @@ profile:
     </div>
     <!-- My Information Table -->
     <div style="display: flex;justify-content: space-between;">
-    <table>
+    <table style="font-family: "EB Garamond", serif;">
       <tbody>
           <tr>
               <th>Name</th>
