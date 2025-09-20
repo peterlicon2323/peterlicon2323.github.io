@@ -10,10 +10,7 @@ related_publications: true
 
 This is Thumbnail
 
-
-![Thumb](/assets/images/projects/gradio_test/thumbnail.png){style="max-width: 60%; display: block; margin-left: auto; margin-right: auto;"}
-
-End Thumb
+<img src="/assets/images/projects/gradio_test/demo.png" alt="Thumb" style="max-width: 60%; display: block; margin-left: auto; margin-right: auto;" >
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
