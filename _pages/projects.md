@@ -5,7 +5,7 @@ permalink: /projects/
 description: Welcome to my vibrant projects hub! 🗂️ Explore, create, inspire! 🚀👀
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [Computer Vision, Natural Language Processing, Audio, Reinforcement Learning, Tabular]
 horizontal: false
 ---
 

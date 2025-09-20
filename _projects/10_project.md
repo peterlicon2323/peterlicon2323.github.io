@@ -4,7 +4,7 @@ title: Gradio Test
 description: with background image
 img: assets/images/projects/gradio_test/thumbnail.png
 importance: 1
-category: work
+category: Computer Vision
 related_publications: true
 ---
 

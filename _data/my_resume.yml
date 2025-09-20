@@ -226,3 +226,35 @@ data:
         url: https://github.com/google
       # - name: Blog
       #   url: https://github.com/google
+
+
+# ### 1. Programming Languages
+
+# - Python
+# - C++
+# - PHP
+# - JavaScript
+
+# ### 2. AI and Machine Learning Frameworks
+# - TensorFlow
+# - PyTorch
+# - Scikit-learn
+# - Keras
+# - NumPy
+# - Pandas
+# - OpenCV
+
+# ### 3. Data Management and Processing
+# - SQL
+# - NoSQL
+# - Spark
+# - Kafka
+# - Jupyter
+
+# ### 4. Development Tools and Environments
+# - Git
+# - Linux
+# - Docker
+# - Selenium
+# - HTML
+# - CSS
