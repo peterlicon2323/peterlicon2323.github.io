@@ -2,7 +2,8 @@
 layout: page
 title: Gradio Test
 description: with background image
-img: assets/img/thumbnail.png
+# img: assets/img/thumbnail.png
+img: assets/images/projects/gradio_test/thumbnail.png
 importance: 1
 category: Computer Vision
 related_publications: true
