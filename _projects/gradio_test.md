@@ -2,7 +2,7 @@
 layout: page
 title: Gradio Test
 description: with background image
-# img: assets/images/projects/gradio_test/thumbnail.png
+img: assets/images/projects/gradio_test/thumbnail.png
 importance: 1
 category: work
 related_publications: true
