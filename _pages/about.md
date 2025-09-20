@@ -30,8 +30,8 @@ profile:
     </div>
     <!-- My Information Table -->
     <div style="display: flex;justify-content: space-between;">
-    <table style="font-family: "EB Garamond", serif;">
-      <tbody>
+    <table>
+      <tbody style="font-family: "EB Garamond", serif;">
           <tr>
               <th>Name</th>
               <td>Albert Einstein</td>
