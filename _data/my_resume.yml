@@ -293,15 +293,33 @@ data:
         
 # Programming Languages
 # Python, JavaScript, PHP, C++, Java, R, Scala
-# AI & Machine Learning Frameworks
-# TensorFlow, PyTorch, Keras, Scikit-learn, OpenCV, NumPy, Pandas, Hugging Face Transformers, LangChain, JAX, MLflow
+
+# Deep Learning Frameworks
+# TensorFlow, PyTorch, Keras, JAX
+
+# Machine Learning Libraries
+# Scikit-learn, MLflow
+
+# Natural Language Processing (NLP)
+# Hugging Face Transformers, LangChain
+
+# Computer Vision
+# OpenCV
+
+# Data Processing Libraries
+# NumPy, Pandas
+
 # Data Management and Processing
 # SQL, NoSQL, Spark, Kafka, Jupyter, Hadoop, Airflow, Dask
+
 # Development Tools and Environments
 # Git, Linux, Docker, Kubernetes, VS Code, PyCharm
+
 # Cloud Computing and Deployment
 # AWS (SageMaker), Google Cloud AI, Azure ML, FastAPI, Flask, TensorRT, Gradio, Streamlit
+
 # Mathematics and Statistics
 # Linear Algebra, Calculus, Probability, Statistics (using SymPy, SciPy)
+
 # Others
 # HTML, CSS, Selenium, REST APIs, Agile Methodologies
