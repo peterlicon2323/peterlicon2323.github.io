@@ -500,6 +500,35 @@
                 font-weight: bold;
             } */
 
+            /* Skills Id */
+            #skills .skills-grid.three-column-section {
+            grid-template-columns: 3fr 5fr 4fr; /* Maintain the same proportions for print */
+                gap: 0.5rem; /* Smaller gap for print */
+                break-inside: avoid; /* Prevent page breaks inside the grid */
+            }
+            
+            #skills .cv-item {
+                margin-bottom: 0.5rem; /* Reduced margin for print */
+                break-inside: avoid; /* Prevent page breaks inside items */
+            }
+            
+            #skills .cv-item-row {
+                font-weight: bold;
+                margin-bottom: 0.2rem;
+                color: black !important; /* Force black text for print */
+            }
+            
+            #skills .cv-item-content {
+                font-size: 10pt; /* Use point size for print */
+                line-height: 1.3;
+                color: black !important; /* Force black text for print */
+            }
+            
+            /* Ensure the entire skills section doesn't break across pages */
+            #skills {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
 
         }
         .cv-item-content.more {
@@ -523,7 +552,41 @@
             font-size: 1.1rem
         }
 
-   
+        /* Skills section specific grid styling for skills id */
+        #skills .skills-grid.three-column-section {
+        display: grid;
+        grid-template-columns: 3fr 5fr 4fr; /* Column 1: 2fr, Column 2: 3fr, Column 3: 2fr */
+        gap: 1rem; /* Adjust gap as needed */
+        align-items: start; /* Align items to the top */
+        }
+
+        /* Skills section specific cv-item styling */
+        #skills .cv-item {
+        margin-bottom: 1rem; /* Add some vertical spacing */
+        }
+
+        /* Skills section specific styling for cv-item-row and content */
+        #skills .cv-item-row {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #333; /* Adjust color as needed */
+        }
+
+        #skills .cv-item-content {
+        font-size: 0.9em;
+        line-height: 1.4;
+        }
+
+        /* Skills section responsive adjustments */
+        @media (max-width: 768px) {
+        #skills .skills-grid.three-column-section {
+            grid-template-columns: 1fr; /* Stack vertically on mobile */
+        }
+        
+        #skills .cv-item-row {
+            font-weight: bold;
+        }
+        }
 
     </style>
 

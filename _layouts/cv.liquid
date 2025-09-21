@@ -84,7 +84,7 @@ layout: default
 
     <article>
       <div class="cv">
-        {% for data in site.data.cv_json %}
+        {% for data in site.data.cv %}
           {% if site.jsonresume and site.jsonresume.size > 0 %}
             {% unless site.jsonresume contains data[0] %}
               {% continue %}
