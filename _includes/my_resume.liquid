@@ -778,17 +778,18 @@
                 
                 <div class="skills-grid">
                     {% for group in section.items %}
-                        <div class="skill-group">
-                            <span class="group-title">{{ group.group_name }}:</span>
-                            <span class="skill-list">
+                        <div class="cv-item">
+                            <div class="cv-item-row">
+                                <span>{{ group.group_name }}</span>
+                            </div>
+                            <div class="cv-item-content">
                                 {% for skill in group.group_name_elements %}
                                     {{ skill.element }}{% if forloop.last == false %}, {% endif %}
                                 {% endfor %}
-                            </span>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
-            
 
             {% elsif sec_id == 'additional_info' %}
                 <div style="display: flex; align-content: center; justify-content: center; gap: 1rem; font-size: 0.8rem;">
