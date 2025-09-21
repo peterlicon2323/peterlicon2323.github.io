@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-{% unless site.data.resume %}
+{% unless site.data.cv %}
   <div class="post">
     <header class="post-header">
       <h1 class="post-title">
         {{ page.title }}
+        <!--
         {% if page.cv_pdf %}
           <a
             {% if page.cv_pdf contains '://' %}
@@ -20,6 +21,8 @@ layout: default
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         {% endif %}
+        -->
+
       </h1>
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
@@ -57,6 +60,7 @@ layout: default
     <header class="post-header">
       <h1 class="post-title">
         {{ page.title }}
+        <!--
         {% if page.cv_pdf %}
           <a
             {% if page.cv_pdf contains '://' %}
@@ -71,6 +75,7 @@ layout: default
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         {% endif %}
+        -->
       </h1>
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
@@ -79,7 +84,7 @@ layout: default
 
     <article>
       <div class="cv">
-        {% for data in site.data.resume %}
+        {% for data in site.data.cv_json %}
           {% if site.jsonresume and site.jsonresume.size > 0 %}
             {% unless site.jsonresume contains data[0] %}
               {% continue %}
@@ -92,29 +97,29 @@ layout: default
             <div>
               {% case data[0] %}
                 {% when 'basics' %}
-                  {% include resume/basics.liquid %}
+                  {% include cv_json/basics.liquid %}
                 {% when 'education' %}
-                  {% include resume/education.liquid %}
+                  {% include cv_json/education.liquid %}
                 {% when 'work' %}
-                  {% include resume/work.liquid %}
+                  {% include cv_json/work.liquid %}
                 {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
+                  {% include cv_json/volunteer.liquid %}
                 {% when 'projects' %}
-                  {% include resume/projects.liquid %}
+                  {% include cv_json/projects.liquid %}
                 {% when 'awards' %}
-                  {% include resume/awards.liquid %}
+                  {% include cv_json/awards.liquid %}
                 {% when 'skills' %}
-                  {% include resume/skills.liquid %}
+                  {% include cv_json/skills.liquid %}
                 {% when 'publications' %}
-                  {% include resume/publications.liquid %}
+                  {% include cv_json/publications.liquid %}
                 {% when 'languages' %}
-                  {% include resume/languages.liquid %}
+                  {% include cv_json/languages.liquid %}
                 {% when 'interests' %}
-                  {% include resume/interests.liquid %}
+                  {% include cv_json/interests.liquid %}
                 {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
+                  {% include cv_json/certificates.liquid %}
                 {% when 'references' %}
-                  {% include resume/references.liquid %}
+                  {% include cv_json/references.liquid %}
                 {% else %}
 
               {% endcase %}
