@@ -17,6 +17,7 @@ body .container {
   margin-right: 0rem;
 }
 .print-button {
+    gap: 0.3rem !important;
     background-color: transparent;
     border: 0.2rem solid var(--global-hover-color);
     border-radius: 0.3rem;    
