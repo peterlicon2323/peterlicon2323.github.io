@@ -241,7 +241,7 @@ data:
         - element: C++
           proficiency: 3/5
 
-      - group_name: AI and Machine Learning Frameworks
+      - group_name: AI Libraries & Frameworks
         group_name_elements:
         - element: TensorFlow
           proficiency: 4/5
@@ -251,14 +251,22 @@ data:
           proficiency: 4/5
         - element: Scikit-learn
           proficiency: 4/5
+        
+
+      - group_name: Python Libraries
+        group_name_elements:
         - element: OpenCV
           proficiency: 3/5
         - element: NumPy
           proficiency: 3/5
         - element: Pandas
           proficiency: 3/5
+        - element: Gradio
+          proficiency: 4.5/5
+        - element: Streamlit
+          proficiency: 4.5/5
 
-      - group_name: Data Management and Processing
+      - group_name: Data Management & Processing
         group_name_elements:
         - element: SQL
           proficiency: 4.5/5
@@ -271,7 +279,7 @@ data:
         - element: Jupyter
           proficiency: 3/5
       
-      - group_name: Development Tools and Environments
+      - group_name: Development Tools & Environments
         group_name_elements:
         - element: Git
           proficiency: 4.5/5
@@ -279,16 +287,17 @@ data:
           proficiency: 3.5/5
         - element: Docker
           proficiency: 3/5
-
-      
+          
       - group_name: Others
         group_name_elements:
         - element: HTML
           proficiency: 4.5/5
         - element: CSS
           proficiency: 4.5/5
+        - element: LangChain
+          proficiency: 4.5/5
         - element: Selenium
-          proficiency: 3/5
+          proficiency: 4.5/5
 
         
 # Programming Languages
