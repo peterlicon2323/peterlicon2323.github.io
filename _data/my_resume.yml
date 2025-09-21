@@ -251,7 +251,7 @@ data:
           proficiency: 4/5
         - element: Scikit-learn
           proficiency: 4/5
-          
+
       - group_name: Data Management & Processing
         group_name_elements:
         - element: SQL
@@ -265,7 +265,7 @@ data:
         - element: Jupyter
           proficiency: 3/5
       
-      - group_name: Development Tools & Environments
+      - group_name: System & DevOps Tools
         group_name_elements:
         - element: Git
           proficiency: 4.5/5
