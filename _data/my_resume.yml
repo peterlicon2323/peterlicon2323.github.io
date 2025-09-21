@@ -291,33 +291,17 @@ data:
           proficiency: 3/5
 
         
-# ### 1. Programming Languages
-
-# - Python
-# - C++
-# - PHP
-# - JavaScript
-
-# ### 2. AI and Machine Learning Frameworks
-# - TensorFlow
-# - PyTorch
-# - Scikit-learn
-# - Keras
-# - NumPy
-# - Pandas
-# - OpenCV
-
-# ### 3. Data Management and Processing
-# - SQL
-# - NoSQL
-# - Spark
-# - Kafka
-# - Jupyter
-
-# ### 4. Development Tools and Environments
-# - Git
-# - Linux
-# - Docker
-# - Selenium
-# - HTML
-# - CSS
+# Programming Languages
+# Python, JavaScript, PHP, C++, Java, R, Scala
+# AI & Machine Learning Frameworks
+# TensorFlow, PyTorch, Keras, Scikit-learn, OpenCV, NumPy, Pandas, Hugging Face Transformers, LangChain, JAX, MLflow
+# Data Management and Processing
+# SQL, NoSQL, Spark, Kafka, Jupyter, Hadoop, Airflow, Dask
+# Development Tools and Environments
+# Git, Linux, Docker, Kubernetes, VS Code, PyCharm
+# Cloud Computing and Deployment
+# AWS (SageMaker), Google Cloud AI, Azure ML, FastAPI, Flask, TensorRT, Gradio, Streamlit
+# Mathematics and Statistics
+# Linear Algebra, Calculus, Probability, Statistics (using SymPy, SciPy)
+# Others
+# HTML, CSS, Selenium, REST APIs, Agile Methodologies
