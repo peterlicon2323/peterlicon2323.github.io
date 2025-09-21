@@ -776,18 +776,17 @@
                 </div>
             -->
                 
-                <div class="cv-item-content">
-                    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 20px;">
-                        {% for group in section.items %}
-                            <div class="skill-group">
-                                <span class="group-title">{{ group.group_name }}: 
-                                    {% for skill in group.group_name_elements %}
-                                        {{ skill.element }}{% if forloop.last == false %}, {% endif %}
-                                    {% endfor %}
-                                </span>
-                            </div>
-                        {% endfor %}
-                    </div>
+                <div class="skills-grid">
+                    {% for group in section.items %}
+                        <div class="skill-group">
+                            <span class="group-title">{{ group.group_name }}:</span>
+                            <span class="skill-list">
+                                {% for skill in group.group_name_elements %}
+                                    {{ skill.element }}{% if forloop.last == false %}, {% endif %}
+                                {% endfor %}
+                            </span>
+                        </div>
+                    {% endfor %}
                 </div>
             
 
