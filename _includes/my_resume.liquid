@@ -777,14 +777,18 @@
             -->
                 
                 <div class="cv-item-content">
-                    <div class="skills-grid">
+                    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 20px;">
                         {% for group in section.items %}
-                            <h3 class="group-title">{{ group.group_name }}</h3>
-                            <ul class="skill-list">
-                                {% for skill in group.group_name_elements %}
-                                    <li>{{ skill.element }}</li>
-                                {% endfor %}
-                            </ul>
+                            <div class="skill-group">
+                                <!-- SEARCH: <h3 class="group-title">{{ group.group_name }}</h3> -->
+                                <!-- REPLACE: --> 
+                                <span class="group-title">{{ group.group_name }}</span>
+                                <ul class="skill-list">
+                                    {% for skill in group.group_name_elements %}
+                                        <li>{{ skill.element }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
