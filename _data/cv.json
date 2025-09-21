@@ -1,8 +1,8 @@
 {
-  "basics": {
+  "basic information": {
     "full name": "Thnw Lkmnh Mnie Nhge",
     "occupation": "AI Engineer",
-    "image": "",
+    "image": "assets/images/cv/avatar.jpg",
     "email": "abcxyz@example.com",
     "phone": "+84xxxxxxxxx",
     "url": "https://example.github.io",
