@@ -251,21 +251,7 @@ data:
           proficiency: 4/5
         - element: Scikit-learn
           proficiency: 4/5
-        
-
-      - group_name: Python Libraries
-        group_name_elements:
-        - element: OpenCV
-          proficiency: 3/5
-        - element: NumPy
-          proficiency: 3/5
-        - element: Pandas
-          proficiency: 3/5
-        - element: Gradio
-          proficiency: 4.5/5
-        - element: Streamlit
-          proficiency: 4.5/5
-
+          
       - group_name: Data Management & Processing
         group_name_elements:
         - element: SQL
@@ -287,7 +273,20 @@ data:
           proficiency: 3.5/5
         - element: Docker
           proficiency: 3/5
-          
+
+      - group_name: Python Libraries
+        group_name_elements:
+        - element: OpenCV
+          proficiency: 3/5
+        - element: NumPy
+          proficiency: 3/5
+        - element: Pandas
+          proficiency: 3/5
+        - element: Gradio
+          proficiency: 4.5/5
+        - element: Streamlit
+          proficiency: 4.5/5
+
       - group_name: Others
         group_name_elements:
         - element: HTML

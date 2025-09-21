@@ -520,10 +520,43 @@
         .degree {
             font-size: 1.1rem
         }
-        /* Set Font Size of skills id  is 0.9rem */
-        #skills {
-            font-size: 0.9rem;
+
+        /* Skills section specific grid styling */
+        #skills .skills-grid.three-column-section {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Column 1: 1fr, Column 2: 2fr, Column 3: 1fr */
+        gap: 1rem; /* Adjust gap as needed */
+        align-items: start; /* Align items to the top */
         }
+
+        /* Skills section specific cv-item styling */
+        #skills .cv-item {
+        margin-bottom: 1rem; /* Add some vertical spacing */
+        }
+
+        /* Skills section specific styling for cv-item-row and content */
+        #skills .cv-item-row {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #333; /* Adjust color as needed */
+        }
+
+        #skills .cv-item-content {
+        font-size: 0.9em;
+        line-height: 1.4;
+        }
+
+        /* Skills section responsive adjustments */
+        @media (max-width: 768px) {
+        #skills .skills-grid.three-column-section {
+            grid-template-columns: 1fr; /* Stack vertically on mobile */
+        }
+        
+        #skills .cv-item-row {
+            font-weight: bold;
+        }
+        }
+
     </style>
 
     <!-- Name and Avatar -->
