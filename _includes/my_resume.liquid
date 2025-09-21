@@ -780,14 +780,11 @@
                     <div class="skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 20px;">
                         {% for group in section.items %}
                             <div class="skill-group">
-                                <!-- SEARCH: <h3 class="group-title">{{ group.group_name }}</h3> -->
-                                <!-- REPLACE: --> 
-                                <span class="group-title">{{ group.group_name }}</span>
-                                <ul class="skill-list">
+                                <span class="group-title">{{ group.group_name }}: 
                                     {% for skill in group.group_name_elements %}
-                                        <li>{{ skill.element }}</li>
+                                        {{ skill.element }}{% if forloop.last == false %}, {% endif %}
                                     {% endfor %}
-                                </ul>
+                                </span>
                             </div>
                         {% endfor %}
                     </div>
