@@ -17,11 +17,11 @@ body .container {
   margin-right: 0rem;
 }
 .print-button {
+    background-color: transparent;
+    border: 0.2rem solid var(--global-hover-color);
+    border-radius: 0.3rem;    
     padding: 0.75rem 1rem;
     margin-right: 1rem;
-    background-color: var(--global-hover-color);
-    border: none;
-    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -33,12 +33,12 @@ body .container {
 }
 i.fas.fa-print {
   color: var(--global-text-color);
-  filter: invert(85%);
+  /* filter: invert(85%); */
 }
 span.print-button-text {
   color: var(--global-text-color);
-  filter: invert(85%);
-  margin-left: 0.5rem;
+  /* filter: invert(85%); */
+  /* margin-left: 0.5rem; */
 }
 
 /* .print-button:hover {
