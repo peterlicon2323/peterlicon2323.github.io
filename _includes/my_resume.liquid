@@ -757,7 +757,9 @@
                         </div>
                     </div>
                 {% endfor %}
+            
             {% elsif sec_id == 'skills' %}
+            <!--
                 <div class="cv-item-content">
                     <div class="skills-grid">
                         {% for skill in section.items %}
@@ -772,6 +774,22 @@
                         {% endfor %}
                     </div>
                 </div>
+            -->
+                
+                <div class="cv-item-content">
+                    <div class="skills-grid">
+                        {% for group in section.items %}
+                            <h3 class="group-title">{{ group.group_name }}</h3>
+                            <ul class="skill-list">
+                                {% for skill in group.group_name_elements %}
+                                    <li>{{ skill.element }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            
+
             {% elsif sec_id == 'additional_info' %}
                 <div style="display: flex; align-content: center; justify-content: center; gap: 1rem; font-size: 0.8rem;">
                     {% for item in section.items %}

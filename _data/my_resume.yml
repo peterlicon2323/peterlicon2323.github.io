@@ -149,25 +149,25 @@ data:
   # Domains: Natural Language Processing (NLP), Computer Vision, Time-Series Analysis, Predictive Modeling
   # Soft Skills: Problem-solving, Team Collaboration, Technical Communication, Agile Methodologies
   
-  skills:
-    title: Technical Skills
-    items:
-      - skill: Python
-        score: 8.5/10
-      - skill: TensorFlow, PyTorch, OpenCV
-        score: 8/10
-      - skill: Git
-        score: 7/10
-      - skill: SQL, NoSQL
-        score: 7/10
-      - skill: Kafka, Spark
-        score: 7/10
-      - skill: Kafka, Spark
-        score: 7/10
-      - skill: JavaScript, HTML, CSS
-        score: 7/10
-      - skill: C++, PHP
-        score: 6/10
+  # skills:
+  #   title: Technical Skills
+  #   items:
+  #     - skill: Python
+  #       score: 8.5/10
+  #     - skill: TensorFlow, PyTorch, OpenCV
+  #       score: 8/10
+  #     - skill: Git
+  #       score: 7/10
+  #     - skill: SQL, NoSQL
+  #       score: 7/10
+  #     - skill: Kafka, Spark
+  #       score: 7/10
+  #     - skill: Kafka, Spark
+  #       score: 7/10
+  #     - skill: JavaScript, HTML, CSS
+  #       score: 7/10
+  #     - skill: C++, PHP
+  #       score: 6/10
       # - skill: Docker
       #   score: 6/10
 
@@ -227,7 +227,71 @@ data:
       # - name: Blog
       #   url: https://github.com/google
 
+  skills:
+    title: Technical Skills
+    items:
+      - group_name: Programming Languages
+        group_name_elements:
+        - element: Python
+          proficiency: 4.5/5
+        - element: JavaScript
+          proficiency: 3.5/5
+        - element: PHP
+          proficiency: 3/5
+        - element: C++
+          proficiency: 3/5
 
+      - group_name: AI and Machine Learning Frameworks
+        group_name_elements:
+        - element: TensorFlow
+          proficiency: 4/5
+        - element: PyTorch
+          proficiency: 4/5
+        - element: Keras
+          proficiency: 4/5
+        - element: Scikit-learn
+          proficiency: 4/5
+        - element: OpenCV
+          proficiency: 3/5
+        - element: NumPy
+          proficiency: 3/5
+        - element: Pandas
+          proficiency: 3/5
+
+      - group_name: Data Management and Processing
+        group_name_elements:
+        - element: SQL
+          proficiency: 4.5/5
+        - element: NoSQL
+          proficiency: 3.5/5
+        - element: Spark
+          proficiency: 3/5
+        - element: Kafka
+          proficiency: 3/5
+        - element: Jupyter
+          proficiency: 3/5
+      
+      - group_name: Development Tools and Environments
+        group_name_elements:
+        - element: Git
+          proficiency: 4.5/5
+        - element: Linux
+          proficiency: 3.5/5
+        - element: Docker
+          proficiency: 3/5
+
+      
+      - group_name: Others
+        group_name_elements:
+        - element: HTML
+          proficiency: 4.5/5
+        - element: CSS
+          proficiency: 4.5/5
+        - element: Selenium
+          proficiency: 3/5
+        - element: Selenium
+          proficiency: 3/5
+        
 # ### 1. Programming Languages
 
 # - Python
