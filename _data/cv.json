@@ -47,7 +47,7 @@
         "username": "AlbertEinstein",
         "url": "https://twitter.com/AlbertEinstein"
       }      
-    ],    
+    ]
   },
   "work": [
     {
@@ -101,7 +101,7 @@
       "issuer": "Stanford University",
       "url": "https://example.com",
       "icon": "fa-solid fa-location-dot"
-    },
+    }
   ],
   "certificates": [
     {
