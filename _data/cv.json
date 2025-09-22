@@ -197,6 +197,19 @@
         "Quantum Communication",
         "Quantum Teleportation"
       ]
+    },
+    {
+      "name": "Do do do",
+      "level": "Normal",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Do Mechanics",
+        "Do Computing",
+        "Do Information",
+        "Do Cryptography",
+        "Do Communication",
+        "Do Teleportation"
+      ]
     }
   ],
   "languages": [

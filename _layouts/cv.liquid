@@ -91,6 +91,8 @@ layout: default
             {% endunless %}
           {% endif %}
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
+          {% assign trimmed_key = data[0] | strip %}
+          {% if ['basics', 'work', 'education', 'certificates', 'skills', 'interests'] contains trimmed_key %}
           <a class="anchor" id="{{ data[0] }}"></a>
           <div class="card mt-3 p-3">
             <!--
@@ -113,30 +115,51 @@ layout: default
 
                 {% when 'education' %}
                   {% include cv_json/education.liquid %}
-
+                  
                 {% when 'work' %}
                   {% include cv_json/work.liquid %}
-
+                <!--
+                {% when 'volunteer' %}
+                  {% include cv_json/volunteer.liquid %}
+                -->
+                
+                <!--
+                {% when 'awards' %}
+                  {% include cv_json/awards.liquid %}
+                -->
                 {% when 'skills' %}
                   {% include cv_json/skills.liquid %}
-
+                <!--
                 {% when 'certifications' %}
                   {% include cv_json/certs.liquid %}
-
+                -->
                 {% when 'certificates' %}
                   {% include cv_json/certs.liquid %}
 
                 {% when 'projects' %}
                   {% include cv_json/projects.liquid %}
-
+                <!--
+                {% when 'publications' %}
+                  {% include cv_json/publications.liquid %}
+                -->
+                <!--
+                {% when 'languages' %}
+                  {% include cv_json/languages.liquid %}
+                -->
                 {% when 'interests' %}
                   {% include cv_json/interests.liquid %}
+                
+                <!--
+                {% when 'references' %}
+                  {% include cv_json/references.liquid %}
+                -->
 
                 {% else %}
 
               {% endcase %}
             </div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
     </article>
