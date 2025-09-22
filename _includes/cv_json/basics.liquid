@@ -35,7 +35,7 @@
         {% if value == blank %}
           {% continue %}
         {% endif %}
-        {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
+        {% if key == 'full name' or key == 'adapted English version name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
           <tr>
             <th class="p-1 pr-2 font-weight-bold" style="text-align: left; vertical-align: middle;">
               {{ key | capitalize }}
