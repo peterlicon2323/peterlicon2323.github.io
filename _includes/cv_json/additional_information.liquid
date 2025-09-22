@@ -1,35 +1,24 @@
-<div class="list-groups row">
-  {%- comment -%}
-    `data` is the array stored under `additional_information` in
-    `_data/cv.json`. Each element is an object with a single key/value
-    pair, e.g.:
+{%- comment -%}
+  Load the “additional_information” object from _data/cv.json
+  and display each entry as:
 
-    { "certificate details": "https://google.com" }
-  {%- endcomment -%}
+  🔗 Certificate Details: https://google.com
+  🔗 Certification Details: https://google.com
+  …
+{%- endcomment -%}
 
-  {%- for entry in data -%}
-    {%- assign label = entry | keys | first -%}
-    {%- assign url   = entry[label] -%}
+{% assign addInfo = site.data.cv.additional_information %}
 
-    <div class="list-group col-md-6 mb-3">
-      <table class="table-cv list-group-table">
-        <tbody>
-          <tr>
-            <td class="list-group-category-icon">
-              <i class="fa-solid fa-link"></i>
-            </td>
-            <td class="list-group-category">{{ label }}</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="list-group-name">
-              <a href="{{ url }}" target="_blank" rel="noopener">
-                {{ url }}
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  {%- endfor -%}
+<div class="additional-info">
+  <ul class="list-unstyled">
+    {% for item in addInfo %}
+      {% assign label = item | keys | first %}
+      {% assign url   = item[label] %}
+      <li class="mb-2 d-flex align-items-center">
+        <i class="fa-solid fa-link me-2"></i>
+        <strong class="me-1">{{ label }}:</strong>
+        <a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
