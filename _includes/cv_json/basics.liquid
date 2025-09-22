@@ -29,9 +29,14 @@
 
     {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
       <tr>
-        <td class="p-1 pr-2 font-weight-bold">
+        <td class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
           <b>{{ key | capitalize }}</b>
         </td>
+        {% if key == 'full name' %}
+        <td class="p-1 pl-2 font-weight-light" style="font-size: 1.5rem;">
+          {{ value }}
+        </td>
+        {% else%}
         <td class="p-1 pl-2 font-weight-light">
           {% case key %}
             {% when 'location' %}
@@ -45,6 +50,7 @@
               {{ value }}
           {% endcase %}
         </td>
+        {% endcase %}
       </tr>
     {% endif %}
   {% endfor %}
