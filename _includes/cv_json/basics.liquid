@@ -18,55 +18,59 @@
     .profile-item {
       flex: 1 1 100%; /* Stack profiles vertically */
     }
+    .avatar-container img {
+      width: 100%;
+      max-width: 17rem; /* Responsive image sizing */
+    }
   }
 </style>
 
 <!-- Personal Information Section -->
-<div style="display: flex;">
-  <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-    {% for item in data[1] %}
-      {% assign key = item[0] %}
-      {% assign value = item[1] %}
-      {% if value == blank %}
-        {% continue %}
-      {% endif %}
-      {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
-        <tr>
-          <th class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
-            {{ key | capitalize }}
-          </th>
-          <td class="p-1 pl-2 font-weight-light">
-              {% when 'location' %}
+{% if data[1] %}
+  <div style="display: flex;">
+    <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+      {% for item in data[1] %}
+        {% assign key = item[0] %}
+        {% assign value = item[1] %}
+        {% if value == blank %}
+          {% continue %}
+        {% endif %}
+        {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
+          <tr>
+            <th class="p-1 pr-2 font-weight-bold" style="text-align: left; vertical-align: middle;">
+              {{ key | capitalize }}
+            </th>
+            <td class="p-1 pl-2 font-weight-light" style="vertical-align: middle; {% if key == 'full name' %} font-size: 1.5rem; {% endif %}">
+              {% if key == 'location' %}
                 {% if value.city and value.countryCode %}
                   {{ value.city }}, {{ value.countryCode }}
                 {% else %}
                   {{ value }}
                 {% endif %}
-              {% when 'email' %}
-                <a href="mailto:{{ value }}">{{ value }}</a>
-              {% when 'phone' %}
-                <a href="tel:{{ value }}">{{ value }}</a>
+              {% elsif key == 'email' %}
+                <a href="mailto:{{ value }}" title="Email {{ value }}">{{ value }}</a>
+              {% elsif key == 'phone' %}
+                <a href="tel:{{ value }}" title="Call {{ value }}">{{ value }}</a>
               {% else %}
                 {{ value }}
-            {% endcase %}
-          </td>
-        </tr>
+              {% endif %}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+    {% for item in data[1] %}
+      {% assign key = item[0] %}
+      {% assign value = item[1] %}
+      {% if key == 'avatar image' and value != blank %}
+        <div class="avatar-container">
+          <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 17rem;" onerror="this.src='path/to/fallback-image.jpg';">
+        </div>
       {% endif %}
     {% endfor %}
-  </table>
-  {% for item in data[1] %}
-    {% assign key = item[0] %}
-    {% assign value = item[1] %}
-    {% if key == 'avatar image' and value != blank %}
-      <div class="avatar-container" style="margin-right: 0rem;">
-        <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 17rem;">
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+  </div>
 
-<!-- Contact Information Section -->
-<div>
+  <!-- Contact Information Section -->
   <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
     {% for item in data[1] %}
       {% assign key = item[0] %}
@@ -74,7 +78,7 @@
       {% if value == blank %}
         {% continue %}
       {% endif %}
-      {% if key == 'profiles' %}
+      {% if key == 'profiles' and value.size > 0 %}
         <tr>
           <th class="p-1 pr-2 font-weight-bold">
             {{ key | capitalize }}
@@ -83,7 +87,7 @@
             <div class="profiles-container">
               {% for profile in value %}
                 <div class="profile-item mb-1">
-                  <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                  <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" title="{{ profile.network }} profile">
                     <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
                     {{ profile.network }}: {{ profile.username }}
                   </a>
@@ -95,4 +99,6 @@
       {% endif %}
     {% endfor %}
   </table>
-</div>
+{% else %}
+  <p>No profile data available.</p>
+{% endif %}
