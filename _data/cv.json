@@ -1,13 +1,9 @@
 {
   "basics": {
     "full name": "Thnw Lkmnh Mnie Nhge",
-    "birth date": "Feb 30, 1701",
-    "occupation": "AI Engineer",
     "avatar image": "/assets/images/cv/avatar.jpg",
-    "email": "abcxyz@example.com",
-    "phone": "+84xxxxxxxxx",
-    "website": "https://example.github.io",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "occupation": "AI Engineer",
+    "birth date": "February 30, 1701",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -15,6 +11,10 @@
       "countryCode": "US",
       "region": "California"
     },
+    "email": "abcxyz@example.com",
+    "phone": "+84xxxxxxxxx",
+    "website": "https://example.github.io",
+    
     "profiles": [
       {
         "network": "GitHub",
@@ -46,7 +46,8 @@
         "username": "AlbertEinstein",
         "url": "https://twitter.com/AlbertEinstein"
       }      
-    ]
+    ],
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
   },
   "work": [
     {
