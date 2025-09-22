@@ -1,4 +1,27 @@
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+<style>
+  /* Style to position the avatar image in the top-right corner */
+  .avatar-container {
+    position: relative;
+  }
+  .avatar-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 10rem;
+  }
+  /* Style for 3-column layout for profiles */
+  .profiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .profile-item {
+    flex: 1 1 calc(33.33% - 1rem); /* 3 columns with gap adjustment */
+    min-width: 150px; /* Ensure responsiveness for smaller screens */
+  }
+</style>
+
+<table class="table table-cv table-sm table-borderless table-responsive table-cv-map avatar-container">
   {% comment %} Render fields dynamically and skip empty values {% endcomment %}
   {% for item in data[1] %}
     {% assign key = item[0] %}
@@ -16,26 +39,23 @@
       <td class="p-1 pl-2 font-weight-light">
         {% case key %}
           {% when 'avatar image' %}
-            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 10rem;">
+            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded avatar-image">
 
           {% when 'location' %}
-            <!-- {{ value.address }}, -->
             {{ value.city }},
-            <!-- {% if value.region %}
-              {{ value.region }},
-            {% endif %} -->
-            <!-- {{ value.postalCode }}, -->
             {{ value.countryCode }}
 
           {% when 'profiles' %}
-            {% for profile in value %}
-              <div class="mb-1">
-                <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                  <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
-                  {{ profile.network }}: {{ profile.username }}
-                </a>
-              </div>
-            {% endfor %}
+            <div class="profiles-container">
+              {% for profile in value %}
+                <div class="profile-item mb-1">
+                  <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                    <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
+                    {{ profile.network }}: {{ profile.username }}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
 
           {% when 'website' %}
             <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
@@ -45,8 +65,10 @@
 
           {% when 'phone' %}
             <a href="tel:{{ value }}">{{ value }}</a>
+
           {% when 'summary' %}
             {{ value }}
+
           {% else %}
             {{ value }}
         {% endcase %}

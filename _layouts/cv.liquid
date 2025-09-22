@@ -97,10 +97,16 @@ layout: default
             <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
             -->
             
-            <h3 class="card-title font-weight-medium">{{ data[0] | title | capitalize }}</h3>
-            <div>
+            {% if data[0] == "basics" %}
+              {% assign part_title = "basic information" %}
+            {% else %}
+              {% assign part_title = data[0] %}
+            {% endif %}
+
+            <h3 class="card-title font-weight-medium">{{ part_title | capitalize }}</h3>
+          <div>
               {% case data[0] %}
-                {% when 'basic_information' %}
+                {% when 'basics' %}
                   {% include cv_json/basics.liquid %}
                 {% when 'education' %}
                   {% include cv_json/education.liquid %}
