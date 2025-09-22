@@ -12,8 +12,8 @@
 <div class="additional-info">
   <ul class="list-unstyled">
     {% for item in addInfo %}
-      {% assign label = item | keys | first %}
-      {% assign url   = item[label] %}
+      {% assign label = item | keys | first | capitalize %}
+      {% assign url   = item[label | downcase] %}   {# keep original key case for lookup #}
       <li class="mb-2 d-flex align-items-center">
         <i class="fa-solid fa-link me-2"></i>
         <strong class="me-1">{{ label }}:</strong>
