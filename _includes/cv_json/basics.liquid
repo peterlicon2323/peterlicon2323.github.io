@@ -35,7 +35,7 @@
           <th class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
             {{ key | capitalize }}
           </th>
-          <td class="p-1 pl-2 font-weight-light" style="vertical-align: middle;{% if key == 'full name' %} font-size: 1.5rem;{% endif %}">
+          <td class="p-1 pl-2 font-weight-light">
               {% when 'location' %}
                 {% if value.city and value.countryCode %}
                   {{ value.city }}, {{ value.countryCode }}
