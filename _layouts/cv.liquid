@@ -112,24 +112,41 @@ layout: default
                   {% include cv_json/education.liquid %}
                 {% when 'work' %}
                   {% include cv_json/work.liquid %}
+                <!--
                 {% when 'volunteer' %}
                   {% include cv_json/volunteer.liquid %}
-                {% when 'projects' %}
-                  {% include cv_json/projects.liquid %}
+                -->
+                
+                <!--
                 {% when 'awards' %}
                   {% include cv_json/awards.liquid %}
+                -->
                 {% when 'skills' %}
                   {% include cv_json/skills.liquid %}
+                
+                {% when 'certifications' %}
+                  {% include cv_json/certs.liquid %}
+
+                {% when 'certificates' %}
+                  {% include cv_json/certs.liquid %}
+
+                {% when 'projects' %}
+                  {% include cv_json/projects.liquid %}
+                <!--
                 {% when 'publications' %}
                   {% include cv_json/publications.liquid %}
+                -->
+                <!--
                 {% when 'languages' %}
                   {% include cv_json/languages.liquid %}
+                -->
                 {% when 'interests' %}
                   {% include cv_json/interests.liquid %}
-                {% when 'certificates' %}
-                  {% include cv_json/certificates.liquid %}
+                
+                <!--
                 {% when 'references' %}
                   {% include cv_json/references.liquid %}
+                -->
                 {% else %}
 
               {% endcase %}

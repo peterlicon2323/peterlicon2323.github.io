@@ -93,6 +93,15 @@
       "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
     }
   ],
+  "certifications": [
+    {
+      "name": "Machine Learning Certifications",
+      "date": "2018-01-01",
+      "issuer": "Stanford University",
+      "url": "https://example.com",
+      "icon": "fa-solid fa-location-dot"
+    },
+  }
   "certificates": [
     {
       "name": "Machine Learning",
