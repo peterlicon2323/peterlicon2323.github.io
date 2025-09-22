@@ -30,13 +30,12 @@
       {% if value == blank %}
         {% continue %}
       {% endif %}
-      {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
+      {% if key == 'full name' or key == 'English version name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
         <tr>
           <th class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
             {{ key | capitalize }}
           </th>
-          <td class="p-1 pl-2 font-weight-light" {% if key == 'full name' %}style="font-size: 1.5rem;"{% endif %}>
-            {% case key %}
+          <td class="p-1 pl-2 font-weight-light" style="vertical-align: middle;{% if key == 'full name' %} font-size: 1.5rem;{% endif %}">
               {% when 'location' %}
                 {% if value.city and value.countryCode %}
                   {{ value.city }}, {{ value.countryCode }}
