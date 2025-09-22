@@ -4,6 +4,7 @@
     "avatar image": "/assets/images/cv/avatar.jpg",
     "occupation": "AI Engineer",
     "birth date": "February 30, 1701",
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -45,8 +46,7 @@
         "username": "AlbertEinstein",
         "url": "https://twitter.com/AlbertEinstein"
       }      
-    ],
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time.",
+    ],    
   },
   "work": [
     {

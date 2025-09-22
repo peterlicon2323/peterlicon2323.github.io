@@ -1,13 +1,16 @@
 <style>
-  /* Style to position the avatar image in the top-right corner */
-  .avatar-container {
+  /* Container for Personal Information with avatar */
+  .personal-info-container {
     position: relative;
+    margin-bottom: 2rem;
   }
+  /* Avatar image styling */
   .avatar-image {
     position: absolute;
     top: 0;
     right: 0;
     max-width: 10rem;
+    z-index: 1; /* Ensure avatar is above table content */
   }
   /* Style for 3-column layout for profiles */
   .profiles-container {
@@ -17,12 +20,48 @@
   }
   .profile-item {
     flex: 1 1 calc(33.33% - 1rem); /* 3 columns with gap adjustment */
-    min-width: 150px; /* Ensure responsiveness for smaller screens */
+    min-width: 150px; /* Ensure responsiveness */
   }
 </style>
 
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map avatar-container">
-  {% comment %} Render fields dynamically and skip empty values {% endcomment %}
+<!-- Personal Information Section -->
+<div class="personal-info-container">
+  <h3>Personal Information</h3>
+  <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+    {% comment %} Render fields dynamically for Personal Information {% endcomment %}
+    {% for item in data[1] %}
+      {% assign key = item[0] %}
+      {% assign value = item[1] %}
+
+      {% if value == blank %}
+        {% continue %}
+      {% endif %}
+
+      {% if key == 'full name' or key == 'avatar image' or key == 'occupation' or key == 'birth date' or key == 'summary' %}
+        <tr>
+          <td class="p-1 pr-2 font-weight-bold">
+            <b>{{ key | capitalize }}</b>
+          </td>
+          <td class="p-1 pl-2 font-weight-light">
+            {% case key %}
+              {% when 'avatar image' %}
+                <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded avatar-image">
+              {% when 'summary' %}
+                {{ value }}
+              {% else %}
+                {{ value }}
+            {% endcase %}
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+
+<!-- Contact Information Section -->
+<h3>Contact Information</h3>
+<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+  {% comment %} Render fields dynamically for Contact Information {% endcomment %}
   {% for item in data[1] %}
     {% assign key = item[0] %}
     {% assign value = item[1] %}
@@ -31,48 +70,38 @@
       {% continue %}
     {% endif %}
 
-    <tr>
-      <td class="p-1 pr-2 font-weight-bold">
-        <b>{{ key | capitalize }}</b>
-      </td>
-
-      <td class="p-1 pl-2 font-weight-light">
-        {% case key %}
-          {% when 'avatar image' %}
-            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded avatar-image">
-
-          {% when 'location' %}
-            {{ value.city }},
-            {{ value.countryCode }}
-
-          {% when 'profiles' %}
-            <div class="profiles-container">
-              {% for profile in value %}
-                <div class="profile-item mb-1">
-                  <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                    <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
-                    {{ profile.network }}: {{ profile.username }}
-                  </a>
-                </div>
-              {% endfor %}
-            </div>
-
-          {% when 'website' %}
-            <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
-
-          {% when 'email' %}
-            <a href="mailto:{{ value }}">{{ value }}</a>
-
-          {% when 'phone' %}
-            <a href="tel:{{ value }}">{{ value }}</a>
-
-          {% when 'summary' %}
-            {{ value }}
-
-          {% else %}
-            {{ value }}
-        {% endcase %}
-      </td>
-    </tr>
+    {% if key == 'location' or key == 'email' or key == 'phone' or key == 'website' or key == 'profiles' %}
+      <tr>
+        <td class="p-1 pr-2 font-weight-bold">
+          <b>{{ key | capitalize }}</b>
+        </td>
+        <td class="p-1 pl-2 font-weight-light">
+          {% case key %}
+            {% when 'location' %}
+              {{ value.city }},
+              {{ value.countryCode }}
+            {% when 'profiles' %}
+              <div class="profiles-container">
+                {% for profile in value %}
+                  <div class="profile-item mb-1">
+                    <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                      <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
+                      {{ profile.network }}: {{ profile.username }}
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            {% when 'website' %}
+              <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
+            {% when 'email' %}
+              <a href="mailto:{{ value }}">{{ value }}</a>
+            {% when 'phone' %}
+              <a href="tel:{{ value }}">{{ value }}</a>
+            {% else %}
+              {{ value }}
+          {% endcase %}
+        </td>
+      </tr>
+    {% endif %}
   {% endfor %}
 </table>
