@@ -1,6 +1,7 @@
 {
   "basics": {
     "full name": "Thnw Lkmnh Mnie Nhge",
+    "adapted  english version name": "Mnie-Nhge Lkmnh Thnw",
     "avatar image": "/assets/images/cv/avatar.jpg",
     "occupation": "AI Engineer",
     "birth date": "February 30, 1701",
@@ -101,7 +102,7 @@
       "url": "https://example.com",
       "icon": "fa-solid fa-location-dot"
     },
-  }
+  ],
   "certificates": [
     {
       "name": "Machine Learning",
