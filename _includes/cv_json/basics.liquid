@@ -42,7 +42,8 @@
 
           {% when 'phone' %}
             <a href="tel:{{ value }}">{{ value }}</a>
-
+          {% when 'summary' %}
+            {{ value }}
           {% else %}
             {{ value }}
         {% endcase %}
