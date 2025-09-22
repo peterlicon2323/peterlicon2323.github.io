@@ -1,44 +1,31 @@
 <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Skip only empty fields {% endcomment %}
-  {% for content in data[1] %}
-    {% if content[1] == "" %}
+  {% comment %} Render fields dynamically and skip empty values {% endcomment %}
+  {% for item in data[1] %}
+    {% assign key = item[0] %}
+    {% assign value = item[1] %}
+
+    {% if value == blank %}
       {% continue %}
     {% endif %}
 
-    {% case content[0] %}
-      {% case 'image' %}
-        {% if content[1] != "" %}
-          <tr>
-            <td class="p-1 pr-2 font-weight-bold">
-              <b>Photo</b>
-            </td>
-            <td class="p-1 pl-2">
-              <img src="{{ content[1] }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 150px; max-height: 150px;">
-            </td>
-          </tr>
-        {% endif %}
-        {% break %}
+    <tr>
+      <td class="p-1 pr-2 font-weight-bold">
+        <b>{{ key | capitalize }}</b>
+      </td>
 
-      {% case 'location' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>Location</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            {% if content[1].address %}{{ content[1].address }}, {% endif %}
-            {% if content[1].city %}{{ content[1].city }}{% if content[1].region %}, {{ content[1].region }}{% endif %}{% if content[1].postalCode %} {{ content[1].postalCode }}{% endif %}, {% endif %}
-            {{ content[1].countryCode }}
-          </td>
-        </tr>
-        {% break %}
+      <td class="p-1 pl-2 font-weight-light">
+        {% case key %}
+          {% when 'image' %}
+            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 150px; max-height: 150px;">
 
-      {% case 'profiles' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>Social Profiles</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            {% for profile in content[1] %}
+          {% when 'location' %}
+            {{ value.address }}, 
+            {{ value.city }}{% if value.region %}, {{ value.region }}{% endif %}
+            {{ value.postalCode }},
+            {{ value.countryCode }}
+
+          {% when 'profiles' %}
+            {% for profile in value %}
               <div class="mb-1">
                 <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
                   <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
@@ -46,52 +33,20 @@
                 </a>
               </div>
             {% endfor %}
-          </td>
-        </tr>
-        {% break %}
 
-      {% case 'url' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>{{ content[0] | capitalize }}</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            <a href="{{ content[1] }}" target="_blank" rel="noopener noreferrer">{{ content[1] }}</a>
-          </td>
-        </tr>
-        {% break %}
+          {% when 'url' %}
+            <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
 
-      {% case 'email' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>{{ content[0] | capitalize }}</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            <a href="mailto:{{ content[1] }}" target="_blank">{{ content[1] }}</a>
-          </td>
-        </tr>
-        {% break %}
+          {% when 'email' %}
+            <a href="mailto:{{ value }}">{{ value }}</a>
 
-      {% case 'phone' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>{{ content[0] | capitalize }}</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            <a href="tel:{{ content[1] }}">{{ content[1] }}</a>
-          </td>
-        </tr>
-        {% break %}
+          {% when 'phone' %}
+            <a href="tel:{{ value }}">{{ value }}</a>
 
-      {% else %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>{{ content[0] | capitalize }}</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            {{ content[1] }}
-          </td>
-        </tr>
-    {% endcase %}
+          {% else %}
+            {{ value }}
+        {% endcase %}
+      </td>
+    </tr>
   {% endfor %}
 </table>
