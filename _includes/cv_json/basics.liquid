@@ -1,17 +1,4 @@
 <style>
-  /* Container for Personal Information with avatar */
-  .personal-info-container {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-  /* Avatar image styling */
-  .avatar-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 10rem;
-    z-index: 1; /* Ensure avatar is above table content */
-  }
   /* Style for 3-column layout for profiles */
   .profiles-container {
     display: flex;
@@ -22,41 +9,46 @@
     flex: 1 1 calc(33.33% - 1rem); /* 3 columns with gap adjustment */
     min-width: 150px; /* Ensure responsiveness */
   }
+  /* Style for avatar image container */
+  .avatar-container {
+    margin-top: 1rem; /* Space between table and image */
+  }
 </style>
 
 <!-- Personal Information Section -->
-<div class="personal-info-container">
-  <h3>Personal Information</h3>
-  <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-    {% comment %} Render fields dynamically for Personal Information {% endcomment %}
-    {% for item in data[1] %}
-      {% assign key = item[0] %}
-      {% assign value = item[1] %}
+<h3>Personal Information</h3>
+<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+  {% comment %} Render fields dynamically for Personal Information (excluding avatar image) {% endcomment %}
+  {% for item in data[1] %}
+    {% assign key = item[0] %}
+    {% assign value = item[1] %}
 
-      {% if value == blank %}
-        {% continue %}
-      {% endif %}
+    {% if value == blank %}
+      {% continue %}
+    {% endif %}
 
-      {% if key == 'full name' or key == 'avatar image' or key == 'occupation' or key == 'birth date' or key == 'summary' %}
-        <tr>
-          <td class="p-1 pr-2 font-weight-bold">
-            <b>{{ key | capitalize }}</b>
-          </td>
-          <td class="p-1 pl-2 font-weight-light">
-            {% case key %}
-              {% when 'avatar image' %}
-                <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded avatar-image">
-              {% when 'summary' %}
-                {{ value }}
-              {% else %}
-                {{ value }}
-            {% endcase %}
-          </td>
-        </tr>
-      {% endif %}
-    {% endfor %}
-  </table>
-</div>
+    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' %}
+      <tr>
+        <td class="p-1 pr-2 font-weight-bold">
+          <b>{{ key | capitalize }}</b>
+        </td>
+        <td class="p-1 pl-2 font-weight-light">
+          {{ value }}
+        </td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+</table>
+{% comment %} Render avatar image in a div below the table if it exists {% endcomment %}
+{% for item in data[1] %}
+  {% assign key = item[0] %}
+  {% assign value = item[1] %}
+  {% if key == 'avatar image' and value != blank %}
+    <div class="avatar-container">
+      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 15rem;">
+    </div>
+  {% endif %}
+{% endfor %}
 
 <!-- Contact Information Section -->
 <h3>Contact Information</h3>
