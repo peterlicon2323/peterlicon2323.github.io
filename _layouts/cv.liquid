@@ -110,8 +110,10 @@ layout: default
               {% case data[0] %}
                 {% when 'basics' %}
                   {% include cv_json/basics.liquid %}
+
                 {% when 'education' %}
                   {% include cv_json/education.liquid %}
+                  
                 {% when 'work' %}
                   {% include cv_json/work.liquid %}
                 <!--

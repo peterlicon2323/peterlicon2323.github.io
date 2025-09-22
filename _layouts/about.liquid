@@ -1,99 +1,80 @@
-<style>
-  /* Style for 3-column layout for profiles */
-  .profiles-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .profile-item {
-    flex: 1 1 calc(33.33% - 1rem); /* 3 columns with gap adjustment */
-    min-width: 150px; /* Ensure responsiveness */
-  }
-  /* Style for avatar image container */
-  .avatar-container {
-    margin-top: 1rem; /* Space between table and image */
-  }
-</style>
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
 
-<!-- Personal Information Section -->
-<h3>Personal Information</h3>
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Personal Information (excluding avatar image) {% endcomment %}
-  {% for item in data[1] %}
-    {% assign key = item[0] %}
-    {% assign value = item[1] %}
-
-    {% if value == blank %}
-      {% continue %}
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/images/about/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
     {% endif %}
 
-    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' %}
-      <tr>
-        <td class="p-1 pr-2 font-weight-bold">
-          <b>{{ key | capitalize }}</b>
-        </td>
-        <td class="p-1 pl-2 font-weight-light">
-          {{ value }}
-        </td>
-      </tr>
-    {% endif %}
-  {% endfor %}
-</table>
-{% comment %} Render avatar image in a div below the table if it exists {% endcomment %}
-{% for item in data[1] %}
-  {% assign key = item[0] %}
-  {% assign value = item[1] %}
-  {% if key == 'avatar image' and value != blank %}
-    <div class="avatar-container">
-      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 16rem;">
-    </div>
-  {% endif %}
-{% endfor %}
+    <div class="clearfix">{{ content }}</div>
 
-<!-- Contact Information Section -->
-<h3>Contact Information</h3>
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Contact Information {% endcomment %}
-  {% for item in data[1] %}
-    {% assign key = item[0] %}
-    {% assign value = item[1] %}
-
-    {% if value == blank %}
-      {% continue %}
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+      </h2>
+      {% include news.liquid limit=true %}
     {% endif %}
 
-    {% if key == 'location' or key == 'email' or key == 'phone' or key == 'website' or key == 'profiles' %}
-      <tr>
-        <td class="p-1 pr-2 font-weight-bold">
-          <b>{{ key | capitalize }}</b>
-        </td>
-        <td class="p-1 pl-2 font-weight-light">
-          {% case key %}
-            {% when 'location' %}
-              {{ value.city }},
-              {{ value.countryCode }}
-            {% when 'profiles' %}
-              <div class="profiles-container">
-                {% for profile in value %}
-                  <div class="profile-item mb-1">
-                    <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                      <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
-                      {{ profile.network }}: {{ profile.username }}
-                    </a>
-                  </div>
-                {% endfor %}
-              </div>
-            {% when 'website' %}
-              <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
-            {% when 'email' %}
-              <a href="mailto:{{ value }}">{{ value }}</a>
-            {% when 'phone' %}
-              <a href="tel:{{ value }}">{{ value }}</a>
-            {% else %}
-              {{ value }}
-          {% endcase %}
-        </td>
-      </tr>
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
     {% endif %}
-  {% endfor %}
-</table>
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  </article>
+</div>
