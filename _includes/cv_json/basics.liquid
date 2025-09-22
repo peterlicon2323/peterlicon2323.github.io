@@ -15,8 +15,8 @@
 
       <td class="p-1 pl-2 font-weight-light">
         {% case key %}
-          {% when 'image' %}
-            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 150px; max-height: 150px;">
+          {% when 'avatar image' %}
+            <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 10rem;">
 
           {% when 'location' %}
             {{ value.address }}, 
