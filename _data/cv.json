@@ -14,7 +14,7 @@
     "email": "abcxyz@example.com",
     "phone": "+84xxxxxxxxx",
     "website": "https://example.github.io",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    
     "profiles": [
       {
         "network": "GitHub",
@@ -47,7 +47,7 @@
         "url": "https://twitter.com/AlbertEinstein"
       }      
     ],
-    
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time.",
   },
   "work": [
     {
