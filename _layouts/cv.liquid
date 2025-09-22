@@ -103,7 +103,9 @@ layout: default
               {% assign part_title = data[0] %}
             {% endif %}
 
-            <h3 class="card-title font-weight-medium">{{ part_title | capitalize }}</h3>
+            <h3 class="card-title font-weight-medium">
+              {{ part_title | capitalize }}
+            </h3>
           <div>
               {% case data[0] %}
                 {% when 'basics' %}
