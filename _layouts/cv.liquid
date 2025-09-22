@@ -99,6 +99,8 @@ layout: default
             
             {% if data[0] == "basics" %}
               {% assign part_title = "Basic Information" %}
+            {% elsif data[0] == "additional_information" %}
+              {% assign part_title = "Additional Information" %}
             {% else %}
               {% assign part_title = data[0] %}
             {% endif %}
@@ -147,6 +149,9 @@ layout: default
                 
                 {% when 'references' %}
                   {% include cv_json/references.liquid %}
+
+                {% when 'additional_information' %}
+                  {% include cv_json/additional_information.liquid %}
 
                 {% else %}
 
