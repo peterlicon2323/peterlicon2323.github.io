@@ -39,13 +39,13 @@
     {% endif %}
   {% endfor %}
 </table>
-{% comment %} Render avatar image below the table if it exists {% endcomment %}
+{% comment %} Render avatar image in a div below the table if it exists {% endcomment %}
 {% for item in data[1] %}
   {% assign key = item[0] %}
   {% assign value = item[1] %}
   {% if key == 'avatar image' and value != blank %}
     <div class="avatar-container">
-      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 10rem;">
+      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 15rem;">
     </div>
   {% endif %}
 {% endfor %}
