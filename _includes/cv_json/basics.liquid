@@ -16,9 +16,9 @@
 </style>
 
 <!-- Personal Information Section -->
-<h3>Personal Information</h3>
+<div style="display: flex;">
 <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Personal Information (excluding avatar image) {% endcomment %}
+  {% comment %} Render fields dynamically for Personal Information (including moved fields) {% endcomment %}
   {% for item in data[1] %}
     {% assign key = item[0] %}
     {% assign value = item[1] %}
@@ -27,13 +27,23 @@
       {% continue %}
     {% endif %}
 
-    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' %}
+    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' %}
       <tr>
         <td class="p-1 pr-2 font-weight-bold">
           <b>{{ key | capitalize }}</b>
         </td>
         <td class="p-1 pl-2 font-weight-light">
-          {{ value }}
+          {% case key %}
+            {% when 'location' %}
+              {{ value.city }},
+              {{ value.countryCode }}
+            {% when 'email' %}
+              <a href="mailto:{{ value }}">{{ value }}</a>
+            {% when 'phone' %}
+              <a href="tel:{{ value }}">{{ value }}</a>
+            {% else %}
+              {{ value }}
+          {% endcase %}
         </td>
       </tr>
     {% endif %}
@@ -44,16 +54,17 @@
   {% assign key = item[0] %}
   {% assign value = item[1] %}
   {% if key == 'avatar image' and value != blank %}
-    <div class="avatar-container">
+    <div class="avatar-container" style="margin-right: 5rem;">
       <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 15rem;">
     </div>
   {% endif %}
 {% endfor %}
+</div>
 
 <!-- Contact Information Section -->
-<h3>Contact Information</h3>
+<div>
 <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Contact Information {% endcomment %}
+  {% comment %} Render fields dynamically for Contact Information (excluding moved fields) {% endcomment %}
   {% for item in data[1] %}
     {% assign key = item[0] %}
     {% assign value = item[1] %}
@@ -62,16 +73,13 @@
       {% continue %}
     {% endif %}
 
-    {% if key == 'location' or key == 'email' or key == 'phone' or key == 'website' or key == 'profiles' %}
+    {% if key == 'website' or key == 'profiles' %}
       <tr>
         <td class="p-1 pr-2 font-weight-bold">
           <b>{{ key | capitalize }}</b>
         </td>
         <td class="p-1 pl-2 font-weight-light">
           {% case key %}
-            {% when 'location' %}
-              {{ value.city }},
-              {{ value.countryCode }}
             {% when 'profiles' %}
               <div class="profiles-container">
                 {% for profile in value %}
@@ -85,10 +93,6 @@
               </div>
             {% when 'website' %}
               <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
-            {% when 'email' %}
-              <a href="mailto:{{ value }}">{{ value }}</a>
-            {% when 'phone' %}
-              <a href="tel:{{ value }}">{{ value }}</a>
             {% else %}
               {{ value }}
           {% endcase %}
@@ -97,3 +101,4 @@
     {% endif %}
   {% endfor %}
 </table>
+</div>
