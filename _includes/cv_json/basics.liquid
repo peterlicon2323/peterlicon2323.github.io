@@ -27,7 +27,7 @@
       {% continue %}
     {% endif %}
 
-    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' %}
+    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
       <tr>
         <td class="p-1 pr-2 font-weight-bold">
           <b>{{ key | capitalize }}</b>
@@ -53,8 +53,9 @@
 {% for item in data[1] %}
   {% assign key = item[0] %}
   {% assign value = item[1] %}
+
   {% if key == 'avatar image' and value != blank %}
-    <div class="avatar-container" style="margin-right: 5rem;">
+    <div class="avatar-container" style="margin-right: 0rem;">
       <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 15rem;">
     </div>
   {% endif %}
@@ -91,8 +92,6 @@
                   </div>
                 {% endfor %}
               </div>
-            {% when 'website' %}
-              <a href="{{ value }}" target="_blank" rel="noopener noreferrer">{{ value }}</a>
             {% else %}
               {{ value }}
           {% endcase %}
