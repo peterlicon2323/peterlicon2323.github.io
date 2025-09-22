@@ -13,97 +13,87 @@
   .avatar-container {
     margin-top: 1rem; /* Space between table and image */
   }
+  /* Responsive adjustment for small screens */
+  @media (max-width: 576px) {
+    .profile-item {
+      flex: 1 1 100%; /* Stack profiles vertically */
+    }
+  }
 </style>
 
 <!-- Personal Information Section -->
 <div style="display: flex;">
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Personal Information (including moved fields) {% endcomment %}
+  <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+    {% for item in data[1] %}
+      {% assign key = item[0] %}
+      {% assign value = item[1] %}
+      {% if value == blank %}
+        {% continue %}
+      {% endif %}
+      {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
+        <tr>
+          <th class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
+            {{ key | capitalize }}
+          </th>
+          <td class="p-1 pl-2 font-weight-light" {% if key == 'full name' %}style="font-size: 1.5rem;"{% endif %}>
+            {% case key %}
+              {% when 'location' %}
+                {% if value.city and value.countryCode %}
+                  {{ value.city }}, {{ value.countryCode }}
+                {% else %}
+                  {{ value }}
+                {% endif %}
+              {% when 'email' %}
+                <a href="mailto:{{ value }}">{{ value }}</a>
+              {% when 'phone' %}
+                <a href="tel:{{ value }}">{{ value }}</a>
+              {% else %}
+                {{ value }}
+            {% endcase %}
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
   {% for item in data[1] %}
     {% assign key = item[0] %}
     {% assign value = item[1] %}
-
-    {% if value == blank %}
-      {% continue %}
-    {% endif %}
-
-    {% if key == 'full name' or key == 'occupation' or key == 'birth date' or key == 'summary' or key == 'location' or key == 'email' or key == 'phone' or key == 'website' %}
-      <tr>
-        <td class="p-1 pr-2 font-weight-bold" style="text-align: left;vertical-align: middle;">
-          <b>{{ key | capitalize }}</b>
-        </td>
-        {% if key == 'full name' %}
-        <td class="p-1 pl-2 font-weight-light" style="font-size: 1.5rem;">
-          {{ value }}
-        </td>
-        {% else%}
-        <td class="p-1 pl-2 font-weight-light">
-          {% case key %}
-            {% when 'location' %}
-              {{ value.city }},
-              {{ value.countryCode }}
-            {% when 'email' %}
-              <a href="mailto:{{ value }}">{{ value }}</a>
-            {% when 'phone' %}
-              <a href="tel:{{ value }}">{{ value }}</a>
-            {% else %}
-              {{ value }}
-          {% endcase %}
-        </td>
-        {% endcase %}
-      </tr>
+    {% if key == 'avatar image' and value != blank %}
+      <div class="avatar-container" style="margin-right: 0rem;">
+        <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 17rem;">
+      </div>
     {% endif %}
   {% endfor %}
-</table>
-{% comment %} Render avatar image in a div below the table if it exists {% endcomment %}
-{% for item in data[1] %}
-  {% assign key = item[0] %}
-  {% assign value = item[1] %}
-
-  {% if key == 'avatar image' and value != blank %}
-    <div class="avatar-container" style="margin-right: 0rem;">
-      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 17rem;">
-    </div>
-  {% endif %}
-{% endfor %}
 </div>
 
 <!-- Contact Information Section -->
 <div>
-<table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
-  {% comment %} Render fields dynamically for Contact Information (excluding moved fields) {% endcomment %}
-  {% for item in data[1] %}
-    {% assign key = item[0] %}
-    {% assign value = item[1] %}
-
-    {% if value == blank %}
-      {% continue %}
-    {% endif %}
-
-    {% if key == 'profiles' %}
-      <tr>
-        <td class="p-1 pr-2 font-weight-bold">
-          <b>{{ key | capitalize }}</b>
-        </td>
-        <td class="p-1 pl-2 font-weight-light">
-          {% case key %}
-            {% when 'profiles' %}
-              <div class="profiles-container">
-                {% for profile in value %}
-                  <div class="profile-item mb-1">
-                    <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                      <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
-                      {{ profile.network }}: {{ profile.username }}
-                    </a>
-                  </div>
-                {% endfor %}
-              </div>
-            {% else %}
-              {{ value }}
-          {% endcase %}
-        </td>
-      </tr>
-    {% endif %}
-  {% endfor %}
-</table>
+  <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
+    {% for item in data[1] %}
+      {% assign key = item[0] %}
+      {% assign value = item[1] %}
+      {% if value == blank %}
+        {% continue %}
+      {% endif %}
+      {% if key == 'profiles' %}
+        <tr>
+          <th class="p-1 pr-2 font-weight-bold">
+            {{ key | capitalize }}
+          </th>
+          <td class="p-1 pl-2 font-weight-light">
+            <div class="profiles-container">
+              {% for profile in value %}
+                <div class="profile-item mb-1">
+                  <a href="{{ profile.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                    <i class="fab fa-{{ profile.network | downcase }} mr-1"></i>
+                    {{ profile.network }}: {{ profile.username }}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
 </div>
