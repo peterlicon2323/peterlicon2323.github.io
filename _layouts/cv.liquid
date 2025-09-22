@@ -91,7 +91,7 @@ layout: default
             {% endunless %}
           {% endif %}
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
-          {% assign trimmed_key = data[0] | strip %}
+          {% assign trimmed_key = data[0] %}
           {% if ['basics', 'work', 'education', 'certificates', 'skills', 'interests'] contains trimmed_key %}
           <a class="anchor" id="{{ data[0] }}"></a>
           <div class="card mt-3 p-3">
@@ -117,7 +117,7 @@ layout: default
                   {% include cv_json/education.liquid %}
                   
                 {% when 'work' %}
-                  {% include cv_json/work.liquid %}
+                  {% include cv_json/work.liquid %}t
                 <!--
                 {% when 'volunteer' %}
                   {% include cv_json/volunteer.liquid %}
