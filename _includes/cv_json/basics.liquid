@@ -56,7 +56,7 @@
 
   {% if key == 'avatar image' and value != blank %}
     <div class="avatar-container" style="margin-right: 0rem;">
-      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 15rem;">
+      <img src="{{ value }}" alt="Profile Photo" class="img-fluid rounded" style="max-width: 17rem;">
     </div>
   {% endif %}
 {% endfor %}
@@ -74,7 +74,7 @@
       {% continue %}
     {% endif %}
 
-    {% if key == 'website' or key == 'profiles' %}
+    {% if key == 'profiles' %}
       <tr>
         <td class="p-1 pr-2 font-weight-bold">
           <b>{{ key | capitalize }}</b>
